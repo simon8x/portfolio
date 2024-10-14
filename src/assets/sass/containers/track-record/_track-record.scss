@@ -1,0 +1,25 @@
+.track-record-section {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    // background-color: red;
+
+    .section-title {
+        @include font-heading-3;
+    }
+
+    .tr-wrapper { 
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        
+            .tr-main {
+                flex-basis: 70%;
+            }
+        
+            .tr-aside {
+                flex-basis: 25%;
+                background-color: aqua;
+            }
+    }
+}

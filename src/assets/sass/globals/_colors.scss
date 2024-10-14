@@ -1,0 +1,26 @@
+// Colores primarios
+$theme-light-primary-background: #F0EFE6;
+$theme-dark-primary-background: #131312;
+
+$theme-light-primary-text: #0a0a0a;
+$theme-dark-primary-text: #f7f7f7;
+
+$theme-light-overlay: rgba(255,255,255,.5);
+$theme-dark-overlay: rgba(0,0,0,.5);
+
+$theme-light-panel-bg:  rgba(0,0,0,.1);
+$theme-dark-panel-bg:rgba(255,255,255,.1);
+
+.light {
+  $text-color: red;
+}
+.dark {
+  $text-color: red;
+}
+
+
+// $dark-primary-color: #303f9f;
+// $light-primary-color: #ffffff;
+// $primary-color: #3f51b5;
+// $text-icons-color: #FFFFFF;
+// $accent-color: #ff9800;

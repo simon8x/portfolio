@@ -1,0 +1,42 @@
+.night{
+    .testimonial-section{
+        background-color: $theme-dark-primary-background;  
+
+        color: $theme-dark-primary-text;    
+    }    
+}
+
+.day{
+    .testimonial-section{
+        background-color: $theme-light-primary-background;    
+        color: $theme-light-primary-text;
+    }
+}
+
+.testimonial-section{
+    // background-color:aqua ;
+    //padding:  1rem 0 3rem;
+    min-height: inherit;
+    color: $theme-dark-primary-text;
+    transition: all .75s;
+    .testimonial-wrapper{
+        // background-color: red;
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        max-width: 100vw;
+        .header-section{
+            width: 30%;
+            display: flex;
+            // background-color: yellowgreen;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .section-title{
+                @include font-display-1;
+            }
+        } 
+        .section-testimonial-content{
+            width: 70%;
+        }
+    }
+}

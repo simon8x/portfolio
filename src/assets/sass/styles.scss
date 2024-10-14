@@ -1,0 +1,20 @@
+@import "./globals/normalizer";
+@import "./globals/typography";
+@import "./globals/colors";
+@import "./globals/buttons";
+@import "./globals/layout";
+
+@import "./components/main-nav-bar/main-nav-bar";
+
+@import "./containers/home/home";
+
+@import "./containers/testimonials/testimonials";
+@import "./components/testimonial/testimonial";
+
+@import "./containers/projects/projects";
+@import "./components/featured-projects/featured-projects";
+@import "./components/other-projects/other-projects";
+
+@import "./containers/track-record/track-record";
+@import "./components/tr-accordion/tr-accordion"
+

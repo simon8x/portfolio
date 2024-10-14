@@ -1,0 +1,54 @@
+.night{
+    .testimonial-section{
+        background-color: $theme-dark-primary-background;  
+
+        color: $theme-dark-primary-text;    
+    }    
+}
+
+.day{
+    .testimonial-section{
+        background-color: $theme-light-primary-background;    
+        color: $theme-light-primary-text;
+    }
+}
+
+.prjects-section{
+    // background-color:aqua ;
+    //padding:  1rem 0 3rem;
+    min-height: inherit;
+    color: $theme-dark-primary-text;
+    transition: all .75s;
+    .hero-projects{
+        // background-color: red;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 100vw;
+        .header-section{
+            width: 100%;
+            display: flex;
+            // background-color: yellowgreen;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .section-title{
+                @include font-heading-4;
+            }
+        } 
+        .section-featured-projects{
+            width: 100%;            
+            border-radius: 1rem;
+            min-height: 40dvh;
+            position: relative;
+            // background-color: red;
+        }
+        .section-other-projects{
+            width: 100%;
+            min-height: 40dvh;
+            position: relative;
+            // background-color: orangered;
+        }
+
+    }
+}
