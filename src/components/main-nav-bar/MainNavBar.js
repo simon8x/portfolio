@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import HamburgerMenu from '../hamburguer-menu/HamburguerMenu'
 // import { Home } from '../../containers/home/Home'
 // import { Projects } from '../../containers/projects/Projects'
 // import { Testimonial } from '../../containers/testimonial/Testimonial'
@@ -9,7 +10,8 @@ export const MainNavBar = () => {
     <nav className='main-nav'>
       <div className='container main-nav-wrapper'>
                      
-            <a className='header-logo-link' href='/'>
+            {/* <a className='header-logo-link' href='/'> */}
+            <Link to={'/'} className='header-logo-link'>
               <div className='my-self-card'>    
                 <div className='avatar-wrapper'>
                   <div className='back-avatar-circle'></div>
@@ -20,7 +22,7 @@ export const MainNavBar = () => {
                   <span className='self-slogan'>UI Engineer and beyond...</span>
                 </div>
               </div>
-            </a>
+            </Link>
      
         
         <ul className='controls-list'>
@@ -33,16 +35,17 @@ export const MainNavBar = () => {
               </button>
           </li>
           <li className='control-item'>
-            <button 
-              className='control-item-btn' 
-              // onClick={ handleTheme }
-              >
+            <HamburgerMenu />
+            {/* <button 
+              className='control-item-btn'  */}
+               {/* onClick={ handleTheme } */}
+              {/* > */}
               {/* {settings.theme === 'night'  
                ? <img className='control-item-btn-icon' src='assets/images/common/icons/icon-day-mode.svg' alt=''/> 
                : <img className='control-item-btn-icon' src='assets/images/common/icons/icon-night-mode.svg' alt=''/>}
               */}
-              <img className='control-item-btn-icon' src='assets/images/icons/icon-day-mode.svg' alt=''/>
-            </button>
+              {/* <img className='control-item-btn-icon' src='assets/images/icons/icon-day-mode.svg' alt=''/>
+            </button> */}
           </li>
         </ul>
       </div>

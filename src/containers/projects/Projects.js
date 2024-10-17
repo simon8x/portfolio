@@ -6,6 +6,7 @@ import 'react-slideshow-image/dist/styles.css';
 
 import { FeaturedProject } from "../../components/featured-project/FeaturedProject";
 import { OtherProject } from "../../components/other-project/OtherProject";
+import { BackgroundShapes } from "../../components/background-shapes/BackgroundShapes";
 
 export const Projects = () => {
 
@@ -204,19 +205,18 @@ export const Projects = () => {
   return (
 
     <>
+      <BackgroundShapes />
       <header className='header'>
         <MainNavBar />
       </header>
       <main className='main-section'>
         
+          <div className='container'>
         <section className='prjects-section'>
-          <div className='container hero-projects'>
-            
-
+          <div className='hero-projects'>
             <div className='header-section'>
               <h2 className='section-title'>Some featured projects</h2>
             </div>
-
             <div className='section-featured-projects'>
               {/* <div className="panel-overlay"></div> */}
               {/* <img className='testimonial-icon' src='assets/images/testimonial/quote-icon.png' alt=''/> */}
@@ -229,6 +229,8 @@ export const Projects = () => {
               </Fade>
 
             </div>
+          </div>
+          <div className='side-projects'>
 
             <div className='header-section'>
               <h2 className='section-title'>Some other projects</h2>
@@ -246,10 +248,9 @@ export const Projects = () => {
               </Slide>
 
             </div>
-
-            
-          </div>
+          </div>           
         </section>
+          </div>
       </main>
 
     </>

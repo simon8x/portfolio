@@ -1,9 +1,12 @@
+import { BackgroundShapes } from "../../components/background-shapes/BackgroundShapes"
+import { CtaCvDownload } from "../../components/cta-cv-download/CtaCvDownload"
 import { MainNavBar } from "../../components/main-nav-bar/MainNavBar"
 import { TrAccordion } from "../../components/tr-accordion/TrAccordion"
 
 export const TrackRecord = () => {
   return (
     <>
+      <BackgroundShapes />
       <header className='header'>
         <MainNavBar />
       </header>
@@ -17,7 +20,7 @@ export const TrackRecord = () => {
                 <TrAccordion/>
               </section>
               <aside className="tr-aside">
-                <h1>a</h1>
+                <CtaCvDownload/>
               </aside>
             </div>
 

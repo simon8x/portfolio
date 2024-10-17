@@ -1,19 +1,5 @@
 .section-testimonial-content{
-    // background-color: red;
-    position: relative;
-    display: flex;
-    flex-direction: column;
 
-    .testimonial-icon{
-        position: absolute;
-        right: 2%;
-        top: -10%;
-        filter: invert(0) drop-shadow(1px 1px 2px rgb(213, 213, 213)) ;
-        z-index: 0;
-        width: 5%;
-        height: auto;
-        opacity: 10%;
-    }
     .panel-overlay{
         position: absolute;
         width: 90%;
@@ -21,139 +7,101 @@
         top: 0;
         left: 5%;
         border-radius: 1rem;
-        background-color: rgba(0,0,0.1);
-    }
-    .panel-overlay::before {
-        content: "";
-        position: absolute;
-        width: 12%;
-        height: 95%;
-
-        background: -moz-linear-gradient(90deg, $theme-dark-primary-background 50%, rgba(0,0,0,1) 50.5%, rgba(200,0,0,0) 77%);
-        background: -webkit-linear-gradient(90deg, $theme-dark-primary-background 50%, rgba(0,0,0,1) 50.5%, rgba(200,0,0,0) 77%);
-        background: linear-gradient(90deg, $theme-dark-primary-background 50%, rgba(0,0,0,1) 50.5%, rgba(200,0,0,0) 77%);
         
-        top: 2.5%;
-        left: -6%;
-        z-index: 1;
+
+        // background-color: $theme-dark-panel-bg;
     }
 
-    .panel-overlay::after {
-        content: "";
-        position: absolute;
-        width: 12%;
-        height: 95%;
-
-        background: -moz-linear-gradient(90deg, $theme-dark-primary-background 50%, rgba(0,0,0,1) 50.5%, rgba(200,0,0,0) 77%);
-        background: -webkit-linear-gradient(90deg, $theme-dark-primary-background 50%, rgba(0,0,0,1) 50.5%, rgba(200,0,0,0) 77%);
-        background: linear-gradient(90deg, $theme-dark-primary-background 50%, rgba(0,0,0,1) 50.5%, rgba(200,0,0,0) 77%);
-        
-        transform: rotate(180deg);
-
-        top: 2.5%;
-        right: -6%;
-        z-index: 1;
-    }
-
-    .single-testimonial-slide{
-        // background-color: rgba(255, 20, 145, 0.159);
-        padding: 1rem 10rem;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        .testimonial-paragraph{
-            font-size: 2rem;
-            font-style: italic;
-            font-weight: 500;
-            margin-bottom: 3rem;
-
-        }
-        .testimonial-author-wrapper{
-            //background-color: red;
-            display: flex;
-            padding-left: 10%;
-            .testimonial-author-avatar-wrapper{
-                width: 7rem;
-                height: 7rem;
-                border-radius: 5px;
-                overflow: hidden;
-                margin: .5rem 1rem .5rem 0;
-                // background-color: yellow;
-                .testimonial-author-avatar-img{
-                    max-width: 100%;
-                    // display: none;
+    >div{
+        // background-color: aqua;
+        // padding: 1rem;
+        height: 100%;
+        >div {
+            // background-color: crimson;
+            // padding: 1rem;
+            height: 100%;
+            >div {
+                // background-color: lime;
+                // padding: 1rem;
+                height: 100%;
+                >div {
+                    //background-color: deeppink;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    .single-testimonial-slide{
+                        height: 100%;
+                        padding: 5rem 7rem;
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        // background-color: rgba(255,0,0,.5);
+                        .quote-wrapper{
+                            flex-grow: 1;
+                            .testimonial-paragraph{
+                                @include paragraph-testimonial;
+                                // font-size: 2rem;
+                                font-style: italic;
+                                // font-weight: 500;
+                                // margin-bottom: 3rem;
+                    
+                            }
+                        }
+                        .testimonial-author-wrapper{
+                            //background-color: red;
+                            display: flex;
+                            justify-content: flex-start;
+                            // padding-left: 10%;
+                            align-items: center;
+                            .testimonial-author-avatar-wrapper{
+                                width: 10rem;
+                                height: 10rem;
+                                border-radius: 5px;
+                                overflow: hidden;
+                                margin: .5rem 1rem .5rem 0;
+                                // background-color: yellow;
+                                .testimonial-author-avatar-img{
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                    // display: none;
+                                }
+                            }
+                            .testimonial-author-data-wrapper{
+                                //background-color: aqua;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: start;
+                                justify-content: center;
+                                
+                                .testimonial-author-name{
+                                    // font-size: 1.6rem;
+                                    @include name-2;
+                                }
+                                .testimonial-author-position{
+                                    // font-size: 1.2rem;
+                                    @include paragraph-md
+                                }
+                            }
+                        }
+                    }
                 }
             }
-            .testimonial-author-data-wrapper{
-                //background-color: aqua;
-                display: flex;
-                flex-direction: column;
-                align-items: start;
-                justify-content: center;
-                
-                .testimonial-author-name{
-                    font-size: 1.6rem;
-                }
-                .testimonial-author-position{
-                    font-size: 1.2rem;
-                }
-            }
         }
+        
+    }
+
+    .indicators {
+        bottom: 5%;
     }
 
     .prev-arrow{
-        background-color: transparent;
-        border: none;
-        left: -1%!important;
-        height: 20%;
-        aspect-ratio: 1/2;
-        svg {
-            fill: yellow;
-        }
+        display: none;
     }
 
     .next-arrow{
-        background-color: transparent;
-        border: none;
-        right: -1%!important;
-        height: 20%;
-        aspect-ratio: 1/2;
+        display: none;
     }
-    .indicators{
-        //background-color: rgba(133, 0, 0, .5);
-        display: flex;
-        justify-items: flex-end;
-        gap: 1.5rem;
-        position: absolute;
-        right: 5%;
-        top: -10%;
-        flex-wrap: nowrap !important;
-        .indicator{
-            padding: 1rem;
-            border:solid 1px black;
-            background-color: black;
-            line-height: 1em;
-            border-radius: 50%;
-        }
-        .indicator:hover{
-            cursor: pointer;
-        }
-        .active{
-            border:solid 1px rgb(121, 121, 121);
-            background-color: rgb(121, 121, 121);
-            box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
-            -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
-            -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
-        }
-    }
-}
 
-// .react-slideshow-container::before {
-//     content: "";
-//     height: 100%;
-//     width: 10%;
-//     background-color: red;
-//     top: 0;
-//     left: 0;
-// }
+}

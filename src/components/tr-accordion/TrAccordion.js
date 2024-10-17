@@ -117,7 +117,8 @@ export const TrAccordion = () => {
                     className={`position-wrapper ${openIndex === index ? "active" : ""}`}
                 >
                     <header 
-                        className={`position-header ${openIndex === index ? "active" : ""}`}
+                        className='position-header'
+                        // className={`position-header ${openIndex === index ? "active" : ""}`}
                         onClick={() => handlePosition(index)}
                     >
                         <div className='position-company-logo'>
@@ -133,7 +134,7 @@ export const TrAccordion = () => {
                         </div>
                     </header>
 
-                    {openIndex === index && (
+                    {/* {openIndex === index && ( */}
                         <div className='position-description'>
                             {resumeItem.detail.map((item, idx) => (
                                 <p className='position-detail' key={idx}>{item}</p>
@@ -141,7 +142,7 @@ export const TrAccordion = () => {
                             <p className='position-achivement'>{resumeItem.achivements}</p>
                             <p className='position-stack'>{resumeItem.techStack}</p>
                         </div>
-                    )}
+                     {/* )}  */}
                 </div>
             ))}
         </section>

@@ -3,8 +3,10 @@
 @import "./globals/colors";
 @import "./globals/buttons";
 @import "./globals/layout";
+@import "./globals/backdrown-shapes";
 
 @import "./components/main-nav-bar/main-nav-bar";
+@import "./components/hamburguer-menu/hamburguer-menu";
 
 @import "./containers/home/home";
 
@@ -14,6 +16,7 @@
 @import "./containers/projects/projects";
 @import "./components/featured-projects/featured-projects";
 @import "./components/other-projects/other-projects";
+@import "./components/simple-cta/simple-cta";
 
 @import "./containers/track-record/track-record";
 @import "./components/tr-accordion/tr-accordion"

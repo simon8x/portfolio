@@ -5,6 +5,7 @@ import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 
 import { Testimonial } from "../../components/testimonial/Testimonial";
+import { BackgroundShapes } from "../../components/background-shapes/BackgroundShapes";
 
 export const Testimonials = () => {
 
@@ -33,8 +34,8 @@ export const Testimonials = () => {
     },
     {
       "text": [
-        "Trabajamos con Simon durante casi 2 años y si tengo que destacar cualidades entre ellas esta su profesionalidad al momento de realizar tareas complejas en poco tiempo. Siempre estuvo a la altura de la calidad y de los desafíos presentados. Asistía a reuniones con los clientes y logro hacerse un lugar importante no solo para mostrar su trabajo sino también para proyectar nuevas funcionalidades y realizar propuestas superadoras.",
-        "Es una gran persona y no dudaria volver a trabajar con él.spuesto a colaborar y encontrar soluciones efectivas. Un excelente compañero."
+        "We worked with Simon for almost 2 years, and if I have to highlight qualities, one of them is his professionalism when it comes to handling complex tasks in a short time. He was always up to the quality and challenges presented. He attended meetings with clients and managed to carve out an important place not only to showcase his work but also to propose new features and offer superior solutions.",
+        "He is a great person, and I would not hesitate to work with him again."
       ],
       "avatar-url": "/assets/images/testimonial/mati-munoz.jpg",
       "name": "Matias Muñoz",
@@ -43,18 +44,73 @@ export const Testimonials = () => {
     },
     {
       "text": [
-        "Simón es una persona creativa que sabe tratar con los clientes y analizar las necesidades de estos más allá de lo que ellos piden.",
-        "En esta empresa, trabajamos en algunos proyectos juntos en los que se destaco por agregar valor al producto y a la relación con los clientes, siempre haciendo un poco más de lo pactado.",
-        "Se adapta muy bien a diferentes esquemas de comunicación interna y a la utilización de herramientas nuevas."
+        "Simón is a creative person who knows how to deal with clients and analyze their needs beyond what they ask for.",
+        "In this company, we worked together on several projects where he stood out by adding value to the product and the relationship with the clients, always going a bit further than what was agreed upon.",
+        "He adapts very well to different internal communication schemes and new tools."
       ],
       "avatar-url": "/assets/images/testimonial/mati-mascazzinni.jpg",
       "name": "Matias Mascazzini",
       "position": "Web developer that builds products for people with Ruby on Rails",
       "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
+    },
+    {
+      "text": [
+        "Excellent teacher! He not only taught me how to develop software but also made the theory interesting.",
+        "Always looking for ways to inspire, he worked on the individual potential of his students. My current career as a developer started with him.",
+        "As a professional, his leadership and technical skills always create an excellent work environment."
+      ],
+      "avatar-url": "/assets/images/testimonial/nelson-nunez.jpg",
+      "name": "Nelson Nuñez",
+      "position": "Software Developer | .NET",
+      "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
+    },
+    {
+      "text": [
+        "I was Simon's student when he was an Instructor at the Informatorio (Laboratorio de Aplicaciones Informáticas) in its opening year, 2016.",
+        "Afterward, we stayed in contact at local events, as Simon has been actively participating in the emerging software development community in the northeast of Argentina for many years.",
+        "I learned many things from him that I now consider invaluable, and I recommend him for his experience and dynamic way of working in a team."
+      ],
+      "avatar-url": "/assets/images/testimonial/juan-martinez.jpg",
+      "name": "Juan Gabriel Martínez",
+      "position": "Software Developer",
+      "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
+    },
+    {
+      "text": [
+        "Simón is the best mentor/tutor in programming I’ve ever had, and he’s the one who inspired me to keep studying.",
+        "Always friendly and energetic, he is eager to teach you everything he knows and, at the same time, always willing to keep learning.",
+        "A great leader, with a creativity I’ve rarely seen, capable of adding immense value to any project."
+      ],
+      "avatar-url": "/assets/images/testimonial/facu-costa.jpg",
+      "name": "Facundo Costa",
+      "position": "Test Automation Engineer at Solvd, Inc.",
+      "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
+    },
+    {
+      "text": [
+        "I worked with Simon on a few projects. Honestly, I was amazed by his way of working and even more by his personality. His positive attitude is very valuable.",
+        "Creative, intelligent, and supportive, without a doubt, he can handle any task presented to him, with an analytical capacity and understanding rarely seen. He is an outstanding professional, and it was a real pleasure to work with him."
+      ],
+      "avatar-url": "/assets/images/testimonial/david-sanchez.jpg",
+      "name": "David Sánchez Leiva",
+      "position": "Sr Software Developer | Magento | Adobe Commerce | WordPress",
+      "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
+    },
+    {
+      "text": [
+        "Simón is an incredible person, both professionally and personally.",
+        "With solid technical and mathematical knowledge, he always has a solution to the problems that arise when analyzing and developing simple and complex solutions.",
+        "A great motivator, he is one of those people you always enjoy working with."
+      ],
+      "avatar-url": "/assets/images/testimonial/brian-stanley.jpg",
+      "name": "Brian Stanley",
+      "position": "CTO at uugot.it",
+      "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
     }
-  ];
+];
 
-  const indicators = (index) => (<div className="indicator"></div>);
+
+  const indicators = (index) => (<div className="indicator bg-red"></div>);
 
   const properties = {
     prevArrow: <button className='nav-arrow prev-arrow'>
@@ -75,29 +131,33 @@ export const Testimonials = () => {
   return (
 
     <>
+      <BackgroundShapes />
       <header className='header'>
         <MainNavBar />
       </header>
       <main className='main-section'>
         
+          <div className='container'>
         <section className='testimonial-section'>
-          <div className='container testimonial-wrapper'>
-            <div className='header-section'>
-              <h2 className='section-title'>See what others say about working with me</h2>
+
+            <div className='testimonial-wrapper'>
+              <div className='header-section'>
+                <h2 className='section-title'>See what others say about working with me</h2>
+              </div>
+              <div className='section-testimonial-content'>
+                {/* <div className="panel-overlay"></div> */}
+                {/* <img className='testimonial-icon' src='assets/images/testimonial/quote-icon.png' alt=''/> */}
+                <Slide indicators={indicators} {...properties}>
+                  {recomendacionesData.map(recomendacion => (
+                    <div key={recomendacion.name}>
+                      <Testimonial recomendacion={recomendacion} />
+                    </div>
+                  ))}
+                </Slide>
+              </div>
             </div>
-            <div className='section-testimonial-content'>
-              <div className="panel-overlay"></div>
-              <img className='testimonial-icon' src='assets/images/testimonial/quote-icon.png' alt=''/>
-              <Slide indicators={indicators} {...properties}>
-                {recomendacionesData.map(recomendacion => (
-                  <div key={recomendacion.name}>
-                    <Testimonial recomendacion={recomendacion} />
-                  </div>
-                ))}
-              </Slide>
-            </div>
-          </div>
         </section>
+          </div>
       </main>
 
     </>
