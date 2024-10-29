@@ -15,7 +15,7 @@ export const MainNavBar = () => {
               <div className='my-self-card'>    
                 <div className='avatar-wrapper'>
                   <div className='back-avatar-circle'></div>
-                  <img className='self-avatar' src={`${process.env.PUBLIC_URL}/assets/me/simon8x-avatar1.png`} alt=''/>
+                  <img className='self-avatar' src={`${process.env.PUBLIC_URL}/assets/images/me/simon8x-avatar1.png`} alt=''/>
                 </div>
                 <div className='data-wrapper'>
                   <h4 className='self-name'>Simón Yamil Ibalo</h4>
