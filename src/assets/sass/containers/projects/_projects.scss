@@ -60,3 +60,39 @@
         flex-direction: row-reverse;
     }
 }
+
+@media screen and (max-width: 92rem) {
+    .prjects-section{
+        
+         .side-projects,
+        .hero-projects{
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-top: 3rem;
+
+            .header-section{
+                width: 100%;
+                max-width: 100%;               
+                .section-title{
+                    margin-block: 1rem;
+                }
+            } 
+            .section-featured-projects{
+                width: 100%;
+                max-width: 100%;
+            }
+            .section-other-projects{
+                width: 100%;
+                max-width: 100%;
+            }
+    
+        }
+        .side-projects {
+            // min-height: 35vh;
+            // flex-direction: row-reverse;
+        }
+        .hero-projects{
+            margin-bottom: 8rem;
+        }
+    }
+}

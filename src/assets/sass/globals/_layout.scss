@@ -65,6 +65,15 @@ body {
     max-width: 1920px;
     margin: 0 auto;
     // background-color: rgb(239, 0, 131);
+    @media screen and (max-width: 76.8rem) {
+        width: 87%;
+    }
+    @media screen and (max-width: 60rem) {
+        width: 92%;
+    }
+    @media screen and (max-width: 40rem) {
+        width: 97%;
+    }
 }
 
 
@@ -118,6 +127,17 @@ body {
     box-shadow: 0px 0px 12px 2px $theme-light-overlay;
     -webkit-box-shadow: 0px 0px 12px 2px $theme-light-overlay;
     -moz-box-shadow: 0px 0px 12px 2px $theme-light-overlay;
+    
+    @media screen and (max-width: 768px) {
+        padding: .8rem;
+        width: 2rem;
+        height: 2rem;
+    }
+    @media screen and (max-width: 600px) {
+        padding: .5rem;
+        width: 1rem;
+        height: 1rem;
+    }
 }
 
 @mixin indicator-active {
@@ -131,6 +151,16 @@ body {
     box-shadow: 0px 0px 12px 2px $theme-light-overlay;
     -webkit-box-shadow: 0px 0px 12px 2px $theme-light-overlay;
     -moz-box-shadow: 0px 0px 12px 2px $theme-light-overlay;
+    @media screen and (max-width: 768px) {
+        padding: .8rem;
+        width: 2rem;
+        height: 2rem;
+    }
+    @media screen and (max-width: 600px) {
+        padding: .8rem;
+        width: 1rem;
+        height: 1rem;
+    }
 }
 
 .indicators{
@@ -140,6 +170,13 @@ body {
     position: absolute;
     right: 5%;
     flex-wrap: nowrap !important;
+    
+    // background-color: red;
+    @media screen and (max-width: 600px) {
+        // display: none;
+        gap: 2rem;
+    }
+    width: 90%;
     .indicator{
         @include indicator;
     }

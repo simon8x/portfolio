@@ -33,18 +33,38 @@ export const OtherProject = ({ otherProject }) => {
                     {/* </button> */}
 
         </div>
-        <Modal open={open} onClose={() => setOpen(false)}>
-            <h2>Big modal</h2>
-            <h4 className='other-project-name'>{otherProject.projectName}</h4>
-            <h4 className='other-project-name'>{otherProject.projectName}</h4>
-            <h4 className='other-project-name'>{otherProject.projectName}</h4>
-            <h4 className='other-project-name'>{otherProject.projectName}</h4>
-            <h4 className='other-project-name'>{otherProject.projectName}</h4>
-            <h4 className='other-project-name'>{otherProject.projectName}</h4>
-            <h4 className='other-project-name'>{otherProject.projectName}</h4>
-            <h4 className='other-project-name'>{otherProject.projectName}</h4>
-            <h4 className='other-project-name'>{otherProject.projectName}</h4>
-        </Modal>
+        <Modal
+                open={open}
+                onClose={() => setOpen(false)}
+                center
+                classNames={{
+                overlay: 'customOverlay',
+                modal: 'customModal',
+                }}
+            >
+                <article className='modal-wrapper'>
+                    <div className='modal-hero-banner-wrapper'>
+                        <img className='modal-hero-banner-img' src={otherProject.projectImageUrl} alt=''/>
+                    </div>
+
+                    <h1 className='modal-project-name'>{otherProject.projectName}</h1>
+                    <h4 className='modal-project-subtitle'>{otherProject.projectSubtitle}</h4>
+                    <p className='modal-project-date'>{otherProject.projectDate}</p>
+                    <div className='modal-stack-wrapper'>
+                        <TechStack stack={otherProject.tecStack}/>
+                    </div>
+                    <div className='modal-long-description-wrapper'>
+                        {otherProject.projectLongDescriptionText.map((item, index) => 
+                            <p className='modal-project-paragraph'>
+                                {item}        
+                            </p>
+                        )}
+                    </div>
+                    
+                    
+
+                </article>
+            </Modal>
         </>
     )
 }

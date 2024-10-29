@@ -86,9 +86,6 @@ export const Home = () => {
           </div> */}
         </div>
       </main> 
-      {/* <header className='header'>
-        <MainNavBar />
-      </header>  */}
     </>
   )
 }

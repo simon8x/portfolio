@@ -1,0 +1,47 @@
+
+:root{
+    --theme-light-primary-background: #F0EFE6;
+    --theme-dark-primary-background: #000000;
+    
+    --theme-light-primary-text: #0a0a0a;
+    --theme-dark-primary-text: #f7f7f7;
+    
+    --theme-light-overlay: rgba(255,255,255,.5);
+    --theme-dark-overlay: rgba(0,0,0,.5);
+    --theme-modal-dark-overlay: rgba(0,0,0,.75);
+    
+    --theme-light-panel-bg:  rgba(0,0,0,.1);
+    --theme-dark-panel-bg:rgba(0,0,0,.5);
+}
+
+.customOverlay {
+    background: var(--theme-dark-overlay);
+    backdrop-filter: blur(.75rem);
+}
+.customModal {
+    background: var(--theme-dark-primary-background);
+    border-radius: 1rem;
+    background-color: var(--theme-dark-panel-bg);
+    border: solid 2px var(--theme-light-overlay);
+    backdrop-filter: blur(5rem);
+@media screen and (max-width:820px) {
+    max-width: 95vw;
+}
+}
+.customModal .modal-wrapper{
+    min-width: 100%;
+}
+
+.react-responsive-modal-closeButton{
+    background-color: var(--theme-modal-dark-overlay);
+    border-radius: .75rem;
+    padding: .3rem;
+}
+.react-responsive-modal-closeButton svg{
+    fill: var(--theme-dark-primary-text);
+    
+}
+
+
+
+

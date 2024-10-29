@@ -48,3 +48,30 @@
         }
     }
 }
+
+@media screen and (max-width: 92rem) {
+    .testimonial-section{
+        margin-top: 2.5rem;
+        .testimonial-wrapper{
+            flex-direction: column;
+            .header-section{
+                width: 100%;
+                margin-bottom: 2rem;
+            } 
+            .section-testimonial-content{
+                width: 100%;
+                margin-bottom: 6rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .testimonial-section{
+        .testimonial-wrapper{
+            .section-testimonial-content{
+                margin-bottom: 10rem;
+            }
+        }
+    }
+}

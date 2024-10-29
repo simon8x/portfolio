@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import { TechStack } from '../tech-stack/TechStack';
 
 
 export const TrAccordion = () => {
@@ -18,7 +19,28 @@ export const TrAccordion = () => {
                 "I have developed https://olympicgamesjam.nwayplay.com/ and https://foodtruckcoinclub.io from scratch and collaborated on https://www.myherogame.com/, for SONY then Crunchyroll.",
             ],
             achivements: "My work in prototyping screens proved instrumental in identifying suspicious fraudulent activities, thereby enhancing the security measures of the platforms.",
-            techStack: "I have successfully leveraged my expertise in ReactJS, HTML5, CSS3, Sass, BEM, and JS to deliver impactful solutions. Additionally, I efficiently managed project workflows using tools such as Jira, Trello, GitHub, and BitBucket. My proficiency in design tools like Figma and Miró further facilitated seamless collaboration and innovation."
+            
+            techComment: "I have successfully leveraged my expertise in ReactJS, HTML5, CSS3, Sass, BEM, and JS to deliver impactful solutions. Additionally, I efficiently managed project workflows using tools such as Jira, Trello, GitHub, and BitBucket. My proficiency in design tools like Figma and Miró further facilitated seamless collaboration and innovation.",
+            tecStack: [
+                "Html5",
+                "Sass",
+                "Bem",
+                "MaterializeCss",
+                "Mui",
+                "ReactJs",
+                "Js",
+                "Npm",
+                "Redux",
+                "Aws",
+                "Jira",
+                "Trello",
+                "Github",
+                "Bitbucket",
+                "Figma",
+                "Miro",
+                "WordPress",
+                "Acf"
+            ],
         },
         {
             position: "Web UI Developer, Consultant",
@@ -34,10 +56,26 @@ export const TrAccordion = () => {
                 "Elaboración de informes de rendimiento para presentaciones ejecutivas."
             ],
             achivements: "As a consultant, I spearheaded the e-commerce business unit, tripling the client portfolio within two years. Also I successfully navigated growth alongside the startup, implemented agile methodologies (Scrum), and effectively managed remote work operations.",
-            techStack: "As a UI developer, I deployed my skills in HTML, CSS, JS, Bootstrap, MaterializeCSS, Sass, Git, WordPress, Woocommerce, and Scrum"
+            tech: "As a UI developer, I deployed my skills in HTML, CSS, JS, Bootstrap, MaterializeCSS, Sass, Git, WordPress, Woocommerce, and Scrum",
+            tecStack: [
+                "Html5",
+                "Sass",
+                "Bem",
+                "MaterializeCss",
+                "Bootstrap",
+                "Js",
+                "Trello",
+                "Github",
+                "Bitbucket",
+                "Figma",
+                "Miro",
+                "WordPress",
+                "Woocommerce",
+                "Acf"
+            ],
         },
         {
-            position: "Web UI Developer",
+            position: "UI/UI Developer",
             company: " Mimuju EdTech",
             companyLogo: "/assets/images/companies/mimuju.png",
             companyUrl: "google.com",
@@ -47,10 +85,19 @@ export const TrAccordion = () => {
             detail: [
                 "I spearheaded the design of the web app's user interface and guided the development of the mobile app UI, ensuring seamless user experiences across platforms.",
                 "From conceptualization to execution, I played an integral role in every stage of the product life cycle, actively participating in Agile Inception Deck sessions and Design Thinking workshops to shape the product vision.",
-                "I meticulously crafted user flows, wireframes, and prototypes to translate ideas into tangible solutions. Additionally, I adeptly utilized HTML, CSS, JS, MaterializeCSS, Sass, and Git to bring these designs to life"
+                "I meticulously crafted user flows, wireframes, and prototypes to translate ideas into tangible solutions. Additionally, to bring these designs to life I skillfully used HTML, CSS, JS, MaterializeCSS, Sass, and Gitlab."
             ],
-            achivements: "review review review review review review review review review ",
-            techStack: "review review review review review review review review review "
+            achivements: "",
+            tecStack: [
+                "Html5",
+                "Sass",
+                "Bem",
+                "MaterializeCss",
+                "Js",
+                "Trello",
+                "Bitbucket",
+                "Invision",
+            ],
         },
         {
             position: "Technical Instructor (developers trainer)",
@@ -67,7 +114,19 @@ export const TrAccordion = () => {
                 "Programming Fundamentals using (Python and Django)"
             ],
             achivements: "Today, I take pride in noting that over half of my former students have transitioned into fulfilling roles within the software industry.",
-            techStack: "Notably, in 2020, I successfully delivered remote classes to a cohort of 100 students concurrently."
+            tech: "Notably, in 2020, I successfully delivered remote classes to a cohort of 100 students concurrently.",
+            tecStack: [
+                "Html5",
+                "CSS",
+                "Js",
+                "MaterializeCss",
+                "Bootstrap",
+                "Python",
+                "Django",
+                "Heroku",
+                "Trello",
+                "Github",
+            ],
         },
         {
             position: "Business analyst",
@@ -81,8 +140,8 @@ export const TrAccordion = () => {
                 "I've engaged with end-users across various organizational levels to capture requirements, subsequently conceptualizing and prototyping new features for integration into the company's ERP software.",
                 "Additionally, I provided outsourcing services to two prominent client companies, BRa and Metrovías, ensuring their specific needs were met with tailored solutions.",
             ],
-            achivements: "review review review review review review ",
-            techStack: "review review review review "
+            achivements: "",
+            tech: ""
         },
         {
             position: "Business analyst - UI dev",
@@ -95,17 +154,24 @@ export const TrAccordion = () => {
             detail: [
                 "This is a custom software company where I started as a business analyst and I was involved in UI development too.I worked in several sectors like insurance, delivery, retail, traceability at food factories and medical care",
             ],
-            achivements: "review review review review review review ",
-            techStack: "review review review review "
+            achivements: "",
+            tech: ""
         }
     ];
-
-    // Estado para almacenar el índice del acordeón abierto
     const [openIndex, setOpenIndex] = useState(null);
+    const headerRefs = useRef([]); // Array de referencias para cada header
 
     const handlePosition = (index) => {
         // Alternar entre abrir/cerrar el acordeón
-        setOpenIndex(openIndex === index ? null : index);
+        const newIndex = openIndex === index ? null : index;
+        setOpenIndex(newIndex);
+
+        // Desplazar el scroll hasta el encabezado clickeado cuando se expande
+        if (newIndex !== null) {
+            headerRefs.current[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Ajustar el scroll unos 80px hacia abajo
+            window.scrollBy({ top: -80, behavior: 'smooth' });
+        }
     };
 
     return (
@@ -118,8 +184,8 @@ export const TrAccordion = () => {
                 >
                     <header 
                         className='position-header'
-                        // className={`position-header ${openIndex === index ? "active" : ""}`}
                         onClick={() => handlePosition(index)}
+                        ref={(el) => (headerRefs.current[index] = el)} // Asignar ref
                     >
                         <div className='position-company-logo'>
                             <img className='company-logo' src={resumeItem.companyLogo} alt='' />
@@ -134,15 +200,14 @@ export const TrAccordion = () => {
                         </div>
                     </header>
 
-                    {/* {openIndex === index && ( */}
-                        <div className='position-description'>
-                            {resumeItem.detail.map((item, idx) => (
-                                <p className='position-detail' key={idx}>{item}</p>
-                            ))}
-                            <p className='position-achivement'>{resumeItem.achivements}</p>
-                            <p className='position-stack'>{resumeItem.techStack}</p>
-                        </div>
-                     {/* )}  */}
+                    <div className='position-description'>
+                        {resumeItem.detail.map((item, idx) => (
+                            <p className='position-detail' key={idx}>{item}</p>
+                        ))}
+                        <p className='position-achivement'>{resumeItem.achivements}</p>
+                        <p className='position-stack'>{resumeItem.techComment}</p>
+                        {resumeItem.tecStack && <TechStack stack={resumeItem.tecStack}/>}
+                    </div>
                 </div>
             ))}
         </section>

@@ -1,6 +1,6 @@
 @import "./globals/normalizer";
-@import "./globals/typography";
 @import "./globals/colors";
+@import "./globals/typography";
 @import "./globals/buttons";
 @import "./globals/layout";
 @import "./globals/backdrown-shapes";
@@ -17,6 +17,8 @@
 @import "./components/featured-projects/featured-projects";
 @import "./components/other-projects/other-projects";
 @import "./components/simple-cta/simple-cta";
+@import "./components/project-modal/project-modal";
+@import "./components/tech-stack/tech-stack";
 
 @import "./containers/track-record/track-record";
 @import "./components/tr-accordion/tr-accordion"

@@ -53,11 +53,12 @@
     width: 100%;
     min-height: 100vh;
     background-image: url(../../../../public/assets/images/bg/stardust.png);
-    background-repeat: repeat-y;
     // animation: spaceRide 300s infinite ease-in-out;
+    background-repeat: repeat-y;
     z-index: 1;
-    mix-blend-mode:difference;
-    // background-blend-mode:hard-light;
+    mix-blend-mode: exclusion;
+    background-size: contain;
+    background-position: center;
 }
 
 @keyframes colorSizeChange {

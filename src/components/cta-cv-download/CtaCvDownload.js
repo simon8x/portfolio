@@ -8,7 +8,14 @@ export const CtaCvDownload = () => {
     </header>
     <div className='cta-body'>
         <p className='cta-pharagrap'>Click here and download my resume</p>
-        <button className='cta-button'>Download Resume</button>
+        <a 
+          href='./assets/downloads/simon-ibalo-web-ui-engineer-en.pdf'
+          download 
+          className='cta-button'
+        >
+          {' '}
+          Download Resume
+        </a>
     </div>
     </div>
   )
