@@ -17,7 +17,7 @@ export const Testimonials = () => {
         "Even across time zones, Simón's commitment to excellence never wavered. His ability to deliver high-quality code and innovative solutions significantly enhanced the nWayPlay Marketplace, making it a seamless and efficient platform for NFT transactions.",
         "I highly recommend Simón for any technical role. His expertise, professionalism, and work ethic will be a tremendous asset to any team.",
       ],
-      "avatar-url": "%PUBLIC_URL%/assets/images/testimonial/jontae-choi.jpg",
+      "avatar-url": `${process.env.PUBLIC_URL}/assets/images/testimonial/jontae-choi.jpg`,
       "name": "Jongtae Choi",
       "position": "Business Strategy and Partnership | Web3",
       "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
@@ -27,7 +27,7 @@ export const Testimonials = () => {
         "I am pleased to provide a strong recommendation for Simón Ibalo, who I had the pleasure of working with as a front end engineer on nWay's NFT Marketplace project. Simon had strong technical expertise and quickly grasped the project requirements. He was able to architect complex React components and features, often suggesting improvements. He has solid problem skills and has a strong attention to the quality of his work.",
         "I highly recommend Simón as a talented and versatile front end engineer and web developer for any project."
       ],
-      "avatar-url": "%PUBLIC_URL%/assets/images/testimonial/rene-hakiki.jpg",
+      "avatar-url": `${process.env.PUBLIC_URL}/assets/images/testimonial/rene-hakiki.jpg`,
       "name": "Rene Hakiki",
       "position": "Executive Producer - Video Game, Interactive Entertainment, AR/VR/XR, Web3 DeFi blockchain & NFT, Development & Production.",
       "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
@@ -37,7 +37,7 @@ export const Testimonials = () => {
         "We worked with Simon for almost 2 years, and if I have to highlight qualities, one of them is his professionalism when it comes to handling complex tasks in a short time. He was always up to the quality and challenges presented. He attended meetings with clients and managed to carve out an important place not only to showcase his work but also to propose new features and offer superior solutions.",
         "He is a great person, and I would not hesitate to work with him again."
       ],
-      "avatar-url": "%PUBLIC_URL%/assets/images/testimonial/mati-munoz.jpg",
+      "avatar-url": `${process.env.PUBLIC_URL}/assets/images/testimonial/mati-munoz.jpg`,
       "name": "Matias Muñoz",
       "position": "Project Manager / Scrum Master / Software Engineer",
       "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
@@ -48,7 +48,7 @@ export const Testimonials = () => {
         "In this company, we worked together on several projects where he stood out by adding value to the product and the relationship with the clients, always going a bit further than what was agreed upon.",
         "He adapts very well to different internal communication schemes and new tools."
       ],
-      "avatar-url": "%PUBLIC_URL%/assets/images/testimonial/mati-mascazzinni.jpg",
+      "avatar-url": `${process.env.PUBLIC_URL}/assets/images/testimonial/mati-mascazzinni.jpg`,
       "name": "Matias Mascazzini",
       "position": "Web developer that builds products for people with Ruby on Rails",
       "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
@@ -59,7 +59,7 @@ export const Testimonials = () => {
         "Always looking for ways to inspire, he worked on the individual potential of his students. My current career as a developer started with him.",
         "As a professional, his leadership and technical skills always create an excellent work environment."
       ],
-      "avatar-url": "%PUBLIC_URL%/assets/images/testimonial/nelson-nunez.jpg",
+      "avatar-url": `${process.env.PUBLIC_URL}/assets/images/testimonial/nelson-nunez.jpg`,
       "name": "Nelson Nuñez",
       "position": "Software Developer | .NET",
       "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
@@ -70,7 +70,7 @@ export const Testimonials = () => {
         "Afterward, we stayed in contact at local events, as Simon has been actively participating in the emerging software development community in the northeast of Argentina for many years.",
         "I learned many things from him that I now consider invaluable, and I recommend him for his experience and dynamic way of working in a team."
       ],
-      "avatar-url": "%PUBLIC_URL%/assets/images/testimonial/juan-martinez.jpg",
+      "avatar-url": `${process.env.PUBLIC_URL}/assets/images/testimonial/juan-martinez.jpg`,
       "name": "Juan Gabriel Martínez",
       "position": "Software Developer",
       "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
@@ -81,7 +81,7 @@ export const Testimonials = () => {
         "Always friendly and energetic, he is eager to teach you everything he knows and, at the same time, always willing to keep learning.",
         "A great leader, with a creativity I’ve rarely seen, capable of adding immense value to any project."
       ],
-      "avatar-url": "%PUBLIC_URL%/assets/images/testimonial/facu-costa.jpg",
+      "avatar-url": `${process.env.PUBLIC_URL}/assets/images/testimonial/facu-costa.jpg`,
       "name": "Facundo Costa",
       "position": "Test Automation Engineer at Solvd, Inc.",
       "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
@@ -91,7 +91,7 @@ export const Testimonials = () => {
         "I worked with Simon on a few projects. Honestly, I was amazed by his way of working and even more by his personality. His positive attitude is very valuable.",
         "Creative, intelligent, and supportive, without a doubt, he can handle any task presented to him, with an analytical capacity and understanding rarely seen. He is an outstanding professional, and it was a real pleasure to work with him."
       ],
-      "avatar-url": "%PUBLIC_URL%/assets/images/testimonial/david-sanchez.jpg",
+      "avatar-url": `${process.env.PUBLIC_URL}/assets/images/testimonial/david-sanchez.jpg`,
       "name": "David Sánchez Leiva",
       "position": "Sr Software Developer | Magento | Adobe Commerce | WordPress",
       "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
@@ -102,7 +102,7 @@ export const Testimonials = () => {
         "With solid technical and mathematical knowledge, he always has a solution to the problems that arise when analyzing and developing simple and complex solutions.",
         "A great motivator, he is one of those people you always enjoy working with."
       ],
-      "avatar-url": "%PUBLIC_URL%/assets/images/testimonial/brian-stanley.jpg",
+      "avatar-url": `${process.env.PUBLIC_URL}/assets/images/testimonial/brian-stanley.jpg`,
       "name": "Brian Stanley",
       "position": "CTO at uugot.it",
       "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
