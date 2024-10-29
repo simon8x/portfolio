@@ -3,11 +3,12 @@ import { TechStack } from '../tech-stack/TechStack';
 
 
 export const TrAccordion = () => {
+    
     const resumeList = [
         {
             position: "Web UI Developer",
             company: "Tricks Games Studio",
-            companyLogo: "%PUBLIC_URL%/assets/images/companies/trick-gs.png",
+            companyLogo: `${process.env.PUBLIC_URL}/assets/images/companies/trick-gs.png`,
             companyUrl: "google.com",
             mode: "remote",
             time: "part-time",
@@ -45,7 +46,7 @@ export const TrAccordion = () => {
         {
             position: "Web UI Developer, Consultant",
             company: "Terciar Asociate Consultant",
-            companyLogo: "%PUBLIC_URL%/assets/images/companies/terciar-ca.png",
+            companyLogo: `${process.env.PUBLIC_URL}/assets/images/companies/terciar-ca.png`,
             companyUrl: "google.com",
             mode: "remote",
             time: "full-time",
@@ -77,7 +78,7 @@ export const TrAccordion = () => {
         {
             position: "UI/UI Developer",
             company: " Mimuju EdTech",
-            companyLogo: "%PUBLIC_URL%/assets/images/companies/mimuju.png",
+            companyLogo: `${process.env.PUBLIC_URL}/assets/images/companies/mimuju.png`,
             companyUrl: "google.com",
             mode: "remote",
             time: "full-time",
@@ -102,7 +103,7 @@ export const TrAccordion = () => {
         {
             position: "Technical Instructor (developers trainer)",
             company: "Government Project",
-            companyLogo: "%PUBLIC_URL%/assets/images/companies/informatorio.png",
+            companyLogo: `${process.env.PUBLIC_URL}/assets/images/companies/informatorio.png`,
             companyUrl: "google.com",
             mode: "remote",
             time: "full-time",
@@ -131,7 +132,7 @@ export const TrAccordion = () => {
         {
             position: "Business analyst",
             company: "Grupo Prominente",
-            companyLogo: "%PUBLIC_URL%/assets/images/companies/prominente.png",
+            companyLogo: `${process.env.PUBLIC_URL}/assets/images/companies/prominente.png`,
             companyUrl: "google.com",
             mode: "remote",
             time: "full-time",
@@ -146,7 +147,7 @@ export const TrAccordion = () => {
         {
             position: "Business analyst - UI dev",
             company: "Optimal",
-            companyLogo: "%PUBLIC_URL%/assets/images/companies/optimal.png",
+            companyLogo: `${process.env.PUBLIC_URL}/assets/images/companies/optimal.png`,
             companyUrl: "google.com",
             mode: "remote",
             time: "full-time",
