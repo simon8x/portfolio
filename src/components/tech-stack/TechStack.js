@@ -3,12 +3,12 @@ import React from 'react'
 
 const techIcons = {
     Acf: <div className='stack-icon-place acf'>
-          <img className='icon-replacement' src='/assets/images/icons/acf-logo.png' alt='' />
+          <img className='icon-replacement' src='%PUBLIC_URL%/assets/images/icons/acf-logo.png' alt='' />
         </div>,
       // name: "Advanced Custom Fields"
     Aws:  <i class="devicon-amazonwebservices-plain-wordmark"></i>,
     Bem: <div className='stack-icon-place acf'>
-            <img className='icon-replacement' src='/assets/images/icons/bem-logo.png' alt='' />
+            <img className='icon-replacement' src='%PUBLIC_URL%/assets/images/icons/bem-logo.png' alt='' />
           </div>,
     Bitbucket:  <i class="devicon-bitbucket-original-wordmark"></i>,
     Bootstrap:  <i class="devicon-bootstrap-plain"></i>,
@@ -22,7 +22,7 @@ const techIcons = {
     GitLab: <i class="devicon-gitlab-plain"></i>,
     Html5: <i className="devicon-html5-plain"></i>,
     Invision: <div className='stack-icon-place'>
-                <img className='icon-replacement invision' src='/assets/images/icons/invision-lt.png' alt='' />
+                <img className='icon-replacement invision' src='%PUBLIC_URL%/assets/images/icons/invision-lt.png' alt='' />
               </div>,
     Figma:  <i class="devicon-figma-plain"></i>,
     Filezilla:  <i class="devicon-filezilla-plain"></i>,
