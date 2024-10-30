@@ -1,6 +1,7 @@
 import { BackgroundShapes } from "../../components/background-shapes/BackgroundShapes"
 import { CtaCvDownload } from "../../components/cta-cv-download/CtaCvDownload"
 import { MainNavBar } from "../../components/main-nav-bar/MainNavBar"
+import { TechPanel } from "../../components/tech-panel/TechPanel"
 import { TrAccordion } from "../../components/tr-accordion/TrAccordion"
 
 export const TrackRecord = () => {
@@ -21,6 +22,7 @@ export const TrackRecord = () => {
               </section>
               <aside className="tr-aside">
                 <CtaCvDownload/>
+                <TechPanel />
               </aside>
             </div>
 

@@ -2,6 +2,7 @@ import React from 'react'
 import {MainNavBar} from "../../components/main-nav-bar/MainNavBar"
 import { BackgroundShapes } from '../../components/background-shapes/BackgroundShapes'
 import { Link } from 'react-router-dom'
+import { CtaSection } from '../../components/cta-section/CtaSection'
 export const Home = () => {
   return (
     <>
@@ -17,8 +18,14 @@ export const Home = () => {
               <h1 className='hero-text'>I have been developing my career working on software projects for more than 10 years. I have played different roles in this story. I want to share some big and small epics so you know where my skills come from.</h1>
             </div>
           </div>
-          {/* <div className='container'>
-            <div className='bubles-section'>
+          <div className='container'>
+            <div className='cta-section'>
+              <CtaSection id={1} target={"/testimonial"} title={"Talking Colegs"} description={"Konw what people says about working with me on a mision."}/>
+              <CtaSection id={2} target={"/projects"} title={"Space Missions"} description={"Find some stories about projects to understand my background."}/>
+              <CtaSection id={3} target={"/track-record"} title={"Track Record"} description={"Every job mins grow for me, know whwew plants I have been working on."}/>
+              {/* <CtaSection id={4} title={"Colegs3"} description={"description"}/>             */}
+            </div>
+            {/* <div className='bubles-section'>
               <div className='single-buble-card'>
                   <div className='buble-wrapper'>
                 <Link 
@@ -82,8 +89,8 @@ export const Home = () => {
                   <h3 className='buble-card-title'>track record</h3>
               </Link>
                 </div>
-            </div>
-          </div> */}
+            </div> */}
+          </div>
         </div>
       </main> 
     </>

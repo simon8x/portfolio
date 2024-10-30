@@ -42,14 +42,14 @@ const HamburgerMenu = () => {
             Testimonial
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link 
             className='link-item'
             to='/about'
           >
             About me
           </Link>
-        </li>
+        </li> */}
       </ul>
     </li>
   );

@@ -1,8 +1,9 @@
 .home-wrapper {
-    min-height: 100%;
+    min-height: 65vh;
     flex-basis: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     .hero-section {
         flex-basis: 65%;
         display: flex;
@@ -79,5 +80,103 @@
 
 
     }
+    .cta-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        // gap: 2%;
+        min-width: 100% ;
+        // background-color: red;
+        // margin-top: 15rem;
+    }
 }
 
+@media screen and (max-width: 768px) {
+    .home-wrapper {
+        
+        .hero-section {
+            margin-block: 15rem;
+            .hero-text {
+                @include font-display-2;
+                text-align: center;
+            }
+        }
+        .bubles-section {
+            flex-basis: 35%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+    
+    
+            .single-buble-card {
+                // width: 30%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+                .buble-wrapper {
+                    // background-color: $theme-dark-panel-bg;
+                    max-width: 20%;
+                    padding: 5%;
+                    aspect-ratio: 1/1;
+                    border-radius: 50%;
+                    display: flex;
+                    margin: 1rem auto;
+                    position: relative;
+                    transition: transform; 
+                    transition-duration: .75s;
+                    // background-color: red;
+                    .buble-image {
+                        max-width: 100%;
+                        height: auto;
+                        // filter:saturate(0);
+                        opacity: 1;
+                        // transition-duration: 5s;
+                        // transition: transform opacity;
+                    }
+    
+                }
+    
+                .buble-wrapper:hover {
+                    transform: scale(1.1);
+                    // filter: saturate(1);
+                    // opacity: 1;   
+                }
+                // .buble-wrapper::before {
+                //     content: "";
+                //     position: absolute;
+                //     top: calc(-5% - 6px );
+                //     left: calc(-5% - 6px );
+                //     border-radius: 50%;
+                //     width: 110%;
+                //     height: 110%;
+                //     border: solid 6px $theme-dark-panel-bg;
+                // }
+                .buble-card-title {
+                    text-transform: uppercase;
+                    @include name-1;
+                }    
+            }
+    
+    
+    
+    
+    
+    
+    
+        }
+        .cta-section {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            // gap: 2%;
+            min-width: 100% ;
+            // background-color: red;
+            // margin-top: 15rem;
+        }
+    }
+}

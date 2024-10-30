@@ -29,6 +29,18 @@
             .invision {
                 filter: brightness(0) invert(1);
             }
+            .elementor {
+                filter: invert(1);
+            }
+            .wp-backery{
+                filter: brightness(0) invert(1);
+            }
+            .shopify g {   
+                transform: scale(.0275);
+                path {
+                    fill: white;
+                }
+            }
         }
     }
 }
