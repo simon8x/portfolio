@@ -26,14 +26,14 @@ export const MainNavBar = () => {
      
         
         <ul className='controls-list'>
-          <li className='control-item'>
-            <button className='control-item-btn' 
-            // onClick={ handleLanguage }
-            >
-              EN
+          {/* <li className='control-item'>
+            <button className='control-item-btn'  */}
+             {/* onClick={ handleLanguage } */}
+            {/* > */}
+              {/* EN */}
               {/* {settings.language === 'EN' ? 'EN' : 'ES'} */}
-              </button>
-          </li>
+              {/* </button>
+          </li> */}
           <li className='control-item'>
             <HamburgerMenu />
             {/* <button 

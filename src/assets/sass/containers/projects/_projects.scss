@@ -26,6 +26,8 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: space-between;
+        gap: 2%;
         max-width: 100vw;
         .header-section{
             width: 30%;
