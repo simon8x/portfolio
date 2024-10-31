@@ -18,6 +18,9 @@ export const Home = () => {
               <h1 className='hero-text'>I have been developing my career working on software projects for more than 10 years. I have played different roles in this story. I want to share some big and small epics so you know where my skills come from.</h1>
             </div>
           </div>
+          {/* <div className='falling-astronaut-container'>
+            <img className='falling-astronaut-img' src={`${process.env.PUBLIC_URL}/assets/images/icons/astronaut.png`} alt=''/>
+          </div> */}
           <div className='container'>
             <div className='cta-section'>
               <CtaSection id={1} target={"/testimonial"} title={"Talking Colegs"} description={"Konw what people says about working with me on a mision."}/>

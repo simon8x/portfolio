@@ -16,6 +16,14 @@
             text-align: center;
         }
     }
+    .falling-astronaut-container{
+        //background-color: red;
+        margin: auto;
+        .falling-astronaut-img {
+            max-width: 7.5rem;
+            height: auto;
+        } 
+    }
     .bubles-section {
         flex-basis: 35%;
         display: flex;
