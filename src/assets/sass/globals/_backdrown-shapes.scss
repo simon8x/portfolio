@@ -14,7 +14,8 @@
         width: 25%;
         height: 25%;
         z-index: 0;
-        mix-blend-mode:hard-light;
+        mix-blend-mode:exclusion;
+        opacity: 0.35;
     }
     .center-top-shape {
         top: 20%;
@@ -31,7 +32,8 @@
         width: 25%;
         height: 25%;
         z-index: 0;
-        mix-blend-mode:hard-light;
+        mix-blend-mode:exclusion;
+        opacity: 0.25;
     }
     
     .left-center-shape{
@@ -65,9 +67,9 @@
     0% {
         stroke: red;
         transform: scale(2) rotate(0deg); // Tamaño inicial
-        filter: blur(3.8rem);
-        -webkit-filter: blur(3.8rem);
-        stroke-width:'5';
+        filter: blur(16.8rem);
+        -webkit-filter: blur(16.8rem);
+        stroke-width:'1';
       }
       13% {
        stroke: #ff6400;
@@ -84,8 +86,8 @@
       55% {
         stroke: #00f;
         transform: scale(5) rotate(360deg); // Tamaño un poco mayor
-        filter: blur(5.8rem);
-        -webkit-filter: blur(5.8rem);
+        filter: blur(19.8rem);
+        -webkit-filter: blur(19.8rem);
         // stroke-width:'7';
       }
       68% {
@@ -99,18 +101,115 @@
         transform: scale(2) rotate(0deg); // Tamaño inicial
         filter: blur(3.8rem);
         -webkit-filter: blur(3.8rem);
-        stroke-width:'5';
+        stroke-width:'1';
       }
 }
 
-// @keyframes spaceRide {
-// 0% {
-//     transform: scale(1) rotate(0deg);
-// }
-// 50% {
-//     transform: scale(1.5) rotate(-10deg);
-// }
-// 100% {
-//     transform: scale(1) rotate(0deg);
-// }
+
+
+// @media screen and (max-width:1920px) {
+//     .background-shapes {
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+//         min-height: 100dvh;
+//         overflow:hidden ;
+    
+//         .center-bottom-shape,
+//         .center-top-shape {
+//             position: absolute;
+//             left: 37.5%;
+//             width: 25%;
+//             height: 25%;
+//             z-index: 0;
+//             mix-blend-mode:exclusion;
+//         }
+//         .center-top-shape {
+//             top: 20%;
+//             animation: colorSizeChange 75s infinite ease-in-out;
+//         }
+//         .center-bottom-shape {
+//             top: 60%;
+//             animation: colorSizeChange 122s infinite ease-in-out;
+//         }
+//         .right-center-shape,
+//         .left-center-shape{
+//             position: absolute;
+//             top: 37.5%;
+//             width: 25%;
+//             height: 25%;
+//             z-index: 0;
+//             mix-blend-mode:exclusion;
+//         }
+        
+//         .left-center-shape{
+//             animation: colorSizeChange 90s infinite ease-in-out;
+//             left: 20%;
+//         }
+    
+//         .right-center-shape{
+//             left: 50%;
+//             animation: colorSizeChange 158s infinite ease-in-out;
+//         }
+    
+//     }
+//     .background-shapes::before {
+//         content: "";
+//         position: fixed;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         min-height: 100vh;
+//         background-image: url(../../../../public/assets/images/bg/stardust.png);
+//         // animation: spaceRide 300s infinite ease-in-out;
+//         background-repeat: repeat-y;
+//         z-index: 1;
+//         mix-blend-mode: exclusion;
+//         background-size: contain;
+//         background-position: center;
+//     }
+    
+//     @keyframes colorSizeChange {
+//         0% {
+//             stroke: red;
+//             transform: scale(2) rotate(0deg); // Tamaño inicial
+//             filter: blur(3.8rem);
+//             -webkit-filter: blur(3.8rem);
+//             stroke-width:'5';
+//           }
+//           13% {
+//            stroke: #ff6400;
+//           }
+//           26% {
+//            stroke: #ff0;
+//           }
+//           39% {
+//            stroke: #0f0;
+//           }
+//           42% {
+//            stroke: #0ff;
+//           }
+//           55% {
+//             stroke: #00f;
+//             transform: scale(5) rotate(360deg); // Tamaño un poco mayor
+//             filter: blur(5.8rem);
+//             -webkit-filter: blur(5.8rem);
+//             // stroke-width:'7';
+//           }
+//           68% {
+//            stroke: #f500ff;
+//           }
+//           71% {
+//            stroke: #000000;
+//           }
+//           100% {
+//             stroke: red;
+//             transform: scale(2) rotate(0deg); // Tamaño inicial
+//             filter: blur(3.8rem);
+//             -webkit-filter: blur(3.8rem);
+//             stroke-width:'5';
+//           }
+//     }
 // }
