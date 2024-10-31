@@ -42,17 +42,20 @@
         } 
         .section-featured-projects{
             width: 70%;
-            max-width: 70%;            
-            border-radius: 1rem;
-            min-height: 40dvh;
             position: relative;
+            background-color: $theme-dark-panel-bg;
+            border-radius: 1rem;
+            backdrop-filter: blur(2px);
+            border: solid 2px $theme-light-overlay;
+            min-height: 40dvh;
+            //max-width: 70%;            
             // background-color: red;
         }
         .section-other-projects{
             width: 70%;
-            max-width: 70%;
-            min-height: 30dvh;
             position: relative;
+            //max-width: 70%;
+            min-height: 30dvh;
             // background-color: orangered;
         }
 

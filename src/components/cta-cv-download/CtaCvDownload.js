@@ -14,7 +14,8 @@ export const CtaCvDownload = () => {
           className='cta-button'
         >
           {' '}
-          Download Resume
+          Download 
+          <img className="btn-icon" src={`${process.env.PUBLIC_URL}/assets/images/icons/download-file.png`} alt=''/>
         </a>
     </div>
     </div>

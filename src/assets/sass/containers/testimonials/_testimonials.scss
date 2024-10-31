@@ -37,12 +37,12 @@
         .section-testimonial-content{
             width: 68%;
             position: relative;
-            display: flex;
-            flex-direction: column;
             background-color: $theme-dark-panel-bg;
             border-radius: 1rem;
             backdrop-filter: blur(2px);
             border: solid 2px $theme-light-overlay;
+            display: flex;
+            flex-direction: column;
 
             //min-height: 50vh;
         }

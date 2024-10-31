@@ -54,7 +54,7 @@ export const TrAccordion = () => {
             detail: [
                 "As a UI-Dev: I have developed interfaces for websites such as: https://autotest.com.ar/ https://cronicasdeagua.com/ http://thethinkingmachine.com.ar/ https://www.identidad-digital.com.ar and others. I have also developed web interfaces for custom systems: administrative systems for pest control services, funeral services, laboratory services. and others.",
                 "As a Consultant: Two years after joining I started working with clients, creating proposals, estimates, setting scope for MVP, I have played as Product Owner creating and prioritizing backlogs. In this role, I spearheaded the e-commerce business unit, tripling the client portfolio within two years. I successfully navigated growth alongside the startup, implemented agile methodologies (Scrum), and effectively managed remote work operations",
-                "Elaboración de informes de rendimiento para presentaciones ejecutivas."
+                "Preparing performance reports for executive presentations."
             ],
             achivements: "As a consultant, I spearheaded the e-commerce business unit, tripling the client portfolio within two years. Also I successfully navigated growth alongside the startup, implemented agile methodologies (Scrum), and effectively managed remote work operations.",
             tech: "As a UI developer, I deployed my skills in HTML, CSS, JS, Bootstrap, MaterializeCSS, Sass, Git, WordPress, Woocommerce, and Scrum",

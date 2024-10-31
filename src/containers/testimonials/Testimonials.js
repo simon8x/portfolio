@@ -110,7 +110,7 @@ export const Testimonials = () => {
 ];
 
 
-  const indicators = (index) => (<div className="indicator bg-red"></div>);
+  const indicators = (index) => (<div className="indicator"></div>);
 
   const properties = {
     prevArrow: <button className='nav-arrow prev-arrow'>
@@ -121,12 +121,6 @@ export const Testimonials = () => {
     </button>
   }
 
-  // const [activeItem, setActiveItem] = useState(0)
-
-
-  // const handleClick = () =>{
-  //   alert(`ckeado en: `)  //${recomendacion.name} undefined
-  // }
 
   return (
 
@@ -145,9 +139,7 @@ export const Testimonials = () => {
                 <h2 className='section-title'>See what others say about working with me</h2>
               </div>
               <div className='section-testimonial-content'>
-                {/* <div className="panel-overlay"></div> */}
-                {/* <img className='testimonial-icon' src='assets/images/testimonial/quote-icon.png' alt=''/> */}
-                <Slide indicators={indicators} {...properties}>
+                <Slide indicators={indicators} {...properties} canSwipe={true}>
                   {recomendacionesData.map(recomendacion => (
                     <div key={recomendacion.name}>
                       <Testimonial recomendacion={recomendacion} />

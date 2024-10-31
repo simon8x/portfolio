@@ -4,7 +4,7 @@
     border-radius: 1rem;
     background-color: $theme-dark-overlay;
     border: solid 2px $theme-light-overlay;
-
+    
     // box-shadow: 0px 0px 3px 1px rgba(0,0,0,.5);
     //   -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,.5);
     //   -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,.5);
@@ -14,11 +14,29 @@
         }
     }
     .cta-body {
+        // background-color: yellow;
+        // display: flex;
+        // flex-direction: column;
         .cta-pharagrap {
             @include paragraph-md;
         }
         .cta-button {
-
+            width: fit-content;
+            // background-color: red;
+            border-radius: 1rem;
+            background-color: $theme-dark-overlay;
+            border: solid 2px $theme-light-overlay;
+            //height: 2.6rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1rem 2rem;
+            @include name-1;
+            .btn-icon {
+                max-height: 2.4rem;
+                width: auto;
+                filter: invert(1);
+            }
         }
     }
 }

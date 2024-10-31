@@ -341,13 +341,6 @@ export const Projects = () => {
     </button>
   }
 
-  // const [activeItem, setActiveItem] = useState(0)
-
-
-  // const handleClick = () =>{
-  //   alert(`ckeado en: `)  //${recomendacion.name} undefined
-  // }
-
   return (
 
     <>
@@ -356,47 +349,42 @@ export const Projects = () => {
         <MainNavBar />
       </header>
       <main className='main-section'>
-        
-          <div className='container'>
-        <section className='prjects-section'>
-          <div className='hero-projects'>
-            <div className='header-section'>
-              <h2 className='section-title'>Some featured projects</h2>
+        <div className='container'>
+          <section className='prjects-section'>
+            <div className='hero-projects'>
+              <div className='header-section'>
+                <h2 className='section-title'>Some featured projects</h2>
+              </div>
+              <div className='section-featured-projects'>
+                <Slide indicators={indicators} {...properties} pauseOnHover={true} duration={6000} transitionDuration={250} canSwipe={true}>              
+                  {featuredProjectsData.map(featuredProject => (
+                    <div key={featuredProject.name}>
+                      <FeaturedProject featuredProject={featuredProject} />
+                    </div>
+                  ))}
+                </Slide>
+              </div>
             </div>
-            <div className='section-featured-projects'>
-              {/* <div className="panel-overlay"></div> */}
-              {/* <img className='testimonial-icon' src='assets/images/testimonial/quote-icon.png' alt=''/> */}
-              <Fade indicators={indicators} {...properties} pauseOnHover={true} duration={6000} transitionDuration={250}>
-                {featuredProjectsData.map(featuredProject => (
-                  <div key={featuredProject.name}>
-                    <FeaturedProject featuredProject={featuredProject} />
-                  </div>
-                ))}
-              </Fade>
+            <div className='side-projects'>
+              <div className='header-section'>
+                <h2 className='section-title'>Some other projects</h2>
+              </div>
+              <div className='section-other-projects'>
+                {/* <div className="panel-overlay"></div> */}
+                {/* <img className='testimonial-icon' src='assets/images/testimonial/quote-icon.png' alt=''/> */}
+                {/* <Slide duration={0} transitionDuration={7000} {...properties} responsive={otherProjectResponsiveSettings} pauseOnHover={true} canSwipe={true} > */}
+                <Slide indicators={indicators} {...properties} pauseOnHover={true} duration={7000} transitionDuration={0} canSwipe={true} responsive={otherProjectResponsiveSettings}>
+                  {otherProjectsData.map(otherProject => (
+                    <div key={otherProject.name}>
+                      <OtherProject otherProject={otherProject} />
+                    </div>
+                  ))}
+                </Slide>
 
+              </div>
             </div>
-          </div>
-          <div className='side-projects'>
-
-            <div className='header-section'>
-              <h2 className='section-title'>Some other projects</h2>
-            </div>
-
-            <div className='section-other-projects'>
-              {/* <div className="panel-overlay"></div> */}
-              {/* <img className='testimonial-icon' src='assets/images/testimonial/quote-icon.png' alt=''/> */}
-              <Slide duration={0} transitionDuration={7000} {...properties} responsive={otherProjectResponsiveSettings} pauseOnHover={true} >
-                {otherProjectsData.map(otherProject => (
-                  <div key={otherProject.name}>
-                    <OtherProject otherProject={otherProject} />
-                  </div>
-                ))}
-              </Slide>
-
-            </div>
-          </div>           
-        </section>
-          </div>
+          </section>
+        </div>
       </main>
 
     </>
