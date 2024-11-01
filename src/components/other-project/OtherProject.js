@@ -1,47 +1,45 @@
 import React from 'react'
+import { TechStack } from '../tech-stack/TechStack';
 import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
-import { TechStack } from '../tech-stack/TechStack'
+import './_custom-modal.css'
 
 export const OtherProject = ({ otherProject }) => {
     const [open, setOpen] = React.useState(false);
     return(
         <>
-        <div className='other-project-slide-wrapper' key={otherProject.index} onClick={() => setOpen(true)} >
-            {/* <button className="button" onClick={() => setOpen(true)}> */}
-            
-            <div className='other-project-slide-image'>
-                <div className='other-project-img-wrapper'>
-                    <img className='other-project-img' src={otherProject['heroImageUrl']} alt=''/>
+            <div className='other-project-slide-wrapper' key={otherProject.index} onClick={() => setOpen(true)} >
+                
+                <div className='other-project-slide-image'>
+                    <div className='other-project-img-wrapper'>
+                        <img className='other-project-img' src={otherProject['heroImageUrl']} alt=''/>
+                    </div>
+                </div>
+
+                <div className='other-project-slide-detail'>
+                    
+                <h4 className='other-project-name'>{otherProject.projectName}</h4>
+                    {/* <p className='other-project-subtitle'>{otherProject.projectSubtitle}</p>
+                    <p className='other-project-paragraph'>{otherProject.projectShortDescription}</p>
+                    <p className='other-project-role'>{otherProject.projectPosition}</p> */}
+
+                    {/* {otherProject.tecStack.map((item, index) => 
+                        <p className='other-project-tecstack'>
+                        {item}        
+                        </p>
+                        )} */}
+
                 </div>
             </div>
-
-            <div className='other-project-slide-detail'>
-                
-            <h4 className='other-project-name'>{otherProject.projectName}</h4>
-                {/* <p className='other-project-subtitle'>{otherProject.projectSubtitle}</p>
-                <p className='other-project-paragraph'>{otherProject.projectShortDescription}</p>
-                <p className='other-project-role'>{otherProject.projectPosition}</p> */}
-
-                {/* {otherProject.tecStack.map((item, index) => 
-                    <p className='other-project-tecstack'>
-                    {item}        
-                    </p>
-                    )} */}
-
-            </div>
-                    {/* </button> */}
-
-        </div>
-        <Modal
-                open={open}
-                onClose={() => setOpen(false)}
-                center
-                classNames={{
-                overlay: 'customOverlay',
-                modal: 'customModal',
-                }}
-            >
+            <Modal
+                    open={open}
+                    onClose={() => setOpen(false)}
+                    center
+                    classNames={{
+                    overlay: 'customOverlay',
+                    modal: 'customModal',
+                    }}
+                >
                 <article className='modal-wrapper'>
                     <div className='modal-hero-banner-wrapper'>
                         <img className='modal-hero-banner-img' src={otherProject.projectImageUrl} alt=''/>
@@ -60,9 +58,6 @@ export const OtherProject = ({ otherProject }) => {
                             </p>
                         )}
                     </div>
-                    
-                    
-
                 </article>
             </Modal>
         </>

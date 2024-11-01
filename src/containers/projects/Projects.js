@@ -370,9 +370,6 @@ export const Projects = () => {
                 <h2 className='section-title'>Some other projects</h2>
               </div>
               <div className='section-other-projects'>
-                {/* <div className="panel-overlay"></div> */}
-                {/* <img className='testimonial-icon' src='assets/images/testimonial/quote-icon.png' alt=''/> */}
-                {/* <Slide duration={0} transitionDuration={7000} {...properties} responsive={otherProjectResponsiveSettings} pauseOnHover={true} canSwipe={true} > */}
                 <Slide indicators={indicators} {...properties} pauseOnHover={true} duration={7000} transitionDuration={0} canSwipe={true} responsive={otherProjectResponsiveSettings}>
                   {otherProjectsData.map(otherProject => (
                     <div key={otherProject.name}>

@@ -44,7 +44,6 @@ export const FeaturedProject = ({ featuredProject }) => {
                     <div className='modal-hero-banner-wrapper'>
                         <img className='modal-hero-banner-img' src={featuredProject.projectImageUrl} alt=''/>
                     </div>
-
                     <h1 className='modal-project-name'>{featuredProject.projectName}</h1>
                     <h4 className='modal-project-subtitle'>{featuredProject.projectSubtitle}</h4>
                     <p className='modal-project-date'>{featuredProject.projectDate}</p>
@@ -58,9 +57,6 @@ export const FeaturedProject = ({ featuredProject }) => {
                             </p>
                         )}
                     </div>
-                    
-                    
-
                 </article>
             </Modal>
         </>

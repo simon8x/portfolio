@@ -5,7 +5,6 @@ const techIcons = {
     Acf: <div className='stack-icon-place acf'>
           <img className='icon-replacement' src={`${process.env.PUBLIC_URL}/assets/images/icons/acf-logo.png`} alt='' />
         </div>,
-      // name: "Advanced Custom Fields"
     Aws:  <i class="devicon-amazonwebservices-plain-wordmark"></i>,
     Bem: <div className='stack-icon-place acf'>
             <img className='icon-replacement' src={`${process.env.PUBLIC_URL}/assets/images/icons/bem-logo.png`} alt='' />
@@ -84,28 +83,6 @@ const techIcons = {
                 <img className='icon-replacement wp-backery' src={`${process.env.PUBLIC_URL}/assets/images/icons/vc-logo.png`} alt='' />
               </div>,
   };
-
-
-
-
-	// version="1.0" 
-	// id="katman_1" 
-	// xmlns="http://www.w3.org/2000/svg" 
-	// xmlns:xlink="http://www.w3.org/1999/xlink" 
-	// x="0px" y="0px"
-	// viewBox="0 0 1280 1024" 
-	// style="enable-background:new 0 0 1280 1024;" 
-	// xml:space="preserve"
-
-
-
-
-
-
-
-
-
-
 
 
 export const TechStack = ({ stack }) => {
