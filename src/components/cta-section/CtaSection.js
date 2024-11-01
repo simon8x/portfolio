@@ -24,7 +24,7 @@ export const CtaSection = (props) => {
           <header className='cta-header'>
               <h3 className='cta-title'>{props.title}</h3>   
               <div className='cta-icon-wrapper'>
-              <img className='cta-icon-img' src={getIcon(props.id)} alt='Icon' />
+              <img className='cta-icon-img' src={getIcon(props.id)} alt='' />
               </div>     
           </header>
           <div className='cta-body'>
