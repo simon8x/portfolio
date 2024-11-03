@@ -101,3 +101,15 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .prjects-section {
+        .side-projects {
+           .section-other-projects{
+                .indicators {
+                    display: none;
+                }
+           }
+        }
+    }
+}
