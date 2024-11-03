@@ -164,17 +164,13 @@ export const TrAccordion = () => {
         }
     ];
     const [openIndex, setOpenIndex] = useState(null);
-//    const headerRefs = useRef([]); // Array de referencias para cada header
+
 
     const handlePosition = (index) => {
-        // Alternar entre abrir/cerrar el acordeón
         const newIndex = openIndex === index ? null : index;
         setOpenIndex(newIndex);
-        //alert(newIndex);
-        // Desplazar el scroll hasta el encabezado clickeado cuando se expande
         if (newIndex !== null) {
             handleScroll()
-            
         }
     }
     
