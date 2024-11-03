@@ -1,9 +1,13 @@
-import { useState, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { TechStack } from '../tech-stack/TechStack';
 
 
 export const TrAccordion = () => {
     
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+
     const resumeList = [
         {
             position: "Web UI Developer",
@@ -160,25 +164,35 @@ export const TrAccordion = () => {
         }
     ];
     const [openIndex, setOpenIndex] = useState(null);
-    const headerRefs = useRef([]); // Array de referencias para cada header
+//    const headerRefs = useRef([]); // Array de referencias para cada header
 
     const handlePosition = (index) => {
         // Alternar entre abrir/cerrar el acordeón
         const newIndex = openIndex === index ? null : index;
         setOpenIndex(newIndex);
-
+        //alert(newIndex);
         // Desplazar el scroll hasta el encabezado clickeado cuando se expande
         if (newIndex !== null) {
-            headerRefs.current[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
-            // Ajustar el scroll unos 80px hacia abajo
-            window.scrollBy({ top: -80, behavior: 'smooth' });
+            handleScroll()
+            
         }
-    };
+    }
+    
+
+    const handleScroll = () => {
+        let activePos = document.getElementById('active-position')
+        if (activePos !== null) {
+            let topOffset = activePos.offsetTop
+            console.log("activePos",{topOffset} )
+            window.scrollTo(0, (topOffset + 50) );
+        }
+    }
 
     return (
         <section className='tr-section'>
             {resumeList.map((resumeItem, index) => (
                 <div
+                    id={`${openIndex === index ? "active-position" : ""}`}
                     key={index}
                     aria-label={resumeItem.company}
                     className={`position-wrapper ${openIndex === index ? "active" : ""}`}
@@ -186,7 +200,6 @@ export const TrAccordion = () => {
                     <header 
                         className='position-header'
                         onClick={() => handlePosition(index)}
-                        ref={(el) => (headerRefs.current[index] = el)} // Asignar ref
                     >
                         <div className='position-company-logo'>
                             <img className='company-logo' src={resumeItem.companyLogo} alt='' />
