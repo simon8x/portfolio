@@ -14,7 +14,7 @@ function App() {
   return (
 
 
-    <HashRouter basename="/portfolio">
+    <HashRouter basename="/">
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/projects' element={ <Projects />}/>
