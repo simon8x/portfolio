@@ -15,7 +15,7 @@ export const Home = () => {
         <div className='home-wrapper'>
           <div className='hero-section'>
             <div className='container'>
-              <h1 className='hero-text'>I have been developing my career working on software projects for more than 10 years. I have played different roles in this story. I want to share some big and small epics so you know where my skills come from.</h1>
+              <h1 className='hero-text'>I have been building my career in software development for over 10 years, taking on different roles along the way. I'd like to share some notable projects, both big and small, to give you an idea of where my skills originate.</h1>
             </div>
           </div>
           {/* <div className='falling-astronaut-container'>
@@ -23,9 +23,9 @@ export const Home = () => {
           </div> */}
           <div className='container'>
             <div className='cta-section'>
-              <CtaSection id={1} target={"/testimonial"} title={"Talking Colegs"} description={"Konw what people says about working with me on a mision."}/>
-              <CtaSection id={2} target={"/projects"} title={"Space Missions"} description={"Find some stories about projects to understand my background."}/>
-              <CtaSection id={3} target={"/track-record"} title={"Track Record"} description={"Every job mins grow for me, know whwew plants I have been working on."}/>
+              <CtaSection id={1} target={"/testimonial"} title={"Talking Colleagues"} description={"Know what others say about working with me on a mission."}/>
+              <CtaSection id={2} target={"/projects"} title={"Space Missions"} description={"Explore some project stories to better understand my background."}/>
+              <CtaSection id={3} target={"/track-record"} title={"Track Record"} description={"Every job helps me grow, see the companies where I've worked."}/>
               {/* <CtaSection id={4} title={"Colegs3"} description={"description"}/>             */}
             </div>
             {/* <div className='bubles-section'>
