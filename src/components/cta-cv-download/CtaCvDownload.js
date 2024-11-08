@@ -9,7 +9,7 @@ export const CtaCvDownload = () => {
     <div className='cta-body'>
         <p className='cta-pharagrap'>Click here and download my resume</p>
         <a 
-          href='./assets/downloads/simon-ibalo-web-ui-engineer-en.pdf'
+          href={`${process.env.PUBLIC_URL}/assets/downloads/simon-ibalo-ui-engineer-en.pdf`}
           download 
           className='cta-button'
         >
