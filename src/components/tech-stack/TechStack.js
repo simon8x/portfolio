@@ -5,6 +5,9 @@ const techIcons = {
     Acf: <div className='stack-icon-place acf'>
           <img className='icon-replacement' src={`${process.env.PUBLIC_URL}/assets/images/icons/acf-logo.png`} alt='' />
         </div>,
+    Analytics: <div className='stack-icon-place'>
+                <img className='icon-replacement analytics' src={`${process.env.PUBLIC_URL}/assets/images/icons/analytics.png`} alt='' />
+               </div>,
     Aws:  <i class="devicon-amazonwebservices-plain-wordmark"></i>,
     Bem: <div className='stack-icon-place acf'>
             <img className='icon-replacement' src={`${process.env.PUBLIC_URL}/assets/images/icons/bem-logo.png`} alt='' />
