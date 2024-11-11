@@ -8,6 +8,20 @@ export const TrAccordion = () => {
         window.scrollTo(0, 0);
       }, []);
 
+    // Función para detectar URLs en el texto y convertirlas en etiquetas <a>
+    const parseTextWithLinks = (text) => {
+        const urlRegex = /(https?:\/\/[^\s]+)/g;
+        return text.split(urlRegex).map((part, index) =>
+            urlRegex.test(part) ? (
+                <a href={part} key={index} target="_blank" rel="noopener noreferrer">
+                    {part}
+                </a>
+            ) : (
+                part
+            )
+        );
+    };
+
     const resumeList = [
         {
             position: "Web UI Developer",
@@ -47,9 +61,9 @@ export const TrAccordion = () => {
                 "WordPress",
                 "Acf"
             ],
-            //achivements: "My work in prototyping screens proved instrumental in identifying suspicious fraudulent activities, thereby enhancing the security measures of the platforms.",
-            //techComment: "I have successfully leveraged my expertise in ReactJS, HTML5, CSS3, Sass, BEM, and JS to deliver impactful solutions. Additionally, I efficiently managed project workflows using tools such as Jira, Trello, GitHub, and BitBucket. My proficiency in design tools like Figma and Miró further facilitated seamless collaboration and innovation.",
         },
+        //achivements: "My work in prototyping screens proved instrumental in identifying suspicious fraudulent activities, thereby enhancing the security measures of the platforms.",
+        //techComment: "I have successfully leveraged my expertise in ReactJS, HTML5, CSS3, Sass, BEM, and JS to deliver impactful solutions. Additionally, I efficiently managed project workflows using tools such as Jira, Trello, GitHub, and BitBucket. My proficiency in design tools like Figma and Miró further facilitated seamless collaboration and innovation.",
         {
             position: "Web UI Developer, Consultant",
             company: "Terciar Asociate Consultant",
@@ -61,7 +75,7 @@ export const TrAccordion = () => {
             detail: [
                 "At this company, I have actively contributed to the development of five custom software applications and over 30 WordPress-based web projects, taking on various roles.",
                 "As a front-end developer, I customized WordPress templates and developed interfaces for applications built with Ruby on Rails.",
-                "Some sites that remain live: autotest.com.ar , jorgeferraresi.com, identidad-digital.com.ar.",
+                "Some sites that remain live: https://autotest.com.ar , https://jorgeferraresi.com , https://identidad-digital.com.ar .",
                 "Two years after joining, I began working directly with clients—creating proposals, providing estimates, and defining MVP scopes. I also served as Product Owner, where I created and prioritized backlogs.",
                 "In the last two years, I led the e-commerce business unit, tripling the client portfolio.",
                 "I implemented agile methodologies (Scrum).",
@@ -247,9 +261,17 @@ export const TrAccordion = () => {
                     </header>
 
                     <div className='position-description'>
-                        {resumeItem.detail.map((item, idx) => (
+        {/*                {resumeItem.detail.map((item, idx) => (
                             <p className='position-detail' key={idx}>{item}</p>
+                        ))}  */}
+
+
+                        {resumeItem.detail.map((item, idx) => (
+                            <p className="position-detail" key={idx}>
+                                {parseTextWithLinks(item)}
+                            </p>
                         ))}
+
                         <p className='position-achivement'>{resumeItem.achivements}</p>
                         <p className='position-stack'>{resumeItem.techComment}</p>
                         {resumeItem.tecStack && <TechStack stack={resumeItem.tecStack}/>}

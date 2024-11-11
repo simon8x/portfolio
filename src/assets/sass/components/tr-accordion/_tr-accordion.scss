@@ -124,11 +124,17 @@
             // transform-origin: top;
             // transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
             
-            .position-detail {
+            .position-detail,
+            .position-detail a {
                 @include paragraph-lg;
                 margin-block-start: .2em;
                 margin-block-end: 1.2em;
             }
+
+            .position-detail a {
+                text-decoration: underline;
+            }
+
             .position-achivement {
                 @include paragraph-md;
             }
