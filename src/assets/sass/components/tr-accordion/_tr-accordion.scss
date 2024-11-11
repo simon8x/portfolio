@@ -30,6 +30,22 @@
                     @include name-1;
                     // text-shadow: 0px 2px 2px rgba(0,0,0,0.75);
                 }
+                .position-detail-row{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 1rem;      
+                    .position-time{
+                        background-color: $theme-light-overlay;
+                        color: $theme-light-primary-text;
+                        padding: .1rem 1rem;
+                        border-radius: .4rem;
+                        @include time-tag;
+
+                    }              
+                    .position-period{
+                        @include tiny-tag;
+                    }
+                }
 
             }
             .position-company-logo{
@@ -47,8 +63,9 @@
                 margin-left: auto;
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
-                align-items: flex-end;
+                justify-content: center;
+                margin-right: 1rem;
+                // align-items: flex-end;
                 .position-icon{
                     width: 2.5rem;
                     height: 2.5rem;
@@ -76,9 +93,9 @@
                     transition: transform .75s ease-in-out, width .75s ease-in-out;
                 }
 
-                .position-date{
-                    @include tiny-tag;
-                }
+                // .position-date{
+                //     @include tiny-tag;
+                // }
 
             }
         }
@@ -149,7 +166,7 @@
         }
         .position-description {
             // max-height: auto;
-            max-height: 1000px; // Valor grande para garantizar que se expanda
+            max-height: 1200px; // Valor grande para garantizar que se expanda
             padding: 1.5rem; // Agregamos padding para mostrar el contenido
             border-bottom: solid 2px $theme-light-overlay;
             border-left: solid 2px $theme-light-overlay;

@@ -15,7 +15,7 @@ export const TrAccordion = () => {
             companyLogo: `${process.env.PUBLIC_URL}/assets/images/companies/trick-gs.png`,
             companyUrl: "google.com",
             mode: "remote",
-            time: "part-time",
+            time: "FULL TIME",
             period: "02/2021 - 04/2024",
             detail: [
                 "I embarked on a big main project with the International Olympic Committee and NwayPlay company, collaborating with teams across Korea, the United States, and Argentina. I started coding reusable components in reactjs and my primary responsibility was the development of the interface for https://nwayplay.com/.",
@@ -27,8 +27,6 @@ export const TrAccordion = () => {
                 "I have successfully leveraged my expertise in ReactJS, HTML5, CSS3, Sass, BEM, and JS.",
                 "Additionally, I efficiently managed project workflows using tools such as Jira, Trello, GitHub, and BitBucket. My proficiency in design tools like Figma and Miró further facilitated seamless collaboration and innovation.",
             ],
-            //achivements: "My work in prototyping screens proved instrumental in identifying suspicious fraudulent activities, thereby enhancing the security measures of the platforms.",
-            //techComment: "I have successfully leveraged my expertise in ReactJS, HTML5, CSS3, Sass, BEM, and JS to deliver impactful solutions. Additionally, I efficiently managed project workflows using tools such as Jira, Trello, GitHub, and BitBucket. My proficiency in design tools like Figma and Miró further facilitated seamless collaboration and innovation.",
             tecStack: [
                 "Html5",
                 "Sass",
@@ -49,6 +47,8 @@ export const TrAccordion = () => {
                 "WordPress",
                 "Acf"
             ],
+            //achivements: "My work in prototyping screens proved instrumental in identifying suspicious fraudulent activities, thereby enhancing the security measures of the platforms.",
+            //techComment: "I have successfully leveraged my expertise in ReactJS, HTML5, CSS3, Sass, BEM, and JS to deliver impactful solutions. Additionally, I efficiently managed project workflows using tools such as Jira, Trello, GitHub, and BitBucket. My proficiency in design tools like Figma and Miró further facilitated seamless collaboration and innovation.",
         },
         {
             position: "Web UI Developer, Consultant",
@@ -56,7 +56,7 @@ export const TrAccordion = () => {
             companyLogo: `${process.env.PUBLIC_URL}/assets/images/companies/terciar-ca.png`,
             companyUrl: "google.com",
             mode: "remote",
-            time: "full-time",
+            time: "FULL TIME",
             period: "05/2014 – 09/2020",
             detail: [
                 "At this company, I have actively contributed to the development of five custom software applications and over 30 WordPress-based web projects, taking on various roles.",
@@ -92,7 +92,7 @@ export const TrAccordion = () => {
             companyLogo: `${process.env.PUBLIC_URL}/assets/images/companies/ministry-logo.png`,
             companyUrl: "google.com",
             mode: "remote",
-            time: "part-time",
+            time: "PART TIME",
             period: "05/2019 – 11/2023",
             detail: [
                 "In 2019, I began a major project with the Ministry of Education of Chaco Province to develop a web portal enabling 50+ departments to manage their own pages and share updates.",
@@ -116,7 +116,7 @@ export const TrAccordion = () => {
             companyLogo: `${process.env.PUBLIC_URL}/assets/images/companies/informatorio.png`,
             companyUrl: "google.com",
             mode: "remote",
-            time: "full-time",
+            time: "PART TIME",
             period: "04/2016 – 08/2020",
             detail: [
                 "I conducted comprehensive theoretical and hands-on classes covering a spectrum of topics including :",
@@ -146,7 +146,7 @@ export const TrAccordion = () => {
             companyLogo: `${process.env.PUBLIC_URL}/assets/images/companies/mimuju.png`,
             companyUrl: "google.com",
             mode: "remote",
-            time: "full-time",
+            time: "PART TIME",
             period: "05/2018 – 04/2020",
             detail: [
                 "I spearheaded the design of the web app's user interface and guided the development of the mobile app UI, to grant seamless user experiences across platforms.",
@@ -172,7 +172,7 @@ export const TrAccordion = () => {
             companyLogo: `${process.env.PUBLIC_URL}/assets/images/companies/prominente.png`,
             companyUrl: "google.com",
             mode: "remote",
-            time: "full-time",
+            time: "FULL TIME",
             period: "05/2014 – 04/2016",
             detail: [
                 "I've engaged with end-users across various organizational levels to capture requirements, subsequently conceptualizing and prototyping new features for integration into the company's ERP software.",
@@ -187,7 +187,7 @@ export const TrAccordion = () => {
             companyLogo: `${process.env.PUBLIC_URL}/assets/images/companies/optimal.png`,
             companyUrl: "google.com",
             mode: "remote",
-            time: "full-time",
+            time: "FULL TIME",
             period: "02/2008 – 02/2011",
             detail: [
                 "This is a custom software company where I started as a business analyst and I was involved in UI development too.I worked in several sectors like insurance, delivery, retail, traceability at food factories and medical care",
@@ -236,10 +236,13 @@ export const TrAccordion = () => {
                         <div className='position-data'>
                             <h3 className='position-name'>{resumeItem.position}</h3>
                             <h6 className='position-company'>{resumeItem.company}</h6>
+                            <div className='position-detail-row'>
+                                <span className='position-period'>{resumeItem.period}</span><span className='position-time'>{resumeItem.time}</span>
+                            </div>
                         </div>
                         <div className='position-side-wrapper'>
                             <span className='position-icon'></span>
-                            <span className='position-date'>{resumeItem.period}</span>
+                            {/* <span className='position-date'>{resumeItem.period}</span> */}
                         </div>
                     </header>
 
