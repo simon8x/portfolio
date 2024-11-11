@@ -16,7 +16,7 @@ export const TrAccordion = () => {
             companyUrl: "google.com",
             mode: "remote",
             time: "part-time",
-            period: "02/2021 - 03/2023",
+            period: "02/2021 - 04/2024",
             detail: [
                 "I embarked on a big main project with the International Olympic Committee and NwayPlay company, collaborating with teams across Korea, the United States, and Argentina. I started coding reusable components in reactjs and my primary responsibility was the development of the interface for https://nwayplay.com/.",
                 "Additionally, I undertook the prototyping of interfaces for the customer service tool and crafted workflows for new product creation and content customization within the same project.",
@@ -57,7 +57,7 @@ export const TrAccordion = () => {
             companyUrl: "google.com",
             mode: "remote",
             time: "full-time",
-            period: "05/2014 – 05/2020",
+            period: "05/2014 – 09/2020",
             detail: [
                 "At this company, I have actively contributed to the development of five custom software applications and over 30 WordPress-based web projects, taking on various roles.",
                 "As a front-end developer, I customized WordPress templates and developed interfaces for applications built with Ruby on Rails.",
