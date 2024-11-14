@@ -13,9 +13,9 @@ export const Home = () => {
       <main className='main-section'>
         {/* <img className='astro' src='./assets/images/bg/sastro1.png' alt="" /> */}
         <div className='home-wrapper'>
-          <div className='hero-section'>
+          <div className='hero-section hero-section'>
             <div className='container'>
-              <h1 className='hero-text'>I have been building my career in software development for over 10 years, taking on different roles along the way. I'd like to share some notable projects, both big and small, to give you an idea of where my skills originate.</h1>
+              <h1 className='hero-text flotate'>I have been building my career in software development for over 10 years, taking on different roles along the way. I'd like to share some notable projects, both big and small, to give you an idea of where my skills originate.</h1>
             </div>
           </div>
           {/* <div className='falling-astronaut-container'>

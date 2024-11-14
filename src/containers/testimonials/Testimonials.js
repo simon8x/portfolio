@@ -136,7 +136,7 @@ export const Testimonials = () => {
 
             <div className='testimonial-wrapper'>
               <div className='header-section'>
-                <h2 className='section-title'>See what others say about working with me</h2>
+                <h2 className='section-title flotate'>See what others say about working with me</h2>
               </div>
               <div className='section-testimonial-content'>
                 <Slide indicators={indicators} {...properties} canSwipe={true}>

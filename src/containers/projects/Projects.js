@@ -354,7 +354,7 @@ export const Projects = () => {
           <section className='prjects-section'>
             <div className='hero-projects'>
               <div className='header-section'>
-                <h2 className='section-title'>Some featured projects</h2>
+                <h2 className='section-title flotate'>Some featured projects</h2>
               </div>
               <div className='section-featured-projects'>
                 <Slide indicators={indicators} {...properties} pauseOnHover={true} duration={6000} transitionDuration={250} canSwipe={true}>              
@@ -368,7 +368,7 @@ export const Projects = () => {
             </div>
             <div className='side-projects'>
               <div className='header-section'>
-                <h2 className='section-title'>Some other projects</h2>
+                <h2 className='section-title flotate'>Some other projects</h2>
               </div>
               <div className='section-other-projects'>
                 <Slide indicators={indicators} {...properties} pauseOnHover={true} duration={0} transitionDuration={5000} canSwipe={true} responsive={otherProjectResponsiveSettings}>

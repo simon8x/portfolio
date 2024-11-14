@@ -19,12 +19,12 @@ export const CtaSection = (props) => {
   };
 
   return (
-    <div className='cta-container'>
+    <div className='cta-container hover-enlarge'>
         <Link to ={props.target}>
           <header className='cta-header'>
               <h3 className='cta-title'>{props.title}</h3>   
               <div className='cta-icon-wrapper'>
-              <img className='cta-icon-img' src={getIcon(props.id)} alt='' />
+              <img className='cta-icon-img flotate' src={getIcon(props.id)} alt='' />
               </div>     
           </header>
           <div className='cta-body'>

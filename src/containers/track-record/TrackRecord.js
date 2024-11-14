@@ -15,7 +15,7 @@ export const TrackRecord = () => {
         <div className="container">
           
           <section className='track-record-section'>          
-            <h1 className="section-title">Profesional track record</h1>
+            <h1 className="section-title flotate">Profesional track record</h1>
             <div className="tr-wrapper">
               <section className="tr-main">
                 <TrAccordion/>
