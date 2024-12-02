@@ -371,7 +371,7 @@ export const Projects = () => {
                 <h2 className='section-title flotate'>Some other projects</h2>
               </div>
               <div className='section-other-projects'>
-                <Slide indicators={indicators} {...properties} pauseOnHover={true} duration={0} transitionDuration={5000} canSwipe={true} responsive={otherProjectResponsiveSettings}>
+                <Slide indicators={false} {...properties} pauseOnHover={true} duration={0} transitionDuration={5000} canSwipe={true} responsive={otherProjectResponsiveSettings}>
                   {otherProjectsData.map(otherProject => (
                     <div key={otherProject.name}>
                       <OtherProject otherProject={otherProject} />
