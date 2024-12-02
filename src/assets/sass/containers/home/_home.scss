@@ -40,17 +40,29 @@
             justify-content: center;
             gap: 1rem;
             .buble-wrapper {
-                // background-color: $theme-dark-panel-bg;
-                max-width: 20%;
-                padding: 5%;
+
+                //ORIGINAL
+                // max-width: 20%;
+                // padding: 5%;
+                // aspect-ratio: 1/1;
+                // border-radius: 50%;
+                // display: flex;
+                // margin: 1rem auto;
+                // position: relative;
+                // transition: transform; 
+                // transition-duration: .75s;
+                
+                //OPCIÓN 1 safari compatibility
+                width: 20%; 
+                height: auto;
                 aspect-ratio: 1/1;
                 border-radius: 50%;
                 display: flex;
                 margin: 1rem auto;
                 position: relative;
-                transition: transform; 
-                transition-duration: .75s;
-                // background-color: red;
+                transition: transform 0.75s;
+                overflow: hidden;
+
                 .buble-image {
                     max-width: 100%;
                     height: auto;
