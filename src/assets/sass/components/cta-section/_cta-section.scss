@@ -5,32 +5,31 @@
     background-color: $theme-dark-overlay;
     border: solid 2px $theme-light-overlay;
 
-    // box-shadow: 0px 0px 3px 1px rgba(0,0,0,.5);
-    //   -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,.5);
-    //   -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,.5);
     .cta-header {
         position: relative;
+
         .cta-title {
             @include font-heading-4;
         }
+
         .cta-icon-wrapper {
             position: absolute;
             right: 0;
             top: -6rem;
             width: 8rem;
-            // height: 5rem;
+            height: 8rem;
             padding: 1.5rem;
-            aspect-ratio: 1/1;
             border-radius: 50%;
-            // background-color: rgba(255, 0, 0, 0.412);
             background-color: $theme-dark-primary-background;
             border: solid 2px $theme-light-overlay;
+
             .cta-icon-img {
                 width: 100%;
                 height: 100%;
                 object-fit: contain
             }
         }
+
         .cta-icon-wrapper::before {
             content: "";
             position: absolute;
@@ -38,15 +37,15 @@
             left: 0;
             height: 4rem;
             width: 100%;
-            // background-color: yellow;
             border-radius: 4rem 4rem 0 0;
-        
         }
     }
     .cta-body {
+
         .cta-pharagrap {
             @include paragraph-md;
         }
+        
         .cta-button {
 
         }

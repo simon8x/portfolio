@@ -17,78 +17,50 @@
         }
     }
     .falling-astronaut-container{
-        //background-color: red;
         margin: auto;
         .falling-astronaut-img {
             max-width: 7.5rem;
             height: auto;
         } 
     }
+
     .bubles-section {
         flex-basis: 35%;
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
 
-
         .single-buble-card {
-            // width: 30%;
             height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 1rem;
-            .buble-wrapper {
 
-                //ORIGINAL
-                // max-width: 20%;
-                // padding: 5%;
-                // aspect-ratio: 1/1;
-                // border-radius: 50%;
-                // display: flex;
-                // margin: 1rem auto;
-                // position: relative;
-                // transition: transform; 
-                // transition-duration: .75s;
-                
-                //OPCIÓN 1 safari compatibility
-                width: 20%; 
-                height: auto;
+            .buble-wrapper {
+                max-width: 20%;
+                padding: 5%;
                 aspect-ratio: 1/1;
                 border-radius: 50%;
                 display: flex;
                 margin: 1rem auto;
                 position: relative;
-                transition: transform 0.75s;
-                overflow: hidden;
+                transition: transform; 
+                transition-duration: .75s;
 
                 .buble-image {
                     max-width: 100%;
                     height: auto;
-                    // filter:saturate(0);
                     opacity: 1;
-                    // transition-duration: 5s;
-                    // transition: transform opacity;
                 }
 
             }
 
             .buble-wrapper:hover {
                 transform: scale(1.1);
-                // filter: saturate(1);
-                // opacity: 1;   
             }
-            // .buble-wrapper::before {
-            //     content: "";
-            //     position: absolute;
-            //     top: calc(-5% - 6px );
-            //     left: calc(-5% - 6px );
-            //     border-radius: 50%;
-            //     width: 110%;
-            //     height: 110%;
-            //     border: solid 6px $theme-dark-panel-bg;
-            // }
+
             .buble-card-title {
                 text-transform: uppercase;
                 @include name-1;
