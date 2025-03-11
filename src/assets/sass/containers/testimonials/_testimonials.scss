@@ -13,6 +13,7 @@
     }
 }
 
+
 .testimonial-section{
     min-height: inherit;
     color: $theme-dark-primary-text;
@@ -49,7 +50,8 @@
     }
 }
 
-@media screen and (max-width: 92rem) {
+
+@media screen and (max-width: 992px) {
     .testimonial-section{
         margin-top: 2.5rem;
         .testimonial-wrapper{

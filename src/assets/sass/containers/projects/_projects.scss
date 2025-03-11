@@ -1,18 +1,3 @@
-.night{
-    .testimonial-section{
-        background-color: $theme-dark-primary-background;  
-
-        color: $theme-dark-primary-text;    
-    }    
-}
-
-.day{
-    .testimonial-section{
-        background-color: $theme-light-primary-background;    
-        color: $theme-light-primary-text;
-    }
-}
-
 .prjects-section{
     // background-color:aqua ;
     //padding:  1rem 0 3rem;
@@ -49,7 +34,10 @@
             border: solid 2px $theme-light-overlay;
             min-height: 40dvh;
             //max-width: 70%;            
-            // background-color: red;
+            //background-color: red;
+            .indicators {
+                bottom: -6rem;
+            }
         }
         .section-other-projects{
             margin-top: 3.5rem;
@@ -67,7 +55,7 @@
     }
 }
 
-@media screen and (max-width: 92rem) {
+@media screen and (max-width: 992px) {
     .prjects-section{
         
          .side-projects,
