@@ -24,6 +24,60 @@ export const TrAccordion = () => {
 
     const resumeList = [
         {
+            position: "UI Engineer",
+            company: "Creamos",
+            companyLogo: `${process.env.PUBLIC_URL}/assets/images/companies/creamos.png`,
+            companyUrl: "https://www.creamos.com/",
+            mode: "remote",
+            time: "FULL TIME",
+            period: "12/2024 - 03/2024",
+            detail: [                 
+                "I participated in the development of Choc, working in an extreme development environment that required adaptability to changes and deadlines.",
+                "My work included layout and integration using tools such as Webflow, Shopify, Smootify and Relume, achieving a functional and attractive ecommerce and marketing platform that met the high standards of the project.",
+            ],
+            tecStack: [
+                "Webflow",
+                "Shopify",
+            ],
+        },
+        {
+            position: "Consultant",
+            company: "Uugot.it",
+            companyLogo: `${process.env.PUBLIC_URL}/assets/images/companies/uugotit.png`,
+            companyUrl: "https://www.uugot.it/",
+            mode: "remote",
+            time: "FULL TIME",
+            period: "10/2024 - 12/2024",
+            detail: [                 
+                "Managed the budget and led the development of product pages and landing pages for app promotion using WordPress.",
+            ],
+            tecStack: [
+                "WordPress",
+                "Figma",
+            ],
+        },
+        {
+            position: "UI Engineer",
+            company: "Daas Software Consulting",
+            companyLogo: `${process.env.PUBLIC_URL}/assets/images/companies/daas.png`,
+            companyUrl: "https://www.daas.consulting/",
+            mode: "remote",
+            time: "FULL TIME",
+            period: "05/2024 - 09/2024",
+            detail: [                 
+                "I participated as FE Dev during the development of an expert system for a Laboratory.",
+                "The system supported the production and traceability of parenteral nutrition bags.",
+                "I worked with Angular Material and also developed reports for specific devices.",
+            ],
+            tecStack: [
+                "Html5",
+                "Sass",
+                "Bem",
+                "Tailwind",
+                "Github"
+            ],
+        },
+        {
             position: "Web UI Developer",
             company: "Tricks Games Studio",
             companyLogo: `${process.env.PUBLIC_URL}/assets/images/companies/trick-gs.png`,
