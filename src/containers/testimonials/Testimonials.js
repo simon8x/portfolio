@@ -12,6 +12,29 @@ export const Testimonials = () => {
   const recomendacionesData = [
     {
       "text": [
+        "I had the pleasure of working with Simon on an ecommerce project at our creative agency, and I appreciated his collaborative and adaptable approach. He brought a friendly energy to the team, making it easy for everyone to work together.",
+        "I would create a backlog of tasks he would need to complete, and then I would do quality control on those.",
+        "Simon was always open to learning new platforms and tools (like Webflow) and adapt to different changes in the project as needed. While he had his own perspectives as a front-end developer, he always respected the product owner's vision and remained flexible throughout the project.",
+        "Above all, Simon was reliable, positive-minded and honest. His positive attitude and team-oriented mindset made him a great addition to the project. I’d recommend him to any team looking for a trustworthy and adaptable developer.",
+      ],
+      "avatar-url": `${process.env.PUBLIC_URL}/assets/images/testimonial/fermin-lira.jpg`,
+      "name": "Fermín Lira",
+      "position": "Front-end Developer and UX Designer (Magento2, npm, javascript, webpack)",
+      "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
+    },
+    {
+      "text": [
+        "We had the pleasure of working with Simón Yamil Ibalo over a period of three months at uugot.it. He was responsible for creating the Landing Page for uugot.it/reachall on a WordPress basis, bringing in his expertise and ensuring that the Product Owner’s vision was fully realized.",
+        "Beyond his core responsibilities, Simón continued to support our development team with valuable insights and hands-on assistance even after the initial project was completed. His deep expertise, combined with a solution-oriented mindset, makes him an exceptional professional. Simón is not only a highly skilled problem solver, but he also ensures on-time delivery and keeps all stakeholders well-informed through his clear and proactive communication.",
+        "Working with Simón was a seamless experience, and we would gladly collaborate with him again in the future. I can highly recommend him without hesitation.",
+      ],
+      "avatar-url": `${process.env.PUBLIC_URL}/assets/images/testimonial/phllip-etzlinger.jpg`,
+      "name": "Philipp Etzlinger",
+      "position": "CEO bei uugot.it",
+      "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
+    },
+    {
+      "text": [
         "I had the pleasure of managing a project where Simón Yamil Ibalo served as the frontend engineer for the nWayPlay Marketplace. Despite being based in South Korea while Simón was in Argentina, our collaboration was seamless and highly productive, thanks to Simón's exceptional communication skills and dedication.",
         "Simón demonstrated outstanding technical expertise in frontend development, creating a user-friendly and visually appealing interface for the marketplace. His meticulous attention to detail and problem-solving abilities were pivotal in implementing complex features and optimizing the user experience.",
         "Even across time zones, Simón's commitment to excellence never wavered. His ability to deliver high-quality code and innovative solutions significantly enhanced the nWayPlay Marketplace, making it a seamless and efficient platform for NFT transactions.",
