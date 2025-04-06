@@ -32,12 +32,15 @@ export const TrAccordion = () => {
             time: "FULL TIME",
             period: "12/2024 - 03/2024",
             detail: [                 
-                "I participated in the development of Choc, working in an extreme development environment that required adaptability to changes and deadlines.",
+                "I participated in the development of Choc at https://www.chocfactory.com/, working in an extreme development environment that required adaptability to changes and deadlines.",
                 "My work included layout and integration using tools such as Webflow, Shopify, Smootify and Relume, achieving a functional and attractive ecommerce and marketing platform that met the high standards of the project.",
             ],
             tecStack: [
                 "Webflow",
                 "Shopify",
+                "Html5",
+                "CSS",
+                "Js",
             ],
         },
         {
@@ -78,7 +81,7 @@ export const TrAccordion = () => {
             ],
         },
         {
-            position: "Web UI Developer",
+            position: "UI Engineer | PM Jr",
             company: "Tricks Games Studio",
             companyLogo: `${process.env.PUBLIC_URL}/assets/images/companies/trick-gs.png`,
             companyUrl: "google.com",
@@ -86,14 +89,17 @@ export const TrAccordion = () => {
             time: "FULL TIME",
             period: "02/2021 - 04/2024",
             detail: [
-                "I embarked on a big main project with the International Olympic Committee and NwayPlay company, collaborating with teams across Korea, the United States, and Argentina. I started coding reusable components in reactjs and my primary responsibility was the development of the interface for https://nwayplay.com/.",
-                "Additionally, I undertook the prototyping of interfaces for the customer service tool and crafted workflows for new product creation and content customization within the same project.",
-                "I produced extensive analysis of user data and product performance to derive metrics and KPIs for generating customizable on-demand reports, proposed new features, conducted demos, and gathered requirements from stakeholders of the customer service tool. I also authored the user guide for the Customer Service Tool tailored to our client's needs.",
-                "My work in prototyping screens proved instrumental in identifying suspicious fraudulent activities, thereby enhancing the security measures of the platforms.",
+
+                "I joined the company as UI Engineer on a large-scale project with the International Olympic Committee and Nway, collaborating from Argentina with teams in Korea and the United States.",
+                "I started coding reusable components in reactjs and my primary responsibility was the interface development of https://nwayplay.com/ (NFT Marketplace). ",
                 "Also I have been a consultant for other company projects on issues related to web interface.",
                 "I have developed https://olympicgamesjam.nwayplay.com/ and https://foodtruckcoinclub.io from scratch and collaborated on https://www.myherogame.com/, and https://nway.com/.",
                 "I have successfully leveraged my expertise in ReactJS, HTML5, CSS3, Sass, BEM, and JS.",
-                "Additionally, I efficiently managed project workflows using tools such as Jira, Trello, GitHub, and BitBucket. My proficiency in design tools like Figma and Miró further facilitated seamless collaboration and innovation.",
+                "As a PM Jr, I led the development of the customer service tool for the NFT Marketplace, under the supervision of a senior PM, using Scrum.",
+                "I captured stakeholder requirements and conducted product demonstrations in English.",
+                "Managed the backlog with Jira, made estimates and defined the scope of MVPs.",
+                "My work in prototyping screens proved instrumental in identifying suspicious fraudulent activities, thereby enhancing the security measures of the platforms.",
+                "Stack: Jira, Confluence, GitHub, Miro.",
             ],
             tecStack: [
                 "Html5",
@@ -119,7 +125,7 @@ export const TrAccordion = () => {
         //achivements: "My work in prototyping screens proved instrumental in identifying suspicious fraudulent activities, thereby enhancing the security measures of the platforms.",
         //techComment: "I have successfully leveraged my expertise in ReactJS, HTML5, CSS3, Sass, BEM, and JS to deliver impactful solutions. Additionally, I efficiently managed project workflows using tools such as Jira, Trello, GitHub, and BitBucket. My proficiency in design tools like Figma and Miró further facilitated seamless collaboration and innovation.",
         {
-            position: "Web UI Developer, Consultant",
+            position: "UI Engineer | PM",
             company: "Terciar Asociate Consultant",
             companyLogo: `${process.env.PUBLIC_URL}/assets/images/companies/terciar-ca.png`,
             companyUrl: "google.com",
@@ -127,12 +133,8 @@ export const TrAccordion = () => {
             time: "FULL TIME",
             period: "05/2014 – 09/2020",
             detail: [
-                "At this company, I have actively contributed to the development of five custom software applications and over 30 WordPress-based web projects, taking on various roles.",
-                "As a front-end developer, I customized WordPress templates and developed interfaces for applications built with Ruby on Rails.",
-                "Some sites that remain live: https://autotest.com.ar , https://jorgeferraresi.com , https://identidad-digital.com.ar .",
-                "Two years after joining, I began working directly with clients—creating proposals, providing estimates, and defining MVP scopes. I also served as Product Owner, where I created and prioritized backlogs.",
-                "In the last two years, I led the e-commerce business unit, tripling the client portfolio.",
-                "I implemented agile methodologies (Scrum).",
+                "I joined the company as a part-time UI Engineer, developing interfaces for WordPress-based websites and custom software based on Ruby on Rails. Stack: HTML, CSS, SASS, JS, Bootstrap, Materialize CSS, WordPress, Woocommerce.",
+                "After my second year, I was promoted and assigned to manage several projects. I successfully managed more than 20 projects related to custom software, websites, and e-commerce. Last year, I led the e-commerce business unit, tripling the client portfolio.",
                 "My stack HTML, CSS, JS, Bootstrap, MaterializeCSS, Sass, Git, WordPress, Woocommerce and Scrum.",
             ],
             // achivements: "As a consultant, I spearheaded the e-commerce business unit, tripling the client portfolio within two years. Also I successfully navigated growth alongside the startup, implemented agile methodologies (Scrum), and effectively managed remote work operations.",
@@ -155,7 +157,7 @@ export const TrAccordion = () => {
             ],
         },
         {
-            position: "Webmaster",
+            position: "Progect Manager",
             company: "Ministry of Education of Chaco Province",
             companyLogo: `${process.env.PUBLIC_URL}/assets/images/companies/ministry-logo.png`,
             companyUrl: "google.com",
@@ -163,7 +165,7 @@ export const TrAccordion = () => {
             time: "PART TIME",
             period: "05/2019 – 11/2023",
             detail: [
-                "In 2019, I began a major project with the Ministry of Education of Chaco Province to develop a web portal enabling 50+ departments to manage their own pages and share updates.",
+                "In 2019, I began a major project with the Ministry of Education of Chaco Province to develop a web portal enabling 50+ departments to manage their own pages and share updates. ",
                 "I designed a modular component system with detailed documentation and obtained a page builder license to create reusable components efficiently.",
                 "Over four years, I managed the portal remotely, holding regular meetings with stakeholders, generating reports, recommending improvements, and implementing solutions.",
                 "This large-scale project grew to include 40+ sections and 100+ categories, and I led it independently as a part-time role.",
