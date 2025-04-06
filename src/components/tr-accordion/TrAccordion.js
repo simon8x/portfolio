@@ -32,7 +32,7 @@ export const TrAccordion = () => {
             time: "FULL TIME",
             period: "12/2024 - 03/2024",
             detail: [                 
-                "I participated in the development of Choc at https://www.chocfactory.com/, working in an extreme development environment that required adaptability to changes and deadlines.",
+                "I participated in the development of Choc at https://www.chocfactory.com/ , working in an extreme development environment that required adaptability to changes and deadlines.",
                 "My work included layout and integration using tools such as Webflow, Shopify, Smootify and Relume, achieving a functional and attractive ecommerce and marketing platform that met the high standards of the project.",
             ],
             tecStack: [

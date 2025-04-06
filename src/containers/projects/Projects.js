@@ -59,6 +59,33 @@ export const Projects = () => {
   const featuredProjectsData = [
     {
     	"projectId": "1",
+    	"projectDate": "from 12/2024 to 03/2025",
+      "heroImageUrl": `${process.env.PUBLIC_URL}/assets/images/projects/choc/project-slider.jpg`,
+    	"projectName": "CHOC",
+    	"projectSubtitle": "Ecommerce & Marketing platform",
+    	"projectPosition": "UI Engineer",
+    	"projectShortDescription": "I contributed to the development of Choc (https://www.chocfactory.com), building a dynamic e-commerce platform using Webflow, Shopify, Smootify, and Relume. It was a fast-paced, collaborative project requiring constant adaptation to shifting goals.",
+    	"tecStack": [
+      	"Webflow",
+        "Shopify",
+      	"Html5",
+      	"CSS",
+        "Js",
+    	],
+      "projectLongDescriptionText":[
+        "I participated in the development of Choc (https://www.chocfactory.com), an e-commerce and marketing platform built under a highly dynamic and deadline-driven environment.",
+        "This project marked my first major experience with Webflow, where I worked alongside a talented team of designers, creatives, and marketing specialists.", 
+        "My role involved layout and integration using Webflow, Shopify, Smootify, and Relume, ensuring the platform was both functional and visually engaging.", 
+        "Frequent changes in objectives and timelines demanded high adaptability and teamwork. The experience sharpened my technical skills while deepening my understanding of collaborative development in a real-world, fast-evolving digital landscape."
+      ],
+      "projectImageUrl":`${process.env.PUBLIC_URL}/assets/images/projects/choc/choc-featured.png`,
+      "projectLogo":`${process.env.PUBLIC_URL}/assets/images/projects/nwayplay/nwayplay-logo.png`,
+      "linkToSite": "https://www.chocfactory.com",
+      "linkToTrailer": "",
+      "linkToBlog":"",
+    },
+    {
+    	"projectId": "2",
     	"projectDate": "from 05/2021 to 10/2023",
       "heroImageUrl": `${process.env.PUBLIC_URL}/assets/images/projects/nwayplay/nwayplay-featured-slider.png`,
     	"projectName": "nwayplay",
@@ -86,7 +113,7 @@ export const Projects = () => {
       "linkToBlog":"https://blog.nwayplay.com/",
     },
     {
-    	"projectId": "2",
+    	"projectId": "3",
       "projectDate": "from 11/2021 to 10/2023",
     	"heroImageUrl": `${process.env.PUBLIC_URL}/assets/images/projects/nwpcstool/cstoo-hero.png`,
     	"projectName": "CS Tool",
@@ -117,7 +144,7 @@ export const Projects = () => {
     },
 
     {
-    	"projectId": "3",
+    	"projectId": "4",
     	"heroImageUrl": `${process.env.PUBLIC_URL}/assets/images/projects/mimuju/mimuju-featured-slider.png`,
     	"projectName": "Mimuju",
     	"projectSubtitle": "Ed Tech Web App",
@@ -144,7 +171,7 @@ export const Projects = () => {
 
 
   	{
-    	"projectId": "4",
+    	"projectId": "5",
       "projectDate": "from 09/2018 to 12/2018",
     	"heroImageUrl": `${process.env.PUBLIC_URL}/assets/images/projects/autotest/autotest-featured.png`,
     	"projectName": "Autotest",
