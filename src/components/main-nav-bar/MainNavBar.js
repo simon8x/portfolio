@@ -19,7 +19,7 @@ export const MainNavBar = () => {
                 </div>
                 <div className='data-wrapper'>
                   <h4 className='self-name'>Simón Yamil Ibalo</h4>
-                  <span className='self-slogan'>Agile Manager and beyond...</span>
+                  <span className='self-slogan'>UX/UI Engineer and beyond...</span>
                 </div>
               </div>
             </Link>
