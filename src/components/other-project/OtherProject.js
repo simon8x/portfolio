@@ -1,11 +1,13 @@
-import React from 'react'
+import { useState,useContext} from 'react'
 import { TechStack } from '../tech-stack/TechStack';
 import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
 import './_custom-modal.css'
+import { LanguageContext } from '../../context/LanguageContext';
 
 export const OtherProject = ({ otherProject }) => {
-    const [open, setOpen] = React.useState(false);
+    const { siteLang } = useContext(LanguageContext)
+    const [open, setOpen] = useState(false);
     return(
         <>
             <div className='other-project-slide-wrapper' key={otherProject.index} onClick={() => setOpen(true)} >
@@ -52,7 +54,7 @@ export const OtherProject = ({ otherProject }) => {
                         <TechStack stack={otherProject.tecStack}/>
                     </div>
                     <div className='modal-long-description-wrapper'>
-                        {otherProject.projectLongDescriptionText.map((item, index) => 
+                        {otherProject.projectLongDescriptionText[siteLang].map((item, index) => 
                             <p className='modal-project-paragraph'>
                                 {item}        
                             </p>

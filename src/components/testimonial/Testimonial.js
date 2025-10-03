@@ -1,10 +1,16 @@
-import React from 'react'
+import {useContext} from 'react'
 
-export const Testimonial = ({ recomendacion }) => (
+import { LanguageContext } from '../../context/LanguageContext';
 
+
+export const Testimonial = ({ recomendacion }) => {
+    
+    const { siteLang } = useContext(LanguageContext);
+    
+    return (
         <div className='single-testimonial-slide' key={recomendacion.index}>
             <div className='quote-wrapper'>
-                {recomendacion.text.map((item, index) => 
+                {recomendacion.text[siteLang].map((item, index) => 
                     <p className='testimonial-paragraph'>
                         {item}        
                     </p>
@@ -13,7 +19,7 @@ export const Testimonial = ({ recomendacion }) => (
             
             <div className='testimonial-author-wrapper'>
                 <div className='testimonial-author-avatar-wrapper'>
-                    <img className='testimonial-author-avatar-img' src={recomendacion['avatar-url']} alt=''/>
+                    <img className='testimonial-author-avatar-img' src={recomendacion['avatarUrl']} alt=''/>
                 </div>
                 <div className='testimonial-author-data-wrapper'>
                     <h4 className='testimonial-author-name'>{recomendacion.name}</h4>
@@ -22,3 +28,4 @@ export const Testimonial = ({ recomendacion }) => (
             </div>
         </div>
   )
+}

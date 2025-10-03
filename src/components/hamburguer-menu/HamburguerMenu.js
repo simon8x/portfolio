@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { LanguageContext } from '../../context/LanguageContext';
+import { menuContent } from '../../data/menuContent';
 
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { siteLang } = useContext(LanguageContext);
+  const currentMenu = menuContent[siteLang] || menuContent.EN;
 
   // Función para manejar el clic y alternar el estado
   const toggleMenu = () => {
@@ -18,9 +22,23 @@ const HamburgerMenu = () => {
       </button>
 
       <ul className={`menu-list ${isOpen ? 'show' : ''}`}>
-        <li>
+
+
+{currentMenu.map(item => (
+          <li key={item.id}>
+            <Link
+              to={item.target}
+              className={({ isActive }) => `link-item ${isActive ? 'active' : ''}`}
+              onClick={() => setIsOpen(false)} // opcional: cerrar menú al clickear
+            >
+              {item.title}
+            </Link>
+          </li>
+        ))}
+
+        {/* <li>
           <Link 
-            className='link-item'
+            className={ ({ isActive }) => `link-item ${ isActive ? 'active' :''}`}
             to='/projects'
           >
             Projects
@@ -28,7 +46,7 @@ const HamburgerMenu = () => {
         </li>
         <li>
           <Link 
-            className='link-item'
+            className={ ({ isActive }) => `link-item ${ isActive ? 'active' :''}`}
             to='/track-record'
           >
             Track Record
@@ -36,18 +54,10 @@ const HamburgerMenu = () => {
         </li>
         <li>
           <Link 
-            className='link-item'
+            className={ ({ isActive }) => `link-item ${ isActive ? 'active' :''}`}
             to='/testimonial'
           >
             Testimonial
-          </Link>
-        </li>
-        {/* <li>
-          <Link 
-            className='link-item'
-            to='/about'
-          >
-            About me
           </Link>
         </li> */}
       </ul>

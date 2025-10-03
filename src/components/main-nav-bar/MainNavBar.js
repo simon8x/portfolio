@@ -1,11 +1,11 @@
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import HamburgerMenu from '../hamburguer-menu/HamburguerMenu'
-// import { Home } from '../../containers/home/Home'
-// import { Projects } from '../../containers/projects/Projects'
-// import { Testimonial } from '../../containers/testimonial/Testimonial'
-// import { TrackRecord } from '../../containers/track-record/TrackRecord'
+import { LangMenu } from '../language-menu/LanguageMenu'
+import { LanguageContext } from '../../context/LanguageContext'
 
 export const MainNavBar = () => {
+  const { siteLang } = useContext( LanguageContext )
   return (
     <nav className='main-nav'>
       <div className='container main-nav-wrapper'>
@@ -19,13 +19,25 @@ export const MainNavBar = () => {
                 </div>
                 <div className='data-wrapper'>
                   <h4 className='self-name'>Simón Yamil Ibalo</h4>
-                  <span className='self-slogan'>UX/UI Engineer and beyond...</span>
+                  <span className='self-slogan'>
+                    { 
+                      (siteLang === 'EN') 
+                      ? "UX/UI Engineer and beyond..."
+                      : "UX/UI Engineer y algo más..."
+                    }
+                    
+                    </span>
                 </div>
               </div>
             </Link>
      
         
         <ul className='controls-list'>
+          <li className='control-item'>
+            <LangMenu/>
+             {/* onClick={ handleLanguage } */}
+             {/* {settings.language === 'EN' ? 'EN' : 'ES'} */}
+          </li>
           {/* <li className='control-item'>
             <button className='control-item-btn'  */}
              {/* onClick={ handleLanguage } */}

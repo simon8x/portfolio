@@ -1,5 +1,5 @@
 import { MainNavBar } from "../../components/main-nav-bar/MainNavBar"
-import { useState } from 'react';
+import { useContext } from 'react';
 
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
@@ -7,131 +7,13 @@ import 'react-slideshow-image/dist/styles.css';
 import { Testimonial } from "../../components/testimonial/Testimonial";
 import { BackgroundShapes } from "../../components/background-shapes/BackgroundShapes";
 
+import { recomendationsData } from '../../data/recomendationsContent';
+import { LanguageContext } from '../../context/LanguageContext';
+
+
 export const Testimonials = () => {
 
-  const recomendacionesData = [
-    {
-      "text": [
-        "I had the pleasure of working with Simon on an ecommerce project at our creative agency, and I appreciated his collaborative and adaptable approach. He brought a friendly energy to the team, making it easy for everyone to work together.",
-        "I would create a backlog of tasks he would need to complete, and then I would do quality control on those.",
-        "Simon was always open to learning new platforms and tools (like Webflow) and adapt to different changes in the project as needed. While he had his own perspectives as a front-end developer, he always respected the product owner's vision and remained flexible throughout the project.",
-        "Above all, Simon was reliable, positive-minded and honest. His positive attitude and team-oriented mindset made him a great addition to the project. I’d recommend him to any team looking for a trustworthy and adaptable developer.",
-      ],
-      "avatar-url": `${process.env.PUBLIC_URL}/assets/images/testimonial/fermin-lira.jpg`,
-      "name": "Fermín Lira",
-      "position": "Front-end Developer and UX Designer (Magento2, npm, javascript, webpack)",
-      "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
-    },
-    {
-      "text": [
-        "We had the pleasure of working with Simón Yamil Ibalo over a period of three months at uugot.it. He was responsible for creating the Landing Page for uugot.it/reachall on a WordPress basis, bringing in his expertise and ensuring that the Product Owner’s vision was fully realized.",
-        "Beyond his core responsibilities, Simón continued to support our development team with valuable insights and hands-on assistance even after the initial project was completed. His deep expertise, combined with a solution-oriented mindset, makes him an exceptional professional. Simón is not only a highly skilled problem solver, but he also ensures on-time delivery and keeps all stakeholders well-informed through his clear and proactive communication.",
-        "Working with Simón was a seamless experience, and we would gladly collaborate with him again in the future. I can highly recommend him without hesitation.",
-      ],
-      "avatar-url": `${process.env.PUBLIC_URL}/assets/images/testimonial/phllip-etzlinger.jpg`,
-      "name": "Philipp Etzlinger",
-      "position": "CEO bei uugot.it",
-      "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
-    },
-    {
-      "text": [
-        "I had the pleasure of managing a project where Simón Yamil Ibalo served as the frontend engineer for the nWayPlay Marketplace. Despite being based in South Korea while Simón was in Argentina, our collaboration was seamless and highly productive, thanks to Simón's exceptional communication skills and dedication.",
-        "Simón demonstrated outstanding technical expertise in frontend development, creating a user-friendly and visually appealing interface for the marketplace. His meticulous attention to detail and problem-solving abilities were pivotal in implementing complex features and optimizing the user experience.",
-        "Even across time zones, Simón's commitment to excellence never wavered. His ability to deliver high-quality code and innovative solutions significantly enhanced the nWayPlay Marketplace, making it a seamless and efficient platform for NFT transactions.",
-        "I highly recommend Simón for any technical role. His expertise, professionalism, and work ethic will be a tremendous asset to any team.",
-      ],
-      "avatar-url": `${process.env.PUBLIC_URL}/assets/images/testimonial/jontae-choi.jpg`,
-      "name": "Jongtae Choi",
-      "position": "Business Strategy and Partnership | Web3",
-      "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
-    },
-    {
-      "text": [
-        "I am pleased to provide a strong recommendation for Simón Ibalo, who I had the pleasure of working with as a front end engineer on nWay's NFT Marketplace project. Simon had strong technical expertise and quickly grasped the project requirements. He was able to architect complex React components and features, often suggesting improvements. He has solid problem skills and has a strong attention to the quality of his work.",
-        "I highly recommend Simón as a talented and versatile front end engineer and web developer for any project."
-      ],
-      "avatar-url": `${process.env.PUBLIC_URL}/assets/images/testimonial/rene-hakiki.jpg`,
-      "name": "Rene Hakiki",
-      "position": "Executive Producer - Video Game, Interactive Entertainment, AR/VR/XR, Web3 DeFi blockchain & NFT, Development & Production.",
-      "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
-    },
-    {
-      "text": [
-        "We worked with Simon for almost 2 years, and if I have to highlight qualities, one of them is his professionalism when it comes to handling complex tasks in a short time. He was always up to the quality and challenges presented. He attended meetings with clients and managed to carve out an important place not only to showcase his work but also to propose new features and offer superior solutions.",
-        "He is a great person, and I would not hesitate to work with him again."
-      ],
-      "avatar-url": `${process.env.PUBLIC_URL}/assets/images/testimonial/mati-munoz.jpg`,
-      "name": "Matias Muñoz",
-      "position": "Project Manager / Scrum Master / Software Engineer",
-      "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
-    },
-    {
-      "text": [
-        "Simón is a creative person who knows how to deal with clients and analyze their needs beyond what they ask for.",
-        "In this company, we worked together on several projects where he stood out by adding value to the product and the relationship with the clients, always going a bit further than what was agreed upon.",
-        "He adapts very well to different internal communication schemes and new tools."
-      ],
-      "avatar-url": `${process.env.PUBLIC_URL}/assets/images/testimonial/mati-mascazzinni.jpg`,
-      "name": "Matias Mascazzini",
-      "position": "Web developer that builds products for people with Ruby on Rails",
-      "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
-    },
-    {
-      "text": [
-        "Excellent teacher! He not only taught me how to develop software but also made the theory interesting.",
-        "Always looking for ways to inspire, he worked on the individual potential of his students. My current career as a developer started with him.",
-        "As a professional, his leadership and technical skills always create an excellent work environment."
-      ],
-      "avatar-url": `${process.env.PUBLIC_URL}/assets/images/testimonial/nelson-nunez.jpg`,
-      "name": "Nelson Nuñez",
-      "position": "Software Developer | .NET",
-      "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
-    },
-    {
-      "text": [
-        "I was Simon's student when he was an Instructor at the Informatorio (Laboratorio de Aplicaciones Informáticas) in its opening year, 2016.",
-        "Afterward, we stayed in contact at local events, as Simon has been actively participating in the emerging software development community in the northeast of Argentina for many years.",
-        "I learned many things from him that I now consider invaluable, and I recommend him for his experience and dynamic way of working in a team."
-      ],
-      "avatar-url": `${process.env.PUBLIC_URL}/assets/images/testimonial/juan-martinez.jpg`,
-      "name": "Juan Gabriel Martínez",
-      "position": "Software Developer",
-      "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
-    },
-    {
-      "text": [
-        "Simón is the best mentor/tutor in programming I’ve ever had, and he’s the one who inspired me to keep studying.",
-        "Always friendly and energetic, he is eager to teach you everything he knows and, at the same time, always willing to keep learning.",
-        "A great leader, with a creativity I’ve rarely seen, capable of adding immense value to any project."
-      ],
-      "avatar-url": `${process.env.PUBLIC_URL}/assets/images/testimonial/facu-costa.jpg`,
-      "name": "Facundo Costa",
-      "position": "Test Automation Engineer at Solvd, Inc.",
-      "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
-    },
-    {
-      "text": [
-        "I worked with Simon on a few projects. Honestly, I was amazed by his way of working and even more by his personality. His positive attitude is very valuable.",
-        "Creative, intelligent, and supportive, without a doubt, he can handle any task presented to him, with an analytical capacity and understanding rarely seen. He is an outstanding professional, and it was a real pleasure to work with him."
-      ],
-      "avatar-url": `${process.env.PUBLIC_URL}/assets/images/testimonial/david-sanchez.jpg`,
-      "name": "David Sánchez Leiva",
-      "position": "Sr Software Developer | Magento | Adobe Commerce | WordPress",
-      "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
-    },
-    {
-      "text": [
-        "Simón is an incredible person, both professionally and personally.",
-        "With solid technical and mathematical knowledge, he always has a solution to the problems that arise when analyzing and developing simple and complex solutions.",
-        "A great motivator, he is one of those people you always enjoy working with."
-      ],
-      "avatar-url": `${process.env.PUBLIC_URL}/assets/images/testimonial/brian-stanley.jpg`,
-      "name": "Brian Stanley",
-      "position": "CTO at uugot.it",
-      "linkedin-link": "https://www.linkedin.com/in/simonibalo/#recommendations"
-    }
-];
-
+  const { siteLang } = useContext(LanguageContext);
 
   const indicators = (index) => (<div className="indicator"></div>);
 
@@ -154,25 +36,26 @@ export const Testimonials = () => {
       </header>
       <main className='main-section'>
         
-          <div className='container'>
-        <section className='testimonial-section'>
-
-            <div className='testimonial-wrapper'>
-              <div className='header-section'>
-                <h2 className='section-title flotate'>See what others say about working with me</h2>
+        <div className='container'>
+          <section className='testimonial-section'>
+              <div className='testimonial-wrapper'>
+                <div className='header-section'>
+                  <h2 className='section-title flotate'>
+                    {recomendationsData[0].headLine[siteLang]}
+                  </h2>
+                </div>
+                <div className='section-testimonial-content'>
+                  <Slide indicators={indicators} {...properties} canSwipe={true}>
+                    {recomendationsData.map(recomendacion => (
+                      <div key={recomendacion.name}>
+                        <Testimonial recomendacion={recomendacion} />
+                      </div>
+                    ))}
+                  </Slide>
+                </div>
               </div>
-              <div className='section-testimonial-content'>
-                <Slide indicators={indicators} {...properties} canSwipe={true}>
-                  {recomendacionesData.map(recomendacion => (
-                    <div key={recomendacion.name}>
-                      <Testimonial recomendacion={recomendacion} />
-                    </div>
-                  ))}
-                </Slide>
-              </div>
-            </div>
-        </section>
-          </div>
+          </section>
+        </div>
       </main>
 
     </>
