@@ -23,25 +23,25 @@ export const homeContent = {
     ]
   },
   ES: {
-    mainTagline: "He estado desarrollando mi carrera en desarrollo de software por más de 10 años, asumiendo diferentes roles en el camino. Me gustaría compartir algunos proyectos destacados, grandes y pequeños, para que tengas una idea de dónde provienen mis habilidades.",
+    mainTagline: "Durante mi carrera en desarrollo de software he asumindo diferentes roles. Aquí encontrarás algunos proyectos destacados, grandes y pequeños, útiles para entender el origen de mis habilidades y mi perfil profesional.",
     ctaItems: [
       {
         id: 1,
         target: "/testimonial",
-        title: "Colegas Hablando",
+        title: "Colegas dicen",
         description: "Conocé lo que dicen otros sobre trabajar conmigo en una misión."
       },
       {
         id: 2,
         target: "/projects",
-        title: "Misiones Espaciales",
-        description: "Explorá algunas historias de proyectos para entender mejor mi recorrido."
+        title: "Algunas Misiones",
+        description: "Explora algunas historias de proyectos para entender mejor mi recorrido."
       },
       {
         id: 3,
         target: "/track-record",
         title: "Trayectoria",
-        description: "Cada trabajo me ayudó a crecer, mirá en qué empresas trabajé."
+        description: "Cada trabajo me ayudó a crecer, mira en qué empresas trabajé."
       }
     ]
   }
