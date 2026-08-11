@@ -5,6 +5,10 @@
 @import "./globals/layout";
 @import "./globals/backdrown-shapes";
 
+// Deben ir antes que sus consumidores: en SASS un mixin se define antes de usarse.
+@import "./globals/skeleton";
+@import "./components/testimonial/testimonial-shared";
+
 @import "./components/main-nav-bar/main-nav-bar";
 @import "./components/hamburguer-menu/hamburguer-menu";
 
@@ -12,7 +16,13 @@
 @import "./components/cta-section/cta-section";
 
 @import "./containers/testimonials/testimonials";
-@import "./components/testimonial/testimonial";
+@import "./components/testimonial-card/testimonial-card";
+@import "./components/country-flag/country-flag";
+
+// Estilos del carrusel archivado: se descomentan solo si se vuelve a rutear
+// TestimonialsCarousel.js.
+// @import "./containers/testimonials-carousel/testimonials-carousel";
+// @import "./components/testimonial/testimonial";
 
 @import "./containers/projects/projects";
 @import "./components/featured-projects/featured-projects";
@@ -23,5 +33,5 @@
 @import "./components/tech-panel/tech-panel";
 
 @import "./containers/track-record/track-record";
-@import "./components/tr-accordion/tr-accordion"
+@import "./components/tr-accordion/tr-accordion";
 

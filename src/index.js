@@ -3,14 +3,32 @@ import ReactDOM from 'react-dom/client';
 // import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { LanguageProvider } from './context/LanguageContext';
+
+// El ResizeObserver de react-slideshow-image dispara este aviso del navegador al rotar la
+// pantalla. Es inofensivo, pero el overlay de webpack-dev-server lo muestra como error fatal.
+if (process.env.NODE_ENV === 'development') {
+  const resizeObserverMessages = [
+    'ResizeObserver loop completed with undelivered notifications.',
+    'ResizeObserver loop limit exceeded'
+  ];
+
+  window.addEventListener('error', (event) => {
+    if (resizeObserverMessages.indexOf(event.message) >= 0) {
+      event.stopImmediatePropagation();
+
+      const overlay = document.getElementById('webpack-dev-server-client-overlay');
+
+      if (overlay != null) {
+        overlay.remove();
+      }
+    }
+  });
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <LanguageProvider> */}
-      <App />
-    {/* </LanguageProvider> */}
+    <App />
   </React.StrictMode>
 );
 

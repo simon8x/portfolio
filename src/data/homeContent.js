@@ -1,47 +1,47 @@
 export const homeContent = {
   EN: {
-    mainTagline: "I have been building my career in software development for over 10 years, taking on different roles along the way. I'd like to share some notable projects, both big and small, to give you an idea of where my skills originate.",
+    mainTagline: "Twelve years building software, nine crafting web interfaces, the last five with React. I started out as a Business Analyst, so I build for what users need and what the business is after.",
     ctaItems: [
       {
         id: 1,
         target: "/testimonial",
-        title: "Talking Colleagues",
-        description: "Know what others say about working with me on a mission."
+        title: "What Colleagues Say",
+        description: "Read what colleagues say about working with me."
       },
       {
         id: 2,
         target: "/projects",
         title: "Space Missions",
-        description: "Explore some project stories to better understand my background."
+        description: "Explore some project stories to understand how I work."
       },
       {
         id: 3,
         target: "/track-record",
         title: "Track Record",
-        description: "Every job helps me grow, see the companies where I've worked."
+        description: "See the companies where I've worked and what each role taught me."
       }
     ]
   },
   ES: {
-    mainTagline: "Durante mi carrera en desarrollo de software he asumindo diferentes roles. Aquí encontrarás algunos proyectos destacados, grandes y pequeños, útiles para entender el origen de mis habilidades y mi perfil profesional.",
+    mainTagline: "Doce años construyendo software, nueve creando interfaces web y los últimos cinco con React. Empecé como Analista Funcional, así que construyo pensando en lo que el usuario necesita y en lo que el negocio busca.",
     ctaItems: [
       {
         id: 1,
         target: "/testimonial",
-        title: "Colegas dicen",
-        description: "Conocé lo que dicen otros sobre trabajar conmigo en una misión."
+        title: "Lo que dicen mis colegas",
+        description: "Lee lo que dicen mis colegas sobre trabajar conmigo."
       },
       {
         id: 2,
         target: "/projects",
-        title: "Algunas Misiones",
-        description: "Explora algunas historias de proyectos para entender mejor mi recorrido."
+        title: "Algunas misiones",
+        description: "Explora algunas historias de proyectos para entender cómo trabajo."
       },
       {
         id: 3,
         target: "/track-record",
         title: "Trayectoria",
-        description: "Cada trabajo me ayudó a crecer, mira en qué empresas trabajé."
+        description: "Mira en qué empresas trabajé y qué me dejó cada rol."
       }
     ]
   }

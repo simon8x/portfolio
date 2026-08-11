@@ -1,0 +1,68 @@
+.country-flag-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    &::after {
+        @include time-tag;
+        content: attr(data-country-label);
+        position: absolute;
+        bottom: calc(100% + .6rem);
+        left: 50%;
+        transform: translateX(-50%);
+        padding: .4rem .8rem;
+        border-radius: .5rem;
+        background-color: $theme-dark-primary-background;
+        border: solid 1px $theme-light-overlay;
+        color: $theme-dark-primary-text;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
+        z-index: 10;
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.country-flag {
+    width: 3rem;
+    height: 3rem;
+    flex-shrink: 0;
+    object-fit: contain;
+
+    @media screen and (max-width: 60rem) {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+
+    @media screen and (max-width: 40rem) {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+// Se apunta al img y no a .country-flag para dejar afuera al fallback de iniciales, que
+// nunca dispara un evento load y quedaría con el shimmer corriendo para siempre.
+img.country-flag {
+    @include image-skeleton;
+}
+
+.country-flag-fallback {
+    @include time-tag;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    padding: .1rem .4rem;
+    border: 1px solid currentColor;
+    border-radius: 2px;
+    letter-spacing: .1rem;
+}

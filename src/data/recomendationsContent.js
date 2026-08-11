@@ -2,26 +2,96 @@ export const recomendationsData = [
   {
     headLine: {
         EN: "See what others say about working with me",
-        ES: "Mira que dicen otros acerca de trabajar conmigo",
+        ES: "Mira que opinan quienes trabajaron conmigo",
     },
     text: {
       EN: [
-        "I had the pleasure of working with Simon on an ecommerce project at our creative agency, and I appreciated his collaborative and adaptable approach. He brought a friendly energy to the team, making it easy for everyone to work together.",
-        "I would create a backlog of tasks he would need to complete, and then I would do quality control on those.",
-        "Simon was always open to learning new platforms and tools (like Webflow) and adapt to different changes in the project as needed. While he had his own perspectives as a front‑end developer, he always respected the product owner's vision and remained flexible throughout the project.",
-        "Above all, Simon was reliable, positive‑minded and honest. His positive attitude and team‑oriented mindset made him a great addition to the project. I’d recommend him to any team looking for a trustworthy and adaptable developer."
+        "I worked with Simón for a year at Monetate, where I'm a UX designer / product manager and he was a front-end engineer.",
+        "He was a pleasure to work with and a real asset to the team. Together we took on an overhaul of our product's user experience, which included a rebrand, more intuitive workflows, and a modernized design system.",
+        "Simón got up to speed on a complex, legacy codebase and eagerly tackled whatever was in front of him, from tricky technical problems to small details that made the product polished.",
+        "When urgent bugs came up, he was quick to jump in and fix them, staying easygoing even under pressure. He's the kind of engineer who cares deeply about the craft and is always looking for ways to make things better, not just get them done.",
+        "I hope I get the chance to work with Simón again."
       ],
       ES: [
-        "Tuve el placer de trabajar con Simón en un proyecto de comercio electrónico en nuestra agencia creativa y valoré mucho su enfoque colaborativo y adaptable. Aportó una energía amigable al equipo, facilitando el trabajo conjunto.",
-        "Yo creaba un backlog de tareas que él debía completar y luego realizaba control de calidad sobre esas tareas.",
-        "Simón siempre estuvo abierto a aprender nuevas plataformas y herramientas (como Webflow) y a adaptarse a los cambios del proyecto cuando fuera necesario. Aunque tenía sus propias perspectivas como desarrollador front‑end, siempre respetó la visión del Product Owner y se mantuvo flexible durante todo el proyecto.",
-        "Sobre todo, Simón fue confiable, positivo y honesto. Su actitud positiva y su mentalidad orientada al equipo lo convirtieron en una gran incorporación al proyecto. Lo recomendaría a cualquier equipo que busque un desarrollador adaptable y confiable."
+        "Trabajé con Simón durante un año en Monetate, donde yo soy diseñadora UX / product manager y él era ingeniero front-end.",
+        "Fue un placer trabajar con él y un activo muy valioso para el equipo. Juntos encaramos una renovación completa de la experiencia de usuario del producto, que incluyó un rebranding, flujos de trabajo más intuitivos y un design system modernizado.",
+        "Simón se adaptó rápidamente a una base de código legacy compleja y abordó con entusiasmo todo lo que tenía por delante, desde problemas técnicos difíciles hasta pequeños detalles que hacían el producto más pulido.",
+        "Cuando surgían bugs urgentes, reaccionaba rápido para resolverlos, manteniendo la calma incluso bajo presión. Es el tipo de ingeniero que se preocupa profundamente por el oficio y siempre busca formas de mejorar las cosas, no solo de terminarlas.",
+        "Espero tener la oportunidad de volver a trabajar con Simón."
       ]
     },
-    avatarUrl: `${process.env.PUBLIC_URL}/assets/images/testimonial/fermin-lira.jpg`,
-    name: "Fermín Lira",
-    position: "Front‑end Developer and UX Designer (Magento2, npm, javascript, webpack)",
-    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations"
+    avatarUrl: `${process.env.PUBLIC_URL}/assets/images/testimonial/judy-keeley.jpg`,
+    name: "Judy Keeley",
+    position: "Principal UX Designer at Monetate",
+    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
+    authorGender: "male",
+    authorLinkedinUrl: "https://www.linkedin.com/in/judykeeley",
+    country: "US"
+  },
+  {
+    text: {
+      EN: [
+        "I worked with Simón at Accelone (Monetate), and he’s a great teammate to have around. ",
+        "He always showed a strong willingness to learn, collaborate, and jump in to help whenever needed. He keeps a solid focus on the customer and making sure what we ship actually delivers value. On top of that, he's reliable, thorough, and stays calm under pressure.",
+        "Beyond the work itself, he’s just a great guy to work with. Any team would benefit from having him, and I’d gladly work with him again."
+      ],
+      ES: [
+        "Trabajé con Simón en Accelone (Monetate), y es un excelente compañero de equipo.",
+        "Siempre demostró una gran disposición para aprender, colaborar y sumarse a ayudar cuando hacía falta. Mantiene un enfoque sólido en el cliente y en asegurarse de que lo que entregamos realmente aporte valor. Además, es confiable, minucioso y mantiene la calma bajo presión.",
+        "Más allá del trabajo en sí, es simplemente una gran persona con la que trabajar. Cualquier equipo se beneficiaría de tenerlo, y volvería a trabajar con él sin dudarlo."
+      ]
+    },
+    avatarUrl: `${process.env.PUBLIC_URL}/assets/images/testimonial/nicolas-arichuluaga.jpg`,
+    name: "Nicolas Arichuluaga",
+    position: "Senior Frontend / Full Stack Developer · React · TypeScript · Node · AI-Augmented Development · Tech Lead",
+    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
+    authorGender: "male",
+    authorLinkedinUrl: "https://www.linkedin.com/in/nispot/",
+    country: "MX"
+  },
+  {
+    text: {
+      EN: [
+        "I have had the pleasure of working closely with Simon on a complex full-stack solution, and he has consistently proven to be an outstanding Frontend developer. Simon possesses a remarkable ability to analyze and deeply understand intricate project requirements, translating them into high-quality, pixel-perfect software pieces using React. His work perfectly aligns with customer expectations from both a functional and a 'look & feel' standpoint.",
+        "Beyond his exceptional UI development skills, Simon actively focused on optimizing Frontend-Backend communication, which significantly improved the overall performance of our website. What truly sets Simon apart, however, is his collaborative mindset. He communicates effectively, contributes positively to discussions with team members and product owners, and is always ready to support others whenever needed. Simon would be a tremendous asset to any engineering team, and I highly recommend him!",
+      ],
+      ES: [
+        "Tuve el placer de trabajar muy de cerca con Simón en una solución full‑stack compleja, y demostró de forma consistente ser un desarrollador Frontend sobresaliente. Simón tiene una capacidad notable para analizar y comprender en profundidad requerimientos complejos, y traducirlos en piezas de software de alta calidad y pixel perfect usando React. Su trabajo se alinea perfectamente con las expectativas del cliente, tanto desde lo funcional como desde el 'look & feel'.",
+        "Más allá de sus excepcionales habilidades en desarrollo de UI, Simón se enfocó activamente en optimizar la comunicación entre Frontend y Backend, lo que mejoró de manera significativa el rendimiento general de nuestro sitio. Sin embargo, lo que realmente lo distingue es su mentalidad colaborativa. Se comunica con efectividad, aporta positivamente en las discusiones con los integrantes del equipo y con los Product Owners, y siempre está dispuesto a ayudar cuando se lo necesita. Simón sería un gran aporte para cualquier equipo de ingeniería, y lo recomiendo enfáticamente.",
+      ]
+    },
+    avatarUrl: `${process.env.PUBLIC_URL}/assets/images/testimonial/hernan-buzzi.jpg`,
+    name: "Hernan Buzzi",
+    position: "QA Engineer | QA Automation | QA Lead | ISTQB CTFL",
+    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
+    authorGender: "male",
+    authorLinkedinUrl: "https://www.linkedin.com/in/hbuzzi/",
+    country: "AR"
+  },
+  {
+    text: {
+      EN: [
+        "I had the pleasure of leading the team Simon was part of for one year within the UI/UX development department, where he worked as a Full-Stack Developer for a company specializing in campaign personalization for e-commerce platforms.",
+        "During this period, we formed the first team dedicated exclusively to completely revamping the platform's visual identity. Simon collaborated with the other team members, including Quality Assurance, to understand the foundations on which the system was built, identify opportunities for improvement, and develop new features.",
+        "Simon was responsible for tasks related to development, usability improvements, layout implementation, and integration with internal services. His daily work involved close collaboration with Quality Assurance and Product. Simon demonstrated the ability and effectiveness to translate requirements based on Figma designs and mockups into releases for testing and production environments.",
+        "He was always willing to collaborate openly with his teammates to achieve each sprint's goals. I particularly value his communication skills and commitment when deadlines were tight.",
+        "Without a doubt, I would work with Simon again if given the opportunity!"
+      ],
+      ES: [
+        "Tuve el agrado de liderar el equipo que formé con Simón durante 1 año como parte del equipo de desarrollo UIUX, donde desempeñó el rol de Full-Stack developer para una compañía dedicada a la personalización de campañas para plataformas de e-commerce.",
+        "Durante este período se conformó el primer equipo dedicado exclusivamente a actualizar por completo la identidad de la plataforma en cuestión. Simón colaboró junto con los otros miembros, incluidos roles de control de calidad, en la tarea de comprender los cimientos sobre los que está construido el sistema, para identificar las posibilidades de mejora y desarrollo de features sobre este.",
+        "Simón se encargó de tareas relacionadas con el desarrollo y mejora de usabilidad, maquetación e integración con servicios internos. Las tareas diarias consistían en la colaboración estrecha con Control de Calidad y Producto. Simón demostró capacidad y efectividad para tomar requerimientos basados en diseños y mockups de Figma y materializarlos en releases a ambientes de prueba y producción, respectivamente.",
+        "Se ha mostrado siempre dispuesto a colaborar abiertamente con sus compañeros de equipo en pos de cumplir los objetivos de cada sprint. Destaco ampliamente la capacidad comunicativa y el compromiso cuando los tiempos aprietan.",
+        "Sin duda, ¡volvería a trabajar con Simón de existir la oportunidad!"
+      ]
+    },
+    avatarUrl: `${process.env.PUBLIC_URL}/assets/images/testimonial/santiago-botta.jpg`,
+    name: "Santiago Botta",
+    position: "Desarrollador Fullstack",
+    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
+    authorGender: "male",
+    authorLinkedinUrl: "https://www.linkedin.com/in/santiago-botta/",
+    country: "AR"
   },
   {
     text: {
@@ -39,7 +109,10 @@ export const recomendationsData = [
     avatarUrl: `${process.env.PUBLIC_URL}/assets/images/testimonial/phllip-etzlinger.jpg`,
     name: "Philipp Etzlinger",
     position: "CEO bei uugot.it",
-    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations"
+    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
+    authorGender: "male",
+    authorLinkedinUrl: "https://www.linkedin.com/in/philippetzlinger/",
+    country: "AT"
   },
   {
     text: {
@@ -59,7 +132,10 @@ export const recomendationsData = [
     avatarUrl: `${process.env.PUBLIC_URL}/assets/images/testimonial/jontae-choi.jpg`,
     name: "Jongtae Choi",
     position: "Business Strategy and Partnership | Web3",
-    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations"
+    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
+    authorGender: "male",
+    authorLinkedinUrl: "https://www.linkedin.com/in/jongtae-choi-24a46645/",
+    country: "KR"
   },
   {
     text: {
@@ -75,7 +151,10 @@ export const recomendationsData = [
     avatarUrl: `${process.env.PUBLIC_URL}/assets/images/testimonial/rene-hakiki.jpg`,
     name: "Rene Hakiki",
     position: "Executive Producer - Video Game, Interactive Entertainment, AR/VR/XR, Web3 DeFi blockchain & NFT, Development & Production.",
-    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations"
+    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
+    authorGender: "male",
+    authorLinkedinUrl: "https://www.linkedin.com/in/rene-hakiki/",
+    country: "US"
   },
   {
     text: {
@@ -90,8 +169,11 @@ export const recomendationsData = [
     },
     avatarUrl: `${process.env.PUBLIC_URL}/assets/images/testimonial/mati-munoz.jpg`,
     name: "Matias Muñoz",
-    position: "Project Manager / Scrum Master / Software Engineer",
-    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations"
+    position: "Senior Producer | Game & Software Development | LiveOps | ENG/SPA",
+    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
+    authorGender: "male",
+    authorLinkedinUrl: "https://www.linkedin.com/in/matias-mu%C3%B1oz-0a4a1b19/",
+    country: "AR"
   },
   {
     text: {
@@ -109,7 +191,10 @@ export const recomendationsData = [
     avatarUrl: `${process.env.PUBLIC_URL}/assets/images/testimonial/mati-mascazzinni.jpg`,
     name: "Matias Mascazzini",
     position: "Web developer that builds products for people with Ruby on Rails",
-    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations"
+    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
+    authorGender: "male",
+    authorLinkedinUrl: "https://www.linkedin.com/in/matiasmasca/",
+    country: "AR"
   },
   {
     text: {
@@ -126,8 +211,11 @@ export const recomendationsData = [
     },
     avatarUrl: `${process.env.PUBLIC_URL}/assets/images/testimonial/nelson-nunez.jpg`,
     name: "Nelson Nuñez",
-    position: "Software Developer | .NET",
-    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations"
+    position: "Fullstack .NET Developer | Blazor | Web API | SQL Server | C#",
+    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
+    authorGender: "male",
+    authorLinkedinUrl: "https://www.linkedin.com/in/nelsonjnunez/",
+    country: "AR"
   },
   {
     text: {
@@ -145,7 +233,10 @@ export const recomendationsData = [
     avatarUrl: `${process.env.PUBLIC_URL}/assets/images/testimonial/juan-martinez.jpg`,
     name: "Juan Gabriel Martínez",
     position: "Software Developer",
-    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations"
+    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
+    authorGender: "male",
+    authorLinkedinUrl: "https://www.linkedin.com/in/jgmart/",
+    country: "AR"
   },
   {
     text: {
@@ -163,7 +254,10 @@ export const recomendationsData = [
     avatarUrl: `${process.env.PUBLIC_URL}/assets/images/testimonial/facu-costa.jpg`,
     name: "Facundo Costa",
     position: "Test Automation Engineer at Solvd, Inc.",
-    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations"
+    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
+    authorGender: "male",
+    authorLinkedinUrl: "https://www.linkedin.com/in/fcosta98/",
+    country: "AR"
   },
   {
     text: {
@@ -179,7 +273,10 @@ export const recomendationsData = [
     avatarUrl: `${process.env.PUBLIC_URL}/assets/images/testimonial/david-sanchez.jpg`,
     name: "David Sánchez Leiva",
     position: "Sr Software Developer | Magento | Adobe Commerce | WordPress",
-    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations"
+    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
+    authorGender: "male",
+    authorLinkedinUrl: "https://www.linkedin.com/in/davidsanchezleiva/",
+    country: "AR"
   },
   {
     text: {
@@ -196,7 +293,10 @@ export const recomendationsData = [
     },
     avatarUrl: `${process.env.PUBLIC_URL}/assets/images/testimonial/brian-stanley.jpg`,
     name: "Brian Stanley",
-    position: "CTO at uugot.it",
-    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations"
+    position: "Senior AI Engineer @ Kavak | CoreAI | Lic. en informática ",
+    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
+    authorGender: "male",
+    authorLinkedinUrl: "https://www.linkedin.com/in/brianstanleyarg/",
+    country: "AR"
   }
 ];

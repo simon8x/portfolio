@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { TechStack } from '../tech-stack/TechStack'
-import { tecStackFE, tecStackCMS } from '../../data/techPanelData'
+import { tecStackFE, tecStackCMS, iaStackCMS } from '../../data/techPanelData'
 import { LanguageContext } from '../../context/LanguageContext';
 
 // const tecStackFE= [
@@ -69,6 +69,14 @@ export const TechPanel = () => {
             }
         </p>
         <TechStack stack={tecStackCMS} />
+        <p className='cta-pharagrap'>
+            {
+                (siteLang === 'EN')
+                  ? "I have worked with those AI tools"
+                  : "He trabajado con las siguientes herramientas de IA"
+            }
+        </p>
+        <TechStack stack={iaStackCMS} />
     </div>
     </div>
   )

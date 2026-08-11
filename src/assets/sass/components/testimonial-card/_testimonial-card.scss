@@ -1,0 +1,96 @@
+.testimonial-card {
+    // Reset del botón: se usa <button> por accesibilidad, pero se ve como la card de home.
+    display: block;
+    width: 100%;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+
+    // Mismo lenguaje visual que .cta-container en home.
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: $theme-dark-overlay;
+    border: solid 2px $theme-light-overlay;
+
+    .testimonial-author-wrapper {
+        @include testimonial-author-block;
+    }
+
+    &:focus-visible {
+        outline: solid 2px $theme-dark-primary-text;
+        outline-offset: 2px;
+    }
+}
+
+// --- Modal ---
+
+// Las clases propias se encadenan con las de react-responsive-modal para ganar por
+// especificidad: la hoja de la librería se inyecta después de styles.scss y, a igualdad
+// de peso, su `background: #fff` pisaba el fondo oscuro del modal.
+.react-responsive-modal-overlay.testimonial-modal-overlay {
+    background: $theme-dark-overlay;
+    backdrop-filter: blur(.75rem);
+}
+
+.react-responsive-modal-modal.testimonial-modal {
+    border-radius: 1rem;
+    background-color: $theme-dark-panel-bg;
+    border: solid 2px $theme-light-overlay;
+    backdrop-filter: blur(5rem);
+    color: $theme-dark-primary-text;
+    max-width: 76rem;
+
+    .react-responsive-modal-closeButton {
+        background-color: $theme-modal-dark-overlay;
+        border-radius: .75rem;
+        padding: .3rem;
+
+        svg { fill: $theme-dark-primary-text; }
+    }
+
+    @media screen and (max-width: 820px) {
+        max-width: 95vw;
+    }
+}
+
+.testimonial-modal-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+
+    .quote-wrapper {
+        @include testimonial-quote-block;
+    }
+
+    .testimonial-author-wrapper {
+        @include testimonial-author-block;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .testimonial-card,
+    .testimonial-modal-wrapper {
+        .testimonial-author-wrapper {
+            .testimonial-author-avatar-wrapper {
+                width: 6rem;
+                height: 6rem;
+                min-width: 6rem;
+                min-height: 6rem;
+                max-width: 6rem;
+                max-height: 6rem;
+            }
+            .testimonial-author-data-wrapper {
+                .testimonial-author-name { font-size: 1.8rem; }
+                .testimonial-author-position { font-size: 1.2rem; }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .testimonial-modal-wrapper .quote-wrapper .testimonial-paragraph {
+        font-size: 1.6rem;
+    }
+}

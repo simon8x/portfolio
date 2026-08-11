@@ -1,7 +1,7 @@
 import { MainNavBar } from "../../components/main-nav-bar/MainNavBar"
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 
-import { Fade, Slide } from 'react-slideshow-image';
+import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import { featuredProjectsData, otherProjectsData } from "../../data/projectsData";
 import { FeaturedProject } from "../../components/featured-project/FeaturedProject";

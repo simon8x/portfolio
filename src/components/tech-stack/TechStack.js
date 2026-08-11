@@ -14,7 +14,16 @@ const techIcons = {
           </div>,
     Bitbucket:  <i class="devicon-bitbucket-original-wordmark"></i>,
     Bootstrap:  <i class="devicon-bootstrap-plain"></i>,
+    Claude: <div className='stack-icon-place'>
+              <img className='icon-replacement claude' src={`${process.env.PUBLIC_URL}/assets/images/icons/claude-logo.png`} alt='' />
+            </div>,
+    Copilot: <div className='stack-icon-place'>
+              <img className='icon-replacement copilot' src={`${process.env.PUBLIC_URL}/assets/images/icons/copilot-logo.svg`} alt='' />
+            </div>,
     CSS:  <i class="devicon-css3-plain"></i>,
+    Cursor: <div className='stack-icon-place'>
+              <img className='icon-replacement cursor' src={`${process.env.PUBLIC_URL}/assets/images/icons/cursor-logo.png`} alt='' />
+            </div>,
     Django:  <i class="devicon-django-plain"></i>,
     Divi: <svg class="divi-icon">
             <path d="M14,2c6.62,0,12,5.38,12,12s-5.38,12-12,12S2,20.62,2,14S7.38,2,14,2 M14,0C6.27,0,0,6.27,0,14 c0,7.73,6.27,14,14,14s14-6.27,14-14C28,6.27,21.73,0,14,0L14,0z"></path>
@@ -23,8 +32,15 @@ const techIcons = {
     Elementor: <div className='stack-icon-place'>
                 <img className='icon-replacement elementor' src={`${process.env.PUBLIC_URL}/assets/images/icons/elementor.png`} alt='' />
               </div>,
+    Eslint:  <i class="devicon-eslint-plain"></i>,
     Github:  <i class="devicon-github-original-wordmark"></i>,
     GitLab: <i class="devicon-gitlab-plain"></i>,
+    GoogleClosure: <div className='stack-icon-place'>
+                    <img className='icon-replacement google-closure' src={`${process.env.PUBLIC_URL}/assets/images/icons/google-closure-logo.png`} alt='' />
+                   </div>,
+    Gpt: <div className='stack-icon-place'>
+          <img className='icon-replacement gpt' src={`${process.env.PUBLIC_URL}/assets/images/icons/gpt-logo.png`} alt='' />
+         </div>,
     Html5: <i className="devicon-html5-plain"></i>,
     Figma:  <i class="devicon-figma-plain"></i>,
     Filezilla:  <i class="devicon-filezilla-plain"></i>,
@@ -32,7 +48,9 @@ const techIcons = {
     Invision: <div className='stack-icon-place'>
                 <img className='icon-replacement invision' src={`${process.env.PUBLIC_URL}/assets/images/icons/invision-lt.png`} alt='' />
               </div>,
-    Jira:  <i class="devicon-jira/assets/images/-plain"></i>,
+    Jenkins:  <i class="devicon-jenkins-plain"></i>,
+    Jest:  <i class="devicon-jest-plain"></i>,
+    Jira:  <i class="devicon-jira-plain"></i>,
     Js: <i class="devicon-javascript-plain"></i>, 
     Jquery:  <i class="devicon-jquery-plain"></i>,
     MaterializeCss: <i className="devicon-materializecss-plain"></i>,
@@ -78,6 +96,7 @@ const techIcons = {
     TypeScript: <i class="devicon-typescript-plain"></i>,
     VSCode: <i class="devicon-vscode-plain"></i>,
     Vite:  <i class="devicon-vitejs-plain"></i>,
+    Webpack:  <i class="devicon-webpack-plain"></i>,
     Vue:  <i class="devicon-vuejs-plain"></i>,
     Webflow:  <i class="devicon-webflow-original"></i>,
     Woocommerce:  <i class="devicon-woocommerce-plain"></i>,
@@ -87,15 +106,58 @@ const techIcons = {
               </div>,
   };
 
+// Nombre visible en el tooltip cuando la clave no es presentable tal cual.
+const techLabels = {
+    Acf: "Advanced Custom Fields",
+    Analytics: "Google Analytics",
+    Aws: "AWS",
+    Bem: "BEM",
+    Claude: "Claude",
+    Copilot: "GitHub Copilot",
+    CSS: "CSS3",
+    Cursor: "Cursor",
+    Elementor: "Elementor",
+    Eslint: "ESLint",
+    Github: "GitHub",
+    GoogleClosure: "Google Closure",
+    Gpt: "ChatGPT",
+    Html5: "HTML5",
+    Filezilla: "FileZilla",
+    Invision: "InVision",
+    Js: "JavaScript",
+    Jquery: "jQuery",
+    MaterializeCss: "Materialize CSS",
+    Mui: "Material UI",
+    Npm: "npm",
+    ReactJs: "React",
+    Ror: "Ruby on Rails",
+    Rubi: "Ruby",
+    Tailwind: "Tailwind CSS",
+    VSCode: "VS Code",
+    Vue: "Vue.js",
+    Woocommerce: "WooCommerce",
+    Wpbackery: "WPBakery",
+  };
+
 
 export const TechStack = ({ stack }) => {
   return (
     <div className="tech-stack">
-        {stack.map((tech, index) => (
-        <div key={index} className="tech-icon">
-            {techIcons[tech] || <span>{tech}</span>} {/* Si no hay ícono, mostrar el nombre */}
-        </div>
-        ))}
+        {stack.map((tech, index) => {
+          const label = techLabels[tech] == null ? tech : techLabels[tech];
+
+          return (
+            <div
+              key={index}
+              className="tech-icon"
+              data-tech-label={label}
+              role="img"
+              aria-label={label}
+            >
+                {techIcons[tech] || <span>{label}</span>} {/* Si no hay ícono, mostrar el nombre */}
+            </div>
+          );
+        })}
     </div>    
   )
 }

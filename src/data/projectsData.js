@@ -1,5 +1,52 @@
 export const featuredProjectsData = [
     {
+        "projectId": "6",
+        "projectDate": "from 05/2025 to Present",
+        "heroImageUrl": `${process.env.PUBLIC_URL}/assets/images/projects/monetate/monetate-featured-slider.webp`,
+        "projectName": "Monetate",
+        "projectSubtitle": {
+            EN: "Enterprise SaaS · AI-powered personalization",
+            ES: "Plataforma SaaS enterprise · Personalización con IA",
+        },
+        "projectPosition": "UX/UI Engineer",
+        "projectShortDescription": {
+            EN: "I contributed to the front-end of an enterprise SaaS platform used by 100+ global retail brands (Adidas, Chanel, Lufthansa), delivering AI-powered real-time personalization, A/B testing, and product recommendations. I worked as part of an Argentine team for a US-based company in a fully English-speaking, cross-cultural environment.",
+            ES: "Contribuí al front-end de una plataforma SaaS enterprise utilizada por más de 100 marcas retail globales (Adidas, Chanel, Lufthansa), con personalización en tiempo real potenciada por IA, A/B testing y recomendaciones de productos. Trabajé en un equipo argentino para una empresa con sede en EE.UU., en un entorno 100% en inglés y cross-cultural.",
+        },
+        "tecStack": [
+            "ReactJs",
+            "Js",
+            "Sass",
+            "Bem",
+            "GoogleClosure",
+            "Webpack",
+            "Jest",
+            "Jenkins",
+            "Aws",
+            "Github",
+            "Jira",
+        ],
+        "projectLongDescriptionText": {
+            EN: [
+                "I worked as part of an Argentine team hired by Monetate to evolve the front-end of an enterprise SaaS platform for AI-powered personalization, used by 100+ global retail brands.",
+                "I contributed to the migration of the product interface from Google Closure to React, maintaining visual quality and stability in a large-scale legacy system.",
+                "I shipped features behind feature flags, coordinating gradual rollouts with product, QA, and backend to de-risk major UI changes.",
+                "I participated in a cross-cultural agile environment: ceremonies, technical discussions, and internal live demos in English with distributed teams.",
+            ],
+            ES: [
+                "Trabajé como parte de un equipo argentino contratado por Monetate para evolucionar el front-end de una plataforma SaaS enterprise de personalización potenciada por IA, utilizada por más de 100 marcas retail a nivel global.",
+                "Contribuí a la migración de la interfaz del producto de Google Closure a React, manteniendo calidad visual y estabilidad en un sistema legacy de gran escala.",
+                "Desplegué funcionalidades detrás de feature flags, coordinando lanzamientos graduales con producto, QA y backend para reducir el riesgo de cambios importantes en la UI.",
+                "Participé en un entorno ágil cross-cultural: ceremonias, discusiones técnicas y demos internas en vivo en inglés con equipos distribuidos.",
+            ],
+        },
+        "projectImageUrl": `${process.env.PUBLIC_URL}/assets/images/projects/monetate/monetate-featured-modal.webp`,
+        "projectLogo": `${process.env.PUBLIC_URL}/assets/images/projects/monetate/monetate-logo.png`,
+        "linkToSite": "https://monetate.com/",
+        "linkToTrailer": "",
+        "linkToBlog": "",
+    },
+    {
         "projectId": "1",
         "projectDate": "from 12/2024 to 03/2025",
         "heroImageUrl": `${process.env.PUBLIC_URL}/assets/images/projects/choc/project-slider.jpg`,
@@ -192,7 +239,6 @@ export const featuredProjectsData = [
             "Acf",
             "CSS",
             "Html5",
-            "ReactJs",
         ],
         "projectLongDescriptionText": {
             EN: [

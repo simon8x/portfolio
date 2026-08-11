@@ -1,6 +1,46 @@
     export const trackRecordData  = [
         {
             position: "UI Engineer",
+            company: "Accelone",
+            companyLogo: `${process.env.PUBLIC_URL}/assets/images/companies/accelone.png`,
+            companyUrl: "https://www.accelone.com/",
+            mode: "remote",
+            time: "FULL TIME",
+            period: "05/2025 - Present",
+            detail: {
+                EN: [                 
+                    "Working as part of an Argentine team hired by a US-based company ([Monetate](https://monetate.com/)) to evolve the front-end of an enterprise SaaS platform delivering AI-powered real-time personalization (A/B testing, audience targeting and product recommendations) used by 100+ global retail brands such as Adidas, Chanel, Lufthansa.",
+                    "Contributing to an ongoing migration of the product interface from Google Closure to React.",
+                    "Shipping features behind feature flags, coordinating gradual rollouts with product, QA and backend to de-risk major UI changes.",
+                    ],
+                ES: [                 
+                    "Trabajo como parte de un equipo argentino contratado por una empresa con sede en EE.UU. ([Monetate](https://monetate.com/)) para evolucionar el front-end de una plataforma SaaS empresarial que ofrece personalización en tiempo real potenciada por IA (A/B testing, segmentación de audiencias y recomendaciones de productos), utilizada por más de 100 marcas retail globales como Adidas, Chanel y Lufthansa.",
+                    "Contribuyo a una migración en curso de la interfaz del producto de Google Closure a React.",
+                    "Despliego funcionalidades detrás de feature flags, coordinando lanzamientos graduales con producto, QA y backend para reducir el riesgo de cambios importantes en la UI.",
+                    ],
+            },            
+            tecStack: [
+                "ReactJs",
+                "Js",
+                "Sass",
+                "Bem",
+                "GoogleClosure",
+                "Webpack",
+                "Jest",
+                "Eslint",
+                "Jenkins",
+                "Aws",
+                "Django",
+                "Python",
+                "Claude",
+                "Copilot",
+                "Cursor",
+                "Github",
+                "Jira",
+            ],
+        },
+        {
+            position: "UI Engineer",
             company: "Creamos",
             companyLogo: `${process.env.PUBLIC_URL}/assets/images/companies/creamos.png`,
             companyUrl: "https://www.creamos.com/",
@@ -58,12 +98,14 @@
                 EN:[                 
                     "I participated as FE Dev during the development of an expert system for a Laboratory.",
                     "The system supported the production and traceability of parenteral nutrition bags.",
-                    "I worked with Angular Material and also developed reports for specific devices.",
+                    "I built the interface with Angular Material and Tailwind CSS, composing reusable utility-based components and keeping a consistent visual language across the whole application.",
+                    "I also developed reports for specific devices.",
                 ],
                 ES:[                 
                     "Participé como FE Dev durante el desarrollo de un sistema experto para un Laboratorio.",
                     "El sistema apoyó la producción y trazabilidad de bolsas de nutrición parenteral.",
-                    "Trabajé con Angular Material y también desarrollé informes para dispositivos específicos.",
+                    "Construí la interfaz con Angular Material y Tailwind CSS, componiendo componentes reutilizables basados en utilidades y manteniendo un lenguaje visual consistente en toda la aplicación.",
+                    "También desarrollé informes para dispositivos específicos.",
                 ]
             },
             tecStack: [

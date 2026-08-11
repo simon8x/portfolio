@@ -8,13 +8,30 @@ import { LanguageContext } from '../../context/LanguageContext';
 export const OtherProject = ({ otherProject }) => {
     const { siteLang } = useContext(LanguageContext)
     const [open, setOpen] = useState(false);
+    const [heroLoaded, setHeroLoaded] = useState(false);
+    const [modalBannerLoaded, setModalBannerLoaded] = useState(false);
+
+    const heroWrapperClass = heroLoaded === true
+        ? 'other-project-img-wrapper is-loaded'
+        : 'other-project-img-wrapper';
+
+    const modalBannerWrapperClass = modalBannerLoaded === true
+        ? 'modal-hero-banner-wrapper is-loaded'
+        : 'modal-hero-banner-wrapper';
+
     return(
         <>
             <div className='other-project-slide-wrapper' key={otherProject.index} onClick={() => setOpen(true)} >
                 
                 <div className='other-project-slide-image'>
-                    <div className='other-project-img-wrapper'>
-                        <img className='other-project-img' src={otherProject['heroImageUrl']} alt=''/>
+                    <div className={heroWrapperClass}>
+                        <img
+                            className='other-project-img'
+                            src={otherProject['heroImageUrl']}
+                            alt=''
+                            onLoad={() => setHeroLoaded(true)}
+                            onError={() => setHeroLoaded(true)}
+                        />
                     </div>
                 </div>
 
@@ -43,8 +60,14 @@ export const OtherProject = ({ otherProject }) => {
                     }}
                 >
                 <article className='modal-wrapper'>
-                    <div className='modal-hero-banner-wrapper'>
-                        <img className='modal-hero-banner-img' src={otherProject.projectImageUrl} alt=''/>
+                    <div className={modalBannerWrapperClass}>
+                        <img
+                            className='modal-hero-banner-img'
+                            src={otherProject.projectImageUrl}
+                            alt=''
+                            onLoad={() => setModalBannerLoaded(true)}
+                            onError={() => setModalBannerLoaded(true)}
+                        />
                     </div>
 
                     <h1 className='modal-project-name'>{otherProject.projectName}</h1>

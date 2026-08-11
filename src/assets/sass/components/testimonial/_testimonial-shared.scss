@@ -1,0 +1,77 @@
+// Reglas visuales del testimonio, desacopladas del DOM del carrusel para poder
+// aplicarlas tanto en la card como en el modal de /testimonial.
+
+@mixin testimonial-quote-block {
+    .testimonial-paragraph {
+        @include paragraph-testimonial;
+        font-style: italic;
+    }
+}
+
+@mixin testimonial-author-block {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .testimonial-author-avatar-wrapper {
+        @include image-skeleton;
+        width: 10rem;
+        height: 10rem;
+        min-width: 10rem;
+        min-height: 10rem;
+        max-width: 10rem;
+        max-height: 10rem;
+        flex-shrink: 0;
+        border-radius: 5px;
+        overflow: hidden;
+        margin: .5rem 1rem .5rem 0;
+
+        .testimonial-author-avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .testimonial-author-data-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+
+        .testimonial-author-name {
+            @include name-2;
+            display: flex;
+            align-items: center;
+            gap: .8rem;
+        }
+
+        .testimonial-author-position {
+            @include paragraph-md;
+        }
+
+        .author-linkedin-link {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            width: fit-content;
+            margin-top: .8rem;
+            padding: .3rem .9rem;
+            border: solid 1px $theme-light-overlay;
+            border-radius: 1rem;
+            color: inherit;
+            text-decoration: none;
+            opacity: .8;
+            transition: opacity .2s ease, background-color .2s ease;
+
+            .author-linkedin-link-text { @include paragraph-md; }
+            .external-link-icon { width: 1.4rem; height: 1.4rem; flex-shrink: 0; }
+
+            &:hover,
+            &:focus-visible {
+                opacity: 1;
+                background-color: $theme-dark-overlay;
+            }
+        }
+    }
+}

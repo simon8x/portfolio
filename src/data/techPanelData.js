@@ -6,6 +6,7 @@ export const tecStackFE= [
     "CSS",
     "Sass",
     "Bem",
+    "Tailwind",
     "MaterializeCss",
     "Bootstrap",
     "Redux",
@@ -30,4 +31,10 @@ export const tecStackCMS= [
     "CSS",
     "Js"
 
+]
+export const iaStackCMS= [
+    "Claude",
+    "Copilot",
+    "Cursor",
+    "Gpt",
 ]

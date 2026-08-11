@@ -6,8 +6,35 @@
     //padding-block: 1rem;
     .tech-icon{
         // background-color: red;
+        position: relative;
         i {
             font-size: 2.5rem;
+        }
+
+        &::after {
+            @include time-tag;
+            content: attr(data-tech-label);
+            position: absolute;
+            bottom: calc(100% + .6rem);
+            left: 50%;
+            transform: translateX(-50%);
+            padding: .4rem .8rem;
+            border-radius: .5rem;
+            background-color: $theme-dark-primary-background;
+            border: solid 1px $theme-light-overlay;
+            color: $theme-dark-primary-text;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
+            z-index: 10;
+        }
+
+        &:hover::after,
+        &:focus-visible::after {
+            opacity: 1;
+            visibility: visible;
         }
         .stack-icon-place{ // acf
             width: 2.8rem;
@@ -30,7 +57,12 @@
             .invision {
                 filter: brightness(0) invert(1);
             }
-            .elementor {
+            .elementor,
+            .claude,
+            .copilot,
+            .cursor,
+            .gpt,
+            .google-closure {
                 filter: invert(1);
             }
             .wp-backery{

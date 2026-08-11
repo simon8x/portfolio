@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 //mport './App.css';
 import './assets/sass/styles.scss';
-import { HashRouter,BrowserRouter,Routes,Route, Navigate } from 'react-router-dom';
+import { HashRouter,Routes,Route, Navigate } from 'react-router-dom';
 import { Projects } from './containers/projects/Projects';
 import { TrackRecord } from './containers/track-record/TrackRecord';
 import { Testimonials } from './containers/testimonials/Testimonials';

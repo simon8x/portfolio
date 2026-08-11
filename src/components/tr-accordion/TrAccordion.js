@@ -11,18 +11,33 @@ export const TrAccordion = () => {
         window.scrollTo(0, 0);
       }, []);
 
-    // Función para detectar URLs en el texto y convertirlas en etiquetas <a>
+    // Detecta enlaces con etiqueta, [Texto](url), o URLs sueltas, y los convierte en <a>
     const parseTextWithLinks = (text) => {
-        const urlRegex = /(https?:\/\/[^\s]+)/g;
-        return text.split(urlRegex).map((part, index) =>
-            urlRegex.test(part) ? (
-                <a href={part} key={index} target="_blank" rel="noopener noreferrer">
-                    {part}
-                </a>
-            ) : (
-                part
-            )
-        );
+        const linkToken = /(\[[^\]]+\]\(https?:\/\/[^\s)]+\)|https?:\/\/[^\s)]+)/g;
+        const labeledLink = /^\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)$/;
+        const bareUrl = /^https?:\/\/[^\s)]+$/;
+
+        return text.split(linkToken).map((part, index) => {
+            const labeled = part.match(labeledLink);
+
+            if (labeled != null) {
+                return (
+                    <a href={labeled[2]} key={index} target="_blank" rel="noopener noreferrer">
+                        {labeled[1]}
+                    </a>
+                );
+            }
+
+            if (bareUrl.test(part) === true) {
+                return (
+                    <a href={part} key={index} target="_blank" rel="noopener noreferrer">
+                        {part}
+                    </a>
+                );
+            }
+
+            return part;
+        });
     };
 
     const [openIndex, setOpenIndex] = useState(null);

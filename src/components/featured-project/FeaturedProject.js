@@ -9,6 +9,16 @@ export const FeaturedProject = ({ featuredProject }) => {
 
 	const { siteLang } = useContext(LanguageContext)
 	const [open, setOpen] = useState(false);
+	const [heroLoaded, setHeroLoaded] = useState(false);
+	const [modalBannerLoaded, setModalBannerLoaded] = useState(false);
+
+	const heroWrapperClass = heroLoaded === true
+		? 'featured-project-img-wrapper is-loaded'
+		: 'featured-project-img-wrapper';
+
+	const modalBannerWrapperClass = modalBannerLoaded === true
+		? 'modal-hero-banner-wrapper is-loaded'
+		: 'modal-hero-banner-wrapper';
 
 	return (
 		<>
@@ -41,8 +51,14 @@ export const FeaturedProject = ({ featuredProject }) => {
 				</div>
 
 				<div className='project-slide-image-col'>
-					<div className='featured-project-img-wrapper'>
-						<img className='featured-project-img' src={featuredProject['heroImageUrl']} alt='' />
+					<div className={heroWrapperClass}>
+						<img
+							className='featured-project-img'
+							src={featuredProject['heroImageUrl']}
+							alt=''
+							onLoad={() => setHeroLoaded(true)}
+							onError={() => setHeroLoaded(true)}
+						/>
 					</div>
 
 				</div>
@@ -57,8 +73,14 @@ export const FeaturedProject = ({ featuredProject }) => {
 				}}
 			>
 				<article className='modal-wrapper'>
-					<div className='modal-hero-banner-wrapper'>
-						<img className='modal-hero-banner-img' src={featuredProject.projectImageUrl} alt='' />
+					<div className={modalBannerWrapperClass}>
+						<img
+							className='modal-hero-banner-img'
+							src={featuredProject.projectImageUrl}
+							alt=''
+							onLoad={() => setModalBannerLoaded(true)}
+							onError={() => setModalBannerLoaded(true)}
+						/>
 					</div>
 					<h1 className='modal-project-name'>{featuredProject.projectName}</h1>
 					<h4 className='modal-project-subtitle'>{featuredProject.projectSubtitle[siteLang]}</h4>
