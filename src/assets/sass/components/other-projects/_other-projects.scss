@@ -12,6 +12,21 @@
     margin-inline: 1rem;
     border-radius: 1rem;
     overflow: hidden;
+    position: relative;
+
+    .project-demo-chip {
+        @include time-tag;
+        position: absolute;
+        top: .6rem;
+        right: .6rem;
+        z-index: 2;
+        padding: .2rem .55rem;
+        border-radius: .35rem;
+        background-color: $theme-dark-primary-background;
+        border: solid 1px $theme-light-overlay;
+        color: $theme-dark-primary-text;
+        pointer-events: none;
+    }
 
     .other-project-slide-image {
         height: 70%;

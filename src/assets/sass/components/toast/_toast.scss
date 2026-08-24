@@ -1,0 +1,37 @@
+// Misma base visual que los tooltips (tech-stack / country-flag), con tipo y padding más amplios.
+.toast {
+    @include time-tag;
+    position: fixed;
+    top: 5.6rem;
+    right: 1.2rem;
+    z-index: 20002;
+    max-width: min(36rem, calc(100vw - 2.4rem));
+    padding: 1.4rem 1.8rem;
+    font-size: 2.1rem;
+    line-height: 1.35;
+    border-radius: .5rem;
+    background-color: $theme-dark-primary-background;
+    border: solid 1px $theme-light-overlay;
+    color: $theme-dark-primary-text;
+    box-shadow: 0 .4rem 1.6rem rgba(0, 0, 0, .35);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: none;
+    transition: opacity .4s ease-in-out, visibility .4s ease-in-out;
+
+    &.is-leaving {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .toast {
+        top: 5.2rem;
+        right: 1rem;
+        left: 1rem;
+        max-width: none;
+        font-size: 1.8rem;
+        padding: 1.2rem 1.4rem;
+    }
+}

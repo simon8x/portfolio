@@ -1,15 +1,22 @@
-import { useState,useContext} from 'react'
+import { useState, useContext, useEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { TechStack } from '../tech-stack/TechStack';
 import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
 import './_custom-modal.css'
 import { LanguageContext } from '../../context/LanguageContext';
+import { LIVE_DEMO_HANDOFF_MS, navigateToLiveDemo } from '../../utils/liveDemoHandoff';
 
 export const OtherProject = ({ otherProject }) => {
     const { siteLang } = useContext(LanguageContext)
+    const navigate = useNavigate();
     const [open, setOpen] = useState(false);
     const [heroLoaded, setHeroLoaded] = useState(false);
     const [modalBannerLoaded, setModalBannerLoaded] = useState(false);
+    const handoffTimeoutRef = useRef(null);
+
+    const demoId = otherProject.demoId;
+    const hasDemo = demoId != null && demoId !== '';
 
     const heroWrapperClass = heroLoaded === true
         ? 'other-project-img-wrapper is-loaded'
@@ -19,10 +26,46 @@ export const OtherProject = ({ otherProject }) => {
         ? 'modal-hero-banner-wrapper is-loaded'
         : 'modal-hero-banner-wrapper';
 
+    const demoChipLabel = siteLang === 'ES' ? 'Demo' : 'Demo';
+    const viewDemoLabel = siteLang === 'ES' ? 'Ver demo' : 'View demo';
+
+    useEffect(() => {
+        return () => {
+            if (handoffTimeoutRef.current != null) {
+                clearTimeout(handoffTimeoutRef.current);
+            }
+        };
+    }, []);
+
+    const handleViewDemo = (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (hasDemo !== true) {
+            return;
+        }
+
+        setOpen(false);
+
+        if (handoffTimeoutRef.current != null) {
+            clearTimeout(handoffTimeoutRef.current);
+        }
+
+        handoffTimeoutRef.current = setTimeout(() => {
+            navigateToLiveDemo(navigate, demoId);
+            handoffTimeoutRef.current = null;
+        }, LIVE_DEMO_HANDOFF_MS);
+    };
+
     return(
         <>
             <div className='other-project-slide-wrapper' key={otherProject.index} onClick={() => setOpen(true)} >
-                
+                {
+                    hasDemo === true
+                        ? <span className='project-demo-chip'>{demoChipLabel}</span>
+                        : null
+                }
+
                 <div className='other-project-slide-image'>
                     <div className={heroWrapperClass}>
                         <img
@@ -38,15 +81,6 @@ export const OtherProject = ({ otherProject }) => {
                 <div className='other-project-slide-detail'>
                     
                 <h4 className='other-project-name'>{otherProject.projectName}</h4>
-                    {/* <p className='other-project-subtitle'>{otherProject.projectSubtitle}</p>
-                    <p className='other-project-paragraph'>{otherProject.projectShortDescription}</p>
-                    <p className='other-project-role'>{otherProject.projectPosition}</p> */}
-
-                    {/* {otherProject.tecStack.map((item, index) => 
-                        <p className='other-project-tecstack'>
-                        {item}        
-                        </p>
-                        )} */}
 
                 </div>
             </div>
@@ -78,11 +112,22 @@ export const OtherProject = ({ otherProject }) => {
                     </div>
                     <div className='modal-long-description-wrapper'>
                         {otherProject.projectLongDescriptionText[siteLang].map((item, index) => 
-                            <p className='modal-project-paragraph'>
+                            <p className='modal-project-paragraph' key={index}>
                                 {item}        
                             </p>
                         )}
                     </div>
+                    {
+                        hasDemo === true
+                            ? <button
+                                type='button'
+                                className='modal-view-demo-link'
+                                onClick={handleViewDemo}
+                              >
+                                {viewDemoLabel}
+                              </button>
+                            : null
+                    }
                 </article>
             </Modal>
         </>

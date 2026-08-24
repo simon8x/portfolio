@@ -1,0 +1,277 @@
+.live-demo-card {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: $theme-dark-overlay;
+    border: solid 2px $theme-light-overlay;
+    position: relative;
+
+    .live-demo-card-tooltip {
+        @include time-tag;
+        position: absolute;
+        bottom: calc(100% + .6rem);
+        left: 0;
+        right: 0;
+        width: 100%;
+        box-sizing: border-box;
+        padding: .5rem 1rem;
+        border-radius: .5rem;
+        background-color: $theme-dark-primary-background;
+        border: solid 1px $theme-light-overlay;
+        color: $theme-dark-primary-text;
+        font-size: calc(1.1rem + 3px);
+        white-space: normal;
+        text-align: left;
+        line-height: 1.35;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
+        z-index: 12;
+    }
+
+    &:hover .live-demo-card-tooltip,
+    &:focus-visible .live-demo-card-tooltip {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .live-demo-card-image-wrapper {
+        @include image-skeleton;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+        border-radius: .75rem;
+        margin-bottom: 1rem;
+
+        .live-demo-card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+    }
+
+    .live-demo-card-name {
+        @include font-heading-4;
+        margin: 0;
+    }
+
+    &:focus-visible {
+        outline: solid 2px $theme-dark-primary-text;
+        outline-offset: 2px;
+    }
+}
+
+.react-responsive-modal-overlay.live-demo-modal-overlay {
+    background: $theme-dark-overlay;
+    backdrop-filter: blur(.75rem);
+}
+
+.react-responsive-modal-modal.live-demo-modal {
+    border-radius: 1rem;
+    background-color: $theme-dark-panel-bg;
+    border: solid 2px $theme-light-overlay;
+    backdrop-filter: blur(5rem);
+    color: $theme-dark-primary-text;
+    max-width: 64rem;
+    width: 92vw;
+
+    .react-responsive-modal-closeButton {
+        background-color: $theme-modal-dark-overlay;
+        border-radius: .75rem;
+        padding: .3rem;
+
+        svg { fill: $theme-dark-primary-text; }
+    }
+
+    @media screen and (max-width: 820px) {
+        max-width: 95vw;
+        width: 95vw;
+    }
+}
+
+.live-demo-modal-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+
+    .live-demo-modal-header {
+        .live-demo-modal-name {
+            @include font-heading-2;
+            margin: 0 0 .75rem;
+        }
+
+        .live-demo-modal-summary {
+            .live-demo-modal-summary-paragraph {
+                @include paragraph-md;
+                margin: 0 0 .9rem;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .live-demo-tech-sheet {
+        .live-demo-tech-sheet-title {
+            @include font-heading-5;
+            margin: 0 0 1rem;
+        }
+
+        .live-demo-tech-sheet-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: .75rem;
+        }
+
+        .live-demo-tech-sheet-item {
+            @include paragraph-sm;
+            margin: 0;
+            padding: .4rem .9rem;
+            border-radius: .5rem;
+            border: solid 1px $theme-light-overlay;
+            background-color: $theme-dark-overlay;
+        }
+    }
+
+    .live-demo-loading-block {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .live-demo-ready-hint {
+            @include paragraph-md;
+            margin: .8rem 0 0;
+        }
+
+        .live-demo-progress {
+            width: 100%;
+            height: .6rem;
+            border-radius: 999px;
+            overflow: hidden;
+            background-color: $theme-dark-overlay;
+            border: solid 1px $theme-light-overlay;
+
+            .live-demo-progress-fill {
+                height: 100%;
+                width: 0;
+                border-radius: inherit;
+                background-color: $theme-dark-primary-text;
+                transition: width .2s ease-out;
+            }
+        }
+
+        .live-demo-loading-label {
+            @include paragraph-sm;
+            margin: 0;
+            opacity: .85;
+        }
+
+        .live-demo-view-btn {
+            align-self: flex-start;
+            font: inherit;
+            cursor: pointer;
+            color: $theme-dark-primary-text;
+            background-color: $theme-dark-overlay;
+            border: solid 2px $theme-light-overlay;
+            border-radius: .75rem;
+            padding: .8rem 1.6rem;
+            @include name-1;
+            transition: opacity .2s ease, transform .2s ease;
+
+            &:hover {
+                transform: scale(1.03);
+            }
+
+            &.is-disabled,
+            &:disabled {
+                cursor: not-allowed;
+                opacity: .45;
+                transform: none;
+            }
+        }
+    }
+}
+
+// Un solo iframe: preload off-screen o fullscreen al ver la demo.
+.live-demo-frame {
+    border: 0;
+    background-color: $theme-dark-primary-background;
+
+    &.is-preload {
+        position: fixed;
+        left: -10000px;
+        top: 0;
+        width: 1280px;
+        height: 800px;
+        opacity: 0;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    &.is-fullscreen {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        opacity: 1;
+        pointer-events: auto;
+        z-index: 20000;
+    }
+}
+
+.live-demo-fullscreen-chrome {
+    position: fixed;
+    inset: 0;
+    z-index: 20001;
+    pointer-events: none;
+
+    .live-demo-fullscreen-close {
+        pointer-events: auto;
+        position: absolute;
+        top: 1.2rem;
+        right: 1.2rem;
+        width: 3.6rem;
+        height: 3.6rem;
+        border: solid 2px $theme-light-overlay;
+        border-radius: .75rem;
+        background-color: $theme-modal-dark-overlay;
+        color: $theme-dark-primary-text;
+        font-size: 2.6rem;
+        line-height: 1;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        box-shadow: 0 .3rem 1.2rem rgba(0, 0, 0, .45);
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        &:focus-visible {
+            outline: solid 2px $theme-dark-primary-text;
+            outline-offset: 2px;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .live-demo-modal-wrapper {
+        .live-demo-modal-header .live-demo-modal-name {
+            font-size: 2rem;
+        }
+    }
+}

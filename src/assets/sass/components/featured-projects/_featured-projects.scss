@@ -14,6 +14,21 @@
     // background-color: greenyellow;
     padding: 2.5%;
     gap: 2%;
+    position: relative;
+
+    .project-demo-chip {
+        @include time-tag;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 2;
+        padding: .25rem .7rem;
+        border-radius: .4rem;
+        background-color: $theme-dark-primary-background;
+        border: solid 1px $theme-light-overlay;
+        color: $theme-dark-primary-text;
+        pointer-events: none;
+    }
     .project-slide-detail-col {
         // background-color: deeppink;
         width: 60%;

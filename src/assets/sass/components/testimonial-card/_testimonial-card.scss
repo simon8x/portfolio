@@ -6,12 +6,21 @@
     font: inherit;
     color: inherit;
     cursor: pointer;
+    position: relative;
 
     // Mismo lenguaje visual que .cta-container en home.
     padding: 2rem;
     border-radius: 1rem;
     background-color: $theme-dark-overlay;
     border: solid 2px $theme-light-overlay;
+
+    .bubble {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        max-width: none;
+        pointer-events: none;
+    }
 
     .testimonial-author-wrapper {
         @include testimonial-author-block;

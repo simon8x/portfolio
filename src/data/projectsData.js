@@ -10,7 +10,7 @@ export const featuredProjectsData = [
         },
         "projectPosition": "UX/UI Engineer",
         "projectShortDescription": {
-            EN: "I contributed to the front-end of an enterprise SaaS platform used by 100+ global retail brands (Adidas, Chanel, Lufthansa), delivering AI-powered real-time personalization, A/B testing, and product recommendations. I worked as part of an Argentine team for a US-based company in a fully English-speaking, cross-cultural environment.",
+            EN: "I contributed to the front-end of an enterprise SaaS used by 100+ global retail brands (Adidas, Chanel, Lufthansa), delivering AI-powered personalization, A/B testing, and product recommendations. Part of an Argentine team for a US-based company in a fully English-speaking, cross-cultural environment.",
             ES: "Contribuí al front-end de una plataforma SaaS enterprise utilizada por más de 100 marcas retail globales (Adidas, Chanel, Lufthansa), con personalización en tiempo real potenciada por IA, A/B testing y recomendaciones de productos. Trabajé en un equipo argentino para una empresa con sede en EE.UU., en un entorno 100% en inglés y cross-cultural.",
         },
         "tecStack": [
@@ -130,6 +130,7 @@ export const featuredProjectsData = [
         "linkToSite": "https://nwayplay.com/",
         "linkToTrailer": "https://www.youtube.com/watch?v=yOfRLiU099c",
         "linkToBlog": "https://blog.nwayplay.com/",
+        "demoId": "box-opening",
     },
     {
         "projectId": "3",
@@ -289,6 +290,7 @@ export const otherProjectsData = [
         "linkToSite": "https://olympicgamesjam.nwayplay.com/",
         "linkToTrailer": "https://www.youtube.com/watch?v=IUVaqRnHmUI",
         "linkToBlog": "https://blog.nwayplay.com/olympic-games-jam-beijing-2022-unveiled-918837a24add",
+        "demoId": "olympics-game-jam",
     },
     {
         "projectId": "2",
@@ -317,6 +319,7 @@ export const otherProjectsData = [
         "projectLogo": "logo url",
         "linkToSite": "https://foodtruckcoinclub.io/",
         "linkToTrailer": "https://www.youtube.com/watch?v=61nHR8_imqg",
+        "demoId": "ftcc",
     },
     {
         "projectId": "3",
@@ -346,6 +349,7 @@ export const otherProjectsData = [
         "projectLogo": "logo url",
         "linkToSite": "https://www.myherogame.com/",
         "linkToTrailer": "https://www.youtube.com/watch?v=i_mgPnGT_-Y",
+        "demoId": "myhero",
     },
     {
         "projectId": "4",

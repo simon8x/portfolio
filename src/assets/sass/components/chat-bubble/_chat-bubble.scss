@@ -1,0 +1,51 @@
+.bubble {
+    max-width: 75%;
+    padding: 1.2rem 1.6rem;
+    border-radius: 1.8rem;
+    line-height: 1.5;
+}
+
+.ai-bubble {
+    background: $theme-light-overlay;
+    color: $theme-dark-primary-text;
+    border-bottom-left-radius: .4rem;
+}
+
+.typing-bubble {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    padding: 1.6rem 2rem;
+}
+
+.dot {
+    width: .6rem;
+    height: .6rem;
+    background: $theme-dark-primary-text;
+    border-radius: 50%;
+    animation: chat-bubble-bounce 1.4s infinite ease-in-out both;
+}
+
+.dot-1 {
+    animation-delay: -0.32s;
+}
+
+.dot-2 {
+    animation-delay: -0.16s;
+}
+
+.dot-3 {
+    animation-delay: 0s;
+}
+
+@keyframes chat-bubble-bounce {
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+}

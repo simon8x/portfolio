@@ -40,6 +40,28 @@
         }
     }
 
+    .modal-view-demo-link {
+        margin-top: 1.5rem;
+        font: inherit;
+        cursor: pointer;
+        color: $theme-dark-primary-text;
+        background: transparent;
+        border: solid 2px $theme-light-overlay;
+        border-radius: .75rem;
+        padding: .7rem 1.4rem;
+        @include name-1;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $theme-dark-overlay;
+        }
+
+        &:focus-visible {
+            outline: solid 2px $theme-dark-primary-text;
+            outline-offset: 2px;
+        }
+    }
+
 
 }
 

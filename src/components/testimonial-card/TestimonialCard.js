@@ -3,6 +3,7 @@ import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
 
 import { LanguageContext } from '../../context/LanguageContext';
+import { ChatBubble } from '../chat-bubble/ChatBubble';
 import { TestimonialAuthor } from '../testimonial-author/TestimonialAuthor';
 
 
@@ -28,6 +29,7 @@ export const TestimonialCard = ({ recomendacion }) => {
                 onClick={() => setOpen(true)}
                 aria-label={openLabel}
             >
+                {/* <ChatBubble /> */}
                 <TestimonialAuthor recomendacion={recomendacion} showLinkedinLink={false} />
             </button>
 
