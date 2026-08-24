@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Opening Flow</title>
+
+    <link rel="stylesheet" href="assets/vendor/materialize/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/fonts-local.css">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+
+    <nav>
+      <div style="background-color: dodgerblue;">
+        <p style="text-align: center; margin: 0;">NAV COMPONENT</p>
+      </div>
+    </nav>
+
+    <section id="box-section" class="box-section">
+      <div class="bottom-flash"></div>
+
+      <h1 class="main-ttl no-margin">New box!</h1>
+
+      <div class="opening-container d-flex">
+        <div id="video-box-container" class="video-box-container">
+          <video
+            id="box-loading-animation"
+            class="box-open-animation"
+            loop
+            muted
+            playsinline
+            preload="metadata"
+          >
+            <source src="assets/videos/epic_step_1_looping_timer.mp4" type="video/mp4">
+          </video>
+          <video
+            id="box-open-animation"
+            class="box-open-animation d-none"
+            muted
+            playsinline
+            preload="metadata"
+          >
+            <source src="assets/videos/epic_step_2_no_loop.mp4" type="video/mp4">
+          </video>
+
+          <div class="pins-layer">
+            <div id="inside-pins" class="pins-grid v-hidden">
+              <div class="pins-grid__single-pin-container tree-per-line-pins">
+                <div class="glow-container--epic">
+                  <a class="modal-trigger" href="#modal1">
+                    <img id="pin-1" class="responsive-img single-pin epic-pin" src="assets/images/card-epic.png" alt="Pin 1" />
+                  </a>
+                </div>
+              </div>
+              <div class="pins-grid__single-pin-container tree-per-line-pins">
+                <div class="glow-container--legendary">
+                  <a class="modal-trigger" href="#modal2">
+                    <img id="pin-2" class="responsive-img single-pin legendary-pin" src="assets/images/card-legendary.png" alt="Pin 2" />
+                  </a>
+                </div>
+              </div>
+              <div class="pins-grid__single-pin-container tree-per-line-pins">
+                <div class="glow-container--rare">
+                  <a class="modal-trigger" href="#modal3">
+                    <img id="pin-3" class="responsive-img single-pin rare-pin" src="assets/images/card-rare.png" alt="Pin 3" />
+                  </a>
+                </div>
+              </div>
+              <div class="pins-grid__single-pin-container tree-per-line-pins">
+                <div class="glow-container--common">
+                  <a class="modal-trigger" href="#modal4">
+                    <img id="pin-4" class="responsive-img single-pin common-pin" src="assets/images/card-common.png" alt="Pin 4" />
+                  </a>
+                </div>
+              </div>
+              <div class="pins-grid__single-pin-container tree-per-line-pins">
+                <div class="glow-container--common">
+                  <a class="modal-trigger" href="#modal1">
+                    <img id="pin-5" class="responsive-img single-pin common-pin" src="assets/images/card-common.png" alt="Pin 5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="control-buttons">
+        <a onclick="playVid()" class="btn-normal btn-normal--wide" id="btn-play-video">open box</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div style="background-color:black; height: 35rem; padding-top: 15rem;">
+        <p style="text-align: center; margin: 0; color:white">FOOTER COMPONENT</p>
+      </div>
+    </footer>
+
+    <div id="modal1" class="modal pin-modal">
+      <div class="modal-content">
+        <div><a class="modal-close right"><span class="material-icons blue-text text-darken-1">close</span></a></div>
+        <div class="pin-container">
+          <div class="pin-video-col">
+            <div class="pin-video-container">
+              <video autoplay loop muted playsinline class="pin-video">
+                <source src="assets/videos/emblem_innsbruck_1976_rare.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="pin-description-col">
+            <span class="pin-description__badge pin-description__badge--rare appear from-left a-duration-3d a-delay-2d">rare</span>
+            <h1 class="pin-description__title no-margin appear from-left a-duration-3d a-delay-4d">Paris 1924</h1>
+            <p class="pin-description__osr no-margin appear from-top a-duration-3d a-delay-6d"><span class="osr__o">origins</span> | <span class="osr__r">series 1</span> | <span class="osr__r">release 1</span></p>
+            <p class="pin-description__description appear from-left a-duration-3d a-delay-8d">The Games of the VIII Olympiad was held in Paris, France in 1924, making Paris the first city to host the Olympic Games twice. This pin design is based on the designation badge worn by the French Olympic Committee (C.O.F.) official.</p>
+            <h3 class="pin-description__momentum appear from-left a-duration-3d a-delay-10d">Games of the VIII Olympiad</h3>
+            <button class="btn-normal btn-normal--wide appear from-left a-duration-3d a-delay-12d modal-trigger modal-close" data-target="modal2">open next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal2" class="modal pin-modal">
+      <div class="modal-content">
+        <div><a class="modal-close right"><span class="material-icons blue-text text-darken-1">close</span></a></div>
+        <div class="pin-container">
+          <div class="pin-video-col">
+            <div class="pin-video-container">
+              <video autoplay loop muted playsinline class="pin-video">
+                <source src="assets/videos/mascot_waldi_v6_rare.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="pin-description-col">
+            <span class="pin-description__badge pin-description__badge--rare appear from-left a-duration-3d a-delay-2d">rare</span>
+            <h1 class="pin-description__title no-margin appear from-left a-duration-3d a-delay-4d">Paris 1924</h1>
+            <p class="pin-description__osr no-margin appear from-top a-duration-3d a-delay-6d"><span class="osr__o">origins</span> | <span class="osr__r">series 1</span> | <span class="osr__r">release 1</span></p>
+            <p class="pin-description__description appear from-left a-duration-3d a-delay-8d">The Games of the VIII Olympiad was held in Paris, France in 1924, making Paris the first city to host the Olympic Games twice. This pin design is based on the designation badge worn by the French Olympic Committee (C.O.F.) official.</p>
+            <h3 class="pin-description__momentum appear from-left a-duration-3d a-delay-10d">Games of the VIII Olympiad</h3>
+            <button class="btn-normal btn-normal--wide appear from-left a-duration-3d a-delay-12d modal-trigger modal-close" data-target="modal3">open next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal3" class="modal pin-modal">
+      <div class="modal-content">
+        <div><a class="modal-close right"><span class="material-icons blue-text text-darken-1">close</span></a></div>
+        <div class="pin-container">
+          <div class="pin-video-col">
+            <div class="pin-video-container">
+              <video autoplay loop muted playsinline class="pin-video">
+                <source src="assets/videos/pictogram_tokyo_1964_swimming_common.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="pin-description-col">
+            <span class="pin-description__badge pin-description__badge--epic appear from-left a-duration-3d a-delay-2d">epic</span>
+            <h1 class="pin-description__title no-margin appear from-left a-duration-3d a-delay-4d">Paris 1924</h1>
+            <p class="pin-description__osr no-margin appear from-top a-duration-3d a-delay-6d"><span class="osr__o">origins</span> | <span class="osr__r">series 1</span> | <span class="osr__r">release 1</span></p>
+            <p class="pin-description__description appear from-left a-duration-3d a-delay-8d">The Games of the VIII Olympiad was held in Paris, France in 1924, making Paris the first city to host the Olympic Games twice. This pin design is based on the designation badge worn by the French Olympic Committee (C.O.F.) official.</p>
+            <h3 class="pin-description__momentum appear from-left a-duration-3d a-delay-10d">Games of the VIII Olympiad</h3>
+            <button class="btn-normal btn-normal--wide appear from-left a-duration-3d a-delay-12d modal-trigger modal-close" data-target="modal4">open next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal4" class="modal pin-modal">
+      <div class="modal-content">
+        <div><a class="modal-close right"><span class="material-icons blue-text text-darken-1">close</span></a></div>
+        <div class="pin-container">
+          <div class="pin-video-col">
+            <div class="pin-video-container">
+              <video autoplay loop muted playsinline class="pin-video">
+                <source src="assets/videos/poster_lakePlacid_1932_epic.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="pin-description-col">
+            <span class="pin-description__badge pin-description__badge--common appear from-left a-duration-3d a-delay-2d">common</span>
+            <h1 class="pin-description__title no-margin appear from-left a-duration-3d a-delay-4d">Paris 1924</h1>
+            <p class="pin-description__osr no-margin appear from-top a-duration-3d a-delay-6d"><span class="osr__o">origins</span> | <span class="osr__r">series 1</span> | <span class="osr__r">release 1</span></p>
+            <p class="pin-description__description appear from-left a-duration-3d a-delay-8d">The Games of the VIII Olympiad was held in Paris, France in 1924, making Paris the first city to host the Olympic Games twice. This pin design is based on the designation badge worn by the French Olympic Committee (C.O.F.) official.</p>
+            <h3 class="pin-description__momentum appear from-left a-duration-3d a-delay-10d">Games of the VIII Olympiad</h3>
+            <button class="btn-normal btn-normal--wide appear from-left a-duration-3d a-delay-12d modal-trigger modal-close" data-target="modal5">open next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal5" class="modal pin-modal">
+      <div class="modal-content">
+        <div><a class="modal-close right"><span class="material-icons blue-text text-darken-1">close</span></a></div>
+        <div class="pin-container">
+          <div class="pin-video-col">
+            <div class="pin-video-container">
+              <video autoplay loop muted playsinline class="pin-video">
+                <source src="assets/videos/poster_lakePlacid_1932_epic.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="pin-description-col">
+            <span class="pin-description__badge pin-description__badge--common appear from-left a-duration-3d a-delay-2d">common</span>
+            <h1 class="pin-description__title no-margin appear from-left a-duration-3d a-delay-4d">Paris 1924</h1>
+            <p class="pin-description__osr no-margin appear from-top a-duration-3d a-delay-6d"><span class="osr__o">origins</span> | <span class="osr__r">series 1</span> | <span class="osr__r">release 1</span></p>
+            <p class="pin-description__description appear from-left a-duration-3d a-delay-8d">The Games of the VIII Olympiad was held in Paris, France in 1924, making Paris the first city to host the Olympic Games twice. This pin design is based on the designation badge worn by the French Olympic Committee (C.O.F.) official.</p>
+            <h3 class="pin-description__momentum appear from-left a-duration-3d a-delay-10d">Games of the VIII Olympiad</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/vendor/materialize/materialize.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.modal');
+        M.Modal.init(elems);
+      });
+
+      var section = document.getElementById('box-section');
+      var vidcontainer = document.getElementById('video-box-container');
+      var vidLoading = document.getElementById('box-loading-animation');
+      var vid = document.getElementById('box-open-animation');
+      var pins = document.getElementById('inside-pins');
+      var btnplayvid = document.getElementById('btn-play-video');
+      var pin1 = document.getElementById('pin-1');
+      var pin2 = document.getElementById('pin-2');
+      var pin3 = document.getElementById('pin-3');
+      var pin4 = document.getElementById('pin-4');
+      var pin5 = document.getElementById('pin-5');
+      var isOpening = false;
+
+      // Simula el polling de getStatusBoxOpen() en openingBox.js (delay 10000 ms)
+      var OPEN_BOX_DELAY_MS = 5000;
+
+      function delay(ms) {
+        return new Promise(function(resolve) {
+          setTimeout(resolve, ms);
+        });
+      }
+
+      function simulateOpenBox() {
+        return delay(OPEN_BOX_DELAY_MS);
+      }
+
+      function hideOpenBoxButton() {
+        btnplayvid.classList.add('v-hidden');
+        btnplayvid.style.pointerEvents = 'none';
+      }
+
+      function playVid() {
+        if (isOpening) {
+          return;
+        }
+        isOpening = true;
+        hideOpenBoxButton();
+
+        window.scroll({ top: 65, behavior: 'smooth' });
+        section.classList.add('grow-100vh', 'a-duration-10d', 'a-delay-2d');
+        vidcontainer.classList.add('grow-70vh', 'a-duration-10d', 'a-delay-2d');
+
+        vidLoading.classList.remove('d-none');
+        vid.classList.add('d-none');
+        vidLoading.currentTime = 0;
+        vidLoading.play();
+
+        simulateOpenBox().then(function() {
+          vidLoading.pause();
+          vidLoading.currentTime = 0;
+
+          vidLoading.classList.add('d-none');
+          vid.classList.remove('d-none');
+          vid.currentTime = 0;
+          vid.play();
+        });
+      }
+
+      vid.onended = function() {
+        pins.classList.remove('v-hidden');
+        pin1.classList.add('appear', 'rady-card', 'a-duration-2d', 'a-delay-1d');
+        pin2.classList.add('appear', 'rady-card', 'a-duration-2d', 'a-delay-2d');
+        pin3.classList.add('appear', 'rady-card', 'a-duration-2d', 'a-delay-3d');
+        pin4.classList.add('appear', 'rady-card', 'a-duration-2d', 'a-delay-4d');
+        pin5.classList.add('appear', 'rady-card', 'a-duration-2d', 'a-delay-5d');
+      };
+    </script>
+  </body>
+</html>
