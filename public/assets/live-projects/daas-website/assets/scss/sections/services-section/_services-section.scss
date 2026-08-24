@@ -1,0 +1,88 @@
+@use "../../settings" as settings;
+
+.services-section {
+    padding: 2.2rem 0;
+    .services-header-row {
+        margin-block: 1rem;
+        .services-title {
+            @include settings.section-title;
+            &{margin-block: 1rem;}
+        }
+        .services-description {
+            @include settings.description-paragraph;
+            &{
+                margin-block: .5rem;
+            }
+        }
+    }
+    .services-body-row{
+        margin-block: 2rem;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        row-gap: 10rem;
+        margin-block: 5rem;
+        .service-wrapper {
+            grid-column: span 6;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            margin-block: 1rem;
+            padding: 0 3rem;
+            .service-image {
+                max-width: 100%;
+                height: auto;
+                display: none;
+            }
+            .service-title {
+                @include settings.feature-title;
+                &{margin-block: 1rem;}
+            }
+            .service-description {
+                @include settings.description-paragraph;
+                &{margin-block: .5rem;}
+            }
+        }
+    }
+}
+@media screen and (min-width:768px) {
+
+    .services-section {
+        padding: 5rem 0;
+        .services-header-row {
+            margin-block: 2.5rem;
+            .services-description {
+                @include settings.description-paragraph;
+            }
+        }
+        .services-body-row{
+            .service-wrapper {
+                grid-column: 2/ span 4;
+                padding: 0 2rem;
+                .service-image {
+                    height: 10rem;
+                    width: auto;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:992px) {
+
+    .services-section {
+        padding: 15rem 0 0;
+        .services-header-row {
+            .services-description {
+                @include settings.description-paragraph;
+                &{text-align: center;}
+            }
+        }
+        .services-body-row{
+            .service-wrapper {
+                grid-column: span 2;
+            }
+        }
+    }
+}

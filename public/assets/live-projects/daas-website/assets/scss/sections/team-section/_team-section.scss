@@ -1,0 +1,109 @@
+@use "../../settings" as settings;
+
+.team-section {
+    padding: 2rem 0;
+    .team-header-row {
+        padding: 2rem;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        .team-title {
+            @include settings.section-title;
+            &{
+                text-transform: uppercase;
+                text-align: left;
+            }
+        }
+        .daas-arrow {
+            max-height: 2.7rem;
+            transform: rotate(180deg);
+        }
+    }
+    .team-description {
+        @include settings.description-paragraph;
+        &{text-align: left;}
+    }
+    .team-body-row {
+        margin-block: 2rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 10rem;
+        margin-block: 5rem;
+        .team-member-wrapper {
+            grid-column: span 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin-block: 1rem;
+            padding: 0 3rem;
+            aspect-ratio: 287/323;
+            .team-member-image {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+            .team-member-info {
+                background-color: white;
+                padding: 3.2rem 5rem ;
+                
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                gap: 1rem;
+                .member-info-name{
+                    @include settings.member-name;
+                }
+                .member-info-role {
+                    @include settings.description-paragraph;
+                    &{
+                        font-size: 1.8rem;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:768px) {
+    .team-section {
+        .team-header-row {
+            .daas-arrow {
+                max-height: 4rem;
+            }
+        }
+        .team-body-row {
+            .team-member-wrapper {
+                grid-column: span 1;
+                .team-member-info {
+                    padding: 1.5rem .75rem ;
+                    gap: .5rem;
+                }
+            }
+    
+        }
+    }
+}
+
+@media screen and (min-width:992px) {
+    .team-section {
+        .team-header-row {
+            .daas-arrow {
+                max-height: 4rem;
+            }
+        }
+        .team-body-row {
+            .team-member-wrapper {
+                grid-column: span 1;
+                position: relative;
+                .team-member-info {
+                    padding: 2.5rem 8rem 2.5rem 3.75rem;
+                    position: absolute;
+                    top: 82.5%;
+                    right: 2.5rem;
+                }
+            }
+        }
+    }
+}

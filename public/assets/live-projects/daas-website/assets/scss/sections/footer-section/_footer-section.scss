@@ -1,0 +1,141 @@
+@use "../../settings" as settings;
+
+.footer {
+    background-color: red;
+    padding: 0 1rem;
+    margin: -.3rem 0 0;
+    position: relative;
+    .row-info-footer {
+        display: grid;
+        grid-template-columns: repeat(10,1fr);
+        column-gap: 1.5rem;
+        width: 100%;
+        .info-col {
+            margin-block: 2rem;
+            .info-col-title {
+                @include settings.footer-title;
+                &{color: settings.$color-text-light;}
+            }
+            .info-col-description {
+                @include settings.footer-paragraph;
+                &{color: settings.$color-text-light;}
+            }
+            .info-col-social-row {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                .social-link {
+                    max-width: 3.9rem;
+                    .social-link-img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+        .info-col__email {
+            .info-col-description {
+                font-size: 1.9rem;
+                color: settings.$color-text-dark;
+                text-decoration: none;
+            }
+        }
+
+        .info-col__studio {
+            .info-col-title {
+                text-decoration: underline;
+            }
+        }
+
+        .info-col__studio, 
+        .info-col__social, 
+        .info-col__email,
+        .info-col__copy {
+            grid-column: span 10;
+        }
+
+        .info-footer-copy {
+            @include settings.footer-paragraph;
+            &{
+                color: settings.$color-text-dark;
+                width: max-content;
+            }
+        }
+    }
+
+    .arrow-to-top-wrapper {
+        max-width: 5rem;
+
+        position: fixed;
+        bottom: 2.5rem;
+        right: 1rem;
+        z-index: 1000;
+        transition: transform 0.3s ease-in-out;
+        will-change: transform;
+        
+        cursor: pointer;
+        .arrow-to-top-img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .arrow-to-top-wrapper.hidden {
+        transform: translateX(+120%);
+    }
+    
+    .arrow-to-top-wrapper.visible {
+        transform: translateX(0);
+    }
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    height: 10rem;
+    width: 100%;
+    z-index: -1;
+    background-image: url(../../assets/images/divider-withe-red.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+@media screen and (min-width:768px) {
+    .footer {
+        .row-info-footer {
+            .info-col {
+                .info-col-social-row {
+                    justify-content: flex-start;
+                    align-items: center;
+                }
+            }
+            .info-col__email {
+                .info-col-description {
+                    font-size: 2.4rem;
+                }
+            }
+            .info-col__studio, 
+            .info-col__social {
+                grid-column: span 3;
+            } 
+            .info-col__email  {
+                grid-column: span 4;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:992px) {
+    .footer {
+        .row-info-footer {
+            .info-col__email {
+                .info-col-description {
+                    font-size: 4rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+@use "../../settings" as settings;
+
+.hero-section {
+    padding: 2rem 0 1.5rem;
+    .hero-row{
+        display: flex;
+        flex-wrap: wrap;
+        .hero-row-half-col {
+            width: 100%;
+        }
+    }
+    .hero-title {
+        @include settings.hero-section-title;
+        &{margin-bottom: 1rem;}
+    }
+    .hero-description {
+        @include settings.description-paragraph;
+    }
+    .hero-image {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .hero-section {
+        padding: 3.5rem 0 2rem;
+        .hero-row{
+            .hero-row-half-col {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:992px) {
+    .hero-section {
+        padding: 3.5rem 0 10rem;
+        .hero-row{
+            .hero-row-half-col {
+                width: 50%;
+            }
+        }
+    }
+}

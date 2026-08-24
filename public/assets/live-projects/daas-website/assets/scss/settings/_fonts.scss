@@ -1,0 +1,146 @@
+body {
+    font-family:Helvetica,sans-serif;
+}
+
+h1,h2,h3,h4,h5,p {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin hero-section-title {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1em;
+    letter-spacing: normal;
+
+    text-align: center;
+
+    @media screen and (min-width:768px) {
+        & {
+            text-align: left;
+            font-size: 5rem;
+        }
+    }
+
+    @media screen and (min-width:992px) {
+        & {
+            font-size: 9rem;
+        }
+    }
+}
+
+@mixin section-title {
+    font-size: 2.7rem;
+    font-weight: 600;
+    line-height: 1.25em;
+    letter-spacing: normal;
+
+    text-align: center;
+
+    @media screen and (min-width:768px) {
+        & {
+            font-size: 4rem;
+        }
+    }
+
+    @media screen and (min-width:992px) {
+        & {
+            font-size: 6rem;
+        }
+    }
+}
+
+@mixin description-paragraph {
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 1.8em;
+    letter-spacing: normal;
+
+    text-align: center;
+
+    @media screen and (min-width:768px) {
+        & {
+            text-align: left;
+            font-size: 2rem;
+        }
+    }
+
+    @media screen and (min-width:992px) {
+        & {
+            font-size: 1.8rem;
+        }
+    }
+
+}
+
+@mixin feature-title {
+    font-size: 2.7rem;
+    font-weight: 600;
+    line-height: 1.25em;
+    letter-spacing: normal;
+    text-transform: uppercase;
+
+    text-align: center;
+
+    @media screen and (min-width:768px) {
+        & {
+            font-size: 4rem;
+        }
+    }
+
+    @media screen and (min-width:992px) {
+        & {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+@mixin content-title {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.25em;
+    letter-spacing: normal;
+    text-transform: uppercase;
+
+    text-align: center;
+
+    @media screen and (min-width:768px) {
+        & {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+@mixin member-name {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: normal;
+    @media screen and (min-width:768px) {
+        & {
+            font-size: 2.2rem;
+        }
+    }
+}
+
+@mixin footer-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+@mixin footer-paragraph {
+    font-size: 1.6rem;
+    line-height: 1.7em;
+    font-weight: 500;
+    letter-spacing: normal;
+}
+
+.dark-text {
+    color: #000;
+}
+
+.light-text {
+    color: #fff;
+}

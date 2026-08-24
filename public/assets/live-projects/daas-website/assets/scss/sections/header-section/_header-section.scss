@@ -1,0 +1,46 @@
+.header {
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
+    background-color: #fff;
+
+    .header-wrapper {
+        margin-left: 2.5rem;
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .logo-wrapper{
+            height: 2.1rem;
+            .logo-image {
+                height: 100%;
+                width: auto;
+            }
+        }
+    }
+}
+
+.header.hidden {
+    transform: translateY(-100%);
+}
+
+.header.visible {
+    transform: translateY(0);
+}
+
+
+@media screen and (min-width:768px) {
+    .header {
+        .header-wrapper {
+            justify-content: flex-start;
+            .logo-wrapper{
+                height: 3rem;
+                .logo-image {
+                }
+            }
+        }
+    }
+}
