@@ -1,0 +1,68 @@
+@use "../../settings" as settings;
+
+.approach-section {
+    position: relative;
+    background-color: #0057e1;
+    padding: 5rem 0;
+    margin-block: 7rem;
+    .approach-row {
+        max-width: 600px;
+        margin: 2rem auto;
+        color: settings.$color-text-light;
+        .approach-title{
+            @include settings.section-title;
+            &{margin-bottom: 1rem;}
+        }
+        .approach-description{
+            @include settings.description-paragraph;
+        }
+    }
+}
+.approach-section::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    height: 10rem;
+    width: 100%;
+    z-index: -1;
+    background-image: url(../../assets/images/divider-withe-blue.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transform: scaleX(-1);
+}
+
+.approach-section::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 10rem;
+    width: 100%;
+    z-index: -1;
+    background-image: url(../../assets/images/divider-withe-blue.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transform: rotate(180deg);
+}
+
+@media screen and (min-width:768px) {
+    
+    .approach-section {
+        .approach-row {
+            margin: 3rem auto;
+        }
+    }
+}
+
+@media screen and (min-width:992px) {
+    
+    .approach-section {
+        .approach-row {
+            margin: 3rem auto;
+            .approach-title{
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}

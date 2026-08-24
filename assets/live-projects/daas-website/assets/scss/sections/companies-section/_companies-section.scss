@@ -1,0 +1,81 @@
+@use "../../settings" as settings;
+
+.companies-section {
+    padding-block: 3.5rem 9rem;
+    .companies-row {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .companies-header-wrapper {
+            .companies-title {
+                @include settings.section-title;
+            }
+        }
+        .companies-body-wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 7.5rem;
+            column-gap: 0;
+            margin-block: 1.5rem;
+            width: 100%;
+            .companies-logo-wrapper {
+                grid-column: span 3;
+                min-height: 15rem;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .company-logo {
+                    width: 70%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:768px) {
+    .companies-section {
+        .companies-row {
+            .companies-body-wrapper {
+                column-gap: 2.5rem;
+                .companies-logo-wrapper {
+                    grid-column: span 1;
+                    .company-logo {
+                        max-width: 16rem;
+                        height: auto;
+                        padding-inline: 10%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:992px) {
+    .companies-section {
+        .companies-row {
+            flex-direction: row;
+            justify-content: space-between;
+            .companies-header-wrapper {
+                width: 40%;
+                .companies-title {
+                    &{
+                        text-align: left;
+                        font-size: 5rem;
+                    }
+                }
+            }
+            .companies-body-wrapper {
+                width: 57%;
+                .companies-logo-wrapper {                   
+                    .company-logo {
+                        padding-inline: 2.5%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+/* GLOBALS */
+@use "./settings" as settings;
+
+/* SECTIONS */
+@use "./sections/header-section/header-section.scss";
+@use "./sections/hero-section/hero-section.scss";
+@use "./sections/approach-section/approach-section.scss";
+@use "./sections/services-section/services-section.scss";
+@use "./sections/generators-section/generators-section.scss";
+@use "./sections/team-section/team-section.scss";
+@use "./sections/companies-section/companies-section.scss";
+@use "./sections/footer-section/footer-section.scss";

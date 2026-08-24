@@ -1,0 +1,122 @@
+@use "../../settings" as settings;
+
+.generators-section {
+    background-color: yellow;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    position: relative;
+    gap: 2rem;
+    .generators-row {
+        position: relative;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        .generators-cta-wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .generators-title {
+                @include settings.content-title;
+                &{font-size: 3.6rem;}
+            }
+            .generators-description {
+                @include settings.description-paragraph;
+            }
+            .generators-button {
+                @include settings.dark-btn;
+                &{margin-top: 2rem;}
+            }
+        }
+    }
+    .generators-background-video-wrapper {
+        position: relative;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        .generators-video{
+            position: relative;            
+            top: 0;
+            left: 0;
+            width: 350%;
+        }
+    }
+    .generators-background-video-wrapper::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: calc(100% - .3rem);
+        z-index: 1;
+        background-image: url(../images/utils/screen-overlay.png);
+    }
+}
+
+.generators-section::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    height: 15rem;
+    width: 100%;
+    background-image: url(../images/divider-withe-yellow.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+@media screen and (min-width:768px) {
+    .generators-section {
+        flex-direction: row;
+        .container{
+            height: 100%;
+        }
+        .generators-row {
+            position: absolute;
+            .generators-cta-wrapper {
+                width: 36%;
+                height: 100%;
+                align-items: flex-start;
+                .generators-title {
+                    &{text-align: left;}
+                }
+            }
+        }
+        .generators-background-video-wrapper {
+            width: 60%;
+            .generators-video{
+                width: 250%;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width:992px) {
+    .generators-section {
+        .container{
+            height: 100%;
+        }
+        .generators-row {
+            position: absolute;
+            .generators-cta-wrapper {
+                .generators-title {
+                    &{font-size: 5.6rem;}
+                }
+                .generators-description {
+                    &{font-size: 2.2rem}
+                }
+            }
+        }
+        .generators-background-video-wrapper {
+            .generators-video{
+                width: 250%;
+            }
+        }
+    }
+}
