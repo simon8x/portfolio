@@ -2,13 +2,22 @@ import { useContext } from "react"
 import { CtaCvDownloadContent } from "../../data/ctaCvDownloadData"
 import { LanguageContext } from "../../context/LanguageContext"
 
-export const CtaCvDownload = () => {
+import { finishAppearAnimation, useAppearOnView } from '../../utils/appear'
 
+export const CtaCvDownload = ({ className, style }) => {
+
+  const { appearRef, enterClass } = useAppearOnView();
+  const extraClassName = className == null ? '' : ' ' + className;
   const { siteLang } = useContext( LanguageContext )
   const content = CtaCvDownloadContent[siteLang] || CtaCvDownloadContent.EN
 
   return (
-    <div className='cta-wrapper'>
+    <div
+      ref={appearRef}
+      className={'cta-wrapper' + extraClassName + enterClass}
+      style={style}
+      onAnimationEnd={finishAppearAnimation}
+    >
       <header className='cta-header'>
           <h3 className='cta-title'>{content.title}</h3>        
       </header>

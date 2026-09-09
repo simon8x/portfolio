@@ -9,9 +9,10 @@ import { liveDemosData, liveDemosSectionHeadline } from '../../data/liveDemosDat
 import { FeaturedProject } from '../../components/featured-project/FeaturedProject';
 import { OtherProject } from '../../components/other-project/OtherProject';
 import { LiveDemoCard } from '../../components/live-demo-card/LiveDemoCard';
-import { BackgroundShapes } from '../../components/background-shapes/BackgroundShapes';
 
 import { LanguageContext } from '../../context/LanguageContext';
+import { ExitNavigateContext } from '../../context/ExitNavigateContext';
+import { AppearBlock, useExitNavigate } from '../../utils/appear';
 
 const otherProjectResponsiveSettings = [
   {
@@ -61,6 +62,8 @@ const otherProjectResponsiveSettings = [
 export const ProjectsV2 = () => {
 
   const { siteLang } = useContext(LanguageContext);
+  const { isExiting, requestNavigate } = useExitNavigate();
+  const exitingClass = isExiting === true ? ' appear--exiting' : '';
   const [searchParams, setSearchParams] = useSearchParams();
   const [preloadingDemoId, setPreloadingDemoId] = useState(null);
   const [launchDemoId, setLaunchDemoId] = useState(null);
@@ -104,8 +107,7 @@ export const ProjectsV2 = () => {
 
   return (
 
-    <>
-      <BackgroundShapes />
+    <ExitNavigateContext.Provider value={requestNavigate}>
       <header className='header'>
         <MainNavBar />
       </header>
@@ -115,34 +117,46 @@ export const ProjectsV2 = () => {
 
             <div className='live-demos-block'>
               <div className='live-demos-header-row'>
-                <h2 className='section-title flotate'>{liveDemosHeadline}</h2>
+                <AppearBlock
+                  className={'appear appear--from-left appear--offscreen' + exitingClass}
+                >
+                  <h2 className='section-title flotate'>{liveDemosHeadline}</h2>
+                </AppearBlock>
               </div>
               <div className='live-demos-grid-row'>
                 <div className='live-demo-card-grid'>
-                  {liveDemosData.map(liveDemo => (
-                    <LiveDemoCard
-                      key={liveDemo.id}
-                      liveDemo={liveDemo}
-                      isPreloading={preloadingDemoId === liveDemo.id}
-                      onRequestPreload={() => setPreloadingDemoId(liveDemo.id)}
-                      launchDemoId={launchDemoId}
-                      onLaunchConsumed={() => setLaunchDemoId(null)}
-                    />
-                  ))}
+                  {liveDemosData.map((liveDemo, index) => {
+                    return (
+                      <LiveDemoCard
+                        key={liveDemo.id}
+                        liveDemo={liveDemo}
+                        isPreloading={preloadingDemoId === liveDemo.id}
+                        onRequestPreload={() => setPreloadingDemoId(liveDemo.id)}
+                        launchDemoId={launchDemoId}
+                        onLaunchConsumed={() => setLaunchDemoId(null)}
+                        className={'appear appear--from-top appear--offscreen' + exitingClass}
+                        style={{ '--appear-delay': (index * 80) + 'ms' }}
+                      />
+                    );
+                  })}
                 </div>
               </div>
             </div>
 
             <div className='hero-projects'>
-              <div className='header-section'>
+              <AppearBlock
+                className={'header-section appear appear--from-left appear--offscreen' + exitingClass}
+              >
                 <h2 className='section-title flotate'>
                   { (siteLang === 'EN')
                     ? 'Some featured projects'
                     : 'Algunos proyectos destacados'
                   }
                   </h2>
-              </div>
-              <div className='section-featured-projects'>
+              </AppearBlock>
+              <AppearBlock
+                className={'section-featured-projects appear appear--from-right appear--offscreen' + exitingClass}
+              >
                 <Slide indicators={indicators} {...properties} pauseOnHover={true} duration={6000} transitionDuration={250} canSwipe={true}>
                   {featuredProjectsData.map(featuredProject => (
                     <div key={featuredProject.projectName}>
@@ -150,19 +164,23 @@ export const ProjectsV2 = () => {
                     </div>
                   ))}
                 </Slide>
-              </div>
+              </AppearBlock>
             </div>
 
             <div className='side-projects'>
-              <div className='header-section'>
+              <AppearBlock
+                className={'header-section appear appear--from-right appear--offscreen' + exitingClass}
+              >
                 <h2 className='section-title flotate'>
                   { (siteLang === 'EN')
                     ? 'Some other projects'
                     : 'Otros proyectos'
                   }
                 </h2>
-              </div>
-              <div className='section-other-projects'>
+              </AppearBlock>
+              <AppearBlock
+                className={'section-other-projects appear appear--from-up appear--offscreen' + exitingClass}
+              >
                 <Slide indicators={false} {...properties} pauseOnHover={true} duration={0} transitionDuration={5000} canSwipe={true} responsive={otherProjectResponsiveSettings}>
                   {otherProjectsData.map(otherProject => (
                     <div key={otherProject.projectName}>
@@ -170,14 +188,14 @@ export const ProjectsV2 = () => {
                     </div>
                   ))}
                 </Slide>
-              </div>
+              </AppearBlock>
             </div>
 
           </section>
         </div>
       </main>
 
-    </>
+    </ExitNavigateContext.Provider>
 
   )
 }

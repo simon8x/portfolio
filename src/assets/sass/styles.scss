@@ -3,7 +3,9 @@
 @import "./globals/typography";
 @import "./globals/buttons";
 @import "./globals/layout";
+@import "./globals/appear";
 @import "./globals/backdrown-shapes";
+@import "./components/warp-overlay/warp-overlay";
 
 // Deben ir antes que sus consumidores: en SASS un mixin se define antes de usarse.
 @import "./globals/skeleton";

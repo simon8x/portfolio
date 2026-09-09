@@ -1,0 +1,239 @@
+.appear {
+    --appear-delay: 0ms;
+    --appear-duration: 560ms;
+    opacity: 0;
+}
+
+.appear.is-visible {
+    opacity: 1;
+    animation-duration: var(--appear-duration);
+    animation-delay: var(--appear-delay);
+    animation-timing-function: ease-out;
+    animation-fill-mode: backwards;
+    animation-name: appear-from-up;
+}
+
+.appear.is-visible:not(.appear--done) {
+    transition: none;
+}
+
+.appear.appear--done:not(.appear--exiting) {
+    opacity: 1;
+    animation: none;
+}
+
+.appear--from-up.is-visible {
+    animation-name: appear-from-up;
+}
+
+.appear--from-top.is-visible {
+    animation-name: appear-from-top;
+}
+
+.appear--from-left.is-visible {
+    animation-name: appear-from-left;
+}
+
+.appear--from-right.is-visible {
+    animation-name: appear-from-right;
+}
+
+.appear--offscreen.is-visible {
+    --appear-duration: 820ms;
+}
+
+.appear--offscreen.appear--from-up.is-visible {
+    animation-name: appear-from-up-offscreen;
+}
+
+.appear--offscreen.appear--from-top.is-visible {
+    animation-name: appear-from-top-offscreen;
+}
+
+.appear--offscreen.appear--from-left.is-visible {
+    animation-name: appear-from-left-offscreen;
+}
+
+.appear--offscreen.appear--from-right.is-visible {
+    animation-name: appear-from-right-offscreen;
+}
+
+.appear.appear--exiting {
+    pointer-events: none;
+    transition: none;
+    animation-delay: var(--appear-exit-delay, 0ms);
+    animation-duration: 680ms;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+.appear--offscreen.appear--from-up.appear--exiting {
+    animation-name: appear-to-up-offscreen;
+}
+
+.appear--offscreen.appear--from-top.appear--exiting {
+    animation-name: appear-to-top-offscreen;
+}
+
+.appear--offscreen.appear--from-left.appear--exiting {
+    animation-name: appear-to-left-offscreen;
+}
+
+.appear--offscreen.appear--from-right.appear--exiting {
+    animation-name: appear-to-right-offscreen;
+}
+
+.appear.appear--offscreen.appear--exiting.appear--exit-right {
+    animation-name: appear-to-right-offscreen;
+}
+
+.appear.appear--offscreen.appear--exiting.appear--exit-left {
+    animation-name: appear-to-left-offscreen;
+}
+
+.appear.appear--offscreen.appear--exiting.appear--exit-up {
+    animation-name: appear-to-up-offscreen;
+}
+
+@keyframes appear-from-up {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes appear-from-top {
+    from {
+        opacity: 0;
+        transform: translateY(-16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes appear-from-left {
+    from {
+        opacity: 0;
+        transform: translateX(-24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes appear-from-right {
+    from {
+        opacity: 0;
+        transform: translateX(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes appear-from-up-offscreen {
+    from {
+        opacity: 1;
+        transform: translateY(110vh);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes appear-from-top-offscreen {
+    from {
+        opacity: 1;
+        transform: translateY(-110vh);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes appear-from-left-offscreen {
+    from {
+        opacity: 1;
+        transform: translateX(-110vw);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes appear-from-right-offscreen {
+    from {
+        opacity: 1;
+        transform: translateX(110vw);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes appear-to-up-offscreen {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(110vh);
+    }
+}
+
+@keyframes appear-to-top-offscreen {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-110vh);
+    }
+}
+
+@keyframes appear-to-left-offscreen {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-110vw);
+    }
+}
+
+@keyframes appear-to-right-offscreen {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(110vw);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .appear,
+    .appear.is-visible,
+    .appear.appear--exiting {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+    }
+}

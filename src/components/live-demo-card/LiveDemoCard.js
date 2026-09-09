@@ -6,6 +6,7 @@ import 'react-responsive-modal/styles.css';
 import { LanguageContext } from '../../context/LanguageContext';
 import { Toast } from '../toast/Toast';
 import { demoReadyClosing } from '../../data/liveDemosData';
+import { finishAppearAnimation, useAppearOnView } from '../../utils/appear';
 
 const LIVE_DEMO_EXIT_TOAST_KEY = 'liveDemoExitHintSeen';
 
@@ -31,7 +32,7 @@ const silenceFrameMedia = (frame) => {
 };
 
 
-export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchDemoId, onLaunchConsumed }) => {
+export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchDemoId, onLaunchConsumed, className, style }) => {
 
     const { siteLang } = useContext(LanguageContext);
     const [infoOpen, setInfoOpen] = useState(false);
@@ -75,6 +76,9 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
     const cardTooltipText = cardTooltip == null
         ? null
         : (cardTooltip[siteLang] == null ? cardTooltip.EN : cardTooltip[siteLang]);
+
+    const { appearRef, enterClass } = useAppearOnView();
+    const extraClassName = className == null ? '' : ' ' + className;
 
     const imageWrapperClass = imageLoaded === true
         ? 'live-demo-card-image-wrapper is-loaded'
@@ -180,20 +184,21 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
             return;
         }
 
-        silenceFrameMedia(iframeRef.current);
+        const frame = iframeRef.current;
+        silenceFrameMedia(frame);
 
         let observer = null;
         const pollId = setInterval(() => {
-            silenceFrameMedia(iframeRef.current);
+            silenceFrameMedia(frame);
         }, 400);
 
         try {
-            const doc = iframeRef.current == null ? null : iframeRef.current.contentDocument;
+            const doc = frame == null ? null : frame.contentDocument;
             const root = doc == null ? null : (doc.body == null ? doc.documentElement : doc.body);
 
             if (root != null && typeof MutationObserver === 'function') {
                 observer = new MutationObserver(() => {
-                    silenceFrameMedia(iframeRef.current);
+                    silenceFrameMedia(frame);
                 });
                 observer.observe(root, { childList: true, subtree: true });
             }
@@ -206,7 +211,7 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
             if (observer != null) {
                 observer.disconnect();
             }
-            silenceFrameMedia(iframeRef.current);
+            silenceFrameMedia(frame);
         };
     }, [isPreloading, demoOpen, isReady]);
 
@@ -357,8 +362,11 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
         <>
             <button
                 type='button'
-                className='live-demo-card hover-enlarge'
+                ref={appearRef}
+                className={'live-demo-card hover-enlarge' + extraClassName + enterClass}
+                style={style}
                 onClick={handleOpenInfo}
+                onAnimationEnd={finishAppearAnimation}
                 aria-label={openLabel}
             >
                 {

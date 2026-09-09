@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { TechStack } from '../tech-stack/TechStack'
 import { tecStackFE, tecStackCMS, iaStackCMS } from '../../data/techPanelData'
 import { LanguageContext } from '../../context/LanguageContext';
+import { finishAppearAnimation, useAppearOnView } from '../../utils/appear';
 
 // const tecStackFE= [
 //     "ReactJs",
@@ -37,12 +38,19 @@ import { LanguageContext } from '../../context/LanguageContext';
 
 // ]
 
-export const TechPanel = () => {
+export const TechPanel = ({ className, style }) => {
 
+    const { appearRef, enterClass } = useAppearOnView();
+    const extraClassName = className == null ? '' : ' ' + className;
     const { siteLang } = useContext(LanguageContext);
 
     return (
-    <div className='cta-wrapper'>
+    <div
+        ref={appearRef}
+        className={'cta-wrapper' + extraClassName + enterClass}
+        style={style}
+        onAnimationEnd={finishAppearAnimation}
+    >
     <header className='cta-header'>
         <h3 className='cta-title'>
             {

@@ -1,11 +1,13 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { LanguageContext } from '../../context/LanguageContext';
+import { ExitNavigateContext } from '../../context/ExitNavigateContext';
 import { menuContent } from '../../data/menuContent';
 
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { siteLang } = useContext(LanguageContext);
+  const requestNavigate = useContext(ExitNavigateContext);
   const currentMenu = menuContent[siteLang] || menuContent.EN;
 
   // Función para manejar el clic y alternar el estado
@@ -29,7 +31,14 @@ const HamburgerMenu = () => {
             <Link
               to={item.target}
               className={({ isActive }) => `link-item ${isActive ? 'active' : ''}`}
-              onClick={() => setIsOpen(false)} // opcional: cerrar menú al clickear
+              onClick={(event) => {
+                setIsOpen(false);
+                if (requestNavigate == null) {
+                  return;
+                }
+                event.preventDefault();
+                requestNavigate(item.target);
+              }}
             >
               {item.title}
             </Link>

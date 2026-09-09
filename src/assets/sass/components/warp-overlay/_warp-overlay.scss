@@ -1,0 +1,48 @@
+.warp-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: transparent;
+    pointer-events: none;
+
+    .warp-overlay-canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+body.is-warping {
+    .warp-overlay {
+        z-index: 1;
+    }
+
+    .header {
+        z-index: 3;
+        pointer-events: none;
+    }
+
+    .main-section {
+        visibility: hidden;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .warp-overlay {
+        display: none;
+    }
+
+    body.is-warping {
+        .header {
+            z-index: 2;
+            pointer-events: auto;
+        }
+
+        .main-section {
+            visibility: visible;
+        }
+    }
+}

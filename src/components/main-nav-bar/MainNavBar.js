@@ -3,15 +3,26 @@ import { Link } from 'react-router-dom'
 import HamburgerMenu from '../hamburguer-menu/HamburguerMenu'
 import { LangMenu } from '../language-menu/LanguageMenu'
 import { LanguageContext } from '../../context/LanguageContext'
+import { ExitNavigateContext } from '../../context/ExitNavigateContext'
 
 export const MainNavBar = () => {
   const { siteLang } = useContext( LanguageContext )
+  const requestNavigate = useContext(ExitNavigateContext)
+
+  const handleLogoClick = (event) => {
+    if (requestNavigate == null) {
+      return
+    }
+    event.preventDefault()
+    requestNavigate('/')
+  }
+
   return (
     <nav className='main-nav'>
       <div className='container main-nav-wrapper'>
                      
             {/* <a className='header-logo-link' href='/'> */}
-            <Link to={'/'} className='header-logo-link'>
+            <Link to={'/'} className='header-logo-link' onClick={handleLogoClick}>
               <div className='my-self-card'>    
                 <div className='avatar-wrapper'>
                   {/* <div className='back-avatar-circle'></div> */}

@@ -199,8 +199,8 @@ export const liveDemosData = [
         featuredImageUrl: `${process.env.PUBLIC_URL}/assets/live-projects/daas-website/assets/images/hero-section-featured-image.avif`,
         demoUrl: `${process.env.PUBLIC_URL}/assets/live-projects/daas-website/index.html`,
         cardTooltip: {
-            EN: 'Just another one-page landing with style 👷',
-            ES: 'Solo otra landing one page con estilo 👷',
+            EN: 'Just another landing one-page with Bahaus style 🎨',
+            ES: 'Solo otra landing one page estilo Bauhaus 🎨',
         },
     },
 ];

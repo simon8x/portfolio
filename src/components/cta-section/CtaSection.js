@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
-
-
+import { ExitNavigateContext } from '../../context/ExitNavigateContext';
+import { finishAppearAnimation, useAppearOnView } from '../../utils/appear';
 
 export const CtaSection = (props) => {
+  const { appearRef, enterClass } = useAppearOnView();
+  const requestNavigate = useContext(ExitNavigateContext);
+  const extraClassName = props.className == null ? '' : ' ' + props.className;
+
+  const handleClick = (event) => {
+    if (requestNavigate == null) {
+      return;
+    }
+    event.preventDefault();
+    requestNavigate(props.target);
+  };
 
   const getIcon = (id) => {
     switch (id) {
@@ -19,8 +30,13 @@ export const CtaSection = (props) => {
   };
 
   return (
-    <div className='cta-container hover-enlarge'>
-        <Link to ={props.target}>
+    <div
+      ref={appearRef}
+      className={'cta-container hover-enlarge' + extraClassName + enterClass}
+      style={props.style}
+      onAnimationEnd={finishAppearAnimation}
+    >
+        <Link to={props.target} onClick={handleClick}>
           <header className='cta-header'>
               <h3 className='cta-title'>{props.title}</h3>   
               <div className='cta-icon-wrapper'>

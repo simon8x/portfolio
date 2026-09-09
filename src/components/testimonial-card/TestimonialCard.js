@@ -3,11 +3,14 @@ import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
 
 import { LanguageContext } from '../../context/LanguageContext';
-import { ChatBubble } from '../chat-bubble/ChatBubble';
 import { TestimonialAuthor } from '../testimonial-author/TestimonialAuthor';
+import { finishAppearAnimation, useAppearOnView } from '../../utils/appear';
 
 
-export const TestimonialCard = ({ recomendacion }) => {
+export const TestimonialCard = ({ recomendacion, className, style, appearReveal }) => {
+
+    const { appearRef, enterClass } = useAppearOnView({ reveal: appearReveal });
+    const extraClassName = className == null ? '' : ' ' + className;
 
     const { siteLang } = useContext(LanguageContext);
     const [open, setOpen] = useState(false);
@@ -25,8 +28,11 @@ export const TestimonialCard = ({ recomendacion }) => {
         <>
             <button
                 type='button'
-                className='testimonial-card hover-enlarge'
+                ref={appearRef}
+                className={'testimonial-card hover-enlarge' + extraClassName + enterClass}
+                style={style}
                 onClick={() => setOpen(true)}
+                onAnimationEnd={finishAppearAnimation}
                 aria-label={openLabel}
             >
                 {/* <ChatBubble /> */}

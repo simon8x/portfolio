@@ -8,6 +8,10 @@ import { TrackRecord } from './containers/track-record/TrackRecord';
 import { Testimonials } from './containers/testimonials/Testimonials';
 import { Home } from './containers/home/Home';
 import { LanguageProvider } from './context/LanguageProvider';
+import { WarpProvider } from './context/WarpProvider';
+import { WarpOverlay } from './components/warp-overlay/WarpOverlay';
+import { BackgroundShapes } from './components/background-shapes/BackgroundShapes';
+import { ScrollToTop } from './components/scroll-to-top/ScrollToTop';
 // import { Home } from './containers/home/Home';
 
 const RedirectProjectsV2ToProjects = () => {
@@ -21,15 +25,20 @@ function App() {
   return (
     <LanguageProvider>
       <HashRouter basename="/">
-        <Routes>
-          <Route path='/' element={<Home />} />
-          {/* <Route path='/projects' element={ <Projects />}/> */}
-          <Route path='/projects' element={ <ProjectsV2 />}/>
-          <Route path='/projects-v2' element={ <RedirectProjectsV2ToProjects />}/>
-          <Route path='/track-record' element={ <TrackRecord />}/>
-          <Route path='/testimonial' element={ <Testimonials />}/>
-          <Route path='/*' element={ <Navigate to= '/'/> }/>
-        </Routes>
+        <WarpProvider>
+          <ScrollToTop />
+          <BackgroundShapes />
+          <WarpOverlay />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            {/* <Route path='/projects' element={ <Projects />}/> */}
+            <Route path='/projects' element={ <ProjectsV2 />}/>
+            <Route path='/projects-v2' element={ <RedirectProjectsV2ToProjects />}/>
+            <Route path='/track-record' element={ <TrackRecord />}/>
+            <Route path='/testimonial' element={ <Testimonials />}/>
+            <Route path='/*' element={ <Navigate to= '/'/> }/>
+          </Routes>
+        </WarpProvider>
       </HashRouter>
     </LanguageProvider>
   );

@@ -24,7 +24,7 @@ export const recomendationsData = [
     name: "Judy Keeley",
     position: "Principal UX Designer at Monetate",
     linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
-    authorGender: "male",
+    authorGender: "female",
     authorLinkedinUrl: "https://www.linkedin.com/in/judykeeley",
     country: "US"
   },
