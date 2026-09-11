@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect, useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { TechStack } from '../tech-stack/TechStack';
 import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
@@ -38,6 +38,10 @@ export const OtherProject = ({ otherProject }) => {
     }, []);
 
     const handleViewDemo = (event) => {
+        if (event.metaKey === true || event.ctrlKey === true || event.shiftKey === true || event.altKey === true) {
+            return;
+        }
+
         event.preventDefault();
         event.stopPropagation();
 
@@ -71,7 +75,7 @@ export const OtherProject = ({ otherProject }) => {
                         <img
                             className='other-project-img'
                             src={otherProject['heroImageUrl']}
-                            alt=''
+                            alt={otherProject.projectName}
                             onLoad={() => setHeroLoaded(true)}
                             onError={() => setHeroLoaded(true)}
                         />
@@ -98,7 +102,7 @@ export const OtherProject = ({ otherProject }) => {
                         <img
                             className='modal-hero-banner-img'
                             src={otherProject.projectImageUrl}
-                            alt=''
+                            alt={otherProject.projectName}
                             onLoad={() => setModalBannerLoaded(true)}
                             onError={() => setModalBannerLoaded(true)}
                         />
@@ -119,13 +123,13 @@ export const OtherProject = ({ otherProject }) => {
                     </div>
                     {
                         hasDemo === true
-                            ? <button
-                                type='button'
+                            ? <Link
+                                to={'/projects?demo=' + encodeURIComponent(demoId)}
                                 className='modal-view-demo-link'
                                 onClick={handleViewDemo}
                               >
                                 {viewDemoLabel}
-                              </button>
+                              </Link>
                             : null
                     }
                 </article>

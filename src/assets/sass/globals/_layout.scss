@@ -41,6 +41,40 @@ body {
     position: relative;
 }
 
+.skip-link {
+    position: absolute;
+    left: 1.6rem;
+    top: 1.6rem;
+    z-index: 100;
+    padding: 1.2rem 2rem;
+    background-color: $theme-dark-primary-text;
+    color: $theme-dark-primary-background;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-family: "Inria Sans";
+    font-weight: 700;
+    text-shadow: none;
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.skip-link:visited {
+    color: $theme-dark-primary-background;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+    clip-path: none;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    outline: 2px solid $theme-dark-primary-background;
+    outline-offset: 2px;
+}
+
 .header {
     height: 64px;
     width: 100%;
@@ -62,7 +96,12 @@ body {
     //align-items: center;
     z-index: 2;
     // background-color: $theme-dark-overlay;
-    
+}
+
+.main-section:focus,
+.main-section:focus-visible {
+    outline: 2px solid $theme-dark-primary-text;
+    outline-offset: -2px;
 }
 
 .container{

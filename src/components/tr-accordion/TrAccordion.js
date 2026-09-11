@@ -88,7 +88,7 @@ const TrPositionItem = ({ resumeItem, index, isOpen, onToggle, siteLang, exiting
                             ? 'company-logo company-logo--informatorio'
                             : 'company-logo'}
                         src={resumeItem.companyLogo}
-                        alt=''
+                        alt={resumeItem.company}
                     />
                 </div>
                 <div className='position-data'>

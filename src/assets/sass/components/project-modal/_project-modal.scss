@@ -41,6 +41,7 @@
     }
 
     .modal-view-demo-link {
+        display: inline-block;
         margin-top: 1.5rem;
         font: inherit;
         cursor: pointer;
@@ -51,6 +52,10 @@
         padding: .7rem 1.4rem;
         @include name-1;
         text-decoration: none;
+
+        &:visited {
+            color: $theme-dark-primary-text;
+        }
 
         &:hover {
             background-color: $theme-dark-overlay;

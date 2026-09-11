@@ -12,6 +12,7 @@ import { WarpProvider } from './context/WarpProvider';
 import { WarpOverlay } from './components/warp-overlay/WarpOverlay';
 import { BackgroundShapes } from './components/background-shapes/BackgroundShapes';
 import { ScrollToTop } from './components/scroll-to-top/ScrollToTop';
+import { SkipLink } from './components/skip-link/SkipLink';
 // import { Home } from './containers/home/Home';
 
 const RedirectProjectsV2ToProjects = () => {
@@ -26,6 +27,7 @@ function App() {
     <LanguageProvider>
       <HashRouter basename="/">
         <WarpProvider>
+          <SkipLink />
           <ScrollToTop />
           <BackgroundShapes />
           <WarpOverlay />

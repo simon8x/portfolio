@@ -19,7 +19,7 @@ export const TestimonialAuthor = ({ recomendacion, showLinkedinLink }) => {
                 <img
                     className='testimonial-author-avatar-img'
                     src={recomendacion.avatarUrl}
-                    alt=''
+                    alt={recomendacion.name}
                     onLoad={() => setAvatarLoaded(true)}
                     onError={() => setAvatarLoaded(true)}
                 />

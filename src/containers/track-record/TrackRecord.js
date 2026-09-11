@@ -23,7 +23,7 @@ export const TrackRecord = () => {
       <header className='header'>
         <MainNavBar />
       </header>
-      <main className='main-section'>
+      <main id='main-content' className='main-section' tabIndex={-1}>
         <div className="container">
 
           <section className='track-record-section'>

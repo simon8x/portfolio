@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { TechStack } from '../tech-stack/TechStack'
 import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
@@ -29,6 +29,12 @@ export const FeaturedProject = ({ featuredProject }) => {
 
 	const demoChipLabel = siteLang === 'ES' ? 'Demo' : 'Demo';
 	const viewDemoLabel = siteLang === 'ES' ? 'Ver demo' : 'View demo';
+	const subtitle = featuredProject.projectSubtitle[siteLang] == null
+		? featuredProject.projectSubtitle.EN
+		: featuredProject.projectSubtitle[siteLang];
+	const imageAlt = subtitle == null || subtitle === ''
+		? featuredProject.projectName
+		: featuredProject.projectName + ' — ' + subtitle;
 
 	useEffect(() => {
 		return () => {
@@ -39,6 +45,10 @@ export const FeaturedProject = ({ featuredProject }) => {
 	}, []);
 
 	const handleViewDemo = (event) => {
+		if (event.metaKey === true || event.ctrlKey === true || event.shiftKey === true || event.altKey === true) {
+			return;
+		}
+
 		event.preventDefault();
 		event.stopPropagation();
 
@@ -98,7 +108,7 @@ export const FeaturedProject = ({ featuredProject }) => {
 						<img
 							className='featured-project-img'
 							src={featuredProject['heroImageUrl']}
-							alt=''
+							alt={imageAlt}
 							onLoad={() => setHeroLoaded(true)}
 							onError={() => setHeroLoaded(true)}
 						/>
@@ -120,7 +130,7 @@ export const FeaturedProject = ({ featuredProject }) => {
 						<img
 							className='modal-hero-banner-img'
 							src={featuredProject.projectImageUrl}
-							alt=''
+							alt={imageAlt}
 							onLoad={() => setModalBannerLoaded(true)}
 							onError={() => setModalBannerLoaded(true)}
 						/>
@@ -140,13 +150,13 @@ export const FeaturedProject = ({ featuredProject }) => {
 					</div>
 					{
 						hasDemo === true
-							? <button
-								type='button'
+							? <Link
+								to={'/projects?demo=' + encodeURIComponent(demoId)}
 								className='modal-view-demo-link'
 								onClick={handleViewDemo}
 							  >
 								{viewDemoLabel}
-							  </button>
+							  </Link>
 							: null
 					}
 				</article>

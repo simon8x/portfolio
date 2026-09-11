@@ -19,7 +19,7 @@ export const Home = () => {
       <header className='header'>
         <MainNavBar />
       </header>
-      <main className='main-section'>
+      <main id='main-content' className='main-section' tabIndex={-1}>
         <div className='home-wrapper'>
           <div className='hero-section hero-section'>
             <div className='container'>
