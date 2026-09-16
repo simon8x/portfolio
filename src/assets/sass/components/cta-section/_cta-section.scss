@@ -11,11 +11,7 @@
 }
 
 .cta-container {
-    padding: 2rem;
     width: 30%;
-    border-radius: 1rem;
-    background-color: $theme-dark-overlay;
-    border: solid 2px $theme-light-overlay;
     position: relative;
 
     .cta-link {
@@ -25,10 +21,26 @@
         text-decoration: none;
     }
 
-    // El grow vive acá, no en el contenedor del glow: Chromium pinta una cruz
-    // blanca si filter:blur queda bajo un ancestro con transform: scale.
+    // El grow y el cromo visual van juntos. El scale no puede vivir en
+    // .cta-container: ahí está el appear (transform) y el glow del icono
+    // (filter:blur); Chromium pinta una cruz blanca si el blur queda bajo un
+    // ancestro con transform: scale.
     .cta-panel {
-        border-radius: inherit;
+        padding: 2rem;
+        border-radius: 1rem;
+        background-color: $theme-dark-overlay;
+        border: solid 2px $theme-light-overlay;
+        transform-origin: center center;
+    }
+
+    &:hover,
+    &:focus-within {
+        z-index: 2;
+    }
+
+    &:hover .cta-panel.hover-enlarge,
+    &:focus-within .cta-panel.hover-enlarge {
+        transform: scale(1.025);
     }
 
     .cta-header {
@@ -121,7 +133,9 @@
 
 @media screen and (max-width:920px) {
     .cta-container {
-        padding: 4rem 2rem 2rem 2rem;
+        .cta-panel {
+            padding: 4rem 2rem 2rem 2rem;
+        }
         .cta-header {
             .cta-title {
                 @include font-heading-4;
@@ -144,9 +158,11 @@
 
 @media screen and (max-width:768px) {
     .cta-container {
-        padding: 4rem 2rem 2rem 2rem;
         width: 100%;
         margin-bottom: 8rem;
+        .cta-panel {
+            padding: 4rem 2rem 2rem 2rem;
+        }
         .cta-body {
             .cta-pharagrap {
                 text-align: center;
