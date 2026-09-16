@@ -32,19 +32,21 @@ export const CtaSection = (props) => {
   return (
     <div
       ref={appearRef}
-      className={'cta-container hover-enlarge' + extraClassName + enterClass}
+      className={'cta-container' + extraClassName + enterClass}
       style={props.style}
       onAnimationEnd={finishAppearAnimation}
     >
-        <Link to={props.target} onClick={handleClick}>
-          <header className='cta-header'>
-              <h3 className='cta-title'>{props.title}</h3>   
-              <div className='cta-icon-wrapper'>
-              <img className='cta-icon-img flotate' src={getIcon(props.id)} alt='' />
-              </div>     
-          </header>
-          <div className='cta-body'>
-              <p className='cta-pharagrap'>{props.description}</p>
+        <Link to={props.target} className='cta-link' onClick={handleClick}>
+          <div className='cta-panel hover-enlarge'>
+            <header className='cta-header'>
+                <h3 className='cta-title'>{props.title}</h3>
+            </header>
+            <div className='cta-body'>
+                <p className='cta-pharagrap'>{props.description}</p>
+            </div>
+          </div>
+          <div className='cta-icon-wrapper'>
+            <img className='cta-icon-img flotate' src={getIcon(props.id)} alt='' />
           </div>
         </Link>
     </div>

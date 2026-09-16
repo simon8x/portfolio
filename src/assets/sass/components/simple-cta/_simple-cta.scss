@@ -40,3 +40,65 @@
         }
     }
 }
+
+.cta-wrapper.cta-cv-download {
+    .cta-body .cta-button {
+        position: relative;
+        isolation: isolate;
+        overflow: visible;
+        background-color: $theme-dark-primary-background;
+        border: solid 2px $theme-light-overlay;
+        border-color: transparent;
+        transition: transform .95s;
+
+        // Disco opaco encima del bloom para que el glow no se vea a través del botón.
+        &::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            box-sizing: border-box;
+            border-radius: inherit;
+            border: solid 2px $theme-light-overlay;
+            background-color: $theme-dark-primary-background;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        &::after {
+            @include relation-glow-bloom(1rem, 7px, 2px);
+        }
+
+        > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        span {
+            font-size: inherit;
+            font-family: inherit;
+            font-weight: inherit;
+            text-shadow: inherit;
+            color: inherit;
+        }
+    }
+
+    &:hover .cta-button,
+    &:focus-within .cta-button {
+        transform: scale(1.025);
+
+        &::after {
+            opacity: 1;
+            animation: relation-glow 20s infinite;
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cta-wrapper.cta-cv-download:hover .cta-button::after,
+    .cta-wrapper.cta-cv-download:focus-within .cta-button::after {
+        animation: none;
+    }
+}

@@ -1,23 +1,28 @@
 .tr-section {
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
     transition: all .75s;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
     .position-wrapper {
         // background-color: yellow;
         // border: solid 2px $theme-light-overlay;
+        position: relative;
+        transform-origin: top center;
+        transition: transform .95s, margin-bottom 0.75s ease;
         .position-header {
             background-color: $theme-dark-panel-bg;
             border: solid 2px $theme-light-overlay;
             position: relative;
             display: flex;
             padding: 1rem .5rem;
-            margin-block: .5rem 0;
             border-radius: 1rem;
             overflow-anchor: auto;
 
             flex-grow: 1;
             z-index: 1;
-            transition: border-radius 0.75s ease;
+            transition: transform .95s, border-radius 0.75s ease;
 
             .position-data{
                 display: flex;
@@ -109,15 +114,13 @@
         .position-description {
             overflow-anchor: none;
             background-color: $theme-dark-panel-bg;
-            border-bottom: solid 2px transparent;
-            border-left: solid 2px transparent;
-            border-right: solid 2px transparent;
+            border: 0;
             border-radius: 0 0 1rem 1rem;
             padding: 0 1.5rem; // Transición desde padding 0 en altura colapsada
             position: relative;
             overflow: hidden;
             max-height: 0;
-            transition: max-height 0.75s ease-in-out, padding 0.75s ease-in-out, border-color 0.75s ease-in-out; // Animación para max-height y padding
+            transition: max-height 0.75s ease-in-out, padding 0.75s ease-in-out, border-color 0.75s ease-in-out, border-width 0.75s ease-in-out;
 
             // animation: show-description;
             // animation-duration: 10s;
@@ -154,9 +157,21 @@
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
-        }        
+        }
+    }
+    .position-wrapper:not(.active) {
+        &:hover {
+            z-index: 2;
+        }
+        .position-header {
+            @include glow-hover-card(1rem, 7px, 2px, 0 0 4px 1px);
+        }
     }
     .position-wrapper.active {
+        z-index: 2;
+        transform: scale(1.025);
+        margin-bottom: var(--tr-scale-spill, 0px);
+
         .position-header {
             border-radius: 1rem 1rem 0 0 ;
             .position-side-wrapper{

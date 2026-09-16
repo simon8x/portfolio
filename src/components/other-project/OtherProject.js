@@ -63,7 +63,7 @@ export const OtherProject = ({ otherProject }) => {
 
     return(
         <>
-            <div className='other-project-slide-wrapper' key={otherProject.index} onClick={() => setOpen(true)} >
+            <div className='other-project-slide-wrapper glow--epic hover-enlarge' key={otherProject.index} onClick={() => setOpen(true)} >
                 {
                     hasDemo === true
                         ? <span className='project-demo-chip'>{demoChipLabel}</span>

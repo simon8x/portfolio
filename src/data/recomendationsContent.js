@@ -1,3 +1,13 @@
+// Nivel del vínculo conmigo → rareza de glow (box-opening).
+// peer = mismo nivel, mentee = alumnos, lead = quienes dirigían el trabajo,
+// sponsor = dirección / cliente por encima de esos leads.
+export const RELATION_LEVEL_GLOW = {
+    peer: 'rare',
+    mentee: 'common',
+    lead: 'epic',
+    sponsor: 'legendary',
+};
+
 export const recomendationsData = [
   {
     headLine: {
@@ -26,7 +36,12 @@ export const recomendationsData = [
     linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
     authorGender: "female",
     authorLinkedinUrl: "https://www.linkedin.com/in/judykeeley",
-    country: "US"
+    country: "US",
+    relation: {
+      EN: "UX lead",
+      ES: "UX lead",
+    },
+    relationLevel: "lead",
   },
   {
     text: {
@@ -47,7 +62,12 @@ export const recomendationsData = [
     linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
     authorGender: "male",
     authorLinkedinUrl: "https://www.linkedin.com/in/nispot/",
-    country: "MX"
+    country: "MX",
+    relation: {
+      EN: "Colleague",
+      ES: "Colega",
+    },
+    relationLevel: "peer",
   },
   {
     text: {
@@ -66,7 +86,66 @@ export const recomendationsData = [
     linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
     authorGender: "male",
     authorLinkedinUrl: "https://www.linkedin.com/in/hbuzzi/",
-    country: "AR"
+    country: "AR",
+    relation: {
+      EN: "Colleague",
+      ES: "Colega",
+    },
+    relationLevel: "peer",
+  },
+  {
+    text: {
+      EN: [
+        "We had the pleasure of working with Simón Yamil Ibalo over a period of three months at uugot.it. He was responsible for creating the Landing Page for uugot.it/reachall on a WordPress basis, bringing in his expertise and ensuring that the Product Owner’s vision was fully realized.",
+        "Beyond his core responsibilities, Simón continued to support our development team with valuable insights and hands‑on assistance even after the initial project was completed. His deep expertise, combined with a solution‑oriented mindset, makes him an exceptional professional. Simón is not only a highly skilled problem‑solver, but he also ensures on‑time delivery and keeps all stakeholders well‑informed through his clear and proactive communication.",
+        "Working with Simón was a seamless experience, and we would gladly collaborate with him again in the future. I can highly recommend him without hesitation."
+      ],
+      ES: [
+        "Tuvimos el placer de trabajar con Simón Yamil Ibalo durante tres meses en uugot.it. Se encargó de crear la landing page de uugot.it/reachall en WordPress, aportando su experiencia y asegurando que la visión del Product Owner se implementara completamente.",
+        "Más allá de sus responsabilidades principales, Simón siguió apoyando a nuestro equipo de desarrollo con valiosos aportes y asistencia práctica incluso después de que el proyecto inicial terminó. Su profunda experiencia, combinada con una mentalidad orientada a las soluciones, lo convierte en un profesional excepcional. Simón no solo resuelve problemas con gran habilidad, también entrega a tiempo y mantiene a todos los involucrados bien informados gracias a su comunicación clara y proactiva.",
+        "Trabajar con Simón fue una experiencia fluida y sin inconvenientes. Con gusto volveríamos a colaborar con él en el futuro. Lo recomiendo sin dudarlo."
+      ]
+    },
+    avatarUrl: `${process.env.PUBLIC_URL}/assets/images/testimonial/phllip-etzlinger.jpg`,
+    name: "Philipp Etzlinger",
+    position: "CEO bei uugot.it",
+    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
+    authorGender: "male",
+    authorLinkedinUrl: "https://www.linkedin.com/in/philippetzlinger/",
+    country: "AT",
+    relation: {
+      EN: "Stakeholder",
+      ES: "Stakeholder",
+    },
+    relationLevel: "sponsor",
+  },
+  {
+    text: {
+      EN: [
+        "I had the pleasure of working with Simon on an ecommerce project at our creative agency, and I appreciated his collaborative and adaptable approach. He brought a friendly energy to the team, making it easy for everyone to work together.",
+        "I would create a backlog of tasks he would need to complete, and then I would do quality control on those.",
+        "Simon was always open to learning new platforms and tools (like Webflow) and adapt to different changes in the project as needed. While he had his own perspectives as a front‑end developer, he always respected the product owner's vision and remained flexible throughout the project.",
+        "Above all, Simon was reliable, positive‑minded and honest. His positive attitude and team‑oriented mindset made him a great addition to the project. I’d recommend him to any team looking for a trustworthy and adaptable developer."
+      ],
+      ES: [
+        "Tuve el placer de trabajar con Simón en un proyecto de comercio electrónico en nuestra agencia creativa y valoré mucho su enfoque colaborativo y adaptable. Aportó una energía amigable al equipo, facilitando el trabajo conjunto.",
+        "Yo creaba un backlog de tareas que él debía completar y luego realizaba control de calidad sobre esas tareas.",
+        "Simón siempre estuvo abierto a aprender nuevas plataformas y herramientas (como Webflow) y a adaptarse a los cambios del proyecto cuando fuera necesario. Aunque tenía sus propias perspectivas como desarrollador front‑end, siempre respetó la visión del Product Owner y se mantuvo flexible durante todo el proyecto.",
+        "Sobre todo, Simón fue confiable, positivo y honesto. Su actitud positiva y su mentalidad orientada al equipo lo convirtieron en una gran incorporación al proyecto. Lo recomendaría a cualquier equipo que busque un desarrollador adaptable y confiable."
+      ]
+    },
+    avatarUrl: `${process.env.PUBLIC_URL}/assets/images/testimonial/fermin-lira.jpg`,
+    name: "Fermín Lira",
+    position: "Front‑end Developer and UX Designer (Magento2, npm, javascript, webpack)",
+    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
+    authorGender: "male",
+    authorLinkedinUrl: "https://www.linkedin.com/in/ferminlira",
+    country: "AR",
+    relation: {
+      EN: "Manager",
+      ES: "Manager",
+    },
+    relationLevel: "sponsor",
   },
   {
     text: {
@@ -91,28 +170,12 @@ export const recomendationsData = [
     linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
     authorGender: "male",
     authorLinkedinUrl: "https://www.linkedin.com/in/santiago-botta/",
-    country: "AR"
-  },
-  {
-    text: {
-      EN: [
-        "We had the pleasure of working with Simón Yamil Ibalo over a period of three months at uugot.it. He was responsible for creating the Landing Page for uugot.it/reachall on a WordPress basis, bringing in his expertise and ensuring that the Product Owner’s vision was fully realized.",
-        "Beyond his core responsibilities, Simón continued to support our development team with valuable insights and hands‑on assistance even after the initial project was completed. His deep expertise, combined with a solution‑oriented mindset, makes him an exceptional professional. Simón is not only a highly skilled problem‑solver, but he also ensures on‑time delivery and keeps all stakeholders well‑informed through his clear and proactive communication.",
-        "Working with Simón was a seamless experience, and we would gladly collaborate with him again in the future. I can highly recommend him without hesitation."
-      ],
-      ES: [
-        "Tuvimos el placer de trabajar con Simón Yamil Ibalo durante tres meses en uugot.it. Se encargó de crear la landing page de uugot.it/reachall en WordPress, aportando su experiencia y asegurando que la visión del Product Owner se implementara completamente.",
-        "Más allá de sus responsabilidades principales, Simón siguió apoyando a nuestro equipo de desarrollo con valiosos aportes y asistencia práctica incluso después de que el proyecto inicial terminó. Su profunda experiencia, combinada con una mentalidad orientada a las soluciones, lo convierte en un profesional excepcional. Simón no solo resuelve problemas con gran habilidad, también entrega a tiempo y mantiene a todos los involucrados bien informados gracias a su comunicación clara y proactiva.",
-        "Trabajar con Simón fue una experiencia fluida y sin inconvenientes. Con gusto volveríamos a colaborar con él en el futuro. Lo recomiendo sin dudarlo."
-      ]
+    country: "AR",
+    relation: {
+      EN: "Tech lead",
+      ES: "Líder técnico",
     },
-    avatarUrl: `${process.env.PUBLIC_URL}/assets/images/testimonial/phllip-etzlinger.jpg`,
-    name: "Philipp Etzlinger",
-    position: "CEO bei uugot.it",
-    linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
-    authorGender: "male",
-    authorLinkedinUrl: "https://www.linkedin.com/in/philippetzlinger/",
-    country: "AT"
+    relationLevel: "lead",
   },
   {
     text: {
@@ -135,7 +198,12 @@ export const recomendationsData = [
     linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
     authorGender: "male",
     authorLinkedinUrl: "https://www.linkedin.com/in/jongtae-choi-24a46645/",
-    country: "KR"
+    country: "KR",
+    relation: {
+      EN: "Tech lead",
+      ES: "Líder técnico",
+    },
+    relationLevel: "lead",
   },
   {
     text: {
@@ -154,7 +222,12 @@ export const recomendationsData = [
     linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
     authorGender: "male",
     authorLinkedinUrl: "https://www.linkedin.com/in/rene-hakiki/",
-    country: "US"
+    country: "US",
+    relation: {
+      EN: "Stakeholder",
+      ES: "Stakeholder",
+    },
+    relationLevel: "sponsor",
   },
   {
     text: {
@@ -173,7 +246,12 @@ export const recomendationsData = [
     linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
     authorGender: "male",
     authorLinkedinUrl: "https://www.linkedin.com/in/matias-mu%C3%B1oz-0a4a1b19/",
-    country: "AR"
+    country: "AR",
+    relation: {
+      EN: "Manager",
+      ES: "Manager",
+    },
+    relationLevel: "sponsor",
   },
   {
     text: {
@@ -194,12 +272,17 @@ export const recomendationsData = [
     linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
     authorGender: "male",
     authorLinkedinUrl: "https://www.linkedin.com/in/matiasmasca/",
-    country: "AR"
+    country: "AR",
+    relation: {
+      EN: "Tech lead",
+      ES: "Líder técnico",
+    },
+    relationLevel: "peer",
   },
   {
     text: {
       EN: [
-        "Excellent teacher! He not only taught me how to develop software but also made the theory interesting.",
+        "Excellent teacher! He not only taught me how to develop software but also made the theory interesting. but also made the theory interesting.",
         "Always looking for ways to inspire, he worked on the individual potential of his students. My current career as a developer started with him.",
         "As a professional, his leadership and technical skills always create an excellent work environment."
       ],
@@ -215,7 +298,12 @@ export const recomendationsData = [
     linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
     authorGender: "male",
     authorLinkedinUrl: "https://www.linkedin.com/in/nelsonjnunez/",
-    country: "AR"
+    country: "AR",
+    relation: {
+      EN: "Ex-student",
+      ES: "Ex Alumno",
+    },
+    relationLevel: "mentee",
   },
   {
     text: {
@@ -236,7 +324,12 @@ export const recomendationsData = [
     linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
     authorGender: "male",
     authorLinkedinUrl: "https://www.linkedin.com/in/jgmart/",
-    country: "AR"
+    country: "AR",
+    relation: {
+      EN: "Ex-student",
+      ES: "Ex Alumno",
+    },
+    relationLevel: "mentee",
   },
   {
     text: {
@@ -257,7 +350,12 @@ export const recomendationsData = [
     linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
     authorGender: "male",
     authorLinkedinUrl: "https://www.linkedin.com/in/fcosta98/",
-    country: "AR"
+    country: "AR",
+    relation: {
+      EN: "Ex-student",
+      ES: "Ex Alumno",
+    },
+    relationLevel: "mentee",
   },
   {
     text: {
@@ -276,7 +374,12 @@ export const recomendationsData = [
     linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
     authorGender: "male",
     authorLinkedinUrl: "https://www.linkedin.com/in/davidsanchezleiva/",
-    country: "AR"
+    country: "AR",
+    relation: {
+      EN: "Colleague",
+      ES: "Colega",
+    },
+    relationLevel: "peer",
   },
   {
     text: {
@@ -297,6 +400,11 @@ export const recomendationsData = [
     linkedinLink: "https://www.linkedin.com/in/simonibalo/#recommendations",
     authorGender: "male",
     authorLinkedinUrl: "https://www.linkedin.com/in/brianstanleyarg/",
-    country: "AR"
+    country: "AR",
+    relation: {
+      EN: "Colleague",
+      ES: "Colega",
+    },
+    relationLevel: "peer",
   }
 ];

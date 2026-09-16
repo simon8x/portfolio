@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { LanguageContext } from '../../context/LanguageContext';
 import { ExitNavigateContext } from '../../context/ExitNavigateContext';
 import { menuContent } from '../../data/menuContent';
@@ -28,9 +28,14 @@ const HamburgerMenu = () => {
 
 {currentMenu.map(item => (
           <li key={item.id}>
-            <Link
+            <NavLink
               to={item.target}
-              className={({ isActive }) => `link-item ${isActive ? 'active' : ''}`}
+              className={(nav) => {
+                if (nav.isActive === true) {
+                  return 'link-item glow--epic active';
+                }
+                return 'link-item glow--epic';
+              }}
               onClick={(event) => {
                 setIsOpen(false);
                 if (requestNavigate == null) {
@@ -41,7 +46,7 @@ const HamburgerMenu = () => {
               }}
             >
               {item.title}
-            </Link>
+            </NavLink>
           </li>
         ))}
 

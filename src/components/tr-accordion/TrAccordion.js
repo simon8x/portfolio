@@ -7,6 +7,12 @@ import { finishAppearAnimation, useAppearOnView } from '../../utils/appear'
 const ITEM_EXIT_STAGGER_MS = 80;
 const NAV_SCROLL_GAP_PX = 12;
 const EXPAND_SETTLE_MS = 750;
+const TR_GROW_SCALE = 1.025;
+
+const updateOpenGrowSpill = (wrapper) => {
+    const spill = wrapper.offsetHeight * (TR_GROW_SCALE - 1);
+    wrapper.style.setProperty('--tr-scale-spill', spill + 'px');
+};
 
 const pinOpenHeaderBelowNav = () => {
     const wrapper = document.getElementById('active-position');
@@ -14,6 +20,7 @@ const pinOpenHeaderBelowNav = () => {
         return;
     }
     wrapper.classList.add('appear--done');
+    updateOpenGrowSpill(wrapper);
     const itemHeader = wrapper.querySelector('.position-header');
     if (itemHeader == null) {
         return;
@@ -68,14 +75,14 @@ const TrPositionItem = ({ resumeItem, index, isOpen, onToggle, siteLang, exiting
             id={isOpen === true ? 'active-position' : ''}
             ref={appearRef}
             aria-label={resumeItem.company}
-            className={'position-wrapper' + (isOpen === true ? ' active' : '') + ' appear appear--from-up appear--offscreen' + enterClass + appearExitingClass}
+            className={'position-wrapper hover-enlarge' + (isOpen === true ? ' active' : '') + ' appear appear--from-up appear--offscreen' + enterClass + appearExitingClass}
             style={{
                 '--appear-exit-delay': ((trackRecordData.length - 1 - index) * ITEM_EXIT_STAGGER_MS) + 'ms'
             }}
             onAnimationEnd={finishAppearAnimation}
         >
             <header
-                className='position-header'
+                className={'position-header' + (isOpen === true ? '' : ' glow--epic')}
                 tabIndex={-1}
                 onMouseDown={(event) => {
                     event.preventDefault();

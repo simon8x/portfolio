@@ -1,9 +1,35 @@
+@keyframes cta-epic-glow {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
 .cta-container {
     padding: 2rem;
     width: 30%;
     border-radius: 1rem;
     background-color: $theme-dark-overlay;
     border: solid 2px $theme-light-overlay;
+    position: relative;
+
+    .cta-link {
+        display: block;
+        position: relative;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    // El grow vive acá, no en el contenedor del glow: Chromium pinta una cruz
+    // blanca si filter:blur queda bajo un ancestro con transform: scale.
+    .cta-panel {
+        border-radius: inherit;
+    }
 
     .cta-header {
         position: relative;
@@ -11,43 +37,84 @@
         .cta-title {
             @include font-heading-4;
         }
+    }
 
-        .cta-icon-wrapper {
-            position: absolute;
-            right: -3.5rem;
-            top: -6rem;
-            width: 8rem;
-            height: 8rem;
-            padding: 1.5rem;
-            border-radius: 50%;
-            background-color: $theme-dark-primary-background;
-            border: solid 2px $theme-light-overlay;
+    .cta-icon-wrapper {
+        position: absolute;
+        right: -3.5rem;
+        top: -6rem;
+        width: 8rem;
+        height: 8rem;
+        padding: 1.5rem;
+        border-radius: 50%;
+        isolation: isolate;
+        overflow: visible;
+        background-color: $theme-dark-primary-background;
 
-            .cta-icon-img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain
-            }
+        .cta-icon-img {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
-        .cta-icon-wrapper::before {
+        // Disco opaco encima del glow para que el PNG transparente no deje ver el magenta.
+        &::before {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
-            height: 4rem;
             width: 100%;
-            border-radius: 4rem 4rem 0 0;
+            height: 100%;
+            box-sizing: border-box;
+            border-radius: 50%;
+            border: solid 2px $theme-light-overlay;
+            background-color: $theme-dark-primary-background;
+            z-index: 0;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: -3px;
+            top: -3px;
+            width: calc(100% + 6px);
+            height: calc(100% + 6px);
+            border-radius: 50%;
+            z-index: -1;
+            pointer-events: none;
+            background: linear-gradient(
+                45deg,
+                $glow-epic-1 4%,
+                $glow-epic-2 32.55%,
+                $glow-epic-3 70.34%,
+                $glow-epic-4 100%
+            );
+            background-size: 400%;
+            opacity: 0;
+            filter: blur(14px);
+            transition: opacity 0.35s ease;
         }
     }
-    .cta-body {
 
+    &:hover .cta-icon-wrapper::before,
+    &:focus-within .cta-icon-wrapper::before {
+        box-shadow: 0 0 8px 2px $glow-epic-2;
+    }
+
+    &:hover .cta-icon-wrapper::after,
+    &:focus-within .cta-icon-wrapper::after {
+        opacity: 1;
+        animation: cta-epic-glow 20s infinite;
+    }
+
+    .cta-body {
         .cta-pharagrap {
             @include paragraph-md;
         }
-        
-        .cta-button {
 
+        .cta-button {
         }
     }
 }
@@ -56,16 +123,16 @@
     .cta-container {
         padding: 4rem 2rem 2rem 2rem;
         .cta-header {
-            position: relative;
             .cta-title {
                 @include font-heading-4;
                 text-align: center;
             }
-            .cta-icon-wrapper {
-                right: 50%;
-                transform: translateX(50%);
-                top: -9rem;
-            }
+        }
+        .cta-icon-wrapper {
+            // Sin transform: también dispara la cruz blanca con filter:blur.
+            right: 50%;
+            margin-right: -4rem;
+            top: -9rem;
         }
         .cta-body {
             .cta-pharagrap {
@@ -80,18 +147,17 @@
         padding: 4rem 2rem 2rem 2rem;
         width: 100%;
         margin-bottom: 8rem;
-        // .cta-header {
-
-        //     .cta-icon-wrapper {
-        //         right: 50%;
-        //         transform: translateX(50%);
-        //         top: -9rem;
-        //     }
-        // }
         .cta-body {
             .cta-pharagrap {
                 text-align: center;
             }
         }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cta-container:hover .cta-icon-wrapper::after,
+    .cta-container:focus-within .cta-icon-wrapper::after {
+        animation: none;
     }
 }

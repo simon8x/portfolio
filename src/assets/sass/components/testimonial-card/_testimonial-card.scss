@@ -26,6 +26,24 @@
         @include testimonial-author-block;
     }
 
+    .testimonial-role-chip {
+        display: none;
+    }
+
+    .testimonial-author-relation {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate3d(0, 100%, 0);
+        transition: transform .28s ease-out, opacity .2s ease-in-out, visibility .2s ease-in-out;
+    }
+
+    &:hover .testimonial-author-relation,
+    &:focus-visible .testimonial-author-relation {
+        opacity: 1;
+        visibility: visible;
+        transform: translate3d(0, 0, 0);
+    }
+
     &:focus-visible {
         outline: solid 2px $theme-dark-primary-text;
         outline-offset: 2px;
@@ -78,6 +96,52 @@
     }
 }
 
+.testimonial-author-avatar-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.testimonial-role-chip-below {
+    display: none;
+}
+
+@media screen and (max-width: 992px) {
+    .testimonial-card {
+        .testimonial-author-relation,
+        &:hover .testimonial-author-relation,
+        &:focus-visible .testimonial-author-relation {
+            display: none;
+        }
+
+        .testimonial-role-chip {
+            display: block;
+            @include time-tag;
+            position: absolute;
+            top: .6rem;
+            right: .6rem;
+            z-index: 2;
+            padding: .2rem .55rem;
+            border-radius: .35rem;
+            background-color: $theme-dark-primary-background;
+            border: solid 1px $theme-light-overlay;
+            color: $theme-dark-primary-text;
+            pointer-events: none;
+        }
+    }
+
+    .testimonial-modal-wrapper {
+        .testimonial-author-relation {
+            display: none;
+        }
+
+        .testimonial-role-chip-below {
+            display: none;
+        }
+    }
+}
+
 @media screen and (max-width: 768px) {
     .testimonial-card,
     .testimonial-modal-wrapper {
@@ -101,5 +165,12 @@
 @media screen and (max-width: 600px) {
     .testimonial-modal-wrapper .quote-wrapper .testimonial-paragraph {
         font-size: 1.6rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .testimonial-card .testimonial-author-relation {
+        transform: none;
+        transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
     }
 }

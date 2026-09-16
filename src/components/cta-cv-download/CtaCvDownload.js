@@ -14,7 +14,7 @@ export const CtaCvDownload = ({ className, style }) => {
   return (
     <div
       ref={appearRef}
-      className={'cta-wrapper' + extraClassName + enterClass}
+      className={'cta-wrapper cta-cv-download' + extraClassName + enterClass}
       style={style}
       onAnimationEnd={finishAppearAnimation}
     >
@@ -23,13 +23,12 @@ export const CtaCvDownload = ({ className, style }) => {
       </header>
       <div className='cta-body'>
           <p className='cta-pharagrap'>{content.description}</p>
-          <a 
+          <a
             href={ content.btnUrl }
-            download 
-            className='cta-button'
+            download
+            className='cta-button glow--epic'
           >
-            {' '}
-            {content.btnText} 
+            <span>{content.btnText}</span>
             <img className="btn-icon" src={`${process.env.PUBLIC_URL}/assets/images/icons/download-file.png`} alt=''/>
           </a>
       </div>

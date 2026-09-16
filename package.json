@@ -12,6 +12,7 @@
     "react-responsive-modal": "^6.4.2",
     "react-router-dom": "^6.26.2",
     "react-scripts": "5.0.1",
+    "@tweenjs/tween.js": "18.6.4",
     "react-slideshow-image": "^4.3.2",
     "sass": "^1.79.4",
     "web-vitals": "^2.1.4"

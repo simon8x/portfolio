@@ -6,6 +6,9 @@ import { LanguageContext } from '../../context/LanguageContext';
 import { TestimonialAuthor } from '../testimonial-author/TestimonialAuthor';
 import { finishAppearAnimation, useAppearOnView } from '../../utils/appear';
 
+// 'card' | 'avatar' — cambiar acá para probar el otro target.
+const TESTIMONIAL_GLOW_TARGET = 'card';
+const TESTIMONIAL_GLOW_CLASS = ' glow--epic glow-target-' + TESTIMONIAL_GLOW_TARGET;
 
 export const TestimonialCard = ({ recomendacion, className, style, appearReveal }) => {
 
@@ -24,18 +27,30 @@ export const TestimonialCard = ({ recomendacion, className, style, appearReveal 
         ? `Leer el testimonio de ${recomendacion.name}`
         : `Read ${recomendacion.name}'s testimonial`;
 
+    const relationCopy = recomendacion.relation == null
+        ? null
+        : (recomendacion.relation[siteLang] == null
+            ? recomendacion.relation.EN
+            : recomendacion.relation[siteLang]);
+
     return (
         <>
             <button
                 type='button'
                 ref={appearRef}
-                className={'testimonial-card hover-enlarge' + extraClassName + enterClass}
+                className={'testimonial-card hover-enlarge' + extraClassName + TESTIMONIAL_GLOW_CLASS + enterClass}
                 style={style}
                 onClick={() => setOpen(true)}
                 onAnimationEnd={finishAppearAnimation}
                 aria-label={openLabel}
+                data-relation-level={recomendacion.relationLevel}
             >
                 {/* <ChatBubble /> */}
+                {
+                    relationCopy == null
+                        ? null
+                        : <span className='testimonial-role-chip'>{relationCopy}</span>
+                }
                 <TestimonialAuthor recomendacion={recomendacion} showLinkedinLink={false} />
             </button>
 

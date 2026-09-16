@@ -25,11 +25,29 @@
         border-radius: 5px;
         overflow: hidden;
         margin: .5rem 1rem .5rem 0;
+        position: relative;
 
         .testimonial-author-avatar-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        .testimonial-author-relation {
+            @include time-tag;
+            position: absolute;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            width: auto;
+            box-sizing: border-box;
+            padding: .3rem .4rem;
+            text-align: center;
+            color: $theme-dark-primary-text;
+            background-color: $theme-modal-dark-overlay;
+            pointer-events: none;
+            z-index: 1;
+            backface-visibility: hidden;
         }
     }
 

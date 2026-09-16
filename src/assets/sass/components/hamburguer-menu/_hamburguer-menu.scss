@@ -63,15 +63,18 @@
           border-bottom: none;
         }
   
-        a {
+        a.link-item {
           text-decoration: none;
           @include font-heading-4;
+          color: $theme-dark-primary-text;
+          @include glow-hover-text;
         }
       }
   
       &.show {
         opacity: 1;
         transform: scaleY(1);
+        overflow: visible;
       }
     }
   }

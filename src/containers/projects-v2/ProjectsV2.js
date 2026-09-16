@@ -1,5 +1,5 @@
 import { MainNavBar } from '../../components/main-nav-bar/MainNavBar'
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import { Slide } from 'react-slideshow-image';
@@ -13,6 +13,7 @@ import { LiveDemoCard } from '../../components/live-demo-card/LiveDemoCard';
 import { LanguageContext } from '../../context/LanguageContext';
 import { ExitNavigateContext } from '../../context/ExitNavigateContext';
 import { AppearBlock, useExitNavigate } from '../../utils/appear';
+import { useSlideshowTickerHover } from '../../utils/pauseSlideshowTicker';
 
 const otherProjectResponsiveSettings = [
   {
@@ -67,7 +68,17 @@ export const ProjectsV2 = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [preloadingDemoId, setPreloadingDemoId] = useState(null);
   const [launchDemoId, setLaunchDemoId] = useState(null);
-  const indicators = (index) => (<div className="indicator"></div>);
+  const [featuredIndex, setFeaturedIndex] = useState(0);
+  const featuredSlideRef = useRef(null);
+  const otherTickerHover = useSlideshowTickerHover();
+  const indicators = false;
+
+  const goToFeatured = (index) => {
+    if (featuredSlideRef.current == null) {
+      return;
+    }
+    featuredSlideRef.current.goTo(index);
+  };
 
   const liveDemosHeadline = liveDemosSectionHeadline[siteLang] == null
     ? liveDemosSectionHeadline.EN
@@ -157,13 +168,33 @@ export const ProjectsV2 = () => {
               <AppearBlock
                 className={'section-featured-projects appear appear--from-right appear--offscreen' + exitingClass}
               >
-                <Slide indicators={indicators} {...properties} pauseOnHover={true} duration={6000} transitionDuration={250} canSwipe={true}>
-                  {featuredProjectsData.map(featuredProject => (
-                    <div key={featuredProject.projectName}>
-                      <FeaturedProject featuredProject={featuredProject} />
-                    </div>
+                <div className='featured-projects-frame glow--epic hover-enlarge'>
+                  <Slide
+                    ref={featuredSlideRef}
+                    indicators={indicators}
+                    {...properties}
+                    pauseOnHover={true}
+                    duration={6000}
+                    transitionDuration={250}
+                    canSwipe={true}
+                    onChange={(from, to) => setFeaturedIndex(to)}
+                  >
+                    {featuredProjectsData.map(featuredProject => (
+                      <div key={featuredProject.projectName}>
+                        <FeaturedProject featuredProject={featuredProject} />
+                      </div>
+                    ))}
+                  </Slide>
+                </div>
+                <div className='indicators'>
+                  {featuredProjectsData.map((featuredProject, index) => (
+                    <div
+                      key={featuredProject.projectName}
+                      className={featuredIndex === index ? 'indicator active' : 'indicator'}
+                      onClick={() => goToFeatured(index)}
+                    />
                   ))}
-                </Slide>
+                </div>
               </AppearBlock>
             </div>
 
@@ -181,13 +212,24 @@ export const ProjectsV2 = () => {
               <AppearBlock
                 className={'section-other-projects appear appear--from-up appear--offscreen' + exitingClass}
               >
-                <Slide indicators={false} {...properties} pauseOnHover={true} duration={0} transitionDuration={5000} canSwipe={true} responsive={otherProjectResponsiveSettings}>
-                  {otherProjectsData.map(otherProject => (
-                    <div key={otherProject.projectName}>
-                      <OtherProject otherProject={otherProject} />
-                    </div>
-                  ))}
-                </Slide>
+                <div {...otherTickerHover.tickerHoverProps}>
+                  <Slide
+                    indicators={indicators}
+                    {...properties}
+                    pauseOnHover={true}
+                    autoplay={otherTickerHover.isHovered === true ? false : true}
+                    duration={0}
+                    transitionDuration={5000}
+                    canSwipe={true}
+                    responsive={otherProjectResponsiveSettings}
+                  >
+                    {otherProjectsData.map(otherProject => (
+                      <div key={otherProject.projectName}>
+                        <OtherProject otherProject={otherProject} />
+                      </div>
+                    ))}
+                  </Slide>
+                </div>
               </AppearBlock>
             </div>
 

@@ -363,7 +363,7 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
             <button
                 type='button'
                 ref={appearRef}
-                className={'live-demo-card hover-enlarge' + extraClassName + enterClass}
+                className={'live-demo-card hover-enlarge glow--epic' + extraClassName + enterClass}
                 style={style}
                 onClick={handleOpenInfo}
                 onAnimationEnd={finishAppearAnimation}
