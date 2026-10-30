@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>mimuju - edTech</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/materialize.css">
+
+ <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="css/materialize.min.css">
+  
+  <!--Import Google Icon Font-->
+  <link href="css/material-icons.css" rel="stylesheet">
+</head>
+
+<body class="cuerpo">
+
+
+  <nav class="nav-extended">
+    <div class="nav-wrapper">
+      <a href="mmj-docente-clases-dashboard-v1.html" class="brand-logo logo-topbar" data-i18n-title="nav.homeTitle" title="Inicio · Mis clases">
+        <img src="images/mmj-logo-white.png">
+      </a>
+
+
+
+      <!-- inicio lista de enlaces del menú arriba derecha -->
+      <ul id="slide-out" class="side-nav">
+        <li>
+          <div class="user-view">
+            <div class="background logo-menu">
+              <img class="responsive-img" src="images/mmjtxt-grey-opt.png">
+            </div>
+            <a href="mmj-docente-perfil-ver-v1.html" class="valign-wrapper">
+              <img class="circle avatar-menu" src="images/no-user-avatar.png">
+              <h6 class="black-text name truncate">
+                <strong>Manuela Vargas</strong><br>Ajustes<span>
+              </span>
+              </h6>
+              
+            </a>
+          </div>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-clases-dashboard-v1.html">
+            <i class="material-icons">class</i>Mis Clases
+          </a>
+        </li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-tareas-dashboard-v1.html">
+            <i class="material-icons">spellcheck</i>Mis Tareas
+          </a>
+        </li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-mensajes-dashboard-v1.html">
+            <i class="material-icons">mail</i>Mis Mensajes
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-alumnos-tomarasistencia-v1.html">
+            <i class="material-icons">pan_tool</i>Asistencias
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-aulas-ver-v1.html">
+            <i class="material-icons">supervisor_account</i>Mis Aulas
+          </a>
+        </li>
+        <li>
+          <a href="mmj-docente-asignaturas-ver-v1.html">
+            <i class="material-icons">turned_in</i>Mis Asignaturas
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a href="index.html">
+            <i class="material-icons">map</i><span data-i18n="nav.sitemap">Mapa de pantallas</span>
+          </a>
+        </li>
+      </ul>
+      <!-- fin lista de enlaces del menú arriba derecha -->
+      <!-- inicio hamburguesa del menú arriba derecha -->
+      <a href="#" data-activates="slide-out" class="button-collapse show-on-large">
+        <i class="material-icons">menu</i>
+      </a>
+      <!-- inicio hamburguesa del menú arriba derecha -->
+
+    </div>
+
+
+  </nav>
+
+  <div class="row grey lighten-5 pad-tab-in">
+
+    <div class="row"> 
+
+      <!-- inicio columna del contenedor principal -->
+      <div class="col s12 cont-ppal"> 
+
+
+      <div class="row">
+        <!-- inicio un cargo -->
+        <div class="col s12 m6 l6 aula-col">
+          <div class="card ver-aula">
+            <!-- encabezado cargo-->
+            <div class="top-bar-actions grey lighten-2">
+
+              <div class="header-calculada">
+                <span class="ttl-calc truncate">5A - EEP N° 124 Domingo Faustino Sarmiento</span>
+              </div>
+
+              <a href="mmj-docente-perfil-editar-v1.html" class="top-bar-btn right tooltipped" data-position="top" data-delay="150" data-tooltip="Habilitar Edición">
+                <span class="accion-btn">
+                  <i class="material-icons">edit</i>
+                  <span class="txt-btn"> EDITAR</span>
+                </span>
+              </a> 
+            </div>
+
+            <!-- cuerpo cargo-->
+            <div class="card-content">
+
+              <p class="datos-personales"><i class="material-icons tiny">room</i> Presidencia Roque Sáenz Peña, Chaco</p>
+
+              <p class="datos-personales"><i class="material-icons tiny">watch_later </i> Turno Mañana</p>
+
+              <p class="datos-personales"><i class="material-icons tiny">assignment_turned_in </i> Titular - Activo</p>
+
+              <br>
+              <div class="divider"></div>
+              <br>
+              <p class="center">
+                <a href="mmj-docente-alumnos-ver-v1.html" class="waves-effect waves-light btn tooltipped" data-position="top" data-delay="150" data-tooltip="Ver Listado">
+                  <i class="material-icons left">assignment</i> Alumnos(24)
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- fin un cargo -->
+
+        <!-- inicio un cargo -->
+        <div class="col s12 m6 l6 aula-col">
+          <div class="card ver-aula">
+            <!-- encabezado cargo-->
+            <div class="top-bar-actions grey lighten-2">
+
+              <div class="header-calculada">
+                <span class="ttl-calc truncate">5B - EEP N° 124 Domingo Faustino Sarmiento</span>
+              </div>
+
+              <a href="mmj-docente-perfil-editar-v1.html" class="top-bar-btn right tooltipped" data-position="top" data-delay="150" data-tooltip="Habilitar Edición">
+                <span class="accion-btn">
+                  <i class="material-icons">edit</i>
+                  <span class="txt-btn"> EDITAR</span>
+                </span>
+              </a> 
+            </div>
+
+            <!-- cuerpo cargo-->
+            <div class="card-content">
+
+              <p class="datos-personales"><i class="material-icons tiny">room</i> Presidencia Roque Sáenz Peña, Chaco</p>
+
+              <p class="datos-personales"><i class="material-icons tiny">watch_later </i> Turno Mañana</p>
+
+              <p class="datos-personales"><i class="material-icons tiny">assignment_turned_in </i> Titular - Activo</p>
+
+              <br>
+              <div class="divider"></div>
+              <br>
+              <p class="center">
+                <a href="mmj-docente-alumnos-ver-v1.html" class="waves-effect waves-light btn tooltipped" data-position="top" data-delay="150" data-tooltip="Ver Listado">
+                  <i class="material-icons left">assignment</i> Alumnos(24)
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- fin un cargo -->
+
+        <!-- inicio un cargo -->
+        <div class="col s12 m6 l6 aula-col">
+          <div class="card ver-aula">
+            <!-- encabezado cargo-->
+            <div class="top-bar-actions grey lighten-2">
+
+              <div class="header-calculada">
+                <span class="ttl-calc truncate">5C - EEP N° 124 Domingo Faustino Sarmiento</span>
+              </div>
+
+              <a href="mmj-docente-perfil-editar-v1.html" class="top-bar-btn right tooltipped" data-position="top" data-delay="150" data-tooltip="Habilitar Edición">
+                <span class="accion-btn">
+                  <i class="material-icons">edit</i>
+                  <span class="txt-btn"> EDITAR</span>
+                </span>
+              </a> 
+            </div>
+
+            <!-- cuerpo cargo-->
+            <div class="card-content">
+
+              <p class="datos-personales"><i class="material-icons tiny">room</i> Presidencia Roque Sáenz Peña, Chaco</p>
+
+              <p class="datos-personales"><i class="material-icons tiny">watch_later </i> Turno Mañana</p>
+
+              <p class="datos-personales"><i class="material-icons tiny">assignment_turned_in </i> Titular - Activo</p>
+
+              <br>
+              <div class="divider"></div>
+              <br>
+              <p class="center">
+                <a href="mmj-docente-alumnos-ver-v1.html" class="waves-effect waves-light btn tooltipped" data-position="top" data-delay="150" data-tooltip="Ver Listado">
+                  <i class="material-icons left">assignment</i> Alumnos(24)
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- fin un cargo -->
+
+
+        <!-- inicio un cargo -->
+        <div class="col s12 m6 l6 aula-col">
+          <div class="card ver-aula">
+            <!-- encabezado cargo-->
+            <div class="top-bar-actions grey lighten-2">
+
+              <div class="header-calculada">
+                <span class="ttl-calc truncate">6A - EEP N° 124 Domingo Faustino Sarmiento</span>
+              </div>
+
+              <a href="mmj-docente-perfil-editar-v1.html" class="top-bar-btn right tooltipped" data-position="top" data-delay="150" data-tooltip="Habilitar Edición">
+                <span class="accion-btn">
+                  <i class="material-icons">edit</i>
+                  <span class="txt-btn"> EDITAR</span>
+                </span>
+              </a> 
+            </div>
+
+            <!-- cuerpo cargo-->
+            <div class="card-content">
+
+              <p class="datos-personales"><i class="material-icons tiny">room</i> Presidencia Roque Sáenz Peña, Chaco</p>
+
+              <p class="datos-personales"><i class="material-icons tiny">watch_later </i> Turno Mañana</p>
+
+              <p class="datos-personales"><i class="material-icons tiny">assignment_turned_in </i> Titular - Activo</p>
+
+              <br>
+              <div class="divider"></div>
+              <br>
+              <p class="center">
+                <a href="mmj-docente-alumnos-ver-v1.html" class="waves-effect waves-light btn tooltipped" data-position="top" data-delay="150" data-tooltip="Ver Listado">
+                  <i class="material-icons left">assignment</i> Alumnos(24)
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- fin un cargo -->
+
+
+        <!-- inicio un cargo -->
+        <div class="col s12 m6 l6 aula-col">
+          <div class="card ver-aula">
+            <!-- encabezado cargo-->
+            <div class="top-bar-actions grey lighten-2">
+
+              <div class="header-calculada">
+                <span class="ttl-calc truncate">6B - EEP N° 124 Domingo Faustino Sarmiento</span>
+              </div>
+
+              <a href="mmj-docente-perfil-editar-v1.html" class="top-bar-btn right tooltipped" data-position="top" data-delay="150" data-tooltip="Habilitar Edición">
+                <span class="accion-btn">
+                  <i class="material-icons">edit</i>
+                  <span class="txt-btn"> EDITAR</span>
+                </span>
+              </a> 
+            </div>
+
+            <!-- cuerpo cargo-->
+            <div class="card-content">
+
+              <p class="datos-personales"><i class="material-icons tiny">room</i> Presidencia Roque Sáenz Peña, Chaco</p>
+
+              <p class="datos-personales"><i class="material-icons tiny">watch_later </i> Turno Mañana</p>
+
+              <p class="datos-personales"><i class="material-icons tiny">assignment_turned_in </i> Titular - Activo</p>
+
+              <br>
+              <div class="divider"></div>
+              <br>
+              <p class="center">
+                <a href="mmj-docente-alumnos-ver-v1.html" class="waves-effect waves-light btn tooltipped" data-position="top" data-delay="150" data-tooltip="Ver Listado">
+                  <i class="material-icons left">assignment</i> Alumnos(24)
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- fin un cargo -->
+
+
+        <!-- inicio un cargo -->
+        <div class="col s12 m6 l6 aula-col">
+          <div class="card ver-aula">
+            <!-- encabezado cargo-->
+            <div class="top-bar-actions grey lighten-2">
+
+              <div class="header-calculada">
+                <span class="ttl-calc truncate">6C - EEP N° 124 Domingo Faustino Sarmiento</span>
+              </div>
+
+              <a href="mmj-docente-perfil-editar-v1.html" class="top-bar-btn right tooltipped" data-position="top" data-delay="150" data-tooltip="Habilitar Edición">
+                <span class="accion-btn">
+                  <i class="material-icons">edit</i>
+                  <span class="txt-btn"> EDITAR</span>
+                </span>
+              </a> 
+            </div>
+
+            <!-- cuerpo cargo-->
+            <div class="card-content">
+
+              <p class="datos-personales"><i class="material-icons tiny">room</i> Presidencia Roque Sáenz Peña, Chaco</p>
+
+              <p class="datos-personales"><i class="material-icons tiny">watch_later </i> Turno Mañana</p>
+
+              <p class="datos-personales"><i class="material-icons tiny">assignment_turned_in </i> Titular - Activo</p>
+
+              <br>
+              <div class="divider"></div>
+              <br>
+              <p class="center">
+                <a href="mmj-docente-alumnos-ver-v1.html" class="waves-effect waves-light btn tooltipped" data-position="top" data-delay="150" data-tooltip="Ver Listado">
+                  <i class="material-icons left">assignment</i> Alumnos(24)
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- fin un cargo -->
+
+
+
+
+      </div>
+
+      <!-- inicio botón nuevo tema -->
+      <div class="fixed-action-btn">
+        <a href="mmj-docente-aula-crear-v1.html" class="btn-floating btn-large tooltipped" data-position="top" data-delay="50" data-tooltip="Nueva Aula">
+          <i class="large material-icons">add</i>
+        </a>
+      </div>
+      <!-- fin botón nuevo tema -->
+      </div>
+    </div>
+
+
+  </div>
+    <script type="text/javascript" src="js/mmj-i18n.js"></script>
+  <script type="text/javascript" src="js/mmj-demo-chrome.js"></script>
+</body>
+
+
+
+
+
+
+<!-- para el select de asignatura -->
+  <script>
+    $(document).ready(function() {
+    $('select').material_select();
+  });
+  </script>
+
+<script type="text/javascript">
+  $(".button-collapse").sideNav();
+  $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 300
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true, // Choose whether you can drag to open on touch screens,
+      onOpen: function(el) {  }, // A function to be called when sideNav is opened
+      onClose: function(el) {  }, // A function to be called when sideNav is closed
+    }
+  );
+</script>

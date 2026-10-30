@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>mimuju - edTech</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/materialize.css">
+
+ <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="css/materialize.min.css">
+  
+  <!--Import Google Icon Font-->
+  <link href="css/material-icons.css" rel="stylesheet">
+</head>
+
+<body class="cuerpo">
+
+
+  <nav class="nav-extended">
+    <div class="nav-wrapper">
+      <a href="mmj-docente-clases-dashboard-v1.html" class="brand-logo logo-topbar" data-i18n-title="nav.homeTitle" title="Inicio · Mis clases">
+        <img src="images/mmj-logo-white.png">
+      </a>
+        <!-- Dropdown Trigger -->
+      <ul class="right cargo-topbar">
+        <li>
+          <i class="material-icons left no-margen">assignment_ind</i>
+          <a class='dropdown-trigger waves-effect waves-light btn-small truncate' href='#' data-activates='dropdown1'>2°A "EEP Juana Azurduy"<i class="material-icons right">keyboard_arrow_down</i></a>
+
+        </li>
+      </ul>  
+      
+      <!-- Dropdown Structure -->
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="#!" class="disabled">2°A "EEP Juana Azurduy"</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">4°C "EEP Eulalia Blasquez"</a></li>
+      </ul>
+
+
+      <!-- inicio lista de enlaces del menú arriba derecha -->
+      <ul id="slide-out" class="side-nav">
+        <li>
+          <div class="user-view">
+            <div class="background logo-menu">
+              <img class="responsive-img" src="images/mmjtxt-grey-opt.png">
+            </div>
+            <a href="mmj-docente-perfil-ver-v1.html" class="valign-wrapper">
+              <img class="circle avatar-menu" src="images/no-user-avatar.png">
+              <h6 class="black-text name truncate">
+                <strong>Manuela Vargas</strong><br>Ajustes<span>
+              </span>
+              </h6>
+              
+            </a>
+          </div>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-clases-dashboard-v1.html">
+            <i class="material-icons">class</i>Mis Clases
+          </a>
+        </li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-tareas-dashboard-v1.html">
+            <i class="material-icons">spellcheck</i>Mis Tareas
+          </a>
+        </li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-mensajes-dashboard-v1.html">
+            <i class="material-icons">mail</i>Mis Mensajes
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-alumnos-tomarasistencia-v1.html">
+            <i class="material-icons">pan_tool</i>Asistencias
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-aulas-ver-v1.html">
+            <i class="material-icons">supervisor_account</i>Mis Aulas
+          </a>
+        </li>
+        <li>
+          <a href="mmj-docente-asignaturas-ver-v1.html">
+            <i class="material-icons">turned_in</i>Mis Asignaturas
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a href="index.html">
+            <i class="material-icons">map</i><span data-i18n="nav.sitemap">Mapa de pantallas</span>
+          </a>
+        </li>
+      </ul>
+      <!-- fin lista de enlaces del menú arriba derecha -->
+      <!-- inicio hamburguesa del menú arriba derecha -->
+      <a href="#" data-activates="slide-out" class="button-collapse show-on-large">
+        <i class="material-icons">menu</i>
+      </a>
+      <!-- inicio hamburguesa del menú arriba derecha -->
+
+    </div>
+
+
+  </nav>
+
+  <div id="globo_ayuda" class="info-row blue lighten-1">
+    <a href="#" class="bt-close grey lighten-2" onclick="cerrar_ayuda()"><i class="material-icons">clear</i></a>
+    <p class="no-margen">Use para cambiar de Aula<i class="material-icons ico-medup">arrow_forward</i><i class="material-icons ico-down">subdirectory_arrow_right</i></p>
+  </div>
+
+  <div class="row grey lighten-5 pad-tab-in">
+    <div class="row"> 
+
+      <!-- inicio columna del contenedor principal -->
+      <div class="col s12 cont-ppal"> 
+
+
+      <div class="row">
+        <!-- inicio un asignatura -->
+        <div class="col s12 m6 l6 aula-col">
+          <div class="card ver-aula">
+            <!-- encabezado asignatura-->
+            <div class="top-bar-actions grey lighten-2">
+
+              <div class="header-calculada">
+                <span class="ttl-calc truncate">Matemáticas</span>
+              </div>
+
+              <a href="mmj-docente-asignatura-editar-v1.html" class="top-bar-btn right tooltipped" data-position="top" data-delay="150" data-tooltip="Habilitar Edición">
+                <span class="accion-btn">
+                  <i class="material-icons">edit</i>
+                  <span class="txt-btn"> EDITAR</span>
+                </span>
+              </a> 
+            </div>
+
+            <!-- cuerpo asignatura-->
+            <div class="card-content asignaturas">
+
+              <p class="datos-personales center-align"><i class="material-icons tiny">date_range</i> LUN(1ra) MAR(2da) MIE(2da) JUE(3ra) VIE(4ta)</p>
+
+              <div class="divider"></div>
+
+              <p class="datos-personales"><i class="material-icons tiny">class</i> Clases dictadas (4/40) 10%</p>
+
+              <div class="progress">
+                <div class="determinate" style="width: 10%"></div>
+              </div>
+
+              <p class="right-align">
+                <a class="waves-effect waves-light btn tooltipped" data-position="top" data-delay="150" data-tooltip="Ver Listado" href="mmj-docente-clases-dashboard-v1.html">
+                  <i class="material-icons left">list</i> Ver Clases
+                </a>
+              </p>
+
+              <br>
+              <div class="divider"></div>
+              <br>
+
+              <p class="datos-personales"><i class="material-icons tiny">spellcheck</i> Cumplimiento Tareas (48%)</p>
+
+              <div class="progress">
+                <div class="determinate" style="width: 48%"></div>
+              </div>
+              
+              
+              <p class="right-align">
+                <a class="waves-effect waves-light btn tooltipped" data-position="top" data-delay="150" data-tooltip="Ver Listado" href="mmj-docente-tareas-dashboard-v1.html">
+                  <i class="material-icons left">list</i> Ver Tareas
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- fin un asignatura -->
+
+        <!-- inicio un asignatura -->
+        <div class="col s12 m6 l6 aula-col">
+          <div class="card ver-aula">
+            <!-- encabezado asignatura-->
+            <div class="top-bar-actions grey lighten-2">
+
+              <div class="header-calculada">
+                <span class="ttl-calc truncate">Lengua</span>
+              </div>
+
+              <a href="mmj-docente-asignatura-editar-v1.html" class="top-bar-btn right tooltipped" data-position="top" data-delay="150" data-tooltip="Habilitar Edición">
+                <span class="accion-btn">
+                  <i class="material-icons">edit</i>
+                  <span class="txt-btn"> EDITAR</span>
+                </span>
+              </a> 
+            </div>
+
+            <!-- cuerpo asignatura-->
+            <div class="card-content asignaturas">
+
+              <p class="datos-personales center-align"><i class="material-icons tiny">date_range</i> LUN(1ra) MAR(2da) MIE(2da) JUE(3ra) VIE(4ta)</p>
+
+              <div class="divider"></div>
+
+              <p class="datos-personales"><i class="material-icons tiny">class</i> Clases dictadas (4/40) 10%</p>
+
+              <div class="progress">
+                <div class="determinate" style="width: 10%"></div>
+              </div>
+
+              <p class="right-align">
+                <a class="waves-effect waves-light btn tooltipped" data-position="top" data-delay="150" data-tooltip="Ver Listado" href="mmj-docente-clases-dashboard-v1.html">
+                  <i class="material-icons left">list</i> Ver Clases
+                </a>
+              </p>
+
+              <br>
+              <div class="divider"></div>
+              <br>
+
+              <p class="datos-personales"><i class="material-icons tiny">spellcheck</i> Cumplimiento Tareas (48%)</p>
+
+              <div class="progress">
+                <div class="determinate" style="width: 48%"></div>
+              </div>
+              
+              
+              <p class="right-align">
+                <a class="waves-effect waves-light btn tooltipped" data-position="top" data-delay="150" data-tooltip="Ver Listado" href="mmj-docente-tareas-dashboard-v1.html">
+                  <i class="material-icons left">list</i> Vr Tareas
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- fin un asignatura -->
+
+        <!-- inicio un asignatura -->
+        <div class="col s12 m6 l6 aula-col">
+          <div class="card ver-aula">
+            <!-- encabezado asignatura-->
+            <div class="top-bar-actions grey lighten-2">
+
+              <div class="header-calculada">
+                <span class="ttl-calc truncate">Ciencias Naturales</span>
+              </div>
+
+              <a href="mmj-docente-asignatura-editar-v1.html" class="top-bar-btn right tooltipped" data-position="top" data-delay="150" data-tooltip="Habilitar Edición">
+                <span class="accion-btn">
+                  <i class="material-icons">edit</i>
+                  <span class="txt-btn"> EDITAR</span>
+                </span>
+              </a> 
+            </div>
+
+            <!-- cuerpo asignatura-->
+            <div class="card-content asignaturas">
+
+              <p class="datos-personales center-align"><i class="material-icons tiny">date_range</i> LUN(1ra) MAR(2da) MIE(2da) JUE(3ra) VIE(4ta)</p>
+
+              <div class="divider"></div>
+
+              <p class="datos-personales"><i class="material-icons tiny">class</i> Clases dictadas (4/40) 10%</p>
+
+              <div class="progress">
+                <div class="determinate" style="width: 10%"></div>
+              </div>
+
+              <p class="right-align">
+                <a class="waves-effect waves-light btn tooltipped" data-position="top" data-delay="150" data-tooltip="Ver Listado" href="mmj-docente-clases-dashboard-v1.html">
+                  <i class="material-icons left">list</i> Ver Clases
+                </a>
+              </p>
+
+              <br>
+              <div class="divider"></div>
+              <br>
+
+              <p class="datos-personales"><i class="material-icons tiny">spellcheck</i> Cumplimiento Tareas (48%)</p>
+
+              <div class="progress">
+                <div class="determinate" style="width: 48%"></div>
+              </div>
+              
+              
+              <p class="right-align">
+                <a class="waves-effect waves-light btn tooltipped" data-position="top" data-delay="150" data-tooltip="Ver Listado" href="mmj-docente-tareas-dashboard-v1.html">
+                  <i class="material-icons left">list</i> Ver Tareas
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- fin un asignatura -->
+
+        <!-- inicio un asignatura -->
+        <div class="col s12 m6 l6 aula-col">
+          <div class="card ver-aula">
+            <!-- encabezado asignatura-->
+            <div class="top-bar-actions grey lighten-2">
+
+              <div class="header-calculada">
+                <span class="ttl-calc truncate">Ciencias Sociales</span>
+              </div>
+
+              <a href="mmj-docente-asignatura-editar-v1.html" class="top-bar-btn right tooltipped" data-position="top" data-delay="150" data-tooltip="Habilitar Edición">
+                <span class="accion-btn">
+                  <i class="material-icons">edit</i>
+                  <span class="txt-btn"> EDITAR</span>
+                </span>
+              </a> 
+            </div>
+
+            <!-- cuerpo asignatura-->
+            <div class="card-content asignaturas">
+
+              <p class="datos-personales center-align"><i class="material-icons tiny">date_range</i> LUN(1ra) MAR(2da) MIE(2da) JUE(3ra) VIE(4ta)</p>
+
+              <div class="divider"></div>
+
+              <p class="datos-personales"><i class="material-icons tiny">class</i> Clases dictadas (4/40) 10%</p>
+
+              <div class="progress">
+                <div class="determinate" style="width: 10%"></div>
+              </div>
+
+              <p class="right-align">
+                <a class="waves-effect waves-light btn tooltipped" data-position="top" data-delay="150" data-tooltip="Ver Listado" href="mmj-docente-clases-dashboard-v1.html">
+                  <i class="material-icons left">list</i> Ver Clases
+                </a>
+              </p>
+
+              <br>
+              <div class="divider"></div>
+              <br>
+
+              <p class="datos-personales"><i class="material-icons tiny">spellcheck</i> Cumplimiento Tareas (48%)</p>
+
+              <div class="progress">
+                <div class="determinate" style="width: 48%"></div>
+              </div>
+              
+              
+              <p class="right-align">
+                <a class="waves-effect waves-light btn tooltipped" data-position="top" data-delay="150" data-tooltip="Ver Listado" href="mmj-docente-tareas-dashboard-v1.html">
+                  <i class="material-icons left">list</i> Vr Tareas
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- fin un asignatura -->
+     
+
+      </div>
+
+      <!-- inicio botón nuevo tema -->
+      <div class="fixed-action-btn">
+        <a href="mmj-docente-aula-crear-v1.html" class="btn-floating btn-large tooltipped" data-position="top" data-delay="50" data-tooltip="Nueva Asignatura">
+          <i class="large material-icons">add</i>
+        </a>
+      </div>
+      <!-- fin botón nuevo tema -->
+      </div>
+    </div>
+
+
+  </div>
+    <script type="text/javascript" src="js/mmj-i18n.js"></script>
+  <script type="text/javascript" src="js/mmj-demo-chrome.js"></script>
+</body>
+
+
+
+<script type="text/javascript">
+  function cerrar_ayuda(){
+    document.getElementById("globo_ayuda").style.display = "none";
+  }
+</script>
+
+
+
+
+<!-- para el select de cargos -->
+<script type="text/javascript">
+  $('.dropdown-trigger').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      cpmtrainWidth: false,
+      hover: false,
+      gutter: 0,
+    }
+  );
+</script>
+
+<script type="text/javascript">
+  $(".button-collapse").sideNav();
+  $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 300
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true, // Choose whether you can drag to open on touch screens,
+      onOpen: function(el) {  }, // A function to be called when sideNav is opened
+      onClose: function(el) {  }, // A function to be called when sideNav is closed
+    }
+  );
+</script>

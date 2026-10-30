@@ -24,8 +24,8 @@
 
             .live-demo-card-grid {
                 display: grid;
-                grid-template-columns: repeat(6, 1fr);
-                gap: 2rem;
+                grid-template-columns: repeat(7, minmax(0, 1fr));
+                gap: 1.25rem;
                 align-items: stretch;
             }
         }
@@ -121,9 +121,15 @@
                 margin-block: 2.5rem 2rem;
             }
 
+            .live-demos-grid-row {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
             .live-demos-grid-row .live-demo-card-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
+                grid-template-columns: repeat(7, minmax(10.5rem, 1fr));
+                gap: 1rem;
+                width: max(100%, 78rem);
             }
         }
 

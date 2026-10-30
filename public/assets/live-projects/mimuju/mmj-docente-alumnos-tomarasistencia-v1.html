@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>mimuju - edTech</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/materialize.css">
+
+ <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="css/materialize.min.css">
+  
+  <!--Import Google Icon Font-->
+  <link href="css/material-icons.css" rel="stylesheet">
+
+
+
+  <script type="text/javascript">
+    function contar_p(){
+      var cheques = document.getElementsByClassName("present");
+      var presentes = 0;
+      var ausentes = 0;
+      for (var i=0; i < cheques.length; i++){
+        if (cheques[i].checked)
+          presentes = presentes + 1;
+        else
+          ausentes = ausentes + 1;
+      }
+      document.getElementById('contador-presentes').innerHTML = presentes;
+      document.getElementById('contador-ausentes').innerHTML = ausentes;
+    }
+  </script>
+
+
+</head>
+
+<body class="cuerpo" onLoad=contar_p();>
+
+  <nav class="nav-extended">
+    <div class="nav-wrapper">
+      <a href="mmj-docente-clases-dashboard-v1.html" class="brand-logo logo-topbar" data-i18n-title="nav.homeTitle" title="Inicio · Mis clases">
+        <img src="images/mmj-logo-white.png">
+      </a>
+        <!-- Dropdown Trigger -->
+      <ul class="right cargo-topbar">
+        <li>
+          <i class="material-icons left no-margen">assignment_ind</i>
+          <a class='dropdown-trigger waves-effect waves-light btn-small truncate' href='#' data-activates='dropdown1'>2°A "EEP Juana Azurduy"<i class="material-icons right">keyboard_arrow_down</i></a>
+
+        </li>
+      </ul>  
+      
+      <!-- Dropdown Structure -->
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="mmj-docente-alumno-ver-v1.html" class="disabled">2°A "EEP Juana Azurduy"</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">4°C "EEP Eulalia Blasquez"</a></li>
+      </ul>
+
+
+      <!-- inicio lista de enlaces del menú arriba derecha -->
+      <ul id="slide-out" class="side-nav">
+        <li>
+          <div class="user-view">
+            <div class="background logo-menu">
+              <img class="responsive-img" src="images/mmjtxt-grey-opt.png">
+            </div>
+            <a href="mmj-docente-perfil-ver-v1.html" class="valign-wrapper">
+              <img class="circle avatar-menu" src="images/no-user-avatar.png">
+              <h6 class="black-text name truncate">
+                <strong>Manuela Vargas</strong><br>Ajustes<span>
+              </span>
+              </h6>
+              
+            </a>
+          </div>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-clases-dashboard-v1.html">
+            <i class="material-icons">class</i>Mis Clases
+          </a>
+        </li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-tareas-dashboard-v1.html">
+            <i class="material-icons">spellcheck</i>Mis Tareas
+          </a>
+        </li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-mensajes-dashboard-v1.html">
+            <i class="material-icons">mail</i>Mis Mensajes
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-alumnos-tomarasistencia-v1.html">
+            <i class="material-icons">pan_tool</i>Asistencias
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-aulas-ver-v1.html">
+            <i class="material-icons">supervisor_account</i>Mis Aulas
+          </a>
+        </li>
+        <li>
+          <a href="mmj-docente-asignaturas-ver-v1.html">
+            <i class="material-icons">turned_in</i>Mis Asignaturas
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a href="index.html">
+            <i class="material-icons">map</i><span data-i18n="nav.sitemap">Mapa de pantallas</span>
+          </a>
+        </li>
+      </ul>
+      <!-- fin lista de enlaces del menú arriba derecha -->
+      <!-- inicio hamburguesa del menú arriba derecha -->
+      <a href="#" data-activates="slide-out" class="button-collapse show-on-large">
+        <i class="material-icons">menu</i>
+      </a>
+      <!-- inicio hamburguesa del menú arriba derecha -->
+
+    </div>
+
+
+  </nav>
+
+  <div id="globo_ayuda" class="info-row blue lighten-1">
+    <a href="#" class="bt-close grey lighten-2" onclick="cerrar_ayuda()"><i class="material-icons">clear</i></a>
+    <p class="no-margen">Use para cambiar de Aula<i class="material-icons ico-medup">arrow_forward</i><i class="material-icons ico-down">subdirectory_arrow_right</i></p>
+  </div>
+
+
+  <!-- inicio contenedor principal -->
+    <div class="row">
+      <div class="col s12 cont-ppal">
+
+
+
+
+
+
+        <!-- inicio lista alumnos -->
+        <ul class="collection listado">
+          <!-- inicio encabezado lista   
+          <div class="card-header grey lighten-3">
+            <span class="card-title grey-text text-darken-4 header-listado">
+            <i class="material-icons grey-text text-darken-4">list</i>
+            <strong>Alumnos</strong></span>
+          </div>-->
+          
+
+        <div class="top-bar-actions grey lighten-2">
+          <div class="header-calculada">
+            <span class="ttl-calc truncate"><strong>Asistencias 13/AGO/2020</strong></span>
+          </div>
+        </div>
+
+
+
+          <!-- inicio un alumno  -->  
+          <li class="collection-item grey lighten-5 li-alumno">
+            <div class="row no-margen">
+              <div class="col s12 caja-alumno-asistencia">
+                <div class="nombre truncate">
+                  <!-- ícono alumno  -->
+                  <span class="numero">1</span> 
+                  <!-- nombre alumno  -->  
+                  <span class="title name-student"><strong>Acevedo Nicolas</strong><br>
+                  </span>
+                </div>
+                <div class="asist center-align">
+                  <div class="switch">
+                    <label>
+                      A
+                      <input type="checkbox" class="present" checked>
+                      <span class="lever"></span>
+                      P
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- fin un alumno  -->
+          <!-- inicio un alumno  -->  
+          <!-- inicio un alumno  -->  
+          <li class="collection-item grey lighten-5 li-alumno">
+            <div class="row no-margen">
+              <div class="col s12 caja-alumno-asistencia">
+                <div class="nombre truncate">
+                  <!-- ícono alumno  -->
+                  <span class="numero">2</span> 
+                  <!-- nombre alumno  -->  
+                  <span class="title name-student"><strong>Cernik  Alex</strong><br>
+                  </span>
+                </div>
+                <div class="asist center-align">
+                  <div class="switch">
+                    <label>
+                      A
+                      <input type="checkbox" class="present" checked>
+                      <span class="lever"></span>
+                      P
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- fin un alumno  -->
+          <!-- inicio un alumno  -->  
+          <li class="collection-item grey lighten-5 li-alumno">
+            <div class="row no-margen">
+              <div class="col s12 caja-alumno-asistencia">
+                <div class="nombre truncate">
+                  <!-- ícono alumno  -->
+                  <span class="numero">3</span> 
+                  <!-- nombre alumno  -->  
+                  <span class="title name-student"><strong>Espindola Maximino David Espindola</strong><br>
+                  </span>
+                </div>
+                <div class="asist center-align">
+                  <div class="switch">
+                    <label>
+                      A
+                      <input type="checkbox" class="present" checked>
+                      <span class="lever"></span>
+                      P
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- fin un alumno  -->
+          <!-- inicio un alumno  -->  
+          <li class="collection-item grey lighten-5 li-alumno">
+            <div class="row no-margen">
+              <div class="col s12 caja-alumno-asistencia">
+                <div class="nombre truncate">
+                  <!-- ícono alumno  -->
+                  <span class="numero">4</span> 
+                  <!-- nombre alumno  -->  
+                  <span class="title name-student"><strong>Fernandez Edgardo David</strong><br>
+                  </span>
+                </div>
+                <div class="asist center-align">
+                  <div class="switch">
+                    <label>
+                      A
+                      <input type="checkbox" class="present" checked>
+                      <span class="lever"></span>
+                      P
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- fin un alumno  -->
+          <!-- inicio un alumno  -->  
+          <li class="collection-item grey lighten-5 li-alumno">
+            <div class="row no-margen">
+              <div class="col s12 caja-alumno-asistencia">
+                <div class="nombre truncate">
+                  <!-- ícono alumno  -->
+                  <span class="numero">5</span> 
+                  <!-- nombre alumno  -->  
+                  <span class="title name-student"><strong>Gomez Exequiel Leandro</strong><br>
+                  </span>
+                </div>
+                <div class="asist center-align">
+                  <div class="switch">
+                    <label>
+                      A
+                      <input type="checkbox" class="present" checked>
+                      <span class="lever"></span>
+                      P
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- fin un alumno  -->
+          <!-- inicio un alumno  -->  
+          <li class="collection-item grey lighten-5 li-alumno">
+            <div class="row no-margen">
+              <div class="col s12 caja-alumno-asistencia">
+                <div class="nombre truncate">
+                  <!-- ícono alumno  -->
+                  <span class="numero">6</span> 
+                  <!-- nombre alumno  -->  
+                  <span class="title name-student"><strong>Gonzalez  Elian Ezequiel</strong><br>
+                  </span>
+                </div>
+                <div class="asist center-align">
+                  <div class="switch">
+                    <label>
+                      A
+                      <input type="checkbox" class="present" checked>
+                      <span class="lever"></span>
+                      P
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- fin un alumno  -->
+          <!-- inicio un alumno  -->  
+          <li class="collection-item grey lighten-5 li-alumno">
+            <div class="row no-margen">
+              <div class="col s12 caja-alumno-asistencia">
+                <div class="nombre truncate">
+                  <!-- ícono alumno  -->
+                  <span class="numero">7</span> 
+                  <!-- nombre alumno  -->  
+                  <span class="title name-student"><strong>Gonzalez  Elian Ezequiel</strong><br>
+                  </span>
+                </div>
+                <div class="asist center-align">
+                  <div class="switch">
+                    <label>
+                      A
+                      <input type="checkbox" class="present" checked>
+                      <span class="lever"></span>
+                      P
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- fin un alumno  -->
+          <!-- inicio un alumno  -->  
+          <li class="collection-item grey lighten-5 li-alumno">
+            <div class="row no-margen">
+              <div class="col s12 caja-alumno-asistencia">
+                <div class="nombre truncate">
+                  <!-- ícono alumno  -->
+                  <span class="numero">8</span> 
+                  <!-- nombre alumno  -->  
+                  <span class="title name-student"><strong>Grancic Lapasini Gian Luca</strong><br>
+                  </span>
+                </div>
+                <div class="asist center-align">
+                  <div class="switch">
+                    <label>
+                      A
+                      <input type="checkbox" class="present" checked>
+                      <span class="lever"></span>
+                      P
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- fin un alumno  -->
+          <!-- inicio un alumno  -->  
+          <li class="collection-item grey lighten-5 li-alumno">
+            <div class="row no-margen">
+              <div class="col s12 caja-alumno-asistencia">
+                <div class="nombre truncate">
+                  <!-- ícono alumno  -->
+                  <span class="numero">9</span> 
+                  <!-- nombre alumno  -->  
+                  <span class="title name-student"><strong>Imfeld Marcos</strong><br>
+                  </span>
+                </div>
+                <div class="asist center-align">
+                  <div class="switch">
+                    <label>
+                      A
+                      <input type="checkbox" class="present" checked>
+                      <span class="lever"></span>
+                      P
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- fin un alumno  -->
+          <!-- inicio un alumno  -->  
+          <li class="collection-item grey lighten-5 li-alumno">
+            <div class="row no-margen">
+              <div class="col s12 caja-alumno-asistencia">
+                <div class="nombre truncate">
+                  <!-- ícono alumno  -->
+                  <span class="numero">10</span> 
+                  <!-- nombre alumno  -->  
+                  <span class="title name-student"><strong>Martina Luis Ángel</strong><br>
+                  </span>
+                </div>
+                <div class="asist center-align">
+                  <div class="switch">
+                    <label>
+                      A
+                      <input type="checkbox" class="present" checked>
+                      <span class="lever"></span>
+                      P
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- fin un alumno  -->
+          <!-- inicio un alumno  -->  
+          <li class="collection-item grey lighten-5 li-alumno">
+            <div class="row no-margen">
+              <div class="col s12 caja-alumno-asistencia">
+                <div class="nombre truncate">
+                  <!-- ícono alumno  -->
+                  <span class="numero">11</span> 
+                  <!-- nombre alumno  -->  
+                  <span class="title name-student"><strong>Montiel Juan Pablo</strong><br>
+                  </span>
+                </div>
+                <div class="asist center-align">
+                  <div class="switch">
+                    <label>
+                      A
+                      <input type="checkbox" class="present" checked>
+                      <span class="lever"></span>
+                      P
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- fin un alumno  -->
+          <!-- inicio un alumno  -->  
+          <li class="collection-item grey lighten-5 li-alumno">
+            <div class="row no-margen">
+              <div class="col s12 caja-alumno-asistencia">
+                <div class="nombre truncate">
+                  <!-- ícono alumno  -->
+                  <span class="numero">12</span> 
+                  <!-- nombre alumno  -->  
+                  <span class="title name-student"><strong>Moreno Christian</strong><br>
+                  </span>
+                </div>
+                <div class="asist center-align">
+                  <div class="switch">
+                    <label>
+                      A
+                      <input type="checkbox" class="present" checked>
+                      <span class="lever"></span>
+                      P
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- fin un alumno  -->
+          <!-- inicio un alumno  -->  
+          <li class="collection-item grey lighten-5 li-alumno">
+            <div class="row no-margen">
+              <div class="col s12 caja-alumno-asistencia">
+                <div class="nombre truncate">
+                  <!-- ícono alumno  -->
+                  <span class="numero">13</span> 
+                  <!-- nombre alumno  -->  
+                  <span class="title name-student"><strong>Navarrete Marianela</strong><br>
+                  </span>
+                </div>
+                <div class="asist center-align">
+                  <div class="switch">
+                    <label>
+                      A
+                      <input type="checkbox" class="present" checked>
+                      <span class="lever"></span>
+                      P
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- fin un alumno  -->
+          <!-- inicio un alumno  -->  
+          <li class="collection-item grey lighten-5 li-alumno">
+            <div class="row no-margen">
+              <div class="col s12 caja-alumno-asistencia">
+                <div class="nombre truncate">
+                  <!-- ícono alumno  -->
+                  <span class="numero">14</span> 
+                  <!-- nombre alumno  -->  
+                  <span class="title name-student"><strong>Nuñez Emilia</strong><br>
+                  </span>
+                </div>
+                <div class="asist center-align">
+                  <div class="switch">
+                    <label>
+                      A
+                      <input type="checkbox" class="present" checked>
+                      <span class="lever"></span>
+                      P
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- fin un alumno  -->
+          <!-- inicio un alumno  -->  
+          <li class="collection-item grey lighten-5 li-alumno">
+            <div class="row no-margen">
+              <div class="col s12 caja-alumno-asistencia">
+                <div class="nombre truncate">
+                  <!-- ícono alumno  -->
+                  <span class="numero">15</span> 
+                  <!-- nombre alumno  -->  
+                  <span class="title name-student"><strong>Orrego Franco</strong><br>
+                  </span>
+                </div>
+                <div class="asist center-align">
+                  <div class="switch">
+                    <label>
+                      A
+                      <input type="checkbox" class="present" checked>
+                      <span class="lever"></span>
+                      P
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- fin un alumno  -->
+          <!-- inicio un alumno  -->  
+          <li class="collection-item grey lighten-5 li-alumno">
+            <div class="row no-margen">
+              <div class="col s12 caja-alumno-asistencia">
+                <div class="nombre truncate">
+                  <!-- ícono alumno  -->
+                  <span class="numero">16</span> 
+                  <!-- nombre alumno  -->  
+                  <span class="title name-student"><strong>Perez Elias</strong><br>
+                  </span>
+                </div>
+                <div class="asist center-align">
+                  <div class="switch">
+                    <label>
+                      A
+                      <input type="checkbox" class="present" checked>
+                      <span class="lever"></span>
+                      P
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- fin un alumno  -->
+          <!-- inicio un alumno  -->  
+          <li class="collection-item grey lighten-5 li-alumno">
+            <div class="row no-margen">
+              <div class="col s12 caja-alumno-asistencia">
+                <div class="nombre truncate">
+                  <!-- ícono alumno  -->
+                  <span class="numero">17</span> 
+                  <!-- nombre alumno  -->  
+                  <span class="title name-student"><strong>Saucedo Hector</strong><br>
+                  </span>
+                </div>
+                <div class="asist center-align">
+                  <div class="switch">
+                    <label>
+                      A
+                      <input type="checkbox" class="present" checked>
+                      <span class="lever"></span>
+                      P
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- fin un alumno  -->
+          <!-- inicio un alumno  -->  
+          <li class="collection-item grey lighten-5 li-alumno">
+            <div class="row no-margen">
+              <div class="col s12 caja-alumno-asistencia">
+                <div class="nombre truncate">
+                  <!-- ícono alumno  -->
+                  <span class="numero">18</span> 
+                  <!-- nombre alumno  -->  
+                  <span class="title name-student"><strong>Segura Elio</strong><br>
+                  </span>
+                </div>
+                <div class="asist center-align">
+                  <div class="switch">
+                    <label>
+                      A
+                      <input type="checkbox" class="present" checked>
+                      <span class="lever"></span>
+                      P
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- fin un alumno  -->
+          <!-- inicio un alumno  -->  
+          <li class="collection-item grey lighten-5 li-alumno">
+            <div class="row no-margen">
+              <div class="col s12 caja-alumno-asistencia">
+                <div class="nombre truncate">
+                  <!-- ícono alumno  -->
+                  <span class="numero">19</span> 
+                  <!-- nombre alumno  -->  
+                  <span class="title name-student"><strong>Sosa Gustavo</strong><br>
+                  </span>
+                </div>
+                <div class="asist center-align">
+                  <div class="switch">
+                    <label>
+                      A
+                      <input type="checkbox" class="present" checked>
+                      <span class="lever"></span>
+                      P
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- fin un alumno  -->
+          <!-- inicio un alumno  -->  
+          <li class="collection-item grey lighten-5 li-alumno">
+            <div class="row no-margen">
+              <div class="col s12 caja-alumno-asistencia">
+                <div class="nombre truncate">
+                  <!-- ícono alumno  -->
+                  <span class="numero">20</span> 
+                  <!-- nombre alumno  -->  
+                  <span class="title name-student"><strong>Sosa Cordero Ivana</strong><br>
+                  </span>
+                </div>
+                <div class="asist center-align">
+                  <div class="switch">
+                    <label>
+                      A
+                      <input type="checkbox" class="present" checked>
+                      <span class="lever"></span>
+                      P
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <br>
+          <br>
+          <!-- fin un alumno  -->
+          <div class="totales">
+            <div class="presentes">
+              <div class="line1">
+                <span class="count">
+                  <i class="material-icons">thumb_up</i>
+                  <!-- <span class="count-checked-checkboxes"> -->
+                  <span id="contador-presentes" class="count-checked-checkboxes">
+                    0
+                  </span>
+                </span>
+              </div>
+              <div class="line2">
+                <span>
+                  presentes
+                </span>
+              </div>
+            </div>
+
+            <div class="ausentes">
+              <div class="line1">
+                <span class="count">
+                  <i class="material-icons">thumb_down</i>
+                  <!-- <span class="count-checked-checkboxes"> -->
+                  <span id="contador-ausentes" class="count-unchecked-checkboxes">
+                    0
+                  </span>
+                </span>
+              </div>
+              <div class="line2">
+                <span>
+                  ausesentes
+                </span>
+              </div>
+            </div>
+          </div>          
+        </ul>
+      <!-- fin lista alumnos -->
+      </div>
+      <!-- inicio botón descargar lista -->
+      <div class="fixed-action-btn">
+        <a href="#" class="btn-floating btn-large tooltipped" data-position="top" data-delay="50" data-tooltip="Guardar asistencia">
+          <i class="large material-icons">save</i>
+        </a>
+      </div>
+      <!-- fin botón descargar lista -->
+    </div>
+
+    <script type="text/javascript" src="js/mmj-i18n.js"></script>
+  <script type="text/javascript" src="js/mmj-demo-chrome.js"></script>
+</body>
+
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+  $(":checkbox").change(function() {
+    contar_p()
+  });
+});
+</script>
+
+
+<script>
+  $(document).ready(function() {
+  $('select').material_select();
+  });
+</script> 
+<script type="text/javascript">
+  $(".button-collapse").sideNav();
+  $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 300
+      edge: 'right', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true, // Choose whether you can drag to open on touch screens,
+      onOpen: function(el) {  }, // A function to be called when sideNav is opened
+      onClose: function(el) {  }, // A function to be called when sideNav is closed
+    }
+  );
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

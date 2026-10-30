@@ -167,6 +167,38 @@
     @include glow-hover-card(1rem, 7px, 2px, 0 0 4px 1px);
 }
 
+// El disco visible es el ::before. El fondo del elemento queda transparente
+// para no sumar otro negro. Al entrar el disco cierra primero y el glow espera;
+// al salir el glow se apaga y el disco abre después.
+.live-demo-card.glow--epic,
+.other-project-slide-wrapper.glow--epic,
+.projects-v2-section .hero-projects .section-featured-projects .featured-projects-frame.glow--epic,
+.projects-v2-section .side-projects .section-featured-projects .featured-projects-frame.glow--epic {
+    background-color: transparent;
+
+    &::before {
+        background-color: rgba(0, 0, 0, 0.25);
+        transition: background-color .2s ease .35s, box-shadow .35s ease;
+    }
+
+    &::after {
+        transition: opacity .35s ease;
+    }
+
+    &:hover,
+    &:focus-visible,
+    &:focus-within {
+        &::before {
+            background-color: $theme-dark-primary-background;
+            transition: background-color .15s ease, box-shadow .35s ease .15s;
+        }
+
+        &::after {
+            transition: opacity .35s ease .15s;
+        }
+    }
+}
+
 .testimonial-card.glow-target-avatar {
     .testimonial-author-avatar-wrapper {
         isolation: isolate;

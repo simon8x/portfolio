@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>mimuju - edTech</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/materialize.css">
+
+ <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="css/materialize.min.css">
+  
+  <!--Import Google Icon Font-->
+  <link href="css/material-icons.css" rel="stylesheet">
+</head>
+
+<body class="cuerpo">
+
+
+  <nav class="nav-extended">
+    <div class="nav-wrapper">
+      <a href="mmj-docente-clases-dashboard-v1.html" class="brand-logo logo-topbar" data-i18n-title="nav.homeTitle" title="Inicio · Mis clases">
+        <img src="images/mmj-logo-white.png">
+      </a>
+        <!-- Dropdown Trigger -->
+      <ul class="right cargo-topbar">
+        <li>
+          <i class="material-icons left no-margen">assignment_ind</i>
+          <a class='dropdown-trigger waves-effect waves-light btn-small truncate' href='#' data-activates='dropdown1'>2°A "EEP Juana Azurduy"<i class="material-icons right">keyboard_arrow_down</i></a>
+
+        </li>
+      </ul>  
+      
+      <!-- Dropdown Structure -->
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="#!" class="disabled">2°A "EEP Juana Azurduy"</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">4°C "EEP Eulalia Blasquez"</a></li>
+      </ul>
+
+
+      <!-- inicio lista de enlaces del menú arriba derecha -->
+      <ul id="slide-out" class="side-nav">
+        <li>
+          <div class="user-view">
+            <div class="background logo-menu">
+              <img class="responsive-img" src="images/mmjtxt-grey-opt.png">
+            </div>
+            <a href="mmj-docente-perfil-ver-v1.html" class="valign-wrapper">
+              <img class="circle avatar-menu" src="images/no-user-avatar.png">
+              <h6 class="black-text name truncate">
+                <strong>Manuela Vargas</strong><br>Ajustes<span>
+              </span>
+              </h6>
+              
+            </a>
+          </div>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-clases-dashboard-v1.html">
+            <i class="material-icons">class</i>Mis Clases
+          </a>
+        </li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-tareas-dashboard-v1.html">
+            <i class="material-icons">spellcheck</i>Mis Tareas
+          </a>
+        </li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-mensajes-dashboard-v1.html">
+            <i class="material-icons">mail</i>Mis Mensajes
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-alumnos-tomarasistencia-v1.html">
+            <i class="material-icons">pan_tool</i>Asistencias
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-aulas-ver-v1.html">
+            <i class="material-icons">supervisor_account</i>Mis Aulas
+          </a>
+        </li>
+        <li>
+          <a href="mmj-docente-asignaturas-ver-v1.html">
+            <i class="material-icons">turned_in</i>Mis Asignaturas
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a href="index.html">
+            <i class="material-icons">map</i><span data-i18n="nav.sitemap">Mapa de pantallas</span>
+          </a>
+        </li>
+      </ul>
+      <!-- fin lista de enlaces del menú arriba derecha -->
+      <!-- inicio hamburguesa del menú arriba derecha -->
+      <a href="#" data-activates="slide-out" class="button-collapse show-on-large">
+        <i class="material-icons">menu</i>
+      </a>
+      <!-- inicio hamburguesa del menú arriba derecha -->
+
+    </div>
+
+  </nav>
+
+  <div class="row grey lighten-5 pad-tab-in">
+
+  <div class="row"> 
+
+    <!-- inicio columna del contenedor principal -->
+    <div class="col s12 cont-ppal">        
+      <!-- inicio tarjeta -->
+      <div class="card editando-mensaje">
+        
+        <!-- inicio encabezado tarjeta -->
+        <div class="top-bar-actions grey lighten-2">
+
+          <a href="mmj-docente-mensajes-dashboard-v1.html" class="top-bar-btn-back left tooltipped" data-position="top" data-delay="150" data-tooltip="Descartar Cambios">
+            <span class="accion-btn">
+              <i class="material-icons">arrow_back</i>
+            </span>
+          </a>
+          <div class="header-calculada">
+            <span class="ttl-calc truncate">Editando Mensaje</span>
+          </div>
+
+          <a href="mmj-docente-mensajes-dashboard-v1.html" class="top-bar-btn right tooltipped" data-position="top" data-delay="150" data-tooltip="Descartar Mensaje" onclick="ConfirmarBorrarClase()">
+            <span class="accion-btn">
+              <i class="material-icons">delete</i>
+              <span class="txt-btn"> ELIMINAR</span>
+            </span>
+          </a> 
+
+        </div>
+        <!-- fin encabezado tarjeta -->
+
+        <!-- inicio cuerpo de la tarjeta -->
+        <div class="card-content">
+
+          <div class="row no-padding">
+            <div class="col l12 m12 s12 no-padding">
+
+              <div class="row no-margen no-padding">
+                <form>
+                  <div class="row">
+
+                    <div class="col l3 m4 s12">
+                      <div class="row">
+                        
+                        <div class="col s12 m12 l12 detalles-msg">
+                          <label><h6>Tipo de Mensaje</h6></label>
+                          <p><strong> Mensaje Directo</strong></p>
+                        </div>
+                        
+                        
+                        <div class="col s12 m12 l12">
+                          <label><h6>Destinatario</h6></label>
+                          <p class="detalle-destinatario"><strong> Belgrano, Manuel</strong></p>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="col l9 m8 s12">
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input id="mensaje-title" type="text" class="validate">
+                          <label for="mensaje-title">Título del mensaje</label>
+                        </div>
+
+                        <div class="input-field col s12">
+                          <textarea id="textarea2" class="materialize-textarea" data-length="5000"></textarea>
+                          <label for="textarea2">Cuerpo del mensaje</label>
+                        </div>
+                      </div>
+                    </div>                    
+                  </div>
+                </form>
+                <div class="row"></div>
+
+              </div>  
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<br><br>
+
+    <!-- inicio botón nuevo mensaje -->
+    <div class="fixed-action-btn">
+      <a href="mmj-docente-mensajes-dashboard-v1.html" class="btn-floating btn-large tooltipped" data-position="top" data-delay="50" data-tooltip="Guardar Cambios">
+        <i class="large material-icons">save</i>
+      </a>
+    </div>
+    <!-- fin botón nuevo mensaje -->
+
+
+    <script type="text/javascript" src="js/mmj-i18n.js"></script>
+  <script type="text/javascript" src="js/mmj-demo-chrome.js"></script>
+</body>
+
+<script type="text/javascript">
+  
+function showDiv(divId, element)
+{
+    document.getElementById(divId).style.display = element.value == 2 ? 'block' : 'none';
+}
+
+</script>
+
+<!-- para el select de asignatura -->
+  <script>
+    $(document).ready(function() {
+    $('select').material_select();
+  });
+  </script>
+
+
+
+<!-- confirmación para quitar un adjunto -->
+
+
+<!-- confirmación para quitar una clase -->
+<script>
+function ConfirmarBorrarClase() {
+  return confirm("¿Está seguro que desea descartar el mensaje?\nPresione ACEPTAR para confirmar o CANCELAR para volver atrás.\n");
+}
+</script>
+
+
+<script>
+  $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 1, // Creates a dropdown of 15 years to control year,
+    monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+      monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+      weekdaysFull: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+      weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
+        today: 'Hoy',
+        clear: 'Limpiar',
+        close: 'Ok',
+        labelMonthNext: 'Siguiente mes',
+      labelMonthPrev: 'Mes anterior',
+      labelMonthSelect: 'Selecciona un mes',
+      labelYearSelect: 'Selecciona un año',
+    closeOnSelect: false // Close upon selecting a date,
+  });
+</script>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {
+      toolbarEnabled: true
+    });
+  });
+</script>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
+</script>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.materialboxed');
+    var instances = M.Materialbox.init(elems);
+  });
+</script>
+
+<!-- mostrar ocultar etiqueta asignatura en listado de clases -->
+<script type="text/javascript">
+  function mostrar_asignaturas(){
+    var x = document.getElementsByClassName("nombre_asignatura");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "unset";
+    } 
+  }
+
+  function ocultar_asignaturas(){
+    var x = document.getElementsByClassName("nombre_asignatura");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    } 
+  }
+</script>
+
+
+
+
+
+
+
+<!-- <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems);
+  });
+</script> -->
+
+<script type="text/javascript">
+  $('.dropdown-trigger').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      cpmtrainWidth: false,
+      hover: false,
+      gutter: 0,
+    }
+  );
+</script>
+
+<script type="text/javascript">
+  $(".button-collapse").sideNav();
+  $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 300
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true, // Choose whether you can drag to open on touch screens,
+      onOpen: function(el) {  }, // A function to be called when sideNav is opened
+      onClose: function(el) {  }, // A function to be called when sideNav is closed
+    }
+  );
+</script>
+</html>

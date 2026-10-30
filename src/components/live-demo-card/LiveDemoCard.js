@@ -44,6 +44,23 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
     const [toastLeaving, setToastLeaving] = useState(false);
     const settleTimeoutRef = useRef(null);
     const iframeRef = useRef(null);
+    const frameReadyPollRef = useRef(null);
+
+    const markFrameSettled = () => {
+        if (settleTimeoutRef.current != null) {
+            return;
+        }
+
+        silenceFrameMedia(iframeRef.current);
+
+        settleTimeoutRef.current = setTimeout(() => {
+            silenceFrameMedia(iframeRef.current);
+            setProgress(100);
+            setIsReady(true);
+            settleTimeoutRef.current = null;
+            postPortfolioLangToFrame();
+        }, 400);
+    };
 
     const name = liveDemo.name[siteLang] == null
         ? liveDemo.name.EN
@@ -77,6 +94,18 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
         ? null
         : (cardTooltip[siteLang] == null ? cardTooltip.EN : cardTooltip[siteLang]);
 
+    const confidentialityNotice = liveDemo.confidentialityNotice == null
+        ? null
+        : (liveDemo.confidentialityNotice[siteLang] == null
+            ? liveDemo.confidentialityNotice.EN
+            : liveDemo.confidentialityNotice[siteLang]);
+
+    const demoVisitorHint = liveDemo.demoVisitorHint == null
+        ? null
+        : (liveDemo.demoVisitorHint[siteLang] == null
+            ? liveDemo.demoVisitorHint.EN
+            : liveDemo.demoVisitorHint[siteLang]);
+
     const { appearRef, enterClass } = useAppearOnView();
     const extraClassName = className == null ? '' : ' ' + className;
 
@@ -88,9 +117,38 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
         ? 'live-demo-view-btn'
         : 'live-demo-view-btn is-disabled';
 
-    const iframeClass = demoOpen === true
-        ? 'live-demo-frame is-fullscreen'
-        : 'live-demo-frame is-preload';
+    const deviceFrame = liveDemo.deviceFrame == null ? null : liveDemo.deviceFrame;
+    const useDeviceFrame = deviceFrame === 'phone' || deviceFrame === 'tablet';
+    const defaultDeviceWidth = deviceFrame === 'tablet' ? 768 : 460;
+    const deviceViewportWidth = liveDemo.deviceViewportWidth == null
+        ? defaultDeviceWidth
+        : liveDemo.deviceViewportWidth;
+
+    const deviceStageStyle = {
+        '--live-demo-device-width': deviceViewportWidth + 'px',
+    };
+
+    const iframeClass = useDeviceFrame === true
+        ? 'live-demo-frame is-device-viewport'
+        : (demoOpen === true
+            ? 'live-demo-frame is-fullscreen'
+            : 'live-demo-frame is-preload');
+
+    const postPortfolioLangToFrame = () => {
+        if (liveDemo.id !== 'mimuju') {
+            return;
+        }
+
+        const frame = iframeRef.current;
+        if (frame == null || frame.contentWindow == null) {
+            return;
+        }
+
+        frame.contentWindow.postMessage(
+            { type: 'portfolio-lang', lang: siteLang },
+            window.location.origin
+        );
+    };
 
     useEffect(() => {
         if (launchDemoId == null || launchDemoId === '') {
@@ -119,6 +177,11 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
         if (settleTimeoutRef.current != null) {
             clearTimeout(settleTimeoutRef.current);
             settleTimeoutRef.current = null;
+        }
+
+        if (frameReadyPollRef.current != null) {
+            clearInterval(frameReadyPollRef.current);
+            frameReadyPollRef.current = null;
         }
 
         setProgress(0);
@@ -157,6 +220,9 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
             if (settleTimeoutRef.current != null) {
                 clearTimeout(settleTimeoutRef.current);
             }
+            if (frameReadyPollRef.current != null) {
+                clearInterval(frameReadyPollRef.current);
+            }
         };
     }, []);
 
@@ -172,6 +238,14 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
             document.body.style.overflow = previousOverflow;
         };
     }, [demoOpen]);
+
+    useEffect(() => {
+        if (isPreloading !== true) {
+            return;
+        }
+
+        postPortfolioLangToFrame();
+    }, [siteLang, isPreloading, liveDemo.id]);
 
     // Mientras el iframe está en preload (no fullscreen), silenciar media autoplay
     // (p. ej. Alphaverse). Mismo origen → podemos pausar video/audio del documento.
@@ -275,6 +349,49 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
         return () => clearTimeout(hideTimer);
     }, [toastLeaving]);
 
+    useEffect(() => {
+        if (isPreloading !== true || isReady === true || useDeviceFrame !== true) {
+            return;
+        }
+
+        const pollFrameReady = () => {
+            const frame = iframeRef.current;
+            if (frame == null) {
+                return;
+            }
+
+            try {
+                const doc = frame.contentDocument;
+                if (doc == null) {
+                    return;
+                }
+
+                if (doc.readyState !== 'complete' && doc.readyState !== 'interactive') {
+                    return;
+                }
+
+                markFrameSettled();
+
+                if (frameReadyPollRef.current != null) {
+                    clearInterval(frameReadyPollRef.current);
+                    frameReadyPollRef.current = null;
+                }
+            } catch (err) {
+                return;
+            }
+        };
+
+        pollFrameReady();
+        frameReadyPollRef.current = setInterval(pollFrameReady, 300);
+
+        return () => {
+            if (frameReadyPollRef.current != null) {
+                clearInterval(frameReadyPollRef.current);
+                frameReadyPollRef.current = null;
+            }
+        };
+    }, [isPreloading, isReady, useDeviceFrame]);
+
     const handleOpenInfo = () => {
         onRequestPreload();
         setInfoOpen(true);
@@ -285,18 +402,7 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
     };
 
     const handleFrameLoad = () => {
-        if (settleTimeoutRef.current != null) {
-            clearTimeout(settleTimeoutRef.current);
-        }
-
-        silenceFrameMedia(iframeRef.current);
-
-        settleTimeoutRef.current = setTimeout(() => {
-            silenceFrameMedia(iframeRef.current);
-            setProgress(100);
-            setIsReady(true);
-            settleTimeoutRef.current = null;
-        }, 400);
+        markFrameSettled();
     };
 
     const handleOpenDemo = () => {
@@ -324,36 +430,103 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
         setToastLeaving(false);
     };
 
+    const renderDemoCloseAndToast = (closeClassName) => {
+        if (demoOpen !== true) {
+            return null;
+        }
+
+        return (
+            <>
+                <button
+                    type='button'
+                    className={closeClassName}
+                    onClick={handleCloseDemo}
+                    aria-label={closeDemoLabel}
+                >
+                    <span aria-hidden='true'>×</span>
+                </button>
+                <Toast
+                    message={toastMessage}
+                    open={toastOpen}
+                    isLeaving={toastLeaving}
+                />
+            </>
+        );
+    };
+
+    const renderFullscreenChrome = () => {
+        if (demoOpen !== true) {
+            return null;
+        }
+
+        return (
+            <div className='live-demo-fullscreen-chrome'>
+                {renderDemoCloseAndToast('live-demo-fullscreen-close')}
+            </div>
+        );
+    };
+
+    const deviceStageClassName = deviceFrame == null
+        ? 'live-demo-device-stage'
+        : 'live-demo-device-stage live-demo-device-stage--' + deviceFrame + (demoOpen === true ? ' is-open' : '');
+
+    const deviceFrameMarkup = deviceFrame === 'tablet'
+        ? (
+            <div className='live-demo-tablet-frame'>
+                <span className='live-demo-tablet-camera' aria-hidden='true' />
+                <div className='live-demo-device-screen'>
+                    <iframe
+                        ref={iframeRef}
+                        className={iframeClass}
+                        src={liveDemo.demoUrl}
+                        title={name}
+                        onLoad={handleFrameLoad}
+                    />
+                </div>
+            </div>
+        )
+        : (
+            <div className='live-demo-phone-frame'>
+                <span className='live-demo-phone-notch' aria-hidden='true' />
+                <div className='live-demo-device-screen live-demo-device-screen--phone'>
+                    <iframe
+                        ref={iframeRef}
+                        className={iframeClass}
+                        src={liveDemo.demoUrl}
+                        title={name}
+                        onLoad={handleFrameLoad}
+                    />
+                </div>
+                <span className='live-demo-phone-home-bar' aria-hidden='true' />
+            </div>
+        );
+
     const demoLayer = isPreloading === true
         ? createPortal(
-            <>
-                <iframe
-                    ref={iframeRef}
-                    className={iframeClass}
-                    src={liveDemo.demoUrl}
-                    title={name}
-                    onLoad={handleFrameLoad}
-                />
-                {
-                    demoOpen === true
-                        ? <div className='live-demo-fullscreen-chrome'>
-                            <button
-                                type='button'
-                                className='live-demo-fullscreen-close'
-                                onClick={handleCloseDemo}
-                                aria-label={closeDemoLabel}
-                            >
-                                <span aria-hidden='true'>×</span>
-                            </button>
-                            <Toast
-                                message={toastMessage}
-                                open={toastOpen}
-                                isLeaving={toastLeaving}
-                            />
-                          </div>
-                        : null
-                }
-            </>,
+            useDeviceFrame === true
+                ? <>
+                    <div
+                        className={deviceStageClassName}
+                        style={deviceStageStyle}
+                    >
+                        <div className='live-demo-device-presenter'>
+                            {deviceFrameMarkup}
+                            {renderDemoCloseAndToast(
+                                'live-demo-fullscreen-close live-demo-fullscreen-close--device-frame'
+                            )}
+                        </div>
+                    </div>
+                  </>
+                : <>
+                    <iframe
+                        ref={iframeRef}
+                        className={iframeClass}
+                        src={liveDemo.demoUrl}
+                        title={name}
+                        onLoad={handleFrameLoad}
+                    />
+                    {renderFullscreenChrome()}
+                  </>,
             document.body
           )
         : null;
@@ -424,8 +597,19 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
                             : null
                     }
 
+                    {
+                        demoVisitorHint == null
+                            ? null
+                            : <p className='live-demo-visitor-hint'>{demoVisitorHint}</p>
+                    }
+
                     <div className='live-demo-loading-block'>
                         <p className='live-demo-ready-hint'>{readyHint}</p>
+                        {
+                            confidentialityNotice == null
+                                ? null
+                                : <p className='live-demo-confidentiality-notice'>{confidentialityNotice}</p>
+                        }
                         <div
                             className='live-demo-progress'
                             role='progressbar'

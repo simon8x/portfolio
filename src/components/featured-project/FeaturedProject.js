@@ -29,6 +29,11 @@ export const FeaturedProject = ({ featuredProject }) => {
 
 	const demoChipLabel = siteLang === 'ES' ? 'Demo' : 'Demo';
 	const viewDemoLabel = siteLang === 'ES' ? 'Ver demo' : 'View demo';
+	const demoConfidentialityNotice = featuredProject.demoConfidentialityNotice == null
+		? null
+		: (featuredProject.demoConfidentialityNotice[siteLang] == null
+			? featuredProject.demoConfidentialityNotice.EN
+			: featuredProject.demoConfidentialityNotice[siteLang]);
 	const subtitle = featuredProject.projectSubtitle[siteLang] == null
 		? featuredProject.projectSubtitle.EN
 		: featuredProject.projectSubtitle[siteLang];
@@ -150,13 +155,20 @@ export const FeaturedProject = ({ featuredProject }) => {
 					</div>
 					{
 						hasDemo === true
-							? <Link
-								to={'/projects?demo=' + encodeURIComponent(demoId)}
-								className='modal-view-demo-link'
-								onClick={handleViewDemo}
-							  >
-								{viewDemoLabel}
-							  </Link>
+							? <>
+								{
+									demoConfidentialityNotice == null
+										? null
+										: <p className='modal-demo-confidentiality-notice'>{demoConfidentialityNotice}</p>
+								}
+								<Link
+									to={'/projects?demo=' + encodeURIComponent(demoId)}
+									className='modal-view-demo-link'
+									onClick={handleViewDemo}
+								>
+									{viewDemoLabel}
+								</Link>
+							  </>
 							: null
 					}
 				</article>

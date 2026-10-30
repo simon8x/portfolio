@@ -214,10 +214,15 @@ export const featuredProjectsData = [
                 "La aplicación mantiene a los tutores al día y permite a los directores de escuela supervisar el progreso de la clase."
             ],
         },
+        demoConfidentialityNotice: {
+            EN: 'Under confidentiality agreements, I may only share the prototype I designed to validate flows with end users; this is not the production application.',
+            ES: 'Por acuerdos de confidencialidad, solo comparto el prototipo que diseñé para validar flujos con usuarios finales; no es la aplicación en producción.',
+        },
         "projectImageUrl": `${process.env.PUBLIC_URL}/assets/images/projects/mimuju/mimuju-featured-modal.png`,
         "projectLogo": "logo url",
         "linkToSite": "",
         "linkToBlog": "",
+        "demoId": "mimuju",
     },
 
 

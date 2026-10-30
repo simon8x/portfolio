@@ -117,8 +117,8 @@ export const liveDemosData = [
     {
         id: 'alphaverse',
         name: {
-            EN: 'Alphaverse',
-            ES: 'Alphaverse',
+            EN: 'Alphaverse Game Landing',
+            ES: 'Alphaverse Game Landing',
         },
         summary: {
             EN: [
@@ -151,8 +151,8 @@ export const liveDemosData = [
     {
         id: 'ftcc',
         name: {
-            EN: 'Food Truck Coin Club',
-            ES: 'Food Truck Coin Club',
+            EN: 'Food Truck Coin Club Game Landing',
+            ES: 'Food Truck Coin Club Game Landing',
         },
         summary: {
             EN: [
@@ -201,6 +201,47 @@ export const liveDemosData = [
         cardTooltip: {
             EN: 'Just another landing one-page with Bahaus style 🎨',
             ES: 'Solo otra landing one page estilo Bauhaus 🎨',
+        },
+    },
+    {
+        id: 'mimuju',
+        deviceFrame: 'tablet',
+        deviceViewportWidth: 768,
+        name: {
+            EN: 'Mimuju EdTech App',
+            ES: 'Mimuju EdTech App',
+        },
+        summary: {
+            EN: [
+                'Clickable UI prototype for Mimuju, an edTech web app for teachers, tutors, and school directors tracking elementary education.',
+                'Teacher-facing screens — static HTML with Materialize CSS and jQuery. When you open the demo, start with the teacher guide on the screen map, then explore Classes, Assignments, Messages, or Statistics.',
+            ],
+            ES: [
+                'Prototipo UI navegable de Mimuju, aplicación edTech para docentes, tutores y directivos que siguen el proceso educativo de primaria.',
+                'Pantallas del rol docente — HTML estático con Materialize CSS y jQuery. Al abrir la demo, empezá por la guía del docente en el mapa de pantallas y explorá Clases, Tareas, Mensajes o Estadísticas.',
+            ],
+        },
+        demoVisitorHint: {
+            EN: 'The full teacher guide (dashboard areas + tutor/director context) is on the first screen inside the demo, before the walkthroughs.',
+            ES: 'La guía completa (áreas del dashboard y contexto tutor/directivo) está en la primera pantalla dentro de la demo, antes de los recorridos.',
+        },
+        confidentialityNotice: {
+            EN: 'Under confidentiality agreements, I may only share the prototype I designed to validate flows with end users; this is not the production application.',
+            ES: 'Por acuerdos de confidencialidad, solo comparto el prototipo que diseñé para validar flujos con usuarios finales; no es la aplicación en producción.',
+        },
+        techStack: [
+            'HTML5',
+            'CSS3',
+            'Sass',
+            'Materialize CSS',
+            'jQuery',
+            'UX Prototyping',
+        ],
+        featuredImageUrl: `${process.env.PUBLIC_URL}/assets/live-projects/mimuju/images/mmj-logo-white.png`,
+        demoUrl: `${process.env.PUBLIC_URL}/assets/live-projects/mimuju/index.html`,
+        cardTooltip: {
+            EN: 'EdTech teacher app · Materialize + jQuery prototype 📚',
+            ES: 'App edTech docente · prototipo Materialize + jQuery 📚',
         },
     },
 ];
