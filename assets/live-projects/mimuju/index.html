@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-i18n-doc-title>Mimuju · Mapa de pantallas (prototipo)</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/materialize.css">
+  <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <link rel="stylesheet" href="css/materialize.min.css">
+  <link href="css/material-icons.css" rel="stylesheet">
+</head>
+<body class="cuerpo">
+
+  <div class="container mmj-hub-wrap">
+    <div class="mmj-hub-banner" role="note">
+      <p data-i18n-html="hub.banner"></p>
+    </div>
+
+    <p class="mmj-hub-confidentiality" data-i18n="hub.confidentiality">Por acuerdos de confidencialidad, solo comparto el prototipo que diseñé para validar flujos con usuarios finales; no es la aplicación en producción.</p>
+
+    <header class="mmj-hub-hero">
+      <h1 data-i18n="hub.title">Mimuju · rol docente</h1>
+      <p data-i18n-html="hub.intro"></p>
+      <div class="mmj-hub-hero-actions">
+        <a href="mmj-docente-clases-dashboard-v1.html" class="btn waves-effect waves-light teal darken-2" data-i18n="hub.ctaStart">Empezar en Mis clases</a>
+        <a href="#guia-docente" class="btn-flat waves-effect" data-i18n="hub.ctaGuide">Guía del docente</a>
+        <a href="#mapa-completo" class="btn-flat waves-effect" data-i18n="hub.ctaMap">Ver mapa completo</a>
+      </div>
+    </header>
+
+    <section class="mmj-hub-guide" id="guia-docente" aria-labelledby="mmj-guide-title">
+      <h2 class="mmj-hub-section-title" id="mmj-guide-title" data-i18n="hub.guideTitle">Guía rápida · dashboard docente</h2>
+      <p class="mmj-hub-guide-lead" data-i18n-html="hub.guideLead"></p>
+      <div class="mmj-guide-grid">
+        <article class="mmj-guide-card">
+          <h3 class="mmj-guide-card-title">
+            <i class="material-icons" aria-hidden="true">class</i>
+            <span data-i18n="guide.classes.title">Clases</span>
+          </h3>
+          <p data-i18n="guide.classes.body"></p>
+        </article>
+        <article class="mmj-guide-card">
+          <h3 class="mmj-guide-card-title">
+            <i class="material-icons" aria-hidden="true">spellcheck</i>
+            <span data-i18n="guide.tasks.title">Tareas</span>
+          </h3>
+          <p data-i18n="guide.tasks.body"></p>
+        </article>
+        <article class="mmj-guide-card">
+          <h3 class="mmj-guide-card-title">
+            <i class="material-icons" aria-hidden="true">mail</i>
+            <span data-i18n="guide.messages.title">Mensajes</span>
+          </h3>
+          <p data-i18n="guide.messages.body"></p>
+        </article>
+        <article class="mmj-guide-card">
+          <h3 class="mmj-guide-card-title">
+            <i class="material-icons" aria-hidden="true">poll</i>
+            <span data-i18n="guide.stats.title">Estadísticas</span>
+          </h3>
+          <p data-i18n="guide.stats.body"></p>
+        </article>
+      </div>
+      <aside class="mmj-hub-guide-aside" role="note">
+        <p data-i18n-html="hub.guideAside"></p>
+      </aside>
+    </section>
+
+    <h2 class="mmj-hub-section-title" data-i18n="hub.toursTitle">Recorridos sugeridos</h2>
+    <div class="mmj-tour-grid">
+      <article class="mmj-tour-card">
+        <h2 data-i18n="tour1.title">Rutina de clase</h2>
+        <p data-i18n="tour1.desc">Dashboard, listado y apertura de una clase dictada.</p>
+        <ol class="mmj-tour-steps">
+          <li data-i18n="tour1.step1">Dashboard de clases</li>
+          <li data-i18n="tour1.step2">Abrir / dictar clase</li>
+        </ol>
+        <a href="mmj-docente-clases-dashboard-v1.html" class="btn waves-effect waves-light teal darken-2 mmj-tour-cta" data-i18n="tour1.cta">Iniciar recorrido</a>
+      </article>
+      <article class="mmj-tour-card">
+        <h2 data-i18n="tour2.title">Ciclo de tarea</h2>
+        <p data-i18n="tour2.desc">Seguimiento y revisión de entregas.</p>
+        <ol class="mmj-tour-steps">
+          <li data-i18n="tour2.step1">Dashboard de tareas</li>
+          <li data-i18n="tour2.step2">Revisar tarea</li>
+        </ol>
+        <a href="mmj-docente-tareas-dashboard-v1.html" class="btn waves-effect waves-light teal darken-2 mmj-tour-cta" data-i18n="tour2.cta">Iniciar recorrido</a>
+      </article>
+      <article class="mmj-tour-card">
+        <h2 data-i18n="tour3.title">Alumnos y asistencia</h2>
+        <p data-i18n="tour3.desc">Listado, ficha y toma de asistencia.</p>
+        <ol class="mmj-tour-steps">
+          <li data-i18n="tour3.step1">Listado de alumnos</li>
+          <li data-i18n="tour3.step2">Ficha del alumno</li>
+          <li data-i18n="tour3.step3">Tomar asistencia</li>
+        </ol>
+        <a href="mmj-docente-alumnos-ver-v1.html" class="btn waves-effect waves-light teal darken-2 mmj-tour-cta" data-i18n="tour3.cta">Iniciar recorrido</a>
+      </article>
+    </div>
+
+    <h2 class="mmj-hub-section-title" id="mapa-completo" data-i18n="hub.mapTitle">Mapa completo de pantallas</h2>
+
+    <div class="row">
+      <div class="col s12 m6 l4">
+        <ul class="collection with-header">
+          <li class="collection-header"><h4><i class="material-icons">class</i> <span data-i18n="map.classes">Clases</span></h4></li>
+          <li class="collection-item"><a href="mmj-docente-clases-dashboard-v1.html" class="mmj-sitemap-link"><i class="material-icons">dashboard</i><span data-i18n="link.dashboard">Dashboard</span></a></li>
+          <li class="collection-item"><a href="mmj-docente-clase-crear-v1.html" class="mmj-sitemap-link"><i class="material-icons">add</i><span data-i18n="link.create">Crear</span></a></li>
+          <li class="collection-item"><a href="mmj-docente-clase-editar-v1.html" class="mmj-sitemap-link"><i class="material-icons">edit</i><span data-i18n="link.edit">Editar</span></a></li>
+          <li class="collection-item"><a href="mmj-docente-clase-dictar-v1.html" class="mmj-sitemap-link"><i class="material-icons">near_me</i><span data-i18n="link.teach">Dictar</span></a></li>
+        </ul>
+      </div>
+      <div class="col s12 m6 l4">
+        <ul class="collection with-header">
+          <li class="collection-header"><h4><i class="material-icons">spellcheck</i> <span data-i18n="map.tasks">Tareas</span></h4></li>
+          <li class="collection-item"><a href="mmj-docente-tareas-dashboard-v1.html" class="mmj-sitemap-link"><i class="material-icons">dashboard</i><span data-i18n="link.dashboard">Dashboard</span></a></li>
+          <li class="collection-item"><a href="mmj-docente-tarea-crear-v1.html" class="mmj-sitemap-link"><i class="material-icons">add</i><span data-i18n="link.create">Crear</span></a></li>
+          <li class="collection-item"><a href="mmj-docente-tarea-editar-v1.html" class="mmj-sitemap-link"><i class="material-icons">edit</i><span data-i18n="link.edit">Editar</span></a></li>
+          <li class="collection-item"><a href="mmj-docente-tarea-revisar-v1.html" class="mmj-sitemap-link"><i class="material-icons">visibility</i><span data-i18n="link.review">Revisar</span></a></li>
+        </ul>
+      </div>
+      <div class="col s12 m6 l4">
+        <ul class="collection with-header">
+          <li class="collection-header"><h4><i class="material-icons">mail</i> <span data-i18n="map.messages">Mensajes</span></h4></li>
+          <li class="collection-item"><a href="mmj-docente-mensajes-dashboard-v1.html" class="mmj-sitemap-link"><i class="material-icons">dashboard</i><span data-i18n="link.dashboard">Dashboard</span></a></li>
+          <li class="collection-item"><a href="mmj-docente-mensaje-crear-v1.html" class="mmj-sitemap-link"><i class="material-icons">add</i><span data-i18n="link.create">Crear</span></a></li>
+          <li class="collection-item"><a href="mmj-docente-mensaje-editar-v1.html" class="mmj-sitemap-link"><i class="material-icons">edit</i><span data-i18n="link.edit">Editar</span></a></li>
+          <li class="collection-item"><a href="mmj-docente-mensaje-revisar-v1.html" class="mmj-sitemap-link"><i class="material-icons">visibility</i><span data-i18n="link.review">Revisar</span></a></li>
+        </ul>
+      </div>
+      <div class="col s12 m6 l4">
+        <ul class="collection with-header">
+          <li class="collection-header"><h4><i class="material-icons">account_circle</i> <span data-i18n="map.profile">Perfil</span></h4></li>
+          <li class="collection-item"><a href="mmj-docente-perfil-ver-v1.html" class="mmj-sitemap-link"><i class="material-icons">visibility</i><span data-i18n="link.view">Ver</span></a></li>
+          <li class="collection-item"><a href="mmj-docente-perfil-crear-v1.html" class="mmj-sitemap-link"><i class="material-icons">add</i><span data-i18n="link.create">Crear</span></a></li>
+          <li class="collection-item"><a href="mmj-docente-perfil-editar-v1.html" class="mmj-sitemap-link"><i class="material-icons">edit</i><span data-i18n="link.edit">Editar</span></a></li>
+        </ul>
+      </div>
+      <div class="col s12 m6 l4">
+        <ul class="collection with-header">
+          <li class="collection-header"><h4><i class="material-icons">supervisor_account</i> <span data-i18n="map.rooms">Aulas y alumnos</span></h4></li>
+          <li class="collection-item"><a href="mmj-docente-aulas-ver-v1.html" class="mmj-sitemap-link"><i class="material-icons">list</i><span data-i18n="link.viewRooms">Ver aulas</span></a></li>
+          <li class="collection-item"><a href="mmj-docente-aula-crear-v1.html" class="mmj-sitemap-link"><i class="material-icons">add</i><span data-i18n="link.createRoom">Crear aula</span></a></li>
+          <li class="collection-item"><a href="mmj-docente-aula-editar-v1.html" class="mmj-sitemap-link"><i class="material-icons">edit</i><span data-i18n="link.editRoom">Editar aula</span></a></li>
+          <li class="collection-item"><a href="mmj-docente-alumnos-ver-v1.html" class="mmj-sitemap-link"><i class="material-icons">people</i><span data-i18n="link.studentList">Listado alumnos</span></a></li>
+          <li class="collection-item"><a href="mmj-docente-alumno-ver-v1.html" class="mmj-sitemap-link"><i class="material-icons">account_box</i><span data-i18n="link.studentProfile">Ficha alumno</span></a></li>
+        </ul>
+      </div>
+      <div class="col s12 m6 l4">
+        <ul class="collection with-header">
+          <li class="collection-header"><h4><i class="material-icons">collections_bookmark</i> <span data-i18n="map.subjects">Asignaturas</span></h4></li>
+          <li class="collection-item"><a href="mmj-docente-asignaturas-ver-v1.html" class="mmj-sitemap-link"><i class="material-icons">list</i><span data-i18n="link.view">Ver</span></a></li>
+          <li class="collection-item"><a href="mmj-docente-asignatura-crear-v1.html" class="mmj-sitemap-link"><i class="material-icons">add</i><span data-i18n="link.create">Crear</span></a></li>
+          <li class="collection-item"><a href="mmj-docente-asignatura-editar-v1.html" class="mmj-sitemap-link"><i class="material-icons">edit</i><span data-i18n="link.edit">Editar</span></a></li>
+        </ul>
+      </div>
+      <div class="col s12 m6 l4">
+        <ul class="collection with-header">
+          <li class="collection-header"><h4><i class="material-icons">pan_tool</i> <span data-i18n="map.attendance">Asistencia</span></h4></li>
+          <li class="collection-item"><a href="mmj-docente-alumnos-tomarasistencia-v1.html" class="mmj-sitemap-link"><i class="material-icons">check_circle</i><span data-i18n="link.takeAttendance">Tomar asistencia</span></a></li>
+        </ul>
+      </div>
+      <div class="col s12 m6 l4">
+        <ul class="collection with-header">
+          <li class="collection-header"><h4><i class="material-icons">poll</i> <span data-i18n="map.stats">Estadísticas</span></h4></li>
+          <li class="collection-item"><a href="mmj-docente-stats-dashboard-v1.html" class="mmj-sitemap-link"><i class="material-icons">insert_chart</i><span data-i18n="link.statsDashboard">Dashboard stats</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/mmj-i18n.js"></script>
+  <script type="text/javascript" src="js/mmj-demo-chrome.js"></script>
+</body>
+</html>

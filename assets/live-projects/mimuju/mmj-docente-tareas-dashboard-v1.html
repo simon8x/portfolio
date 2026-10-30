@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>mimuju - edTech</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/materialize.css">
+
+ <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="css/materialize.min.css">
+  
+  <!--Import Google Icon Font-->
+  <link href="css/material-icons.css" rel="stylesheet">
+</head>
+
+<body class="cuerpo">
+
+
+  <nav class="nav-extended">
+    <div class="nav-wrapper">
+      <a href="mmj-docente-clases-dashboard-v1.html" class="brand-logo logo-topbar" data-i18n-title="nav.homeTitle" title="Inicio · Mis clases">
+        <img src="images/mmj-logo-white.png">
+      </a>
+        <!-- Dropdown Trigger -->
+      <ul class="right cargo-topbar">
+        <li>
+          <i class="material-icons left no-margen">assignment_ind</i>
+          <a class='dropdown-trigger waves-effect waves-light btn-small truncate' href='#' data-activates='dropdown1'>2°A "EEP Juana Azurduy"<i class="material-icons right">keyboard_arrow_down</i></a>
+
+        </li>
+      </ul>  
+      
+      <!-- Dropdown Structure -->
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="#!" class="disabled">2°A "EEP Juana Azurduy"</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">4°C "EEP Eulalia Blasquez"</a></li>
+      </ul>
+
+
+      <!-- inicio lista de enlaces del menú arriba derecha -->
+      <ul id="slide-out" class="side-nav">
+        <li>
+          <div class="user-view">
+            <div class="background logo-menu">
+              <img class="responsive-img" src="images/mmjtxt-grey-opt.png">
+            </div>
+            <a href="mmj-docente-perfil-ver-v1.html" class="valign-wrapper">
+              <img class="circle avatar-menu" src="images/no-user-avatar.png">
+              <h6 class="black-text name truncate">
+                <strong>Manuela Vargas</strong><br>Ajustes<span>
+              </span>
+              </h6>
+              
+            </a>
+          </div>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-clases-dashboard-v1.html">
+            <i class="material-icons">class</i>Mis Clases
+          </a>
+        </li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-tareas-dashboard-v1.html">
+            <i class="material-icons">spellcheck</i>Mis Tareas
+          </a>
+        </li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-mensajes-dashboard-v1.html">
+            <i class="material-icons">mail</i>Mis Mensajes
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-alumnos-tomarasistencia-v1.html">
+            <i class="material-icons">pan_tool</i>Asistencias
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-aulas-ver-v1.html">
+            <i class="material-icons">supervisor_account</i>Mis Aulas
+          </a>
+        </li>
+        <li>
+          <a href="mmj-docente-asignaturas-ver-v1.html">
+            <i class="material-icons">turned_in</i>Mis Asignaturas
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a href="index.html">
+            <i class="material-icons">map</i><span data-i18n="nav.sitemap">Mapa de pantallas</span>
+          </a>
+        </li>
+      </ul>
+      <!-- fin lista de enlaces del menú arriba derecha -->
+      <!-- inicio hamburguesa del menú arriba derecha -->
+      <a href="#" data-activates="slide-out" class="button-collapse show-on-large">
+        <i class="material-icons">menu</i>
+      </a>
+      <!-- inicio hamburguesa del menú arriba derecha -->
+
+    </div>
+    <div class="nav-content tiratabs">
+      <div class="row no-margen">
+        <div class="col l11 m10 s10 no-padding">
+          <div class="row header-tabs">
+            <div class="col s4 center single-tab">
+              <a href="mmj-docente-clases-dashboard-v1.html">
+                <div class="cont-tab">
+                  <div class="icono">
+                    <i class="tiny material-icons">class</i>
+                  </div>
+                  <div class="text-icn truncate">
+                    Clases
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col s4 center single-tab activa">
+              <a href="mmj-docente-tareas-dashboard-v1.html">
+                <div class="cont-tab">
+                  <div class="icono">
+                    <i class="material-icons">spellcheck</i>
+                  </div>
+                  <div class="text-icn truncate">
+                    Tareas
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col s4 center single-tab">
+              <a href="mmj-docente-mensajes-dashboard-v1.html">
+                <div class="cont-tab">
+                  <div class="icono">
+                    <i class="material-icons">email</i>
+                  </div>
+                  <div class="text-icn truncate">
+                    Mensajes
+                  </div>
+                </div>
+              </a>
+            </div>      
+          </div>          
+        </div>
+        <div class="col l1 m2 s2 center no-padding">
+          <a href="mmj-docente-stats-dashboard-v1.html" aria-label="Estadísticas" title="Estadísticas">
+            <div class="cont-tab cont-tab--icon-only">
+              <div class="icono">
+                <i class="tiny material-icons">poll</i>
+              </div>
+            </div>
+          </a>
+        </div>        
+      </div>
+    </div>
+  </nav>
+
+  <div class="row grey lighten-5 pad-tab-in">
+
+    <div class="row">
+
+      <div class="col l6 m6 s12 no-padding">
+        <span class="lbl-dropdo">Seleccione asignatura</span>      
+        <!-- Dropdown Trigger -->
+        <ul>
+          <li>
+            <i class="material-icons left no-margen icn-dropdo">class</i>
+            <a class='selector-materia dropdown-trigger waves-effect waves-light btn-small truncate' href='#' data-activates='dropdown-asignaturas'>Todas<i class="material-icons right">keyboard_arrow_down</i></a>
+          </li>
+        </ul>  
+          
+        <!-- Dropdown Structure -->
+        <ul id='dropdown-asignaturas' class='dropdown-content txt-dropdo'>
+          <li>
+            <a href="#!" onclick="mostrar_asignaturas()">Todas</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="#!" onclick="ocultar_asignaturas()">Matemáticas</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="#!" onclick="ocultar_asignaturas()">Lengua</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="#!" onclick="ocultar_asignaturas()">Cs. Sociales</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="#!" onclick="ocultar_asignaturas()">Cs. Naturales</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="#!" onclick="ocultar_asignaturas()">Formación ética y ciudadana</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="#!" onclick="ocultar_asignaturas()">Tecnología</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col l6 m6 s12 no-padding">
+        
+        <form action="#" class="filtro-temas">
+
+          <span class="cada-filtro">
+            <input class="with-gap" name="group1" type="radio" id="porvencer" checked />
+            <label for="porvencer">Para Hoy(5)</label>
+          </span> 
+
+
+          <span class="cada-filtro">
+            <input class="with-gap" name="group1" type="radio" id="todos" />
+            <label for="todos">Todas(25)</label>
+          </span>
+
+          <span class="cada-filtro">
+            <input class="with-gap" name="group1" type="radio" id="vencidos" />
+            <label for="vencidos">Vencidas(20)</label>
+          </span>
+
+        </form>
+
+
+      </div>
+
+    </div>
+
+
+<!-- inicio contenedor principal -->
+  <div class="row">
+    <div class="col s12 cont-ppal">
+      <!-- inicio lista tareas -->
+      <ul class="collapsible" data-collapsible="accordion">
+        
+        <li>
+          <!-- inicio color Tarea sin vencer encabezado tarea -->    
+          <div class="collapsible-header tooltipped grey lighten-5" data-position="top" data-delay="150" data-tooltip="Ver Tarea">
+
+            <span class="secondary-content fecha-sin-vencer">
+              <!-- fecha deadline -->
+              15/08
+            </span>
+            <div class="truncate">
+              <span class="icono-tarea sin-vencer">
+                <i class="material-icons">assignment</i>
+              </span>
+              <!-- título de la tarea  -->  
+              <span class="title black-text">
+                <strong><span class="nombre_asignatura">[Matemática]</span> Operaciones</strong>
+              </span>
+            </div>
+          </div>
+          <!-- fin color Tarea sin vencer encabezado tarea --> 
+          <!-- inicio cuerpo tarea --> 
+          <div class="collapsible-body white no-padding tareas">
+
+            <div class="top-bar-actions grey lighten-2">
+
+              <div class="header-calculada">
+                <span class="ttl-calc truncate">Resumen</span>
+              </div>
+                
+              <a href="mmj-docente-tarea-editar-v1.html" class="top-bar-btn right tooltipped" data-position="top" data-delay="150" data-tooltip="Editar Tarea">
+                <span class="accion-btn">
+                  <i class="material-icons">edit</i>
+                  <span class="txt-btn"> EDITAR</span>
+                </span>
+              </a>
+
+              <a href="mmj-docente-tarea-revisar-v1.html" class="top-bar-btn right tooltipped" data-position="top" data-delay="150" data-tooltip="Controlar Tarea">
+                <span class="accion-btn">
+                  <i class="material-icons">done_all</i>
+                  <span class="txt-btn"> REVISAR</span>
+                </span>
+              </a>
+            </div>
+
+            <div class="contenido-extracto">
+                
+              <p class="fecha-clase">Dictada el 12/08/2020</p>
+
+              <p class="tema-content mostrando-extracto">
+
+              <!-- descripción del tema  -->
+                ¿Por qué nuestro sistema de numeración es posicional?<br>
+                En cualquier número el valor de cada cifra depende de la posición que ocupa.<br>
+                En el número 16.696.562 el primer 6 no tiene el mismo valor que el segundo 6, tampoco tiene el mismo valor que el tercero ni que el cuarto.<br>
+
+                16.696.562 (Dieciséis millones seiscientos noventa y seis mil quinientos sesenta y dos)<br>
+                6  decenas = 60 unidades <br>
+                6  unidades de mil = 6.000 unidades <br>
+                6  centenas de mil = 600.000 unidades <br>
+                6  unidades de millón = 6.000.000 unidades <br>
+
+                Actividades: <br>
+
+                Responder:<br>
+                ¿Cuánto vale, según la posición que ocupa cada uno de los 4 que aparecen en el número cuatrocientos mil cuarenta y cuatro?<br>
+                ¿Y en el número catorce millones doscientos cuarenta y tres mil cuatrocientos sesenta y uno?<br>
+                <br>
+                Responder en cifras y en palabras.<br>
+                La nave espacial debe hacer dos viajes a la Luna y traer material para investigar. 
+                <br>
+                ¿Cuántos kilómetros tendrá que recorrer en total?  (figura 1)<br>
+
+                <br>En un encuentro se habla de un continente imaginario, constituido por 3 países: Dormilandia, Juguetilandia y Divertilandia. Mirar el mapa y responder. (figura 2)<br>
+
+                ¿Cuál de los tres países tiene más habitantes?<br>
+                ¿Cuál de los tres países tiene menos habitantes?<br>
+                ¿Cuántas personas habitan todo el continente?<br>
+                  
+              </p>
+            </div>
+            <div class="msg-mostrar-resto grey lighten-2">
+              <p class="center no-margen grey-text text-darken-3">
+                Para ver el resto del contenido y su cumplimiento, presione <strong class="grey-text text-darken-4"><i class="material-icons tiny">done_all</i></strong>
+              </p>
+            </div>
+
+          </div>
+        </li>
+        <!-- fin un tarea  -->
+
+        <!-- inicio una tarea vencida y color de fondo -->    
+        <li>
+          <!-- inicio color tarea vencida  -->   
+          <div class="collapsible-header tooltipped grey lighten-3" data-position="top" data-delay="50" data-tooltip="Ver Tarea">
+            <span class="secondary-content fecha-vencida">
+              <!--  fecha de vencimiento  -->  
+              13/08
+            </span>            
+            <div class="truncate">
+              <!-- ícono tarea vencida  --> 
+              <span class="icono-tarea vencida">
+                <i class="material-icons">assignment</i>
+              </span>
+              <!-- título de la tarea  -->  
+              <span class="title grey-text text-darken-2">
+                <strong><span class="nombre_asignatura">[Ciencias Naturales]</span> Sumando las frutas</strong>
+              </span>
+            </div>
+
+          </div>              
+          <!-- fin color tarea vencida  --> 
+          <!-- inicio cuerpo tarea  --> 
+          <!-- inicio cuerpo tarea --> 
+          <div class="collapsible-body white no-padding tareas">
+
+            <div class="top-bar-actions grey lighten-2">
+
+              <div class="header-calculada">
+                <span class="ttl-calc truncate">Resumen</span>
+              </div>
+                
+              <a href="mmj-docente-tarea-editar-v1.html" class="top-bar-btn right tooltipped" data-position="top" data-delay="150" data-tooltip="Editar Tarea">
+                <span class="accion-btn">
+                  <i class="material-icons">edit</i>
+                  <span class="txt-btn"> EDITAR</span>
+                </span>
+              </a>
+
+              <a href="mmj-docente-tarea-revisar-v1.html" class="top-bar-btn right tooltipped" data-position="top" data-delay="150" data-tooltip="Controlar Tarea">
+                <span class="accion-btn">
+                  <i class="material-icons">done_all</i>
+                  <span class="txt-btn"> REVISAR</span>
+                </span>
+              </a>
+            </div>
+
+            <div class="contenido-extracto">
+                
+              <p class="fecha-clase">Dictada el 12/08/2020</p>
+
+              <p class="tema-content mostrando-extracto">
+
+              <!-- descripción del tema  -->
+                ¿Por qué nuestro sistema de numeración es posicional?<br>
+                En cualquier número el valor de cada cifra depende de la posición que ocupa.<br>
+                En el número 16.696.562 el primer 6 no tiene el mismo valor que el segundo 6, tampoco tiene el mismo valor que el tercero ni que el cuarto.<br>
+
+                16.696.562 (Dieciséis millones seiscientos noventa y seis mil quinientos sesenta y dos)<br>
+                6  decenas = 60 unidades <br>
+                6  unidades de mil = 6.000 unidades <br>
+                6  centenas de mil = 600.000 unidades <br>
+                6  unidades de millón = 6.000.000 unidades <br>
+
+                Actividades: <br>
+
+                Responder:<br>
+                ¿Cuánto vale, según la posición que ocupa cada uno de los 4 que aparecen en el número cuatrocientos mil cuarenta y cuatro?<br>
+                ¿Y en el número catorce millones doscientos cuarenta y tres mil cuatrocientos sesenta y uno?<br>
+                <br>
+                Responder en cifras y en palabras.<br>
+                La nave espacial debe hacer dos viajes a la Luna y traer material para investigar. 
+                <br>
+                ¿Cuántos kilómetros tendrá que recorrer en total?  (figura 1)<br>
+
+                <br>En un encuentro se habla de un continente imaginario, constituido por 3 países: Dormilandia, Juguetilandia y Divertilandia. Mirar el mapa y responder. (figura 2)<br>
+
+                ¿Cuál de los tres países tiene más habitantes?<br>
+                ¿Cuál de los tres países tiene menos habitantes?<br>
+                ¿Cuántas personas habitan todo el continente?<br>
+                  
+              </p>
+            </div>
+            <div class="msg-mostrar-resto grey lighten-2">
+              <p class="center no-margen grey-text text-darken-3">
+                Para ver el resto del contenido y su cumplimiento, presione <strong class="grey-text text-darken-4"><i class="material-icons tiny">done_all</i></strong>
+              </p>
+            </div>
+
+          </div>
+        </li>
+        <!-- fin un tarea vencida -->
+
+      </ul>
+    <!-- fin lista tareas -->
+    </div>
+    <!-- fin lista tareas -->
+    <!-- inicio paginación tareas -->
+    <div class="row center-align">
+        <ul class="pagination no-margen">
+          <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+          <li class="active"><a href="#!">1</a></li>
+          <li class="waves-effect"><a href="#!">2</a></li>
+          <li class="waves-effect"><a href="#!">3</a></li>
+          <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+    </div>
+    <!-- fin paginación tareas -->
+    <!-- inicio botón nueva tarea -->
+    <div class="fixed-action-btn">
+        <a href="mmj-docente-tarea-crear-v1.html" class="btn-floating btn-large tooltipped" data-position="top" data-delay="50" data-tooltip="Crear Tarea">
+          <i class="large material-icons">add</i>
+        </a>
+    </div>
+    <!-- fin botón nueva tarea -->
+  </div>
+  <!-- fin contenedor principal -->
+
+
+
+  </div>
+
+
+
+
+
+    <script type="text/javascript" src="js/mmj-i18n.js"></script>
+  <script type="text/javascript" src="js/mmj-demo-chrome.js"></script>
+</body>
+
+
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
+</script>
+
+
+<!-- mostrar ocultar etiqueta asignatura en listado de tareas -->
+<script type="text/javascript">
+  function mostrar_asignaturas(){
+    var x = document.getElementsByClassName("nombre_asignatura");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "unset";
+    } 
+  }
+
+  function ocultar_asignaturas(){
+    var x = document.getElementsByClassName("nombre_asignatura");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    } 
+  }
+</script>
+
+
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems);
+  });
+</script>
+
+<script type="text/javascript">
+  $('.dropdown-trigger').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      cpmtrainWidth: false,
+      hover: false,
+      gutter: 0,
+    }
+  );
+</script>
+
+<script type="text/javascript">
+  $(".button-collapse").sideNav();
+  $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 300
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true, // Choose whether you can drag to open on touch screens,
+      onOpen: function(el) {  }, // A function to be called when sideNav is opened
+      onClose: function(el) {  }, // A function to be called when sideNav is closed
+    }
+  );
+</script>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>mimuju - edTech</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/materialize.css">
+
+ <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="css/materialize.min.css">
+  
+  <!--Import Google Icon Font-->
+  <link href="css/material-icons.css" rel="stylesheet">
+</head>
+
+<body class="cuerpo">
+
+
+  <nav class="nav-extended">
+    <div class="nav-wrapper">
+      <a href="mmj-docente-clases-dashboard-v1.html" class="brand-logo logo-topbar" data-i18n-title="nav.homeTitle" title="Inicio · Mis clases">
+        <img src="images/mmj-logo-white.png">
+      </a>
+        <!-- Dropdown Trigger -->
+      <ul class="right cargo-topbar">
+        <li>
+          <i class="material-icons left no-margen">assignment_ind</i>
+          <a class='dropdown-trigger waves-effect waves-light btn-small truncate' href='#' data-activates='dropdown1'>2°A "EEP Juana Azurduy"<i class="material-icons right">keyboard_arrow_down</i></a>
+
+        </li>
+      </ul>  
+      
+      <!-- Dropdown Structure -->
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="mmj-docente-alumno-ver-v1.html" class="disabled">2°A "EEP Juana Azurduy"</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">4°C "EEP Eulalia Blasquez"</a></li>
+      </ul>
+
+
+      <!-- inicio lista de enlaces del menú arriba derecha -->
+      <ul id="slide-out" class="side-nav">
+        <li>
+          <div class="user-view">
+            <div class="background logo-menu">
+              <img class="responsive-img" src="images/mmjtxt-grey-opt.png">
+            </div>
+            <a href="mmj-docente-perfil-ver-v1.html" class="valign-wrapper">
+              <img class="circle avatar-menu" src="images/no-user-avatar.png">
+              <h6 class="black-text name truncate">
+                <strong>Manuela Vargas</strong><br>Ajustes<span>
+              </span>
+              </h6>
+              
+            </a>
+          </div>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-clases-dashboard-v1.html">
+            <i class="material-icons">class</i>Mis Clases
+          </a>
+        </li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-tareas-dashboard-v1.html">
+            <i class="material-icons">spellcheck</i>Mis Tareas
+          </a>
+        </li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-mensajes-dashboard-v1.html">
+            <i class="material-icons">mail</i>Mis Mensajes
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-alumnos-tomarasistencia-v1.html">
+            <i class="material-icons">pan_tool</i>Asistencias
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-aulas-ver-v1.html">
+            <i class="material-icons">supervisor_account</i>Mis Aulas
+          </a>
+        </li>
+        <li>
+          <a href="mmj-docente-asignaturas-ver-v1.html">
+            <i class="material-icons">turned_in</i>Mis Asignaturas
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a href="index.html">
+            <i class="material-icons">map</i><span data-i18n="nav.sitemap">Mapa de pantallas</span>
+          </a>
+        </li>
+      </ul>
+      <!-- fin lista de enlaces del menú arriba derecha -->
+      <!-- inicio hamburguesa del menú arriba derecha -->
+      <a href="#" data-activates="slide-out" class="button-collapse show-on-large">
+        <i class="material-icons">menu</i>
+      </a>
+      <!-- inicio hamburguesa del menú arriba derecha -->
+
+    </div>
+
+
+  </nav>
+
+  <div id="globo_ayuda" class="info-row blue lighten-1">
+    <a href="#" class="bt-close grey lighten-2" onclick="cerrar_ayuda()"><i class="material-icons">clear</i></a>
+    <p class="no-margen">Use para cambiar de Aula<i class="material-icons ico-medup">arrow_forward</i><i class="material-icons ico-down">subdirectory_arrow_right</i></p>
+  </div>
+
+  <div class="row grey lighten-5 pad-tab-in">
+    <div class="row"> 
+
+      <!-- inicio columna del contenedor principal -->
+      <div class="col s12 cont-ppal"> 
+
+          <div class="card ver-aula">
+            <!-- encabezado asignatura-->
+            <div class="top-bar-actions grey lighten-2">
+
+              <div class="header-calculada">
+                <span class="ttl-calc truncate">2°A "EEP Juana Azurduy"</span>
+              </div>
+
+              <!-- <a href="mmj-docente-asignatura-editar-v1.html" class="top-bar-btn right tooltipped" data-position="top" data-delay="150" data-tooltip="Habilitar Edición">
+                <span class="accion-btn">
+                  <i class="material-icons">edit</i>
+                  <span class="txt-btn"> EDITAR</span>
+                </span>
+              </a> -->
+
+            </div>
+
+            <!-- cuerpo asignatura-->
+            <div class="card-content asignaturas">
+
+              <p class="datos-personales center-align grey-text text-darken-2"><i class="material-icons tiny">info</i> Toca el nombre para ver la tarjeta del alumno</p>
+
+              <div class="collection">
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">Abal, Macarena Celeste</a>
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">Abila, Valentina</a>
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">Abregú, Julian Ezequiel</a>
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">Abzueta Angola, Isai Eduardo</a>
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">Acevedo Jaime, Adriana Carolina</a>
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">Acosta, Daniela Nahir</a>
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">Acosta Benitez, Maria Gabriela</a>
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">Aglioni, Diana Elizabeth</a>
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">Alves Guimaraes, Glenia Leticia</a>
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">Barrera Samudio, Celina Mariel</a>
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">Bedregal Herrera, Juliana Lorena</a>
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">Biesek, Denise Gabriely</a>
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">Bordalecu Campodónico, Valentina</a>
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">Carrero Carrasco, Felipe Eduardo</a>
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">Cordoba Villamayor, Nancy Mailen</a>
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">Dávila Rojas, Ignacio David</a>
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">Esposito Basilico, Micaela Giselle</a>
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">Ferreira, Josiani Maiara</a>
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">Garavito Calderon, Ingrith Estefany</a>
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">Herrera Arias, Angie Katherin</a>
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">Inostroza Valdes, Gustavo David</a>
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">Kubica, Camila Belén</a>
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">Leal Gutiérrez, Macarena Andrea</a>
+                <a href="mmj-docente-alumno-ver-v1.html" class="collection-item">López Aguilar, Carolina Estefanía</a>
+                
+                
+                
+
+
+              </div>
+
+
+
+            </div>
+          </div>
+
+     
+
+      </div>
+
+      <!-- inicio botón regresar -->
+      <div class="fixed-action-btn">
+        <a href="mmj-docente-aulas-ver-v1.html" class="btn-floating btn-large tooltipped" data-position="top" data-delay="50" data-tooltip="Regresar">
+          <i class="large material-icons">arrow_back</i>
+        </a>
+      </div>
+      <!-- fin botón regresar -->
+      </div>
+    </div>
+
+
+  </div>
+    <script type="text/javascript" src="js/mmj-i18n.js"></script>
+  <script type="text/javascript" src="js/mmj-demo-chrome.js"></script>
+</body>
+
+
+
+<script type="text/javascript">
+  function cerrar_ayuda(){
+    document.getElementById("globo_ayuda").style.display = "none";
+  }
+</script>
+
+
+
+
+<!-- para el select de cargos -->
+<script type="text/javascript">
+  $('.dropdown-trigger').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      cpmtrainWidth: false,
+      hover: false,
+      gutter: 0,
+    }
+  );
+</script>
+
+<script type="text/javascript">
+  $(".button-collapse").sideNav();
+  $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 300
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true, // Choose whether you can drag to open on touch screens,
+      onOpen: function(el) {  }, // A function to be called when sideNav is opened
+      onClose: function(el) {  }, // A function to be called when sideNav is closed
+    }
+  );
+</script>

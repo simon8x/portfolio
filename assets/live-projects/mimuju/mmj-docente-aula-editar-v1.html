@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>mimuju - edTech</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/materialize.css">
+
+ <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="css/materialize.min.css">
+  
+  <!--Import Google Icon Font-->
+  <link href="css/material-icons.css" rel="stylesheet">
+</head>
+
+<body class="cuerpo">
+
+
+  <nav class="nav-extended">
+    <div class="nav-wrapper">
+      <a href="mmj-docente-clases-dashboard-v1.html" class="brand-logo logo-topbar" data-i18n-title="nav.homeTitle" title="Inicio · Mis clases">
+        <img src="images/mmj-logo-white.png">
+      </a>
+        <!-- Dropdown Trigger -->
+      <ul class="right cargo-topbar">
+        <li>
+          <i class="material-icons left no-margen">assignment_ind</i>
+          <a class='dropdown-trigger waves-effect waves-light btn-small truncate' href='#' data-activates='dropdown1'>2°A "EEP Juana Azurduy"<i class="material-icons right">keyboard_arrow_down</i></a>
+
+        </li>
+      </ul>  
+      
+      <!-- Dropdown Structure -->
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="#!" class="disabled">2°A "EEP Juana Azurduy"</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">4°C "EEP Eulalia Blasquez"</a></li>
+      </ul>
+
+
+      <!-- inicio lista de enlaces del menú arriba derecha -->
+      <ul id="slide-out" class="side-nav">
+        <li>
+          <div class="user-view">
+            <div class="background logo-menu">
+              <img class="responsive-img" src="images/mmjtxt-grey-opt.png">
+            </div>
+            <a href="mmj-docente-perfil-ver-v1.html" class="valign-wrapper">
+              <img class="circle avatar-menu" src="images/no-user-avatar.png">
+              <h6 class="black-text name truncate">
+                <strong>Manuela Vargas</strong><br>Ajustes<span>
+              </span>
+              </h6>
+              
+            </a>
+          </div>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-clases-dashboard-v1.html">
+            <i class="material-icons">class</i>Mis Clases
+          </a>
+        </li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-tareas-dashboard-v1.html">
+            <i class="material-icons">spellcheck</i>Mis Tareas
+          </a>
+        </li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-mensajes-dashboard-v1.html">
+            <i class="material-icons">mail</i>Mis Mensajes
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-alumnos-tomarasistencia-v1.html">
+            <i class="material-icons">pan_tool</i>Asistencias
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-aulas-ver-v1.html">
+            <i class="material-icons">supervisor_account</i>Mis Aulas
+          </a>
+        </li>
+        <li>
+          <a href="mmj-docente-asignaturas-ver-v1.html">
+            <i class="material-icons">turned_in</i>Mis Asignaturas
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a href="index.html">
+            <i class="material-icons">map</i><span data-i18n="nav.sitemap">Mapa de pantallas</span>
+          </a>
+        </li>
+      </ul>
+      <!-- fin lista de enlaces del menú arriba derecha -->
+      <!-- inicio hamburguesa del menú arriba derecha -->
+      <a href="#" data-activates="slide-out" class="button-collapse show-on-large">
+        <i class="material-icons">menu</i>
+      </a>
+      <!-- inicio hamburguesa del menú arriba derecha -->
+
+    </div>
+
+
+  </nav>
+
+  <div class="row grey lighten-5 pad-tab-in">
+
+    <div class="row"> 
+
+      <!-- inicio columna del contenedor principal -->
+      <div class="col s12 cont-ppal"> 
+
+
+        <div class="card editar-perfil">
+
+
+          <div class="top-bar-actions grey lighten-2">
+
+            <a href="mmj-docente-aulas-ver-v1.html" class="top-bar-btn-back left">
+              <span class="accion-btn">
+                <i class="material-icons">arrow_back</i>
+              </span>
+            </a> 
+            <div class="header-calculada">
+              <span class="ttl-calc truncate">Editando Aula</span>
+            </div>
+
+          </div>
+
+          <!-- fin encabezado tarjeta -->
+          <!-- inicio cuerpo de la tarjeta -->
+          <div class="card-content">
+
+
+            <form>
+              <!-- inicio columna de datos personales -->
+
+              <div class="row">
+
+                <h6 class="ttl-data-input">
+                  <i class="material-icons">
+                    account_balance
+                  </i>
+                   Datos del Establecimiento
+                </h6>
+
+                <div class="input-field col s12 m3 l3">
+                  <select>
+                    <option value="" disabled selected>Seleccione</option>
+                    <option value="1">Chaco</option>
+                    <option value="2">Corrientes</option>
+                    <option value="3">Formosa</option>
+                    <option value="4">Misiones</option>
+                  </select>
+                  <label><h6>Provincia</h6></label>
+                </div>
+
+                <div class="input-field col s12 m4 l3">
+                  <select>
+                    <option value="" disabled selected>Seleccione</option>
+                    <option value="1">Resistencia</option>
+                    <option value="2">Sáenz Peña</option>
+                    <option value="3">Machagay</option>
+                    <option value="4">Makallé</option>
+                  </select>
+                  <label><h6>Localidad</h6></label>
+                </div>
+
+                <div class="input-field col s12 m5 l6">
+                  <select>
+                    <option value="" disabled selected>Seleccione</option>
+                    <option value="1">EEP n°166 "Celedonio Fernández"</option>
+                    <option value="2">EEP n°306 "Margarita Dichoff"</option>
+                    <option value="3">EEP n°464 "República de Honduras"</option>
+                    <option value="4">EEP n°31 "Domingo Faustino Sarmiento"</option>
+                  </select>
+                  <label><h6>Establecimiento</h6></label>
+                </div>
+
+              </div>  
+              
+              <div class="row">
+                <h6 class="ttl-data-input">
+                  <i class="material-icons">
+                    supervisor_account
+                  </i>
+                  Datos del curso
+                </h6>
+
+                <div class="input-field col s4 m4 l3">
+                  <select>
+                    <option value="" disabled selected>Seleccione</option>
+                    <option value="1">1° "A"</option>
+                    <option value="2">1° "B"</option>
+                    <option value="3">1° "C"</option>
+                    <option value="4">2° "A"</option>
+                    <option value="5">2° "B"</option>
+                    <option value="6">2° "C"</option>
+                    <option value="7">3° "A"</option>
+                    <option value="8">3° "B"</option>
+                    <option value="9">3° "C"</option>
+                    <option value="10">4° "A"</option>
+                    <option value="11">4° "B"</option>
+                    <option value="12">4° "C"</option>
+                    <option value="13">5° "A"</option>
+                    <option value="14">5° "B"</option>
+                    <option value="15">5° "C"</option>
+                    <option value="16">6° "A"</option>
+                    <option value="17">6° "B"</option>
+                    <option value="18">6° "C"</option>
+                    <option value="19">7° "A"</option>
+                    <option value="20">7° "B"</option>
+                    <option value="21">7° "C"</option>
+                  </select>
+                  <label><h6>Aula</h6></label>
+                </div>
+
+                <div class="input-field col s8 m3 l3">
+                  <select>
+                    <option value="" disabled selected>Seleccione</option>
+                    <option value="1">Mañana</option>
+                    <option value="2">Tarde</option>
+                  </select>
+                  <label><h6>Turno</h6></label>
+                </div>
+
+                <!-- sobre el campo que falta acá que es sobre la situación de revista podríamos implementar la idea de registrar si es maestro de grado o maestro especial por ejemplo... esto podría ser importante si agregamos a asitencia ya que podemos usar esto para que al maestro del grado le aparezca la opción tomar asistencia y a los otros a lo sumo el resultado -->
+
+              </div>
+
+
+              
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <!-- inicio botón guardar -->
+    <div class="fixed-action-btn">
+      <a href="mmj-docente-aulas-ver-v1.html" class="btn-floating btn-large tooltipped" data-position="top" data-delay="50" data-tooltip="Guardar Cambios">
+        <i class="large material-icons">save</i>
+      </a>
+    </div>
+    <!-- fin botón guardar -->
+
+  </div>
+    <script type="text/javascript" src="js/mmj-i18n.js"></script>
+  <script type="text/javascript" src="js/mmj-demo-chrome.js"></script>
+</body>
+
+
+<!-- para el select de asignatura -->
+  <script>
+    $(document).ready(function() {
+    $('select').material_select();
+  });
+  </script>
+
+<script type="text/javascript">
+  $(".button-collapse").sideNav();
+  $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 300
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true, // Choose whether you can drag to open on touch screens,
+      onOpen: function(el) {  }, // A function to be called when sideNav is opened
+      onClose: function(el) {  }, // A function to be called when sideNav is closed
+    }
+  );
+</script>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>mimuju - edTech</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/materialize.css">
+
+ <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="css/materialize.min.css">
+  
+  <!--Import Google Icon Font-->
+  <link href="css/material-icons.css" rel="stylesheet">
+</head>
+
+<body class="cuerpo">
+
+
+  <nav class="nav-extended">
+    <div class="nav-wrapper">
+      <a href="mmj-docente-clases-dashboard-v1.html" class="brand-logo logo-topbar" data-i18n-title="nav.homeTitle" title="Inicio · Mis clases">
+        <img src="images/mmj-logo-white.png">
+      </a>
+        <!-- Dropdown Trigger -->
+      <ul class="right cargo-topbar">
+        <li>
+          <i class="material-icons left no-margen">assignment_ind</i>
+          <a class='dropdown-trigger waves-effect waves-light btn-small truncate' href='#' data-activates='dropdown1'>2°A "EEP Juana Azurduy"<i class="material-icons right">keyboard_arrow_down</i></a>
+
+        </li>
+      </ul>  
+      
+      <!-- Dropdown Structure -->
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="#!" class="disabled">2°A "EEP Juana Azurduy"</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">4°C "EEP Eulalia Blasquez"</a></li>
+      </ul>
+
+
+      <!-- inicio lista de enlaces del menú arriba derecha -->
+      <ul id="slide-out" class="side-nav">
+        <li>
+          <div class="user-view">
+            <div class="background logo-menu">
+              <img class="responsive-img" src="images/mmjtxt-grey-opt.png">
+            </div>
+            <a href="mmj-docente-perfil-ver-v1.html" class="valign-wrapper">
+              <img class="circle avatar-menu" src="images/no-user-avatar.png">
+              <h6 class="black-text name truncate">
+                <strong>Manuela Vargas</strong><br>Ajustes<span>
+              </span>
+              </h6>
+              
+            </a>
+          </div>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-clases-dashboard-v1.html">
+            <i class="material-icons">class</i>Mis Clases
+          </a>
+        </li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-tareas-dashboard-v1.html">
+            <i class="material-icons">spellcheck</i>Mis Tareas
+          </a>
+        </li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-mensajes-dashboard-v1.html">
+            <i class="material-icons">mail</i>Mis Mensajes
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-alumnos-tomarasistencia-v1.html">
+            <i class="material-icons">pan_tool</i>Asistencias
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-aulas-ver-v1.html">
+            <i class="material-icons">supervisor_account</i>Mis Aulas
+          </a>
+        </li>
+        <li>
+          <a href="mmj-docente-asignaturas-ver-v1.html">
+            <i class="material-icons">turned_in</i>Mis Asignaturas
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a href="index.html">
+            <i class="material-icons">map</i><span data-i18n="nav.sitemap">Mapa de pantallas</span>
+          </a>
+        </li>
+      </ul>
+      <!-- fin lista de enlaces del menú arriba derecha -->
+      <!-- inicio hamburguesa del menú arriba derecha -->
+      <a href="#" data-activates="slide-out" class="button-collapse show-on-large">
+        <i class="material-icons">menu</i>
+      </a>
+      <!-- inicio hamburguesa del menú arriba derecha -->
+
+    </div>
+    <div class="nav-content tiratabs">
+      <div class="row no-margen">
+        <div class="col l11 m10 s10 no-padding">
+          <div class="row header-tabs">
+            <div class="col s4 center single-tab">
+              <a href="mmj-docente-clases-dashboard-v1.html">
+                <div class="cont-tab">
+                  <div class="icono">
+                    <i class="tiny material-icons">class</i>
+                  </div>
+                  <div class="text-icn truncate">
+                    Clases
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col s4 center single-tab">
+              <a href="mmj-docente-tareas-dashboard-v1.html">
+                <div class="cont-tab">
+                  <div class="icono">
+                    <i class="material-icons">spellcheck</i>
+                  </div>
+                  <div class="text-icn truncate">
+                    Tareas
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col s4 center single-tab">
+              <a href="mmj-docente-mensajes-dashboard-v1.html">
+                <div class="cont-tab">
+                  <div class="icono">
+                    <i class="material-icons">email</i>
+                  </div>
+                  <div class="text-icn truncate">
+                    Mensajes
+                  </div>
+                </div>
+              </a>
+            </div>      
+          </div>          
+        </div>
+        <div class="col l1 m2 s2 center no-padding">
+          <div class="row header-tabs">
+            <div class="col s12 center single-tab activa">
+              <a href="mmj-docente-stats-dashboard-v1.html" aria-label="Estadísticas" title="Estadísticas">
+              <div class="cont-tab cont-tab--icon-only">
+                <div class="icono">
+                  <i class="tiny material-icons">poll</i>
+                </div>
+              </div>
+              </a>
+            </div>
+          </div>
+        </div>        
+      </div>
+
+
+<!--       <span class="nav-title">Title</span>
+      <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal">
+        <i class="material-icons">add</i>
+      </a> -->
+    </div>
+  </nav>
+
+  <div class="row grey lighten-5 pad-tab-in">
+
+
+
+<!-- inicio contenedor principal -->
+  <div class="row">
+    <div class="col s12 cont-ppal">
+
+      <p class="mmj-stat-intro grey-text text-darken-2">Seguimiento por alumno: tareas completadas sobre enviadas y mensajes leídos sobre enviados.</p>
+
+      <ul class="collection with-header mmj-stat-table">
+        <li class="collection-header cabeza-stat renglon-alumno">
+          <div class="row valign-wrapper no-margen">
+            <div class="col m6 s12 no-margen no-padding">
+              <span class="black-text"><strong>Alumno</strong></span>
+            </div>
+            <div class="col m3 s6 center">
+              <span class="black-text"><strong><i class="material-icons tiny">spellcheck</i> Tareas</strong></span>
+              <span class="mmj-stat-col-hint">completadas / enviadas</span>
+            </div>
+            <div class="col m3 s6 center">
+              <span class="black-text"><strong><i class="material-icons tiny">mail</i> Mensajes</strong></span>
+              <span class="mmj-stat-col-hint">leídos / enviados</span>
+            </div>
+          </div>
+        </li>
+        <li class="collection-item renglon-alumno"><div class="row valign-wrapper no-margen"><div class="col m6 s12 truncate"><span class="icono-alumno"><i class="material-icons">account_circle</i></span><strong>García, Sofía</strong></div><div class="col m3 s6 center"><span class="stat-number">8/10</span></div><div class="col m3 s6 center"><span class="stat-number">22/22</span></div></div></li>
+        <li class="collection-item renglon-alumno"><div class="row valign-wrapper no-margen"><div class="col m6 s12 truncate"><span class="icono-alumno"><i class="material-icons">account_circle</i></span><strong>López, Mateo</strong></div><div class="col m3 s6 center"><span class="stat-number">6/10</span></div><div class="col m3 s6 center"><span class="stat-number">18/22</span></div></div></li>
+        <li class="collection-item renglon-alumno"><div class="row valign-wrapper no-margen"><div class="col m6 s12 truncate"><span class="icono-alumno"><i class="material-icons">account_circle</i></span><strong>Fernández, Valentina</strong></div><div class="col m3 s6 center"><span class="stat-number">10/10</span></div><div class="col m3 s6 center"><span class="stat-number">20/22</span></div></div></li>
+        <li class="collection-item renglon-alumno"><div class="row valign-wrapper no-margen"><div class="col m6 s12 truncate"><span class="icono-alumno"><i class="material-icons">account_circle</i></span><strong>Rodríguez, Tomás</strong></div><div class="col m3 s6 center"><span class="stat-number">5/10</span></div><div class="col m3 s6 center"><span class="stat-number">15/22</span></div></div></li>
+        <li class="collection-item renglon-alumno"><div class="row valign-wrapper no-margen"><div class="col m6 s12 truncate"><span class="icono-alumno"><i class="material-icons">account_circle</i></span><strong>Martínez, Emma</strong></div><div class="col m3 s6 center"><span class="stat-number">9/10</span></div><div class="col m3 s6 center"><span class="stat-number">21/22</span></div></div></li>
+        <li class="collection-item renglon-alumno"><div class="row valign-wrapper no-margen"><div class="col m6 s12 truncate"><span class="icono-alumno"><i class="material-icons">account_circle</i></span><strong>Pérez, Joaquín</strong></div><div class="col m3 s6 center"><span class="stat-number">7/10</span></div><div class="col m3 s6 center"><span class="stat-number">19/22</span></div></div></li>
+        <li class="collection-item renglon-alumno"><div class="row valign-wrapper no-margen"><div class="col m6 s12 truncate"><span class="icono-alumno"><i class="material-icons">account_circle</i></span><strong>Sánchez, Lucía</strong></div><div class="col m3 s6 center"><span class="stat-number">4/10</span></div><div class="col m3 s6 center"><span class="stat-number">12/22</span></div></div></li>
+        <li class="collection-item renglon-alumno"><div class="row valign-wrapper no-margen"><div class="col m6 s12 truncate"><span class="icono-alumno"><i class="material-icons">account_circle</i></span><strong>Díaz, Benjamín</strong></div><div class="col m3 s6 center"><span class="stat-number">8/10</span></div><div class="col m3 s6 center"><span class="stat-number">22/22</span></div></div></li>
+      </ul>
+
+    </div>
+    <!-- fin lista tareas -->
+
+    <!-- fin botón nuevo tema -->
+
+  </div>
+
+
+    <script type="text/javascript" src="js/mmj-i18n.js"></script>
+  <script type="text/javascript" src="js/mmj-demo-chrome.js"></script>
+</body>
+
+
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
+</script>
+
+
+
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems);
+  });
+</script>
+
+<script type="text/javascript">
+  $('.dropdown-trigger').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      cpmtrainWidth: false,
+      hover: false,
+      gutter: 0,
+    }
+  );
+</script>
+
+<script type="text/javascript">
+  $(".button-collapse").sideNav();
+  $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 300
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true, // Choose whether you can drag to open on touch screens,
+      onOpen: function(el) {  }, // A function to be called when sideNav is opened
+      onClose: function(el) {  }, // A function to be called when sideNav is closed
+    }
+  );
+</script>
+</html>

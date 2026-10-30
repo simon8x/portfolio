@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>mimuju - edTech</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/materialize.css">
+
+ <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="css/materialize.min.css">
+  
+  <!--Import Google Icon Font-->
+  <link href="css/material-icons.css" rel="stylesheet">
+</head>
+
+<body class="cuerpo">
+
+
+  <nav class="nav-extended">
+    <div class="nav-wrapper">
+      <a href="mmj-docente-clases-dashboard-v1.html" class="brand-logo logo-topbar" data-i18n-title="nav.homeTitle" title="Inicio · Mis clases">
+        <img src="images/mmj-logo-white.png">
+      </a>
+        <!-- Dropdown Trigger -->
+      <ul class="right cargo-topbar">
+        <li>
+          <i class="material-icons left no-margen">assignment_ind</i>
+          <a class='dropdown-trigger waves-effect waves-light btn-small truncate' href='#' data-activates='dropdown1'>2°A "EEP Juana Azurduy"<i class="material-icons right">keyboard_arrow_down</i></a>
+
+        </li>
+      </ul>  
+      
+      <!-- Dropdown Structure -->
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="#!" class="disabled">2°A "EEP Juana Azurduy"</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">4°C "EEP Eulalia Blasquez"</a></li>
+      </ul>
+
+
+      <!-- inicio lista de enlaces del menú arriba derecha -->
+      <ul id="slide-out" class="side-nav">
+        <li>
+          <div class="user-view">
+            <div class="background logo-menu">
+              <img class="responsive-img" src="images/mmjtxt-grey-opt.png">
+            </div>
+            <a href="mmj-docente-perfil-ver-v1.html" class="valign-wrapper">
+              <img class="circle avatar-menu" src="images/no-user-avatar.png">
+              <h6 class="black-text name truncate">
+                <strong>Manuela Vargas</strong><br>Ajustes<span>
+              </span>
+              </h6>
+              
+            </a>
+          </div>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-clases-dashboard-v1.html">
+            <i class="material-icons">class</i>Mis Clases
+          </a>
+        </li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-tareas-dashboard-v1.html">
+            <i class="material-icons">spellcheck</i>Mis Tareas
+          </a>
+        </li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-mensajes-dashboard-v1.html">
+            <i class="material-icons">mail</i>Mis Mensajes
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-alumnos-tomarasistencia-v1.html">
+            <i class="material-icons">pan_tool</i>Asistencias
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a class="waves-effect" href="mmj-docente-aulas-ver-v1.html">
+            <i class="material-icons">supervisor_account</i>Mis Aulas
+          </a>
+        </li>
+        <li>
+          <a href="mmj-docente-asignaturas-ver-v1.html">
+            <i class="material-icons">turned_in</i>Mis Asignaturas
+          </a>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <a href="index.html">
+            <i class="material-icons">map</i><span data-i18n="nav.sitemap">Mapa de pantallas</span>
+          </a>
+        </li>
+      </ul>
+      <!-- fin lista de enlaces del menú arriba derecha -->
+      <!-- inicio hamburguesa del menú arriba derecha -->
+      <a href="#" data-activates="slide-out" class="button-collapse show-on-large">
+        <i class="material-icons">menu</i>
+      </a>
+      <!-- inicio hamburguesa del menú arriba derecha -->
+
+    </div>
+
+    <!-- <div class="nav-content tiratabs">
+      <div class="row no-margen">
+        <div class="col l11 m10 s10 no-padding">
+          <div class="row header-tabs">
+            <div class="col s4 center single-tab">
+              <a href="mmj-docente-clases-dashboard-v1.html">
+                <div class="cont-tab">
+                  <div class="icono">
+                    <i class="tiny material-icons">class</i>
+                  </div>
+                  <div class="text-icn truncate">
+                    Clases
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col s4 center single-tab activa">
+              <a href="mmj-docente-tareas-dashboard-v1.html">
+                <div class="cont-tab">
+                  <div class="icono">
+                    <i class="material-icons">spellcheck</i>
+                  </div>
+                  <div class="text-icn truncate">
+                    Tareas
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col s4 center single-tab">
+              <a href="mmj-docente-mensajes-dashboard-v1.html">
+                <div class="cont-tab">
+                  <div class="icono">
+                    <i class="material-icons">email</i>
+                  </div>
+                  <div class="text-icn truncate">
+                    Mensajes
+                  </div>
+                </div>
+              </a>
+            </div>      
+          </div>          
+        </div>
+        <div class="col l1 m2 s2 center no-padding">
+          <a href="mmj-docente-stats-dashboard-v1.html" aria-label="Estadísticas" title="Estadísticas">
+            <div class="cont-tab cont-tab--icon-only">
+              <div class="icono">
+                <i class="tiny material-icons">poll</i>
+              </div>
+            </div>
+          </a>
+        </div>        
+      </div>
+    </div> -->
+
+  </nav>
+
+  <div class="row grey lighten-5 pad-tab-in">
+
+  <div class="row"> 
+
+    <!-- inicio columna del contenedor principal -->
+    <div class="col s12 cont-ppal">        
+      <!-- inicio tarjeta -->
+      <div class="card creando-tarea">
+        <!-- inicio encabezado tarjeta -->
+        <div class="top-bar-actions grey lighten-2">
+
+          <a href="mmj-docente-tareas-dashboard-v1.html" class="top-bar-btn-back left">
+            <span class="accion-btn">
+              <i class="material-icons">arrow_back</i>
+            </span>
+          </a> 
+          <div class="header-calculada">
+            <span class="ttl-calc truncate">Creando Tarea</span>
+          </div>
+
+          <a class="top-bar-btn right tooltipped dropdown-trigger" data-activates='dropdown2'data-position="top" data-delay="150" data-tooltip="Adjuntar Recurso" href="#">
+            <span class="accion-btn">
+              <i class="material-icons">attach_file</i>
+              <span class="txt-btn"> ADJUNTAR</span>
+            </span>
+
+          </a>
+
+          <!-- Dropdown Structure -->
+          <ul id='dropdown2' class='dropdown-content menu-adjuntar'>
+            <li><a href="#!"><i class="material-icons left">image</i>Imagen</a></li>
+            <li class="divider"></li>
+            <li><a href="#!"><i class="material-icons left">insert_link</i>Enlace</a></li>
+            <li class="divider"></li>
+            <li><a href="#!"><i class="material-icons left">description</i>Documento</a></li>
+            <li class="divider"></li>
+            <li><a href="#!"><i class="material-icons left">volume_up</i>Audio</a></li>
+            <li class="divider"></li>
+            <li><a href="#!"><i class="material-icons left">slideshow</i>Video</a></li>
+            <li class="divider"></li>
+            <li><a href="#!"><i class="material-icons left">picture_as_pdf</i>Archivo PDF</a></li>
+            <li class="divider"></li>
+            <li><a href="#!"><i class="material-icons left">grid_on</i>Hoja de cálculo</a></li>
+          </ul>
+
+          <a href="mmj-docente-tareas-dashboard-v1.html" class="top-bar-btn right tooltipped" data-position="top" data-delay="150" data-tooltip="Eliminar Tarea" onclick="ConfirmarBorrarClase()">
+            <span class="accion-btn">
+              <i class="material-icons">delete</i>
+              <span class="txt-btn"> ELIMINAR</span>
+            </span>
+          </a> 
+
+        </div>
+        <!-- fin encabezado tarjeta -->
+        <!-- inicio cuerpo de la tarjeta -->
+        <div class="card-content">
+
+          <div class="row no-padding">
+            <div class="col l9 m12 s12 no-padding">
+
+              <!-- si la clase no fue dictada  -->
+
+              <div class="row no-margen no-padding">
+                <form>
+
+                  <div class="input-field col s12 m6 l4">
+                    <select>
+                      <option value="" disabled selected>Seleccione asignatura</option>
+                      <option value="1">Matemáticas</option>
+                      <option value="2">Lengua</option>
+                      <option value="3">Ciencias Sociales</option>
+                      <option value="4">Ciencias Naturales</option>
+                      <option value="5">ESI</option>
+                      <option value="6">Ninguna</option>
+                    </select>
+                    <label><h6>Asignatura</h6></label>
+                  </div>
+                  
+                  <div class="col l4 hide-on-med-and-down"></div>
+                  
+                  <div class="input-field col s12 m6 l4">
+                    <input placeholder="Selecciona Fecha" id="deadline_date" type="text" class="datepicker">
+                    <label for="deadline_date">Fecha de entrega</label>
+                  </div>
+
+                  <div class="input-field col s12">
+                    <input id="tarea-title" type="text" class="validate">
+                    <label for="tarea-title">Título de la tarea</label>
+                  </div>
+
+                  <div class="input-field col s12">
+                    <textarea id="textarea2" class="materialize-textarea" data-length="5000"></textarea>
+                    <label for="textarea2">Consigna para la Tarea</label>
+                  </div>
+
+                <div class="row"></div>
+
+              </div>  
+            </div>
+
+            <div class="col l3 m12 s12 no-padding grey lighten-4 z-depth-1">
+              <div class="row">
+
+                <div class="col s12 no-padding z-depth-1">
+                  <p class="center cabecera-listado-respuestas white-text"> RECURSOS (0)</p>
+                </div>
+
+                <div class="col s12">
+                  <p class="center">Recursos adjuntos</p>
+                </div>
+
+                <!--INICIO UN RECURSO imagen-->
+                <!-- en listado de clases -->
+                <div class="col s12 m6 l12">
+                  <div class="recurso-adj">
+                    <a class="modal-trigger" href="#modal-abrirparaver">
+                      <div class="avt-adj">
+                        <span class="icon-placeholder">
+                          <i class="material-icons large">image</i>
+                        </span>
+                      </div>
+                      <div class="des-adj">
+                        <a href="#modal-confirmar-borrar" onclick="ConfirmarBorrarRecurso()" class="modal-trigger quitar-recurso red darken-3 z-depth-1">
+                          <i class="material-icons">clear</i>
+                        </a>
+                        <p class="nombre-adj">mi-adjunto-para-la-clase.jpg</p>
+                        <p class="tipo-adj"><i class="material-icons tiny">image</i>Imagen</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- en listado de clases -->
+                <!--FIN UN RECURSO imagen-->
+
+                <!--INICIO UN RECURSO PDF-->
+                <!-- en listado de clases -->
+                <div class="col s12 m6 l12">
+                  <div class="recurso-adj">
+                    <a class="modal-trigger" href="#modal-abrirparaver">
+                      <div class="avt-adj">
+                        <span class="icon-placeholder">
+                          <i class="material-icons large">picture_as_pdf</i>
+                        </span>
+                      </div>
+                      <div class="des-adj">
+                        <a href="#modal-confirmar-borrar" onclick="ConfirmarBorrarRecurso()" class="modal-trigger quitar-recurso red darken-3 z-depth-1">
+                          <i class="material-icons">clear</i>
+                        </a>
+                        <p class="nombre-adj">mi-adjunto-para-la-clase.pdf</p>
+                        <p class="tipo-adj"><i class="material-icons tiny">picture_as_pdf</i>Documento PDF</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- en listado de clases -->
+                <!--FIN UN RECURSO PDF-->
+
+                <!--INICIO UN RECURSO youtube video-->
+                <!-- en listado de clases -->
+                <div class="col s12 m6 l12">
+                  <div class="recurso-adj">
+                    <a class="modal-trigger" href="#modal-abrirparaver">
+                      <div class="avt-adj">
+                        <span class="icon-placeholder">
+                          <i class="material-icons large">slideshow</i>
+                        </span>
+                      </div>
+                      <div class="des-adj">
+                        <a href="#modal-confirmar-borrar" onclick="ConfirmarBorrarRecurso()" class="modal-trigger quitar-recurso red darken-3 z-depth-1">
+                          <i class="material-icons">clear</i>
+                        </a>
+                        <p class="nombre-adj">Titulo cargado al video</p>
+                        <p class="tipo-adj"><i class="material-icons tiny">slideshow</i>Video</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- en listado de clases -->
+                <!--FIN UN RECURSO youtube video-->    
+
+                <!--INICIO UN RECURSO archivo de audio-->
+                <!-- en listado de clases -->
+                <div class="col s12 m6 l12">
+                  <div class="recurso-adj">
+                    <a class="modal-trigger" href="#modal-abrirparaver">
+                      <div class="avt-adj">
+                        <span class="icon-placeholder">
+                          <i class="material-icons large">volume_up</i>
+                        </span>
+                      </div>
+                      <div class="des-adj">
+                        <a href="#modal-confirmar-borrar" onclick="ConfirmarBorrarRecurso()" class="modal-trigger quitar-recurso red darken-3 z-depth-1">
+                          <i class="material-icons">clear</i>
+                        </a>
+                        <p class="nombre-adj">Nombre_del_archivo.mp3</p>
+                        <p class="tipo-adj"><i class="material-icons tiny">volume_up</i>Audio</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- en listado de clases -->
+                <!--FIN UN RECURSO archivo de audio--> 
+
+                <!--INICIO UN RECURSO archivo .doc o .docx-->
+                <!-- en listado de clases -->
+                <div class="col s12 m6 l12">
+                  <div class="recurso-adj">
+                    <a class="modal-trigger" href="#modal-abrirparaver">
+                      <div class="avt-adj">
+                        <span class="icon-placeholder">
+                          <i class="material-icons large">description</i>
+                        </span>
+                      </div>
+                      <div class="des-adj">
+                        <a href="#modal-confirmar-borrar" onclick="ConfirmarBorrarRecurso()" class="modal-trigger quitar-recurso red darken-3 z-depth-1">
+                          <i class="material-icons">clear</i>
+                        </a>
+                        <p class="nombre-adj">Nombre_del_archivo.doc</p>
+                        <p class="tipo-adj"><i class="material-icons tiny">description</i>Documento</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- en listado de clases -->
+                <!--FIN UN RECURSO archivo .doc o .docx--> 
+   
+                <!--INICIO UN RECURSO archivo hoja de cálculo-->
+                <!-- en listado de clases -->
+                <div class="col s12 m6 l12">
+                  <div class="recurso-adj">
+                    <a class="modal-trigger" href="#modal-abrirparaver">
+                      <div class="avt-adj">
+                        <span class="icon-placeholder">
+                          <i class="material-icons large">grid_on</i>
+                        </span>
+                      </div>
+                      <div class="des-adj">
+                        <a href="#modal-confirmar-borrar" onclick="ConfirmarBorrarRecurso()" class="modal-trigger quitar-recurso red darken-3 z-depth-1">
+                          <i class="material-icons">clear</i>
+                        </a>
+                        <p class="nombre-adj">Nombre_del_archivo.xls</p>
+                        <p class="tipo-adj"><i class="material-icons tiny">grid_on</i>Hoja de cálculo</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- en listado de clases -->
+                <!--FIN UN RECURSO archivo hoja de cálculo-->
+                
+                <div class="col s12">
+                  <p class="center">Recursos con vista previa</p>
+                </div>
+
+                <!--INICIO UN RECURSO imagen-->
+                <div class="col s12 m6 l12">
+                  <div class="recurso-adj">
+                    <a class="modal-trigger" href="#modal-video-imagen">  
+                      <div class="avt-adj">
+                        <span class="lupa-img">
+                          <i class="material-icons large">zoom_in</i>
+                        </span>
+                        <!-- el id del video es lo que hay que meter dentro de la url http://img.youtube.com/vi/{id.video}/1.jpg al final /1 o /2 .jpg son distintos tamaños de imagen preview
+                        -->
+                        <img class="materialboxed" src="images/foto-manual.jpg">
+                      </div>
+                      <div class="des-adj">
+                        <a href="#modal-confirmar-borrar" onclick="ConfirmarBorrarRecurso()" class="modal-trigger quitar-recurso red darken-3 z-depth-1">
+                          <i class="material-icons">clear</i>
+                        </a>
+                        <p class="nombre-adj">mi_adjunto_para_la_clase.jpg</p>
+                        <p class="tipo-adj"><i class="material-icons tiny">image</i>
+                        Video
+                      </p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!--FIN UN RECURSO-->
+
+                <!--INICIO UN RECURSO-->
+                <!-- video de youtube -->
+                <div class="col s12 m6 l12">
+                  <div class="recurso-adj">
+                    <a class="modal-trigger" href="#modal-video-imagen">  
+                      <div class="avt-adj">
+                        <span class="lupa-img">
+                          <i class="material-icons large">zoom_in</i>
+                        </span>
+                          <!-- el id del video es lo que hay que meter dentro de la url http://img.youtube.com/vi/{id.video}/1.jpg al final /1 o /2 .jpg son distintos tamaños de imagen preview
+                        -->
+                          <img src="http://img.youtube.com/vi/r1KmUxNxSwk/1.jpg"/>
+                      </div>
+                      <div class="des-adj">
+                        <a href="#modal-confirmar-borrar" onclick="ConfirmarBorrarRecurso()" class="modal-trigger quitar-recurso red darken-3 z-depth-1">
+                          <i class="material-icons">clear</i>
+                        </a>
+                        <p class="nombre-adj">Contra el corona virus nos lavamos las manos con Zamba</p>
+                        <p class="tipo-adj"><i class="material-icons tiny">play_circle_outline</i>
+                        Video
+                      </p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!--FIN UN RECURSO-->
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<br><br>
+
+    <!-- inicio botón nueva tarea -->
+    <div class="fixed-action-btn">
+      <a href="mmj-docente-tareas-dashboard-v1.html" class="btn-floating btn-large tooltipped" data-position="top" data-delay="50" data-tooltip="Enviar Tarea">
+        <i class="large material-icons">send</i>
+      </a>
+    </div>
+    <!-- fin botón nueva tarea -->
+
+    <!-- Modal Structure -->
+  <div id="modal-abrirparaver" class="modal">
+    <div class="modal-content">
+      <h4>Abrir recurso</h4>
+      <p>En la aplicación real, el adjunto se abriría en una pestaña nueva o en el visor del dispositivo. En este prototipo el enlace es solo demostrativo.</p>
+    </div>
+
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Entiendo</a>
+    </div>
+  </div>
+
+
+
+<!-- mostrando video de youtube o una imagen en en un modal  -->
+  <!-- Modal Structure -->
+  <div id="modal-video-imagen" class="modal video-modal">
+<div class="modal-content modal-video">
+      <h6 class="center">Higiene de manos — material de apoyo</h6>
+      <div class="res_vid_cont">
+        <iframe width="600" height="338" src="https://www.youtube.com/embed/r1KmUxNxSwk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+<div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Regresar</a>
+    </div>
+  </div>
+
+
+    <script type="text/javascript" src="js/mmj-i18n.js"></script>
+  <script type="text/javascript" src="js/mmj-demo-chrome.js"></script>
+</body>
+
+<!-- para el select de asignatura -->
+  <script>
+    $(document).ready(function() {
+    $('select').material_select();
+  });
+  </script>
+
+
+
+<!-- confirmación para quitar un adjunto -->
+<script>
+function ConfirmarBorrarRecurso() {
+  return confirm("¿Está seguro que desea eliminar el recurso adjunto?\nPresione ACEPTAR para confirmar o CANCELAR para volver atrás.\n");
+}
+</script>
+
+<!-- confirmación para quitar una clase -->
+<script>
+function ConfirmarBorrarClase() {
+  return confirm("¿Está seguro que desea eliminar esta tarea?\nPresione ACEPTAR para confirmar o CANCELAR para volver atrás.\n");
+}
+</script>
+
+
+<script>
+  $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 1, // Creates a dropdown of 15 years to control year,
+    monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+      monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+      weekdaysFull: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+      weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
+        today: 'Hoy',
+        clear: 'Limpiar',
+        close: 'Ok',
+        labelMonthNext: 'Siguiente mes',
+      labelMonthPrev: 'Mes anterior',
+      labelMonthSelect: 'Selecciona un mes',
+      labelYearSelect: 'Selecciona un año',
+    closeOnSelect: false // Close upon selecting a date,
+  });
+</script>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {
+      toolbarEnabled: true
+    });
+  });
+</script>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
+</script>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.materialboxed');
+    var instances = M.Materialbox.init(elems);
+  });
+</script>
+
+<!-- mostrar ocultar etiqueta asignatura en listado de clases -->
+<script type="text/javascript">
+  function mostrar_asignaturas(){
+    var x = document.getElementsByClassName("nombre_asignatura");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "unset";
+    } 
+  }
+
+  function ocultar_asignaturas(){
+    var x = document.getElementsByClassName("nombre_asignatura");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    } 
+  }
+</script>
+
+
+
+
+
+
+
+<!-- <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems);
+  });
+</script> -->
+
+<script type="text/javascript">
+  $('.dropdown-trigger').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      cpmtrainWidth: false,
+      hover: false,
+      gutter: 0,
+    }
+  );
+</script>
+
+<script type="text/javascript">
+  $(".button-collapse").sideNav();
+  $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 300
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true, // Choose whether you can drag to open on touch screens,
+      onOpen: function(el) {  }, // A function to be called when sideNav is opened
+      onClose: function(el) {  }, // A function to be called when sideNav is closed
+    }
+  );
+</script>
+</html>
