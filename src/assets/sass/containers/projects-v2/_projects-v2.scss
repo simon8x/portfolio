@@ -121,15 +121,10 @@
                 margin-block: 2.5rem 2rem;
             }
 
-            .live-demos-grid-row {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-            }
-
             .live-demos-grid-row .live-demo-card-grid {
-                grid-template-columns: repeat(7, minmax(10.5rem, 1fr));
+                grid-template-columns: repeat(4, minmax(0, 1fr));
                 gap: 1rem;
-                width: max(100%, 78rem);
+                width: 100%;
             }
         }
 
@@ -166,7 +161,7 @@
 @media screen and (max-width: 768px) {
     .projects-v2-section {
         .live-demos-block .live-demos-grid-row .live-demo-card-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 1rem;
         }
 

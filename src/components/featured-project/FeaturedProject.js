@@ -6,12 +6,15 @@ import 'react-responsive-modal/styles.css';
 import './_custom-modal.css';
 import { LanguageContext } from '../../context/LanguageContext';
 import { LIVE_DEMO_HANDOFF_MS, navigateToLiveDemo } from '../../utils/liveDemoHandoff';
+import { ProjectModalStoryBlocks } from '../project-modal-story/ProjectModalStoryBlocks';
+import { ProjectCaseStudyModal } from '../project-modal-story/ProjectCaseStudyModal';
 
 export const FeaturedProject = ({ featuredProject }) => {
 
 	const { siteLang } = useContext(LanguageContext)
 	const navigate = useNavigate();
 	const [open, setOpen] = useState(false);
+	const [caseStudyOpen, setCaseStudyOpen] = useState(false);
 	const [heroLoaded, setHeroLoaded] = useState(false);
 	const [modalBannerLoaded, setModalBannerLoaded] = useState(false);
 	const handoffTimeoutRef = useRef(null);
@@ -29,6 +32,11 @@ export const FeaturedProject = ({ featuredProject }) => {
 
 	const demoChipLabel = siteLang === 'ES' ? 'Demo' : 'Demo';
 	const viewDemoLabel = siteLang === 'ES' ? 'Ver demo' : 'View demo';
+	const caseStudy = featuredProject.projectResearchCaseStudy;
+	const hasCaseStudy = caseStudy != null && caseStudy.blocks != null && caseStudy.blocks.length > 0;
+	const openCaseStudyLabel = siteLang === 'ES'
+		? 'Ver método: de los datos a la cola de revisión'
+		: 'View method: from data to review queue';
 	const demoConfidentialityNotice = featuredProject.demoConfidentialityNotice == null
 		? null
 		: (featuredProject.demoConfidentialityNotice[siteLang] == null
@@ -48,6 +56,13 @@ export const FeaturedProject = ({ featuredProject }) => {
 			}
 		};
 	}, []);
+
+	const handleOpenCaseStudy = (event) => {
+		event.preventDefault();
+		event.stopPropagation();
+		setOpen(false);
+		setCaseStudyOpen(true);
+	};
 
 	const handleViewDemo = (event) => {
 		if (event.metaKey === true || event.ctrlKey === true || event.shiftKey === true || event.altKey === true) {
@@ -153,6 +168,21 @@ export const FeaturedProject = ({ featuredProject }) => {
 							</p>
 						)}
 					</div>
+					<ProjectModalStoryBlocks
+						blocks={featuredProject.projectStoryBlocks}
+						siteLang={siteLang}
+					/>
+					{
+						hasCaseStudy === true
+							? <button
+								type='button'
+								className='modal-view-case-study-link'
+								onClick={handleOpenCaseStudy}
+							  >
+								{openCaseStudyLabel}
+							  </button>
+							: null
+					}
 					{
 						hasDemo === true
 							? <>
@@ -173,6 +203,12 @@ export const FeaturedProject = ({ featuredProject }) => {
 					}
 				</article>
 			</Modal>
+			<ProjectCaseStudyModal
+				caseStudy={caseStudy}
+				siteLang={siteLang}
+				open={caseStudyOpen}
+				onClose={() => setCaseStudyOpen(false)}
+			/>
 		</>
 	)
 }

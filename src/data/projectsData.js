@@ -144,8 +144,8 @@ export const featuredProjectsData = [
         },
         "projectPosition": "UX designer",
         "projectShortDescription": {
-            EN: "During a large project, we identified several information needs essential for client-side decision-making. We recognized this gap and proposed a solution to address it.",
-            ES: "Durante un proyecto de gran envergadura, identificamos varias necesidades de información esenciales para la toma de decisiones del cliente. Reconocimos esta deficiencia y propusimos una solución para abordarla."
+            EN: "I led CS Tool UX prototyping. For transaction monitoring I used descriptive statistics and business analysis on marketplace sales to define prioritization rules and design review screens.",
+            ES: "Lideré el prototipado UX de CS Tool. En monitoreo de transacciones usé estadística descriptiva y lectura del negocio sobre ventas del marketplace para definir reglas de priorización y diseñar pantallas de revisión.",
         },
         "tecStack": [
             "Sass",
@@ -158,18 +158,208 @@ export const featuredProjectsData = [
         ],
         "projectLongDescriptionText": {
             EN: [
-                "Fact: The NFT Marketplace client makes decisions based on blockchain data.",
-                "Opportunity: We proposed developing a customer service tool to enable the client to manage marketplace operations and integrate custom content management features—all based on marketplace data.",
-                "My role: Analyze processes, prototype features and workflows, document them, present to stakeholders, and gather feedback. Additionally, analyze data and define metrics to model a comprehensive marketplace dashboard.",
-                "Each week, I created a feature-specific document, discussed it with the team, and then moved forward with development.",
-                "Featured Fact: By analyzing transaction volumes and financial flows, we developed a method to detect suspicious or potentially fraudulent transactions between anonymous users.",
+                "After nwayplay launched, the client needed an internal console to run the secondary marketplace, not just blockchain exports. CS Tool became that hub: content tools, support workflows, and operational reports.",
+                "I led discovery and prototyping. When a feature required quantitative exploration, I worked exports with descriptive statistics and business analysis before proposing screens. Each week I wrote a feature brief, reviewed it with the client and engineering, and iterated until it was ready to build.",
             ],
             ES: [
-                "Dato: El cliente del Mercado NFT toma decisiones basándose en datos de blockchain.",
-                "Oportunidad: Propusimos desarrollar una herramienta de atención al cliente que permitiera al cliente gestionar las operaciones del mercado e integrar funciones personalizadas de gestión de contenido, todo ello basado en datos del mercado.",
-                "Mi función: Analizar procesos, crear prototipos de funciones y flujos de trabajo, documentarlos, presentarlos a las partes interesadas y recopilar comentarios. Además, analizar datos y definir métricas para modelar un panel de control integral del mercado.",
-                "Cada semana, creaba un documento específico de cada función, lo discutía con el equipo y luego avanzaba con el desarrollo.",
-                "Dato destacado: Mediante el análisis de los volúmenes de transacciones y los flujos financieros, desarrollamos un método para detectar transacciones sospechosas o potencialmente fraudulentas entre usuarios anónimos.",
+                "Tras el lanzamiento de nwayplay, el cliente necesitaba una consola interna para operar el marketplace secundario, no solo exportaciones desde blockchain. CS Tool concentró herramientas de contenido, flujos de soporte y reportes operativos.",
+                "Lideré descubrimiento y prototipado. Cuando una funcionalidad exigía explorar datos, trabajé exportaciones con estadística descriptiva y contexto de negocio antes de proponer pantallas. Cada semana redacté un brief por funcionalidad, lo revisé con el cliente e ingeniería e iteré hasta dejarlo listo para desarrollar.",
+            ],
+        },
+        "projectStoryBlocks": [
+            {
+                "kind": "heading",
+                "text": {
+                    EN: "My role",
+                    ES: "Mi rol",
+                },
+            },
+            {
+                "kind": "text",
+                "text": {
+                    EN: "UX designer owning the prototyping pipeline: wireframes, interaction notes, and written specs. Two full-stack developers built in React and Material UI; I was the link between client stakeholders and the team.",
+                    ES: "Diseñador UX a cargo del pipeline de prototipado: wireframes, notas de interacción y especificaciones escritas. Dos desarrolladores full stack implementaron en React y Material UI; fui el enlace entre referentes del cliente y el equipo.",
+                },
+            },
+            {
+                "kind": "heading",
+                "text": {
+                    EN: "How we worked",
+                    ES: "Cómo trabajamos",
+                },
+            },
+            {
+                "kind": "text",
+                "text": {
+                    EN: "Each week I produced one document per feature: the problem, the specialist workflow, edge cases, and acceptance criteria. We reviewed it together, captured feedback, and only then moved into development, which reduced rework on a fast-moving roadmap.",
+                    ES: "Cada semana producía un documento por funcionalidad: el problema, el flujo del especialista, los casos límite y los criterios de aceptación. Lo revisábamos juntos, incorporábamos comentarios y recién entonces pasábamos a desarrollo, lo que redujo retrabajo en una hoja de ruta acelerada.",
+                },
+            },
+            {
+                "kind": "heading",
+                "text": {
+                    EN: "What it covered",
+                    ES: "Qué cubría",
+                },
+            },
+            {
+                "kind": "text",
+                "text": {
+                    EN: "CS Tool covered marketplace operations: content, support views, and reports. Transaction monitoring is documented below—from sales export to prioritization rules and review prototype.",
+                    ES: "CS Tool cubría operaciones del marketplace: contenido, vistas de soporte y reportes. El monitoreo de transacciones está documentado abajo, de la exportación de ventas a reglas de priorización y prototipo de revisión.",
+                },
+            },
+        ],
+        "projectResearchCaseStudy": {
+            "title": {
+                EN: "Transaction monitoring",
+                ES: "Monitoreo de transacciones",
+            },
+            "subtitle": {
+                EN: "From sales exports to review queue rules",
+                ES: "De exportaciones de ventas a reglas de cola de revisión",
+            },
+            "intro": {
+                EN: [
+                    "Operations needed to prioritize marketplace reviews. I started from sales exports, used descriptive statistics and business context to define prioritization rules, and prototyped a review screen that surfaces flags and the operation log. Specialists decide outcomes.",
+                ],
+                ES: [
+                    "Operaciones necesitaba priorizar revisiones en el marketplace. Partí de exportaciones de ventas, usé estadística descriptiva y contexto de negocio para definir reglas de priorización y prototipar una pantalla de revisión que muestra alertas y el registro de operaciones. Los especialistas deciden el resultado.",
+                ],
+            },
+            "privacyNote": {
+                EN: "Data from Sep 2021 to Sep 2023. Marketplace handles only.",
+                ES: "Datos de sep 2021 a sep 2023. Solo identificadores de usuario del marketplace.",
+            },
+            "blocks": [
+                {
+                    "kind": "heading",
+                    "text": {
+                        EN: "1 · Read the sales export",
+                        ES: "1 · Leer la exportación de ventas",
+                    },
+                },
+                {
+                    "kind": "text",
+                    "text": {
+                        EN: "Each row is one sale: price, pin, piece, seller. This eight-row excerpt spans 2 to 1,050 USD and shows one piece resold by different sellers at different prices (639844 at 2, 6, and 25 USD). That resale pattern—not a full distribution—was the starting point for deeper analysis.",
+                        ES: "Cada fila es una venta: precio, pin, pieza, vendedor. Este extracto de ocho filas ya va de 2 a 1.050 USD y muestra una pieza revendida por distintos vendedores a distintos precios (639844 a 2, 6 y 25 USD). Ese patrón de reventa, y no una distribución completa, fue el punto de partida para profundizar el análisis.",
+                    },
+                },
+                {
+                    "kind": "chart",
+                    "chartId": "cstool-transaction-sample",
+                    "caption": {
+                        EN: "Export excerpt, pin names shortened.",
+                        ES: "Extracto de la exportación; nombres de pin abreviados.",
+                    },
+                },
+                {
+                    "kind": "heading",
+                    "text": {
+                        EN: "2 · Compare each pin with its peers",
+                        ES: "2 · Comparar cada pin con sus pares",
+                    },
+                },
+                {
+                    "kind": "text",
+                    "text": {
+                        EN: "I compared pins with the same edition and rarity to control for scarcity. Within Premiere Common (20 pins, 7,255 sales, 56,588 USD) sales volume per pin is similar, but money is not. For each pin I computed average price per sale and took the median of those twenty values as the group baseline so one extreme pin does not set the bar. Six pins at or above twice that median concentrate 63% of cohort money on 42% of cohort sales; I used 2× median as the drill-down flag. Legitimate price gaps can still occur; the flag prioritizes review, it does not conclude a case.",
+                        ES: "Comparé pins de misma edición y rareza para controlar la escasez. En Premiere Common (20 pins, 7.255 ventas, 56.588 USD) el volumen por pin es parecido, pero el dinero no. Calculé el precio promedio por venta de cada pin y tomé la mediana de esos veinte valores como referencia del grupo, para que un pin extremo no fije el umbral. Seis pins en o por encima del doble de esa mediana concentran el 63% del dinero del grupo en el 42% de las ventas; usé el doble de la mediana como alerta al abrir una fila. Puede haber brechas legítimas de precio; la alerta prioriza revisión, no concluye un caso.",
+                    },
+                },
+                {
+                    "kind": "chart",
+                    "chartId": "cstool-pin-cohort",
+                    "caption": {
+                        EN: "Average price per sale for each pin. Orange: at least twice the group median.",
+                        ES: "Precio promedio por venta de cada pin. En naranja: al menos el doble de la mediana del grupo.",
+                    },
+                },
+                {
+                    "kind": "heading",
+                    "text": {
+                        EN: "3 · Cross earnings and sales at account level",
+                        ES: "3 · Cruzar ganancias y ventas a nivel cuenta",
+                    },
+                },
+                {
+                    "kind": "text",
+                    "text": {
+                        EN: "On the 24 top earners by revenue—not the full account base—I crossed total earnings with sales count. Two profiles stand out: high volume at low ticket (1,826 sales at ~3 USD each) and high earnings with few sales. Twelve of those 24 earned 4,474 to 14,925 USD with 60 sales or fewer; among them, eleven fall between 235 and 535 USD per sale and one at 162 USD, with nothing between 162 and 235. I set the list threshold at 200 USD per sale from that twelve-account slice. The chart applies that threshold to all 24 accounts; the prototype uses it to order the queue.",
+                        ES: "En las 24 cuentas con más ingresos, no en toda la base, crucé ganancia total con cantidad de ventas. Destacan dos perfiles: mucho volumen con ticket bajo (1.826 ventas a unos 3 USD cada una) y mucha ganancia con pocas ventas. Doce de esas 24 acumularon entre 4.474 y 14.925 USD con 60 ventas o menos; entre ellas, once quedan entre 235 y 535 USD por venta y una en 162 USD, sin valores entre 162 y 235. Fijé el umbral de lista en 200 USD por venta a partir de esas doce cuentas. El gráfico aplica ese umbral a las 24; el prototipo lo usa para ordenar la cola.",
+                    },
+                },
+                {
+                    "kind": "chart",
+                    "chartId": "cstool-accounts-scatter",
+                    "caption": {
+                        EN: "Earned money vs sales count on the top 24.",
+                        ES: "Ganancia vs cantidad de ventas en las 24 primeras.",
+                    },
+                },
+                {
+                    "kind": "heading",
+                    "text": {
+                        EN: "4 · Queue order, log, and drill-down",
+                        ES: "4 · Orden de cola, registro y detalle",
+                    },
+                },
+                {
+                    "kind": "text",
+                    "text": {
+                        EN: "Step 3 sets queue order; step 2 adds pin context when a row opens. The operation log holds the evidence. I reviewed logs with experienced reviewers, captured what they check on open, and wired the prototype so each entry opens that log plus pin context from step 2.",
+                        ES: "El paso 3 define el orden de la cola; el paso 2 suma contexto del pin al abrir una fila. El registro de operaciones concentra la evidencia. Revisé registros con revisores experimentados, anoté qué consultan al abrir y conecté el prototipo para que cada entrada abra ese registro más el contexto del pin del paso 2.",
+                    },
+                },
+                {
+                    "kind": "heading",
+                    "text": {
+                        EN: "5 · KYC, withdrawals and P2E",
+                        ES: "5 · KYC, retiros y P2E",
+                    },
+                },
+                {
+                    "kind": "splitChart",
+                    "chartId": "cstool-kyc-status",
+                    "text": {
+                        EN: "Withdrawals required approved KYC; trading did not. P2E let users enter with in-game currency without a real-money deposit. The review screen surfaces that context beside the sales metrics: 50.1% of marketplace accounts lacked approved KYC—a key input when interpreting withdrawals.",
+                        ES: "Retirar exigía KYC aprobado; operar, no. P2E permitía entrar con moneda de juego sin depósito en dinero real. La pantalla de revisión muestra ese contexto junto a las métricas de ventas: el 50,1% de las cuentas del marketplace no tenía KYC aprobado, dato clave al interpretar retiros.",
+                    },
+                    "caption": {
+                        EN: "Marketplace-wide KYC status, Sep 2021 to Sep 2023.",
+                        ES: "Estado KYC de todo el marketplace, sep 2021 a sep 2023.",
+                    },
+                },
+                {
+                    "kind": "heading",
+                    "text": {
+                        EN: "6 · Review tool (prototype)",
+                        ES: "6 · Herramienta de revisión (prototipo)",
+                    },
+                },
+                {
+                    "kind": "text",
+                    "text": {
+                        EN: "Rows rank by the step 3 rule. Each shows earnings per sale from that analysis; withdrawal vs marketplace average reflects ops criteria from log review, not this sales export. The wireframe below is illustrative.",
+                        ES: "Las filas se ordenan con la regla del paso 3. Cada una muestra ganancia por venta del análisis; la comparación de retiros con el promedio del marketplace refleja criterios acordados con operaciones al revisar registros, no esta exportación de ventas. El wireframe de abajo es ilustrativo.",
+                    },
+                },
+                {
+                    "kind": "chart",
+                    "chartId": "cstool-reports-wireframe",
+                    "caption": {
+                        EN: "Illustrative prototype: flagged accounts on the left, pin operation cycle on the right. Same resale pattern as piece 639844 in step 1 (real export prices); cycle amounts are schematic (A→B: 12 USD, B→C: 38 USD, C→A: 95 USD).",
+                        ES: "Prototipo ilustrativo: cuentas marcadas a la izquierda, ciclo de operaciones del pin a la derecha. Mismo patrón de reventa que la pieza 639844 del paso 1 (precios reales de la exportación); los montos del ciclo son esquemáticos (A→B: 12 USD, B→C: 38 USD, C→A: 95 USD).",
+                    },
+                },
+                {
+                    "kind": "text",
+                    "text": {
+                        EN: "We walked through the flow in the weekly brief with client and engineering and aligned on build scope. The list prioritizes review; specialists still decide each case.",
+                        ES: "Presentamos el flujo en el brief semanal con cliente e ingeniería y alineamos alcance de desarrollo. La lista prioriza revisión; cada caso sigue en manos del especialista.",
+                    },
+                },
             ],
         },
         "projectImageUrl": `${process.env.PUBLIC_URL}/assets/images/projects/nwpcstool/cstoo-hero.png`,

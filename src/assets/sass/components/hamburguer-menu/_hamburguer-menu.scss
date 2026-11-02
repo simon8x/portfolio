@@ -1,6 +1,7 @@
 .hamburger-menu {
     list-style: none;
-    //position: relative;
+    position: relative;
+    z-index: 1;
   
     .hamburger-icon {
       cursor: pointer;
@@ -12,7 +13,8 @@
       background: none;
       border: none;
       padding: 0;
-      z-index: 1;
+      position: relative;
+      z-index: 2;
       
       .bar {
         width: 100%;
@@ -29,6 +31,10 @@
       }
       &.open .bar:nth-child(3) {
         transform: translateY(-10px) rotate(-45deg);
+      }
+
+      &.open {
+        z-index: 102;
       }
     }
   
@@ -53,7 +59,7 @@
       box-shadow: 0px 0px 3px 1px rgba(0,0,0,.5);
       -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,.5);
       -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,.5);
-      // z-index: 100;
+      z-index: 101;
   
       li {
         padding: 10px;
@@ -78,6 +84,10 @@
       }
     }
   }
+
+.header:has(.hamburger-menu .menu-list.show) {
+    z-index: 50;
+}
 
 @media screen and (max-width: 768px) {
   .hamburger-menu {
