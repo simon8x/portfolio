@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import { MainNavBar } from '../../components/main-nav-bar/MainNavBar';
 import { FaqSection } from '../../components/faq-section/FaqSection';
 import { ExitNavigateContext } from '../../context/ExitNavigateContext';
