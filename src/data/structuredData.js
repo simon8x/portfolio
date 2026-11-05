@@ -49,6 +49,7 @@ const buildFeaturedProjectList = (lang) => {
 export const buildStructuredData = (lang) => {
   const schemaLang = lang === 'ES' ? 'ES' : 'EN';
   const siteUrl = entityProfile.canonicalSite;
+  const siteUrlBase = siteUrl.replace(/\/$/, '');
   const personId = siteUrl + '#person';
   const websiteId = siteUrl + '#website';
   const profileId = siteUrl + '#profile';
@@ -92,7 +93,8 @@ export const buildStructuredData = (lang) => {
       },
       {
         '@type': 'FAQPage',
-        '@id': siteUrl + '#faq',
+        '@id': siteUrlBase + '/faq#faq',
+        url: siteUrlBase + '/faq',
         mainEntity: buildFaqEntities(schemaLang),
       },
       buildFeaturedProjectList(schemaLang),

@@ -21,10 +21,11 @@ Primary skills: React, JavaScript, UX/UI, HTML, CSS, Sass, accessibility, design
 
 | Section | URL | Content |
 |---------|-----|---------|
-| Home | https://simon8x.github.io/portfolio/ | Tagline, navigation, FAQ (Common questions) |
+| Home | https://simon8x.github.io/portfolio/ | Tagline and navigation |
 | Projects | https://simon8x.github.io/portfolio/projects | Featured projects, other projects, live demos |
 | Track record | https://simon8x.github.io/portfolio/track-record | Work history, tech panel, resume PDF (EN/ES) |
 | Testimonials | https://simon8x.github.io/portfolio/testimonial | Written recommendations from colleagues |
+| Common questions | https://simon8x.github.io/portfolio/faq | FAQ (English and Spanish) |
 
 Note: This portfolio is a React single-page app on GitHub Pages. Legacy URLs with `#/…` redirect to the paths above. Static files such as this document and llms.txt are always available without JavaScript.
 

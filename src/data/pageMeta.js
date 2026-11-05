@@ -47,6 +47,18 @@ const PAGE_META = {
         'Lo que dicen colegas sobre trabajar con Simón Ibalo en equipos de producto, UX e ingeniería.',
     },
   },
+  '/faq': {
+    EN: {
+      title: 'Common questions — Simón Ibalo',
+      description:
+        'Frequently asked questions about Simón Ibalo’s role, experience, skills, projects, languages, and how to contact him.',
+    },
+    ES: {
+      title: 'Preguntas frecuentes — Simón Ibalo',
+      description:
+        'Preguntas habituales sobre el rol, experiencia, habilidades, proyectos, idiomas y contacto de Simón Ibalo.',
+    },
+  },
 };
 
 export const getPageMeta = (pathname, siteLang) => {

@@ -1,10 +1,11 @@
 import { useContext } from "react"
+import { Link } from 'react-router-dom'
 import { LanguageContext } from "../../context/LanguageContext"
 import { ExitNavigateContext } from "../../context/ExitNavigateContext"
 import {MainNavBar} from "../../components/main-nav-bar/MainNavBar"
 import { CtaSection } from '../../components/cta-section/CtaSection'
-import { FaqSection } from '../../components/faq-section/FaqSection'
 import { homeContent } from '../../data/homeContent'
+import { faqHomeLink } from '../../data/faqContent'
 import { AppearBlock, useExitNavigate } from '../../utils/appear'
 
 const CTA_APPEAR_FROM = ['left', 'up', 'right']
@@ -50,7 +51,9 @@ export const Home = () => {
                 )
               })}
             </div>
-            <FaqSection />
+            <p className='home-faq-link'>
+              <Link to='/faq'>{faqHomeLink[siteLang] || faqHomeLink.EN}</Link>
+            </p>
           </div>
         </div>
       </main>

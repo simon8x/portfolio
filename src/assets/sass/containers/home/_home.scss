@@ -84,6 +84,24 @@
         // background-color: red;
         // margin-top: 15rem;
     }
+
+    .home-faq-link {
+        flex-basis: 100%;
+        margin: 2rem 0 1rem;
+        text-align: center;
+
+        a {
+            @include paragraph-md;
+            color: rgba($theme-dark-primary-text, .75);
+            text-decoration: underline;
+            text-underline-offset: .2em;
+
+            &:hover,
+            &:focus-visible {
+                color: $theme-dark-primary-text;
+            }
+        }
+    }
 }
 
 
@@ -189,16 +207,34 @@
     
     
         }
-        .cta-section {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            // gap: 2%;
-            min-width: 100% ;
-            // background-color: red;
-            // margin-top: 15rem;
+    .cta-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        // gap: 2%;
+        min-width: 100% ;
+        // background-color: red;
+        // margin-top: 15rem;
+    }
+
+    .home-faq-link {
+        flex-basis: 100%;
+        margin: 2rem 0 1rem;
+        text-align: center;
+
+        a {
+            @include paragraph-md;
+            color: rgba($theme-dark-primary-text, .75);
+            text-decoration: underline;
+            text-underline-offset: .2em;
+
+            &:hover,
+            &:focus-visible {
+                color: $theme-dark-primary-text;
+            }
         }
     }
+}
 }
 

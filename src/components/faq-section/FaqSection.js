@@ -12,15 +12,21 @@ const getLocalizedField = (field, siteLang) => {
   return localized == null ? field.EN : localized;
 };
 
-export const FaqSection = () => {
+export const FaqSection = ({ asPage }) => {
   const { siteLang } = useContext(LanguageContext);
   const heading = getLocalizedField(faqSectionTitle, siteLang);
+  const isPage = asPage === true;
+  const headingId = isPage === true ? 'faq-page-heading' : 'home-faq-heading';
+  const sectionClassName = isPage === true
+    ? 'faq-section faq-section--page'
+    : 'faq-section';
+  const TitleTag = isPage === true ? 'h1' : 'h2';
 
   return (
-    <section className='faq-section' aria-labelledby='home-faq-heading'>
-      <h2 id='home-faq-heading' className='faq-section__title'>
+    <section className={sectionClassName} aria-labelledby={headingId}>
+      <TitleTag id={headingId} className='faq-section__title'>
         {heading}
-      </h2>
+      </TitleTag>
       <div className='faq-section__list'>
         {faqItems.map((item) => (
           <article className='faq-section__item' key={item.id}>

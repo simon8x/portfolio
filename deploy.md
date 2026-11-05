@@ -188,6 +188,38 @@ npm run build
 
 Revisar errores de compilación antes de intentar deploy.
 
+### `Error: spawn ENAMETOOLONG` al deploy (Windows)
+
+En Windows, `gh-pages` puede fallar al ejecutar `git rm` sobre demasiados archivos: la línea de comando supera el límite del sistema.
+
+**Alternativas:**
+
+1. Ejecutar `npm run deploy` desde **Git Bash** o **WSL** (a veces evita el error).
+2. **Deploy manual** (mismo resultado que `npm run deploy`):
+
+```bash
+npm run build
+```
+
+Luego, desde PowerShell (ajustá `$deployDir` si hace falta):
+
+```powershell
+$deployDir = Join-Path $env:TEMP "portfolio-gh-pages-deploy"
+$repoRoot = "C:\repos\github\portfolio-24"   # ruta local del repo
+$masterSha = git -C $repoRoot rev-parse --short HEAD
+
+if (Test-Path $deployDir) { Remove-Item $deployDir -Recurse -Force }
+git clone --depth 1 --branch gh-pages https://github.com/simon8x/portfolio.git $deployDir
+Get-ChildItem $deployDir -Force | Where-Object { $_.Name -ne '.git' } | Remove-Item -Recurse -Force
+Copy-Item -Path "$repoRoot\build\*" -Destination $deployDir -Recurse -Force
+Set-Location $deployDir
+git add -A
+git commit -m "Deploy from master $masterSha"
+git push origin gh-pages
+```
+
+Verificar con `git log origin/gh-pages -1 --oneline` y el smoke check habitual en producción.
+
 ### `master` y prod desincronizados
 
 Comparar fechas de último commit:

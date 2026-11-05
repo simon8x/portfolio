@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate, useSearchParams } from 'react-r
 import { ProjectsV2 } from './containers/projects-v2/ProjectsV2';
 import { TrackRecord } from './containers/track-record/TrackRecord';
 import { Testimonials } from './containers/testimonials/Testimonials';
+import { Faq } from './containers/faq/Faq';
 import { Home } from './containers/home/Home';
 import { LanguageProvider } from './context/LanguageProvider';
 import { WarpProvider } from './context/WarpProvider';
@@ -45,6 +46,7 @@ function App() {
             <Route path='/projects-v2' element={ <RedirectProjectsV2ToProjects />}/>
             <Route path='/track-record' element={ <TrackRecord />}/>
             <Route path='/testimonial' element={ <Testimonials />}/>
+            <Route path='/faq' element={ <Faq />}/>
             <Route path='/*' element={ <Navigate to= '/'/> }/>
           </Routes>
         </WarpProvider>

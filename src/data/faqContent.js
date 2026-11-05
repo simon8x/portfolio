@@ -3,6 +3,11 @@ export const faqSectionTitle = {
   ES: 'Preguntas frecuentes',
 };
 
+export const faqHomeLink = {
+  EN: 'FAQ',
+  ES: 'FAQ',
+};
+
 export const faqItems = [
   {
     id: 'who',

@@ -10,6 +10,7 @@ export const CRAWLER_FALLBACK_ROUTES = [
   { pathname: '/projects', outputPath: 'projects/index.html' },
   { pathname: '/track-record', outputPath: 'track-record/index.html' },
   { pathname: '/testimonial', outputPath: 'testimonial/index.html' },
+  { pathname: '/faq', outputPath: 'faq/index.html' },
 ];
 
 const escapeHtml = (value) => {
@@ -26,13 +27,12 @@ const buildNavLinks = () => {
     { href: SITE_BASE + '/projects', label: 'Projects' },
     { href: SITE_BASE + '/track-record', label: 'Track record' },
     { href: SITE_BASE + '/testimonial', label: 'Testimonials' },
+    { href: SITE_BASE + '/faq', label: 'Common questions' },
   ];
 };
 
-const buildHomeFallback = () => {
-  const navLinks = buildNavLinks();
-  const faqHeading = escapeHtml(faqSectionTitle.EN);
-  const faqBlocks = faqItems
+const buildFaqBlocks = () => {
+  return faqItems
     .map((item) => {
       const question = escapeHtml(item.question.EN);
       const answer = escapeHtml(item.answer.EN);
@@ -42,7 +42,10 @@ const buildHomeFallback = () => {
       );
     })
     .join('');
+};
 
+const buildHomeFallback = () => {
+  const navLinks = buildNavLinks();
   const navItems = navLinks
     .map((link) => {
       return '<li><a href="' + escapeHtml(link.href) + '">' + escapeHtml(link.label) + '</a></li>';
@@ -54,9 +57,7 @@ const buildHomeFallback = () => {
     '<h1>' + escapeHtml(entityProfile.fullName) + ' — ' + escapeHtml(entityProfile.jobTitle.EN) + '</h1>' +
     '<p>' + escapeHtml(entityProfile.descriptionLong.EN) + '</p>' +
     '<h2>Site sections</h2>' +
-    '<ul>' + navItems + '</ul>' +
-    '<h2>' + faqHeading + '</h2>' +
-    '<dl>' + faqBlocks + '</dl>'
+    '<ul>' + navItems + '</ul>'
   );
 };
 
@@ -97,6 +98,13 @@ const buildSectionFallback = (pathname) => {
   if (pathname === '/testimonial') {
     extra =
       '<p>This section contains written recommendations from colleagues. Enable JavaScript to read the full testimonials layout.</p>';
+  }
+
+  if (pathname === '/faq') {
+    const faqHeading = escapeHtml(faqSectionTitle.EN);
+    extra =
+      '<h2>' + faqHeading + '</h2>' +
+      '<dl>' + buildFaqBlocks() + '</dl>';
   }
 
   return (

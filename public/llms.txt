@@ -6,13 +6,14 @@ Extended profile, projects, and FAQ: [llms-full.txt](https://simon8x.github.io/p
 
 ## Canonical site
 
-- [Portfolio home](https://simon8x.github.io/portfolio/): introduction, navigation, and FAQ
+- [Portfolio home](https://simon8x.github.io/portfolio/): introduction and navigation
 
 ## In-app sections
 
 - [Projects](https://simon8x.github.io/portfolio/projects): featured case studies and live demos
 - [Track record](https://simon8x.github.io/portfolio/track-record): employers, roles, tech stacks, CV download
 - [Testimonials](https://simon8x.github.io/portfolio/testimonial): colleague recommendations
+- [Common questions](https://simon8x.github.io/portfolio/faq): FAQ about role, experience, and contact
 
 Legacy hash URLs (`#/projects`, etc.) redirect to the paths above.
 

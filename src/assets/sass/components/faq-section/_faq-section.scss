@@ -33,6 +33,13 @@
         margin: 0;
         color: rgba($theme-dark-primary-text, .88);
     }
+
+    &--page {
+        margin-top: 2rem;
+        max-width: 48rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 @media screen and (max-width: 768px) {
