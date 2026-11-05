@@ -71,7 +71,9 @@ Restricción importante: el router es `HashRouter`. WhatsApp, Slack y LinkedIn l
 
 ## 4. Title, meta description y Open Graph
 
-**Estado actual (`public/index.html`):**
+**Estado:** ✅ Implementado (meta estáticos + `pageMeta.js` + `DocumentMeta.js`).
+
+**Estado previo (`public/index.html`):**
 
 - Title y description genéricos: `UX/UI Engineer and beyond...`
 - `og:image` apunta a `/images/me/simon8x-avatar1.png` — el archivo real está en `assets/images/me/simon8x-avatar1.png`
