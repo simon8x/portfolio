@@ -4,7 +4,7 @@
 
 **Seguimiento:** marcar `[x]` al cerrar cada ítem. Pedir implementación por fase (ej. *“implementá la Fase 1 del plan GEO/AEO”*).
 
-**Estado global:** 🟡 En progreso (Fase 1 completada)
+**Estado global:** 🟡 En progreso (Fases 1–5 completadas; Fase 0 y 6 pendientes)
 
 | Fase | Nombre | Estado |
 |------|--------|--------|
@@ -13,7 +13,7 @@
 | 2 | Descubrimiento para crawlers de IA | ✅ |
 | 3 | Datos estructurados (JSON-LD) | ✅ |
 | 4 | Indexación real (rutas + HTML estático) | ✅ |
-| 5 | Prerender / fallback en build | ⬜ |
+| 5 | Prerender / fallback en build | ✅ |
 | 6 | Medición e iteración | ⬜ |
 
 ---
@@ -161,13 +161,15 @@ flowchart TB
 
 **Por qué:** CRA entrega un `<div id="root">` vacío; muchos bots no renderizan JS.
 
-**Opción A (recomendada para gh-pages sin eject):** post-build con **react-snap** o script custom que pre-renderice rutas clave a HTML estático.
+### Decisión Fase 5
 
-**Opción B (mínima):** `<noscript>` en `index.html` con párrafo + enlaces a secciones (generado desde `entityProfile` en build script).
+**Opción B ampliada (implementada):** `<noscript>` generado en **postbuild** desde `src/data/crawlerFallbackContent.js`. Se inyecta en `build/index.html` y en copias por ruta (`build/projects/index.html`, etc.) para que GitHub Pages sirva HTML con bio, FAQ o resumen de sección sin ejecutar React.
 
-- [ ] **5.1** Elegir A o B y documentar en este archivo (subsección “Decisión Fase 5”).
-- [ ] **5.2** Implementar para al menos: `/`, `/projects`, `/track-record`, `/testimonial`.
-- [ ] **5.3** Confirmar que `view-source:` en producción muestra texto de bio + FAQ o listado de proyectos.
+**Opción A (react-snap):** descartada en v1 para evitar dependencia pesada y fricción con React 18 en CRA.
+
+- [x] **5.1** Elegir A o B y documentar en este archivo (subsección “Decisión Fase 5”).
+- [x] **5.2** Implementar para al menos: `/`, `/projects`, `/track-record`, `/testimonial`.
+- [x] **5.3** Confirmar que `view-source:` en producción muestra texto de bio + FAQ o listado de proyectos.
 
 **Commit sugerido:** `feat(seo): prerender key routes for crawler-visible content`
 
