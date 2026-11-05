@@ -10,7 +10,7 @@
 |------|--------|--------|
 | 0 | Baseline y queries objetivo | ⬜ |
 | 1 | Capa de datos + contenido citables | ✅ |
-| 2 | Descubrimiento para crawlers de IA | ⬜ |
+| 2 | Descubrimiento para crawlers de IA | ✅ |
 | 3 | Datos estructurados (JSON-LD) | ⬜ |
 | 4 | Indexación real (rutas + HTML estático) | ⬜ |
 | 5 | Prerender / fallback en build | ⬜ |
@@ -105,20 +105,20 @@ flowchart TB
 
 ### 2.1 `llms.txt`
 
-- [ ] Agregar `public/llms.txt` (formato markdown breve):
+- [x] Agregar `public/llms.txt` (formato markdown breve):
   - Título, resumen profesional (EN primero o bilingüe)
   - Lista de URLs importantes con descripción de una línea
   - Enlace a `llms-full.txt` si existe
-- [ ] Agregar `public/llms-full.txt`: versión extendida (bio, lista de proyectos con 1 párrafo cada uno, FAQ en texto plano).
+- [x] Agregar `public/llms-full.txt`: versión extendida (bio, lista de proyectos con 1 párrafo cada uno, FAQ en texto plano).
 
 **Opción de mantenimiento:** script `scripts/generate-llms.js` (Node 8–compatible) que lea `entityProfile`, `faqContent`, `projectsData` y regenere ambos archivos en `prebuild` — evaluar en implementación para evitar drift manual.
 
 ### 2.2 Sitemap y robots
 
-- [ ] Crear `public/sitemap.xml` con URLs **reales publicables**:
+- [x] Crear `public/sitemap.xml` con URLs **reales publicables**:
   - Hoy con HashRouter: al menos `https://simon8x.github.io/portfolio/` y anclas documentadas; tras Fase 4: `/portfolio/projects`, `/track-record`, etc.
-- [ ] En `public/robots.txt`, agregar línea `Sitemap: https://simon8x.github.io/portfolio/sitemap.xml`
-- [ ] Mantener `User-agent: *` / `Allow` salvo política explícita contra bots (no bloquear GPTBot/PerplexityBot por defecto).
+- [x] En `public/robots.txt`, agregar línea `Sitemap: https://simon8x.github.io/portfolio/sitemap.xml`
+- [x] Mantener `User-agent: *` / `Allow` salvo política explícita contra bots (no bloquear GPTBot/PerplexityBot por defecto).
 
 **Commit sugerido:** `feat(geo): add llms.txt, sitemap, and robots sitemap reference`
 

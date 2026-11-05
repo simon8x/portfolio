@@ -1,0 +1,25 @@
+# Simón Ibalo — UX/UI Engineer
+
+> UX/UI Engineer with 9+ years building web interfaces and 5 years with React. Twelve years in software; based in northeast Argentina. English and Spanish.
+
+Extended profile, projects, and FAQ: [llms-full.txt](https://simon8x.github.io/portfolio/llms-full.txt)
+
+## Canonical site
+
+- [Portfolio home](https://simon8x.github.io/portfolio/): introduction, navigation, and FAQ
+
+## In-app sections (HashRouter; open in a browser)
+
+- [Projects](https://simon8x.github.io/portfolio/#/projects): featured case studies and live demos
+- [Track record](https://simon8x.github.io/portfolio/#/track-record): employers, roles, tech stacks, CV download
+- [Testimonials](https://simon8x.github.io/portfolio/#/testimonial): colleague recommendations
+
+## Same as
+
+- https://github.com/simon8x
+- https://github.com/simon8x/portfolio
+- https://www.linkedin.com/in/simonibalo/
+
+## Contact
+
+- https://www.linkedin.com/in/simonibalo/
