@@ -8,6 +8,7 @@ import { LanguageContext } from '../../context/LanguageContext';
 import { LIVE_DEMO_HANDOFF_MS, navigateToLiveDemo } from '../../utils/liveDemoHandoff';
 import { ProjectModalStoryBlocks } from '../project-modal-story/ProjectModalStoryBlocks';
 import { ProjectCaseStudyModal } from '../project-modal-story/ProjectCaseStudyModal';
+import { ModalScrollAnchor, useModalDialogFocus } from '../../utils/modalScrollStart';
 
 export const FeaturedProject = ({ featuredProject }) => {
 
@@ -18,6 +19,7 @@ export const FeaturedProject = ({ featuredProject }) => {
 	const [heroLoaded, setHeroLoaded] = useState(false);
 	const [modalBannerLoaded, setModalBannerLoaded] = useState(false);
 	const handoffTimeoutRef = useRef(null);
+	const projectDialogFocus = useModalDialogFocus();
 
 	const demoId = featuredProject.demoId;
 	const hasDemo = demoId != null && demoId !== '';
@@ -137,6 +139,8 @@ export const FeaturedProject = ({ featuredProject }) => {
 				</div>
 			</div>
 			<Modal
+				ref={projectDialogFocus.dialogRef}
+				initialFocusRef={projectDialogFocus.initialFocusRef}
 				open={open}
 				onClose={() => setOpen(false)}
 				center
@@ -146,6 +150,7 @@ export const FeaturedProject = ({ featuredProject }) => {
 				}}
 			>
 				<article className='modal-wrapper'>
+					<ModalScrollAnchor />
 					<div className={modalBannerWrapperClass}>
 						<img
 							className='modal-hero-banner-img'

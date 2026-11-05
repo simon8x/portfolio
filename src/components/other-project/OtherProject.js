@@ -6,6 +6,7 @@ import 'react-responsive-modal/styles.css';
 import './_custom-modal.css'
 import { LanguageContext } from '../../context/LanguageContext';
 import { LIVE_DEMO_HANDOFF_MS, navigateToLiveDemo } from '../../utils/liveDemoHandoff';
+import { ModalScrollAnchor, useModalDialogFocus } from '../../utils/modalScrollStart';
 
 export const OtherProject = ({ otherProject }) => {
     const { siteLang } = useContext(LanguageContext)
@@ -14,6 +15,7 @@ export const OtherProject = ({ otherProject }) => {
     const [heroLoaded, setHeroLoaded] = useState(false);
     const [modalBannerLoaded, setModalBannerLoaded] = useState(false);
     const handoffTimeoutRef = useRef(null);
+    const dialogFocus = useModalDialogFocus();
 
     const demoId = otherProject.demoId;
     const hasDemo = demoId != null && demoId !== '';
@@ -89,6 +91,8 @@ export const OtherProject = ({ otherProject }) => {
                 </div>
             </div>
             <Modal
+                    ref={dialogFocus.dialogRef}
+                    initialFocusRef={dialogFocus.initialFocusRef}
                     open={open}
                     onClose={() => setOpen(false)}
                     center
@@ -98,6 +102,7 @@ export const OtherProject = ({ otherProject }) => {
                     }}
                 >
                 <article className='modal-wrapper'>
+                    <ModalScrollAnchor />
                     <div className={modalBannerWrapperClass}>
                         <img
                             className='modal-hero-banner-img'

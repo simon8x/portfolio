@@ -5,6 +5,7 @@ import 'react-responsive-modal/styles.css';
 import { LanguageContext } from '../../context/LanguageContext';
 import { TestimonialAuthor } from '../testimonial-author/TestimonialAuthor';
 import { finishAppearAnimation, useAppearOnView } from '../../utils/appear';
+import { ModalScrollAnchor, useModalDialogFocus } from '../../utils/modalScrollStart';
 
 // 'card' | 'avatar' — cambiar acá para probar el otro target.
 const TESTIMONIAL_GLOW_TARGET = 'card';
@@ -17,6 +18,7 @@ export const TestimonialCard = ({ recomendacion, className, style, appearReveal 
 
     const { siteLang } = useContext(LanguageContext);
     const [open, setOpen] = useState(false);
+    const dialogFocus = useModalDialogFocus();
 
     // Fallback a EN por si se suma un idioma sin traducir todas las entradas.
     const paragraphs = recomendacion.text[siteLang] == null
@@ -55,6 +57,8 @@ export const TestimonialCard = ({ recomendacion, className, style, appearReveal 
             </button>
 
             <Modal
+                ref={dialogFocus.dialogRef}
+                initialFocusRef={dialogFocus.initialFocusRef}
                 open={open}
                 onClose={() => setOpen(false)}
                 center
@@ -64,6 +68,7 @@ export const TestimonialCard = ({ recomendacion, className, style, appearReveal 
                 }}
             >
                 <article className='testimonial-modal-wrapper'>
+                    <ModalScrollAnchor />
                     <div className='quote-wrapper'>
                         {paragraphs.map((item, index) =>
                             <p className='testimonial-paragraph' key={index}>

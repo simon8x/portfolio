@@ -1,5 +1,6 @@
 import { Modal } from 'react-responsive-modal';
 import { ProjectModalStoryBlocks } from './ProjectModalStoryBlocks';
+import { ModalScrollAnchor, useModalDialogFocus } from '../../utils/modalScrollStart';
 
 const getLocalizedCopy = (field, siteLang) => {
 	if (field == null) {
@@ -24,6 +25,8 @@ const getLocalizedList = (field, siteLang) => {
 };
 
 export const ProjectCaseStudyModal = ({ caseStudy, siteLang, open, onClose }) => {
+	const dialogFocus = useModalDialogFocus();
+
 	if (caseStudy == null) {
 		return null;
 	}
@@ -35,6 +38,8 @@ export const ProjectCaseStudyModal = ({ caseStudy, siteLang, open, onClose }) =>
 
 	return (
 		<Modal
+			ref={dialogFocus.dialogRef}
+			initialFocusRef={dialogFocus.initialFocusRef}
 			open={open}
 			onClose={onClose}
 			center
@@ -44,6 +49,7 @@ export const ProjectCaseStudyModal = ({ caseStudy, siteLang, open, onClose }) =>
 			}}
 		>
 			<article className='modal-wrapper modal-wrapper--case-study'>
+				<ModalScrollAnchor />
 				<p className='modal-case-study-eyebrow'>
 					{siteLang === 'ES' ? 'Método / investigación' : 'Method / research'}
 				</p>

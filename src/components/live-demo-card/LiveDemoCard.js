@@ -7,6 +7,7 @@ import { LanguageContext } from '../../context/LanguageContext';
 import { Toast } from '../toast/Toast';
 import { demoReadyClosing } from '../../data/liveDemosData';
 import { finishAppearAnimation, useAppearOnView } from '../../utils/appear';
+import { ModalScrollAnchor, useModalDialogFocus } from '../../utils/modalScrollStart';
 
 const LIVE_DEMO_EXIT_TOAST_KEY = 'liveDemoExitHintSeen';
 
@@ -45,6 +46,7 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
     const settleTimeoutRef = useRef(null);
     const iframeRef = useRef(null);
     const frameReadyPollRef = useRef(null);
+    const dialogFocus = useModalDialogFocus();
 
     const markFrameSettled = () => {
         if (settleTimeoutRef.current != null) {
@@ -562,6 +564,8 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
             </button>
 
             <Modal
+                ref={dialogFocus.dialogRef}
+                initialFocusRef={dialogFocus.initialFocusRef}
                 open={infoOpen}
                 onClose={handleCloseInfo}
                 center
@@ -571,6 +575,7 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
                 }}
             >
                 <article className='live-demo-modal-wrapper'>
+                    <ModalScrollAnchor />
                     <header className='live-demo-modal-header'>
                         <h3 className='live-demo-modal-name'>{name}</h3>
                         <div className='live-demo-modal-summary'>
