@@ -11,7 +11,7 @@
 | 0 | Baseline y queries objetivo | ⬜ |
 | 1 | Capa de datos + contenido citables | ✅ |
 | 2 | Descubrimiento para crawlers de IA | ✅ |
-| 3 | Datos estructurados (JSON-LD) | ⬜ |
+| 3 | Datos estructurados (JSON-LD) | ✅ |
 | 4 | Indexación real (rutas + HTML estático) | ⬜ |
 | 5 | Prerender / fallback en build | ⬜ |
 | 6 | Medición e iteración | ⬜ |
@@ -128,11 +128,11 @@ flowchart TB
 
 **Por qué:** schema.org da a las IA anclas tipadas (Person, CreativeWork, FAQPage).
 
-- [ ] **3.1** Bloque `<script type="application/ld+json">` en `public/index.html` (estático, visible sin JS):
+- [x] **3.1** Bloque `<script type="application/ld+json">` en `public/index.html` (estático, visible sin JS):
   - `@graph`: `Person` + `ProfilePage` (o `WebSite` con `author`)
   - `sameAs`, `url`, `jobTitle`, `description`
-- [ ] **3.2** Componente o snippet en build: `FAQPage` con `mainEntity` desde `faqContent` (puede duplicarse en index estático o inyectarse vía script de build).
-- [ ] **3.3** (Opcional v1) `ItemList` de proyectos destacados con `name`, `description`, `url` a demo o ficha — datos desde `projectsData`.
+- [x] **3.2** Componente o snippet en build: `FAQPage` con `mainEntity` desde `faqContent` (puede duplicarse en index estático o inyectarse vía script de build).
+- [x] **3.3** (Opcional v1) `ItemList` de proyectos destacados con `name`, `description`, `url` a demo o ficha — datos desde `projectsData`.
 
 **Validación:** Google Rich Results Test / Schema Markup Validator (manual, post-deploy).
 
