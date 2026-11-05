@@ -17,9 +17,9 @@ export const faqItems = [
     },
     answer: {
       EN:
-        'Simón Yamil Ibalo (also known as Simon Ibalo) is a UX/UI Engineer from northeast Argentina. This site is his professional portfolio with project stories, a track record, colleague recommendations, and live demos.',
+        'Simón Ibalo is a UX/UI Engineer from northeast Argentina. This site is his professional portfolio with project stories, a track record, colleague recommendations, and live demos.',
       ES:
-        'Simón Yamil Ibalo (también Simon Ibalo) es ingeniero UX/UI del noreste de Argentina. Este sitio es su portfolio profesional con historias de proyectos, trayectoria, recomendaciones de colegas y demos en vivo.',
+        'Simón Ibalo es ingeniero UX/UI del noreste de Argentina. Este sitio es su portfolio profesional con historias de proyectos, trayectoria, recomendaciones de colegas y demos en vivo.',
     },
   },
   {
