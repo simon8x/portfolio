@@ -3,8 +3,8 @@ import userEvent from '@testing-library/user-event';
 import { LanguageProvider } from '../../context/LanguageProvider';
 import { SkipLink } from './SkipLink';
 
-test('skip link focuses main without changing the hash', async () => {
-  window.history.pushState({}, '', '/#/projects');
+test('skip link focuses main without changing the route', async () => {
+  window.history.pushState({}, '', '/projects');
 
   render(
     <LanguageProvider>
@@ -17,5 +17,5 @@ test('skip link focuses main without changing the hash', async () => {
   await userEvent.click(skip);
 
   expect(document.getElementById('main-content')).toHaveFocus();
-  expect(window.location.hash).toBe('#/projects');
+  expect(window.location.pathname).toBe('/projects');
 });

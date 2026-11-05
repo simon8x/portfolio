@@ -2,7 +2,7 @@
 
 Alcance: las prácticas del feedback Mindata que **sí mejoran este sitio**. No incluye contraste de overlays ni `eager`/`fetchpriority` del hero (el home es texto, no una imagen LCP).
 
-Restricción importante: el router es `HashRouter`. WhatsApp, Slack y LinkedIn leen el HTML estático de `public/index.html` y **ignoran el hash**. Los meta por ruta sirven para pestaña, historial y lectores de pantalla, no para previews al compartir `#/projects`.
+Restricción importante: el sitio usa **`BrowserRouter`** con `basename` `/portfolio` en GitHub Pages. WhatsApp, Slack y LinkedIn siguen leyendo sobre todo el HTML estático de la ruta servida; **`DocumentMeta`** actualiza `og:url`, canonical y título por ruta cuando la SPA carga.
 
 ---
 

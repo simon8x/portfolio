@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 //mport './App.css';
 import './assets/sass/styles.scss';
-import { HashRouter,Routes,Route, Navigate, useSearchParams } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useSearchParams } from 'react-router-dom';
 // import { Projects } from './containers/projects/Projects'; // legacy
 import { ProjectsV2 } from './containers/projects-v2/ProjectsV2';
 import { TrackRecord } from './containers/track-record/TrackRecord';
@@ -14,6 +14,8 @@ import { BackgroundShapes } from './components/background-shapes/BackgroundShape
 import { ScrollToTop } from './components/scroll-to-top/ScrollToTop';
 import { SkipLink } from './components/skip-link/SkipLink';
 import { DocumentMeta } from './components/document-meta/DocumentMeta';
+import { LegacyHashRouteRedirect } from './components/legacy-hash-route-redirect/LegacyHashRouteRedirect';
+import { getRouterBasename } from './utils/siteUrl';
 // import { Home } from './containers/home/Home';
 
 const RedirectProjectsV2ToProjects = () => {
@@ -24,9 +26,12 @@ const RedirectProjectsV2ToProjects = () => {
 };
 
 function App() {
+  const routerBasename = getRouterBasename();
+
   return (
     <LanguageProvider>
-      <HashRouter basename="/">
+      <BrowserRouter basename={routerBasename}>
+        <LegacyHashRouteRedirect />
         <WarpProvider>
           <DocumentMeta />
           <SkipLink />
@@ -43,7 +48,7 @@ function App() {
             <Route path='/*' element={ <Navigate to= '/'/> }/>
           </Routes>
         </WarpProvider>
-      </HashRouter>
+      </BrowserRouter>
     </LanguageProvider>
   );
 }

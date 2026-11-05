@@ -2,6 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <script>
+      (function (location) {
+        if (location.search.charAt(1) === '/') {
+          var decoded = location.search.slice(1).split('&').map(function (part) {
+            return part.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, null, location.pathname + decoded + location.hash);
+        }
+      }(window.location));
+    </script>
+    <link rel="canonical" id="portfolio-canonical" href="https://simon8x.github.io/portfolio/" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" /> 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -38,7 +49,7 @@
     -->
     <title>Simón Ibalo — UX/UI Engineer</title>
 
-        <script type="application/ld+json" id="portfolio-json-ld">
+                <script type="application/ld+json" id="portfolio-json-ld">
     {
       "@context": "https://schema.org",
       "@graph": [
@@ -188,42 +199,42 @@
               "position": 1,
               "name": "Monetate",
               "description": "I contributed to the front-end of an enterprise SaaS used by 100+ global retail brands (Adidas, Chanel, Lufthansa), delivering AI-powered personalization, A/B testing, and product recommendations. Part of an Argentine team for a US-based company in a fully English-speaking, cross-cultural environment.",
-              "url": "https://simon8x.github.io/portfolio/#/projects"
+              "url": "https://simon8x.github.io/portfolio/projects"
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "CHOC",
               "description": "I contributed to the development of Choc (https://www.chocfactory.com), building a dynamic e-commerce platform using Webflow, Shopify, Smootify, and Relume. It was a fast-paced, collaborative project requiring constant adaptation to shifting goals.",
-              "url": "https://simon8x.github.io/portfolio/#/projects"
+              "url": "https://simon8x.github.io/portfolio/projects"
             },
             {
               "@type": "ListItem",
               "position": 3,
               "name": "nwayplay",
               "description": "A big challenge: a small team from Argentina working alongside teams from Korea and the USA. Together, we created a marketplace. Nwayplay is a platform for Olympic-related digital product sales in partnership with the IOC, featuring an official secondary marketplace.",
-              "url": "https://simon8x.github.io/portfolio/#/projects"
+              "url": "https://simon8x.github.io/portfolio/projects"
             },
             {
               "@type": "ListItem",
               "position": 4,
               "name": "CS Tool",
               "description": "I led CS Tool UX prototyping. For transaction monitoring I used descriptive statistics and business analysis on marketplace sales to define prioritization rules and design review screens.",
-              "url": "https://simon8x.github.io/portfolio/#/projects"
+              "url": "https://simon8x.github.io/portfolio/projects"
             },
             {
               "@type": "ListItem",
               "position": 5,
               "name": "Mimuju",
               "description": "We built an edTech web app from scratch to help teachers, tutors, and school directors track the educational process for elementary students.",
-              "url": "https://simon8x.github.io/portfolio/#/projects"
+              "url": "https://simon8x.github.io/portfolio/projects"
             },
             {
               "@type": "ListItem",
               "position": 6,
               "name": "Autotest",
               "description": "A prestigious automotive magazine with over 15 years of success needed to migrate from print to digital. So...",
-              "url": "https://simon8x.github.io/portfolio/#/projects"
+              "url": "https://simon8x.github.io/portfolio/projects"
             }
           ]
         }

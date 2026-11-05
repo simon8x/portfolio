@@ -12,7 +12,7 @@
 | 1 | Capa de datos + contenido citables | ✅ |
 | 2 | Descubrimiento para crawlers de IA | ✅ |
 | 3 | Datos estructurados (JSON-LD) | ✅ |
-| 4 | Indexación real (rutas + HTML estático) | ⬜ |
+| 4 | Indexación real (rutas + HTML estático) | ✅ |
 | 5 | Prerender / fallback en build | ⬜ |
 | 6 | Medición e iteración | ⬜ |
 
@@ -21,7 +21,7 @@
 ## Relación con otros planes
 
 - **`docs/seo-a11y-implementation-plan.md` (secciones 4–5):** title, description, OG en `index.html` / `404.html` y meta por ruta en la SPA son **prerrequisito compartido** con AEO. Ejecutar esa sección **antes o en paralelo con Fase 1–2** de este plan.
-- **HashRouter:** hoy las URLs son `/#/projects`. Los crawlers de IA indexan mejor rutas sin hash. La **Fase 4** aborda la migración; hasta entonces GEO/AEO se apoya en archivos estáticos en `public/` (`llms.txt`, `sitemap.xml`, JSON-LD en `index.html`).
+- **HashRouter:** migrado a **`BrowserRouter`** con `basename` de `PUBLIC_URL` (`/portfolio` en producción). Redirect legacy `#/…` en `LegacyHashRouteRedirect`. GitHub Pages: `404.html` + script en `index.html`.
 
 ---
 
@@ -146,10 +146,10 @@ flowchart TB
 
 **Decisión registrada:** migrar `HashRouter` → `BrowserRouter` en `src/App.js` con patrón gh-pages ya documentado en `public/404.html` (redirect a `index.html`).
 
-- [ ] **4.1** Cambiar router y actualizar tests que usan `HashRouter`.
-- [ ] **4.2** Verificar `homepage` en `package.json` y links internos (`Link`, redirects).
-- [ ] **4.3** Actualizar `sitemap.xml` con rutas limpias: `/`, `/projects`, `/track-record`, `/testimonial`.
-- [ ] **4.4** Alinear `og:url` y canonical por ruta cuando exista `DocumentMeta` (plan SEO sección 4).
+- [x] **4.1** Cambiar router y actualizar tests que usan `HashRouter`.
+- [x] **4.2** Verificar `homepage` en `package.json` y links internos (`Link`, redirects).
+- [x] **4.3** Actualizar `sitemap.xml` con rutas limpias: `/`, `/projects`, `/track-record`, `/testimonial`.
+- [x] **4.4** Alinear `og:url` y canonical por ruta cuando exista `DocumentMeta` (plan SEO sección 4).
 
 **Riesgo:** enlaces externos antiguos con `#/` — mantener redirect en app de `#/projects` → `/projects` si es viable.
 

@@ -34,7 +34,7 @@ const buildFeaturedProjectList = (lang) => {
       position: index + 1,
       name: project.projectName,
       description: description,
-      url: entityProfile.canonicalSite + '#/projects',
+      url: entityProfile.canonicalSite.replace(/\/$/, '') + '/projects',
     };
   });
 
