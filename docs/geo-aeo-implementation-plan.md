@@ -4,11 +4,11 @@
 
 **Seguimiento:** marcar `[x]` al cerrar cada ítem. Pedir implementación por fase (ej. *“implementá la Fase 1 del plan GEO/AEO”*).
 
-**Estado global:** 🟡 En progreso (Fases 1–5 completadas; Fase 0 y 6 pendientes)
+**Estado global:** 🟡 Fases 1–5 hechas; completar medición manual (Fase 0.2) y iteración (Fase 6)
 
 | Fase | Nombre | Estado |
 |------|--------|--------|
-| 0 | Baseline y queries objetivo | ⬜ |
+| 0 | Baseline y queries objetivo | 🟡 plantilla lista (falta medición 0.2) |
 | 1 | Capa de datos + contenido citables | ✅ |
 | 2 | Descubrimiento para crawlers de IA | ✅ |
 | 3 | Datos estructurados (JSON-LD) | ✅ |
@@ -57,12 +57,12 @@ flowchart TB
 
 **Por qué:** sin queries de referencia no se sabe si GEO/AEO mejoró.
 
-- [ ] **0.1** Documentar 10–15 prompts de prueba (ES + EN), por ejemplo:
+- [x] **0.1** Documentar 10–15 prompts de prueba (ES + EN), por ejemplo:
   - *¿Quién es Simón Ibalo / Simon Ibalo UX?*
   - *UX UI Engineer React Argentina portfolio*
   - *Simón Ibalo proyectos / track record*
 - [ ] **0.2** Ejecutar esos prompts en Perplexity, ChatGPT (browse si hay), Gemini; anotar si aparece el sitio, GitHub, LinkedIn u otra fuente.
-- [ ] **0.3** Guardar baseline en `docs/geo-aeo-baseline.md` (fecha + tabla prompt → fuentes citadas).
+- [x] **0.3** Guardar baseline en `docs/geo-aeo-baseline.md` (fecha + tabla prompt → fuentes citadas).
 
 **Criterio de done:** archivo baseline con al menos 10 filas.
 
