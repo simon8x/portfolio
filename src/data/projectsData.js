@@ -205,8 +205,8 @@ export const featuredProjectsData = [
             {
                 "kind": "text",
                 "text": {
-                    EN: "CS Tool covered marketplace operations: content, support views, and reports. Transaction monitoring is documented below—from sales export to prioritization rules and review prototype.",
-                    ES: "CS Tool cubría operaciones del marketplace: contenido, vistas de soporte y reportes. El monitoreo de transacciones está documentado abajo, de la exportación de ventas a reglas de priorización y prototipo de revisión.",
+                    EN: "CS Tool covered marketplace operations: content, support views, and reports. Transaction monitoring is documented below—from sales export to prioritization rules.",
+                    ES: "CS Tool cubría operaciones del marketplace: contenido, vistas de soporte y reportes. El monitoreo de transacciones está documentado abajo, de la exportación de ventas a las reglas de priorización.",
                 },
             },
         ],
@@ -329,28 +329,6 @@ export const featuredProjectsData = [
                     "caption": {
                         EN: "Marketplace-wide KYC status, Sep 2021 to Sep 2023.",
                         ES: "Estado KYC de todo el marketplace, sep 2021 a sep 2023.",
-                    },
-                },
-                {
-                    "kind": "heading",
-                    "text": {
-                        EN: "6 · Review tool (prototype)",
-                        ES: "6 · Herramienta de revisión (prototipo)",
-                    },
-                },
-                {
-                    "kind": "text",
-                    "text": {
-                        EN: "Rows rank by the step 3 rule. Each shows earnings per sale from that analysis; withdrawal vs marketplace average reflects ops criteria from log review, not this sales export. The wireframe below is illustrative.",
-                        ES: "Las filas se ordenan con la regla del paso 3. Cada una muestra ganancia por venta del análisis; la comparación de retiros con el promedio del marketplace refleja criterios acordados con operaciones al revisar registros, no esta exportación de ventas. El wireframe de abajo es ilustrativo.",
-                    },
-                },
-                {
-                    "kind": "chart",
-                    "chartId": "cstool-reports-wireframe",
-                    "caption": {
-                        EN: "Illustrative prototype: flagged accounts on the left, pin operation cycle on the right. Same resale pattern as piece 639844 in step 1 (real export prices); cycle amounts are schematic (A→B: 12 USD, B→C: 38 USD, C→A: 95 USD).",
-                        ES: "Prototipo ilustrativo: cuentas marcadas a la izquierda, ciclo de operaciones del pin a la derecha. Mismo patrón de reventa que la pieza 639844 del paso 1 (precios reales de la exportación); los montos del ciclo son esquemáticos (A→B: 12 USD, B→C: 38 USD, C→A: 95 USD).",
                     },
                 },
                 {
