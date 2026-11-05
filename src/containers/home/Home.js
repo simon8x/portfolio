@@ -3,6 +3,7 @@ import { LanguageContext } from "../../context/LanguageContext"
 import { ExitNavigateContext } from "../../context/ExitNavigateContext"
 import {MainNavBar} from "../../components/main-nav-bar/MainNavBar"
 import { CtaSection } from '../../components/cta-section/CtaSection'
+import { FaqSection } from '../../components/faq-section/FaqSection'
 import { homeContent } from '../../data/homeContent'
 import { AppearBlock, useExitNavigate } from '../../utils/appear'
 
@@ -49,6 +50,7 @@ export const Home = () => {
                 )
               })}
             </div>
+            <FaqSection />
           </div>
         </div>
       </main>
