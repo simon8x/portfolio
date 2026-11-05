@@ -1,0 +1,109 @@
+# Simón Ibalo — full context for AI crawlers
+
+Canonical URL: https://simon8x.github.io/portfolio/
+
+Also known as: Simon Ibalo
+
+## Summary
+
+Simón Yamil Ibalo is a UX/UI Engineer from northeast Argentina. He has twelve years in software, nine crafting web interfaces, and five focused on React. He started as a Business Analyst and builds interfaces aligned with user needs and business goals. He works on enterprise SaaS, marketplaces, and product experiences. Languages: English and Spanish (professional).
+
+Primary skills: React, JavaScript, UX/UI, HTML, CSS, Sass, accessibility, design systems.
+
+## Links
+
+- Portfolio: https://simon8x.github.io/portfolio/
+- GitHub: https://github.com/simon8x
+- Repository: https://github.com/simon8x/portfolio
+- LinkedIn: https://www.linkedin.com/in/simonibalo/
+
+## Site sections
+
+| Section | URL | Content |
+|---------|-----|---------|
+| Home | https://simon8x.github.io/portfolio/ | Tagline, navigation, FAQ (Common questions) |
+| Projects | https://simon8x.github.io/portfolio/projects | Featured projects, other projects, live demos |
+| Track record | https://simon8x.github.io/portfolio/track-record | Work history, tech panel, resume PDF (EN/ES) |
+| Testimonials | https://simon8x.github.io/portfolio/testimonial | Written recommendations from colleagues |
+
+Note: This portfolio is a React single-page app on GitHub Pages. Legacy URLs with `#/…` redirect to the paths above. Static files such as this document and llms.txt are always available without JavaScript.
+
+## Featured projects (short)
+
+### Monetate — Enterprise SaaS · AI-powered personalization
+
+I contributed to the front-end of an enterprise SaaS used by 100+ global retail brands (Adidas, Chanel, Lufthansa), delivering AI-powered personalization, A/B testing, and product recommendations. Part of an Argentine team for a US-based company in a fully English-speaking, cross-cultural environment.
+
+### CHOC — Ecommerce & Marketing platform
+
+I contributed to the development of Choc (https://www.chocfactory.com), building a dynamic e-commerce platform using Webflow, Shopify, Smootify, and Relume. It was a fast-paced, collaborative project requiring constant adaptation to shifting goals.
+
+### nwayplay — NFT Marketplace
+
+A small team from Argentina working alongside teams from Korea and the USA created an Olympic-related digital marketplace with an official secondary marketplace in partnership with the IOC.
+
+### CS Tool — Customer Service Tool for NFT MKP
+
+I led CS Tool UX prototyping. For transaction monitoring I used descriptive statistics and business analysis on marketplace sales to define prioritization rules and design review screens.
+
+### Mimuju — Ed Tech Web App
+
+We built an edTech web app from scratch to help teachers, tutors, and school directors track the educational process for elementary students.
+
+### Autotest
+
+(See portfolio Projects section for narrative and stack.)
+
+## Live demos (static HTML, subset of projects)
+
+When available on the portfolio, demos are hosted under:
+
+- https://simon8x.github.io/portfolio/assets/live-projects/
+
+Examples include My Hero Academia, Olympics Games Jam, Mimuju teacher prototype, and others listed on the Projects page.
+
+## FAQ (English)
+
+### Who is Simón Ibalo?
+
+Simón Yamil Ibalo (also known as Simon Ibalo) is a UX/UI Engineer from northeast Argentina. This site is his professional portfolio with project stories, a track record, colleague recommendations, and live demos.
+
+### What is his current professional role?
+
+He works as a UI Engineer on an Argentine team supporting Monetate’s enterprise personalization SaaS, contributing to a front-end migration from Google Closure to React. See the Track Record section for employers and dates.
+
+### How much experience does he have?
+
+Twelve years building software, nine years designing and implementing web interfaces, and five years working primarily with React. He began his career as a Business Analyst before moving into UX/UI engineering.
+
+### What technologies does he use?
+
+React, JavaScript, HTML, CSS, and Sass are core to his day-to-day work. He also uses accessibility practices, design systems, and tooling such as Jest, Webpack, and CI pipelines depending on the product.
+
+### What kinds of projects are featured here?
+
+Featured work includes enterprise SaaS, marketplaces, games, and marketing sites. The Projects section combines case-study narratives with optional live demos when confidentiality allows.
+
+### What languages does he work in?
+
+He works professionally in English and Spanish. This portfolio can be viewed in both languages using the language control in the navigation bar.
+
+### How can I contact Simón Ibalo?
+
+The best way to reach him is via LinkedIn at linkedin.com/in/simonibalo. You can also download his resume from the Track Record page in English or Spanish.
+
+### Where is he based?
+
+He is based in northeast Argentina and has worked with distributed and remote teams for US and global clients.
+
+### What is his background before UX/UI engineering?
+
+He started as a Business Analyst, which shaped how he connects user research, product goals, and implementation. That background still informs how he approaches interface and front-end work.
+
+### What can I find on this portfolio?
+
+Home introduces his profile. Projects covers case studies and demos. Track Record lists companies, roles, and skills. Testimonials collects written recommendations from colleagues.
+
+## FAQ (Español)
+
+Las mismas preguntas frecuentes están disponibles en español en la sección "Preguntas frecuentes" de la home del portfolio cuando el visitante elige idioma ES.
