@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GAMES PAGE</title>
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <section class="hero-games-section">    
+        <div class="hero-wrapper">
+
+            <div id="game1" class="single-game-container">
+                <div onclick="openGame1()" class="click-layer"></div>
+                <img class="game-featured-img" src="assets/images/featured-single-game-background.jpg">
+                <a onclick="closeGame1()" id="g1close" class="close-hero-game">
+                    <img src="assets/images/close-icon.svg">
+                </a>
+                <div id="g1content" class="game-info-wrapper">
+                    <img class="game__logo" src="assets/images/logo-wwe.png"/>
+                    <a id="g1btn" class="btn-main" href="#">explore <img class="btn-arrow" src="assets/images/right-arrow.svg"></a>
+                </div>
+            </div>
+            <div id="game2" class="single-game-container">
+                <div onclick="openGame2()" class="click-layer"></div>
+                <img class="game-featured-img" src="assets/images/featured-single-game-background.jpg">
+                <a onclick="closeGame2()" id="g2close" class="close-hero-game">
+                    <img src="assets/images/close-icon.svg">
+                </a>
+                <div id="g2content" class="game-info-wrapper">
+                    <img class="game__logo" src="assets/images/logo-bp.png"/>
+                    <a id="g2btn" class="btn-main" href="#">explore <img class="btn-arrow" src="assets/images/right-arrow.svg"></a>
+                </div>
+
+            </div>
+            <div id="game3" class="single-game-container">
+                <div onclick="openGame3()" class="click-layer"></div>
+                <img class="game-featured-img" src="assets/images/featured-single-game-background.jpg">
+                <a onclick="closeGame3()" id="g3close" class="close-hero-game">
+                    <img src="assets/images/close-icon.svg">
+                </a>
+                <div id="g3content" class="game-info-wrapper">
+                    <img class="game__logo" src="assets/images/logo_pr_se.png"/>
+                    <a id="g3btn" class="btn-main" href="#">explore <img class="btn-arrow" src="assets/images/right-arrow.svg"></a>
+                </div>
+            </div>
+            <div id="game4" class="single-game-container">
+                <div onclick="openGame4()" class="click-layer"></div>
+                <img class="game-featured-img" src="assets/images/featured-single-game-background.jpg">
+                <a onclick="closeGame4()" id="g4close" class="close-hero-game">
+                    <img src="assets/images/close-icon.svg">
+                </a>
+                <div id="g4content" class="game-info-wrapper">
+                    <img class="game__logo" src="assets/images/logo_pr.png"/>
+                    <a id="g4btn" class="btn-main" href="#">explore <img class="btn-arrow" src="assets/images/right-arrow.svg"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<script src="assets/js/nway-demo-chrome.js"></script>
+</body>
+
+<script>
+    var game1 = document.getElementById('game1');
+    var g1close = document.getElementById('g1close');
+    var g1content = document.getElementById('g1content');
+    var g1btn = document.getElementById('g1btn');
+    var game2 = document.getElementById('game2');
+    var g2close = document.getElementById('g2close');
+    var g2content = document.getElementById('g2content');
+    var g2btn = document.getElementById('g2btn');
+    var game3 = document.getElementById('game3');
+    var g3close = document.getElementById('g3close');
+    var g3content = document.getElementById('g3content');
+    var g3btn = document.getElementById('g3btn');
+    var game4 = document.getElementById('game4');
+    var g4close = document.getElementById('g4close');
+    var g4content = document.getElementById('g4content');
+    var g4btn = document.getElementById('g4btn');
+    var clickLayers = document.getElementsByClassName('click-layer');
+
+    function openGame1(){
+        game1.classList.remove("restore-from-big","restore-from-cero");
+        game1.classList.add("grow-hero-game");
+        game2.classList.add("colapse-hero-game");
+        game3.classList.add("colapse-hero-game");
+        game4.classList.add("colapse-hero-game");
+        g1close.classList.remove("hidder");
+        g1close.classList.add("appear");
+        g1btn.classList.remove("hidder");
+        g1btn.classList.add("appear");
+        g1content.classList.remove("grow-container");
+        g1content.classList.add("restore-container");
+        for (let i = 0; i < clickLayers.length; i++) {
+            clickLayers[i].style.pointerEvents = "none";
+        }
+    }
+
+    function closeGame1(){
+        game1.classList.remove("grow-hero-game");
+        game1.classList.add("restore-from-big");
+        game2.classList.remove("colapse-hero-game");
+        game2.classList.add("restore-from-cero");
+        game3.classList.remove("colapse-hero-game");
+        game3.classList.add("restore-from-cero")
+        game4.classList.remove("colapse-hero-game");
+        game4.classList.add("restore-from-cero")
+        g1close.classList.remove("appear");
+        g1close.classList.add("hidder");
+        g1btn.classList.remove("appear");
+        g1btn.classList.add("hidder");
+        g1content.classList.remove("restore-container");
+        g1content.classList.add("grow-container");
+        for (let i = 0; i < clickLayers.length; i++) {
+            clickLayers[i].style.pointerEvents = "auto";
+        }
+    }
+    
+    function openGame2(){
+        game2.classList.remove("restore-from-big","restore-from-cero");
+        game2.classList.add("grow-hero-game");
+        game1.classList.add("colapse-hero-game");
+        game3.classList.add("colapse-hero-game");
+        game4.classList.add("colapse-hero-game");
+        g2close.classList.remove("hidder");
+        g2close.classList.add("appear");
+        g2btn.classList.remove("hidder");
+        g2btn.classList.add("appear");
+        g2content.classList.remove("grow-container");
+        g2content.classList.add("restore-container");
+        for (let i = 0; i < clickLayers.length; i++) {
+            clickLayers[i].style.pointerEvents = "none";
+        }
+    }
+
+    function closeGame2(){
+        game1.classList.remove("colapse-hero-game");
+        game1.classList.add("restore-from-cero");
+        game2.classList.remove("grow-hero-game");
+        game2.classList.add("restore-from-big");
+        game3.classList.remove("colapse-hero-game");
+        game3.classList.add("restore-from-cero")
+        game4.classList.remove("colapse-hero-game");
+        game4.classList.add("restore-from-cero")
+        g2close.classList.remove("appear");
+        g2close.classList.add("hidder");
+        g2btn.classList.remove("appear");
+        g2btn.classList.add("hidder");
+        g2content.classList.remove("restore-container");
+        g2content.classList.add("grow-container");
+        for (let i = 0; i < clickLayers.length; i++) {
+            clickLayers[i].style.pointerEvents = "auto";
+        }
+    }
+
+    function openGame3(){
+        game3.classList.remove("restore-from-big","restore-from-cero");
+        game3.classList.add("grow-hero-game");
+        game1.classList.add("colapse-hero-game");
+        game2.classList.add("colapse-hero-game");
+        game4.classList.add("colapse-hero-game");
+        g3close.classList.remove("hidder");
+        g3close.classList.add("appear");
+        g3btn.classList.remove("hidder");
+        g3btn.classList.add("appear");
+        g3content.classList.remove("grow-container");
+        g3content.classList.add("restore-container");
+        for (let i = 0; i < clickLayers.length; i++) {
+            clickLayers[i].style.pointerEvents = "none";
+        }
+    }
+
+    function closeGame3(){
+        game1.classList.remove("colapse-hero-game");
+        game1.classList.add("restore-from-cero");
+        game3.classList.remove("grow-hero-game");
+        game3.classList.add("restore-from-big");
+        game2.classList.remove("colapse-hero-game");
+        game2.classList.add("restore-from-cero")
+        game4.classList.remove("colapse-hero-game");
+        game4.classList.add("restore-from-cero")
+        g3close.classList.remove("appear");
+        g3close.classList.add("hidder");
+        g3btn.classList.remove("appear");
+        g3btn.classList.add("hidder");
+        g3content.classList.remove("restore-container");
+        g3content.classList.add("grow-container");
+        for (let i = 0; i < clickLayers.length; i++) {
+            clickLayers[i].style.pointerEvents = "auto";
+        }
+    }
+    
+    function openGame4(){
+        game4.classList.remove("restore-from-big","restore-from-cero");
+        game4.classList.add("grow-hero-game");
+        game1.classList.add("colapse-hero-game");
+        game2.classList.add("colapse-hero-game");
+        game3.classList.add("colapse-hero-game");
+        g4close.classList.remove("hidder");
+        g4close.classList.add("appear");
+        g4btn.classList.remove("hidder");
+        g4btn.classList.add("appear");
+        g4content.classList.remove("grow-container");
+        g4content.classList.add("restore-container");
+        for (let i = 0; i < clickLayers.length; i++) {
+            clickLayers[i].style.pointerEvents = "none";
+        }
+    }
+
+    function closeGame4(){
+        game1.classList.remove("colapse-hero-game");
+        game1.classList.add("restore-from-cero");
+        game4.classList.remove("grow-hero-game");
+        game4.classList.add("restore-from-big");
+        game2.classList.remove("colapse-hero-game");
+        game2.classList.add("restore-from-cero")
+        game3.classList.remove("colapse-hero-game");
+        game3.classList.add("restore-from-cero")
+        g4close.classList.remove("appear");
+        g4close.classList.add("hidder");
+        g4btn.classList.remove("appear");
+        g4btn.classList.add("hidder");
+        g4content.classList.remove("restore-container");
+        g4content.classList.add("grow-container");
+        for (let i = 0; i < clickLayers.length; i++) {
+            clickLayers[i].style.pointerEvents = "auto";
+        }
+    }
+    
+</script>

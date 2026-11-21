@@ -1,0 +1,23 @@
+.contact-form-section{
+    max-width: 100%;
+    background-color: $color-background-main;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    .hero-wrapper{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        .hero__title{
+            @include title-h1-main;
+            margin: 0;
+            text-transform: none;
+            text-align: center;
+        }
+    }
+}

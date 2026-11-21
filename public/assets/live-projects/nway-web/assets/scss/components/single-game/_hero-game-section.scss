@@ -1,0 +1,33 @@
+.hero-game-section{
+    min-height: 90vh;
+    padding-block: 5rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    .hero-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .hero__title{
+            @include title-h1-main;
+            margin: 0;
+            text-align: center;
+        }
+        .hero_description{
+            @include description-p-main;
+            text-align: center;
+        }
+        .download-bttons-wrapper{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            gap:2.4rem;
+            margin-top: 2.5rem;
+        }
+    }
+    
+}

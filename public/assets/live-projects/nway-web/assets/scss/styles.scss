@@ -1,0 +1,59 @@
+
+/* globals */
+@import "components/globals/normalize";
+@import "components/globals/fonts";
+@import "components/globals/colors";
+@import "components/globals/grid";
+@import "components/globals/helpers";
+@import "components/globals/buttons";
+@import "components/globals/header";
+@import "components/globals/footer";
+@import "components/globals/animations";
+
+/* home */ 
+
+@import "components/home/hero-section";
+@import "components/home/gallery-section";
+@import "components/home/intro-section";
+@import "components/home/web3-section";
+@import "components/home/fans-section";
+@import "components/home/games-slider";
+@import "components/home/join-us-section";
+@import "components/home/our-team-section";
+@import "components/home/news-section";
+@import "components/home/hero-slider";
+@import "components/home/backgrounds";
+
+/* team page */      
+@import "components/team/hero-section";
+@import "components/team/counters-section";
+@import "components/team/people-first-section";
+@import "components/team/team-tabs-section";
+@import "components/team/testimonial-section";
+@import "components/team/organization-section";
+@import "components/team/values-section";
+@import "components/team/old-team-slider";
+
+/* carrers page */
+@import "components/carrers/hero-section";
+@import "components/carrers/indication-section"; 
+@import "components/carrers/why-section";
+@import "components/carrers/positions-section";
+@import "components/carrers/best-company-section";
+
+/* games page */ 
+@import "components/single-game/hero-game-section";
+@import "components/single-game/slider-game";
+@import "components/single-game/features-section";  
+
+/* games paage */
+@import "components/games/hero-games-section";   
+
+/* contact page */
+@import "components/contact/contact-hero-section"; 
+@import "components/contact/contact-form-section";
+@import "components/contact/contact-socialmedia-section";
+
+/* news page */
+@import "components/news/news-header";
+@import "components/news/news-body";

@@ -1,0 +1,137 @@
+.join-us-section{
+    //min-height: 90vh;
+    padding: 10rem 0;
+    position: relative;
+    z-index: 1;
+    .join-us-wrapper{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        >div:nth-of-type(1){
+            padding: 0 1.2rem 0 0;
+        }
+        >div:nth-of-type(2){
+            padding: 0 0 0 1.2rem;
+        }
+        .join-col{
+            width: 50%;
+            border: none;
+            .join__subtitle{
+                @include subtitle-main;
+                margin: 0;
+            }
+            .join__title{
+                @include title-h1-main;
+                margin: 0
+            }
+            .join__description{
+                @include description-p-main;
+                //font-size: 2.6rem;
+            }
+            .open-position{
+                border-top: solid .1rem $color-light-text;
+                padding: 2.5rem 0;
+                .position__area{
+                    @include subtitle-main;
+                    margin: 0;
+                }
+                .position__title{
+                    @include title-h1-main;
+                    text-transform: none;
+                    font-size: 4.2rem;
+                    line-height: 1.2em;
+                    font-weight: 700;
+                    margin: 0;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                .position__extract{
+                    @include column-p-main;
+                }
+                .position__link-wrapper{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    .position__link{
+                        @include btn-go-circle;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:$bp-medium) {
+    .join-us-section{
+        //min-height: 90vh;
+        padding: 10rem 0;
+        position: relative;
+        z-index: 1;
+        .join-us-wrapper{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            >div:nth-of-type(1){
+                padding: 0;
+            }
+            >div:nth-of-type(2){
+                padding: 0;
+                margin-top: 5rem;
+            }
+            .join-col{
+                width: 100%;
+                .join__subtitle{
+                    
+                }
+                .join__title{
+                    
+                }
+                .join__description{
+                    
+                }
+                .open-position{
+                    border-top: solid .1rem $color-light-text;
+                    padding: 2.5rem 0;
+                    position: relative;
+                    .position__area{
+                        @include subtitle-main;
+                        margin: 0;
+                    }
+                    .position__title{
+                        @include position-title;
+                        width: calc( 100% - 6rem);
+                    }
+                    .position__extract{
+                        @include position-location-list;
+                        margin-top: .8rem;
+                    }
+                    .position__link-wrapper{
+                        position: absolute;
+                        top: 50%;
+                        transform:translateY(-50%);
+                        right: 0;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-end;
+                        .position__link{
+                            @include btn-go-circle;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:$bp-small) {
+    .join-us-section{
+        .join-us-wrapper{
+            >div:nth-of-type(2){
+                border-bottom: solid 1px $color-light-text;
+            }
+        }
+    }
+}

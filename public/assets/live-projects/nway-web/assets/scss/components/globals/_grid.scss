@@ -1,0 +1,46 @@
+$bp-large: 992px;
+$bp-medium: 768px;
+$bp-small: 600px;
+$bp-extra-small: 500px;
+
+$distance-container-bp-xl: 15%;
+$distance-container-bp-lg: 10%;
+$distance-container-bp-md: 7.5%;
+$distance-container-bp-sm: 5%;
+$distance-container-bp-xs: 2.5%;
+
+
+
+
+.container{
+    max-width: 70%;
+    display: block;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: $bp-large) {
+    .container{
+        max-width: 80%;
+    }
+    
+}
+
+@media screen and (max-width: $bp-medium) {
+    .container{
+        max-width: 85%;
+    }
+    
+}
+
+@media screen and (max-width: $bp-small) {
+    .container{
+        max-width: 90%;
+    }
+    
+}
+
+@media screen and (max-width: $bp-extra-small) {
+    .container{
+        max-width: 95%;
+    }
+}
