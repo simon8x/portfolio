@@ -1,0 +1,246 @@
+html.nway-demo-root {
+    --nway-demo-topbar-height: 56px;
+}
+
+html.nway-demo-root,
+html.nway-demo-root body {
+    overflow-x: hidden;
+}
+
+html.nway-demo-root body.nway-demo-nav-panel-open {
+    overflow: hidden;
+}
+
+html.nway-demo-root body.has-nway-demo-topbar {
+    padding-top: var(--nway-demo-topbar-height);
+}
+
+/* Chrome fijo: logo + mapa de pantallas (scroll del documento, también en iframe) */
+.nway-demo-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1100;
+    width: 100%;
+    isolation: isolate;
+    touch-action: manipulation;
+    background: rgba(20, 20, 28, 0.97);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.nway-demo-topbar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: 100%;
+    height: var(--nway-demo-topbar-height);
+    padding: 0 1.25rem;
+    box-sizing: border-box;
+}
+
+.nway-demo-topbar__logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    line-height: 0;
+}
+
+.nway-demo-topbar__logo img {
+    display: block;
+    height: 28px;
+    width: auto;
+}
+
+.nway-demo-nav-toggle {
+    position: relative;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.nway-demo-nav-toggle:hover,
+.nway-demo-nav-toggle:focus-visible {
+    background: rgba(255, 255, 255, 0.08);
+    outline: none;
+}
+
+.nway-demo-nav-toggle__bar,
+.nway-demo-nav-toggle__bar::before,
+.nway-demo-nav-toggle__bar::after {
+    display: block;
+    position: absolute;
+    left: 50%;
+    width: 22px;
+    height: 2px;
+    margin-left: -11px;
+    background: #fff;
+    transition: transform 0.2s linear, opacity 0.2s linear, top 0.2s linear;
+}
+
+.nway-demo-nav-toggle__bar {
+    top: 50%;
+    margin-top: -1px;
+}
+
+.nway-demo-nav-toggle__bar::before,
+.nway-demo-nav-toggle__bar::after {
+    content: "";
+}
+
+.nway-demo-nav-toggle__bar::before {
+    top: -7px;
+}
+
+.nway-demo-nav-toggle__bar::after {
+    top: 7px;
+    width: 18px;
+    margin-left: -9px;
+}
+
+.nway-demo-nav-toggle[aria-expanded="true"] .nway-demo-nav-toggle__bar {
+    background: transparent;
+}
+
+.nway-demo-nav-toggle[aria-expanded="true"] .nway-demo-nav-toggle__bar::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.nway-demo-nav-toggle[aria-expanded="true"] .nway-demo-nav-toggle__bar::after {
+    top: 0;
+    width: 22px;
+    margin-left: -11px;
+    transform: rotate(-45deg);
+}
+
+.nway-demo-nav-panel {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: min(70vh, 520px);
+    overflow-y: auto;
+    padding: 1rem 1.25rem 1.25rem;
+    background: rgba(28, 28, 38, 0.98);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.nway-demo-nav-panel.is-open {
+    display: block;
+    z-index: 2;
+}
+
+.nway-demo-nav-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: rgba(0, 0, 0, 0.35);
+    cursor: default;
+    touch-action: manipulation;
+}
+
+.nway-demo-nav-backdrop.is-visible {
+    display: block;
+}
+
+.nway-demo-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.nway-demo-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    color: #f0f0f8;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    line-height: 1.35;
+    transition: background 0.15s ease;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.12);
+}
+
+.nway-demo-nav-link:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+
+.nway-demo-nav-link.is-current {
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.nway-demo-nav-link.is-current::after {
+    content: "•";
+    opacity: 0.85;
+    font-size: 18px;
+}
+
+/* Team tabs: contain drift animations inside the section */
+.team-tabs-section .team-tabs-body {
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.team-tabs-section .team-wrapper.items {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    contain: layout paint;
+}
+
+.team-tabs-section .team-member-wrapper {
+    contain: layout;
+}
+
+.team-tabs-section .team-tabs-header {
+    position: relative;
+    z-index: 20;
+}
+
+.team-tabs-section .single-tab {
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.15);
+    user-select: none;
+    pointer-events: auto;
+}
+
+.team-tabs-section .single-tab-wrapper {
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.15);
+    pointer-events: auto;
+}
+
+.team-tabs-section .team-tabs-body {
+    position: relative;
+    z-index: 1;
+}

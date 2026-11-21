@@ -1,0 +1,20 @@
+.indication-section{
+    width: 100%;
+    padding-block: 2rem 4rem;
+    position: relative;
+    z-index: 1;
+    .indication-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .indication__img{
+            margin-bottom: 5rem;
+        }
+        .indication__text{
+            @include description-p-main;
+            text-align: center;
+            max-width: 80rem;
+        }
+    }
+}
