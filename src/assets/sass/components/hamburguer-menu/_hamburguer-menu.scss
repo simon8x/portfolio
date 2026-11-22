@@ -96,15 +96,21 @@
 }
 
 @media screen and (max-width: 768px) {
+  // En mobile el panel se ancla al .main-nav (sticky, ancho completo) y no al <li>
+  // de 30px; si no, "width: 100%" resolvía a ~40px y los links salían del viewport.
   .hamburger-menu {
- 
-  
-    // .hamburger-icon {
- 
-     
-  
+    position: static;
+
+    .hamburger-icon {
+      position: relative;
+    }
+
     .menu-list {
-      width: 100%;
+      left: 0;
+      right: 0;
+      width: auto;
+      max-width: 100%;
+      border-radius: 0 0 5px 5px;
       //background-color: red;
   
       // li {
