@@ -274,7 +274,6 @@
     left: -10000px;
     top: 0;
     opacity: 0;
-    visibility: hidden;
     pointer-events: none;
 
     &.live-demo-device-stage--phone {
@@ -285,11 +284,6 @@
     &.live-demo-device-stage--tablet {
         width: calc(var(--live-demo-device-width) + 4rem);
         height: calc((var(--live-demo-device-width) * 4 / 3) + 4.5rem);
-    }
-
-    &.live-demo-device-stage--desktop {
-        width: calc(var(--live-demo-device-width) + 3.5rem);
-        height: calc((var(--live-demo-device-width) * 9 / 16) + 6.5rem);
     }
 
     &.is-open {
@@ -304,16 +298,7 @@
         box-sizing: border-box;
         background-color: $theme-modal-dark-overlay;
         opacity: 1;
-        visibility: visible;
         pointer-events: auto;
-    }
-
-    &.live-demo-device-stage--desktop.is-open {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        padding: 1rem 1.25rem 1.25rem;
     }
 }
 
@@ -323,48 +308,6 @@
     max-width: 100%;
     max-height: calc(100vh - 3rem);
     pointer-events: auto;
-
-    &.live-demo-device-presenter--desktop {
-        flex: 1 1 auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        min-height: 0;
-        max-height: none;
-        overflow: hidden;
-    }
-}
-
-.live-demo-desktop-notice-bar {
-    flex: 0 0 auto;
-    z-index: 6;
-    width: 100%;
-    max-width: 52rem;
-    margin: 0 auto 0.75rem;
-    padding: 0.65rem 0.9rem;
-    border-radius: 0.5rem;
-    border: solid 1px rgba(0, 131, 143, 0.45);
-    background-color: rgba(12, 18, 22, 0.92);
-    box-shadow: 0 0.35rem 1.2rem rgba(0, 0, 0, 0.35);
-    pointer-events: none;
-
-    p {
-        @include paragraph-sm;
-        margin: 0;
-        color: $theme-dark-primary-text;
-        line-height: 1.45;
-        text-align: center;
-    }
-}
-
-.live-demo-desktop-scale-host {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: scale(var(--live-demo-desktop-scale, 1));
-    transform-origin: center center;
-    will-change: transform;
 }
 
 .live-demo-fullscreen-close {
@@ -398,13 +341,6 @@
         top: .65rem;
         right: .65rem;
         z-index: 5;
-    }
-
-    &.live-demo-fullscreen-close--desktop-stage {
-        position: fixed;
-        top: max(1rem, env(safe-area-inset-top, 0px));
-        right: max(1rem, env(safe-area-inset-right, 0px));
-        z-index: 20003;
     }
 }
 
@@ -497,67 +433,6 @@
     background-color: rgba(255, 255, 255, .35);
 }
 
-.live-demo-desktop-frame {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0.65rem 0.65rem 0;
-    border-radius: 1.1rem 1.1rem 0.35rem 0.35rem;
-    background-color: #1a1a1e;
-    border: solid 0.28rem rgba(255, 255, 255, 0.16);
-    box-shadow:
-        0 1.5rem 4rem rgba(0, 0, 0, 0.55),
-        inset 0 0 0 0.1rem rgba(255, 255, 255, 0.06);
-    flex-shrink: 0;
-}
-
-.live-demo-desktop-bezel-top {
-    width: 100%;
-    height: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0.35rem;
-}
-
-.live-demo-desktop-brand {
-    width: 0.45rem;
-    height: 0.45rem;
-    border-radius: 50%;
-    background: #3a3a42;
-    box-shadow:
-        -0.65rem 0 0 #3a3a42,
-        0.65rem 0 0 #3a3a42;
-    width: 100%;
-    text-align: center;
-    height: auto;
-}
-
-.live-demo-desktop-stand {
-    width: 7rem;
-    height: 1.65rem;
-    margin-top: 0.15rem;
-    background: linear-gradient(180deg, #2a2a30 0%, #141418 100%);
-    border-radius: 0 0 0.35rem 0.35rem;
-    clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
-}
-
-.live-demo-device-screen--desktop {
-    width: var(--live-demo-device-width);
-    height: calc(var(--live-demo-device-width) * 9 / 16);
-    border-radius: 0.25rem;
-    overflow: hidden;
-    touch-action: pan-y pinch-zoom;
-}
-
-.live-demo-device-stage--desktop .live-demo-frame.is-device-viewport {
-    width: var(--live-demo-device-width);
-    height: calc(var(--live-demo-device-width) * 9 / 16);
-    max-width: none;
-    max-height: none;
-}
-
 @media screen and (max-width: 520px) {
     .live-demo-device-stage.is-open {
         padding: .75rem;
@@ -576,15 +451,6 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .live-demo-device-stage--desktop.is-open {
-        padding: 0.75rem 0.65rem 1rem;
-
-        .live-demo-desktop-notice-bar {
-            max-width: calc(100vw - 2rem);
-            margin-bottom: 0.5rem;
-        }
-    }
-
     .live-demo-device-stage--tablet.is-open {
         padding: 0;
         background-color: $theme-dark-primary-background;

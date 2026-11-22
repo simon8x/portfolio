@@ -244,40 +244,4 @@ export const liveDemosData = [
             ES: 'App edTech docente · prototipo Materialize + jQuery 📚',
         },
     },
-    {
-        id: 'nway-web',
-        deviceFrame: 'desktop',
-        deviceViewportWidth: 1280,
-        name: {
-            EN: 'nWay.com redesign template',
-            ES: 'Plantilla rediseño nWay.com',
-        },
-        summary: {
-            EN: [
-                'Static HTML prototype for a corporate nWay.com redesign: home, games, careers, team, contact, and news screens with in-demo navigation.',
-                'I built pixel-level layouts in HTML and SCSS with desktop-first breakpoints; mobile was left incomplete. The Team page includes custom tab animations preserved in the demo.',
-            ],
-            ES: [
-                'Prototipo HTML estático para el rediseño de nWay.com: home, games, careers, team, contact y news con navegación dentro de la demo.',
-                'Maqueté en HTML y SCSS con breakpoints desktop-first; la versión mobile quedó incompleta. La página Team conserva animaciones personalizadas en las tabs.',
-            ],
-        },
-        demoVisitorHint: {
-            EN: 'Desktop-width HTML prototype only — mobile layouts were not completed. The monitor scales to fit your screen.',
-            ES: 'Solo prototipo HTML a ancho desktop — no hay versión mobile completa. El monitor se escala para entrar en pantalla.',
-        },
-        techStack: [
-            'HTML5',
-            'SCSS',
-            'CSS3',
-            'JavaScript',
-            'Figma',
-        ],
-        featuredImageUrl: `${process.env.PUBLIC_URL}/assets/live-projects/nway-web/assets/images/logo_nWay.png`,
-        demoUrl: `${process.env.PUBLIC_URL}/assets/live-projects/nway-web/home.html`,
-        cardTooltip: {
-            EN: 'Redesign template · static HTML + SCSS 🎮',
-            ES: 'Plantilla de rediseño · HTML + SCSS estático 🎮',
-        },
-    },
 ];

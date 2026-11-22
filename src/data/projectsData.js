@@ -552,7 +552,6 @@ export const otherProjectsData = [
         "projectLogo": "logo url",
         "linkToSite": "https://nway.com/",
         "linkToTrailer": "",
-        "demoId": "nway-web",
     },
     {
         "projectId": "5",

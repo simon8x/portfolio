@@ -46,9 +46,6 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
     const settleTimeoutRef = useRef(null);
     const iframeRef = useRef(null);
     const frameReadyPollRef = useRef(null);
-    const deviceStageRef = useRef(null);
-    const desktopScaleHostRef = useRef(null);
-    const [desktopScale, setDesktopScale] = useState(1);
     const dialogFocus = useModalDialogFocus();
 
     const markFrameSettled = () => {
@@ -123,10 +120,8 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
         : 'live-demo-view-btn is-disabled';
 
     const deviceFrame = liveDemo.deviceFrame == null ? null : liveDemo.deviceFrame;
-    const useDeviceFrame = deviceFrame === 'phone' || deviceFrame === 'tablet' || deviceFrame === 'desktop';
-    const defaultDeviceWidth = deviceFrame === 'desktop'
-        ? 1280
-        : (deviceFrame === 'tablet' ? 768 : 460);
+    const useDeviceFrame = deviceFrame === 'phone' || deviceFrame === 'tablet';
+    const defaultDeviceWidth = deviceFrame === 'tablet' ? 768 : 460;
     const deviceViewportWidth = liveDemo.deviceViewportWidth == null
         ? defaultDeviceWidth
         : liveDemo.deviceViewportWidth;
@@ -142,7 +137,7 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
             : 'live-demo-frame is-preload');
 
     const postPortfolioLangToFrame = () => {
-        if (liveDemo.id !== 'mimuju' && liveDemo.id !== 'nway-web') {
+        if (liveDemo.id !== 'mimuju') {
             return;
         }
 
@@ -245,77 +240,6 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
             document.body.style.overflow = previousOverflow;
         };
     }, [demoOpen]);
-
-    useEffect(() => {
-        if (deviceFrame !== 'desktop' || demoOpen !== true) {
-            setDesktopScale(1);
-            return;
-        }
-
-        const updateDesktopScale = () => {
-            const stage = deviceStageRef.current;
-            const host = desktopScaleHostRef.current;
-            if (stage == null || host == null) {
-                return;
-            }
-
-            host.style.setProperty('--live-demo-desktop-scale', '1');
-            const frameEl = host.querySelector('.live-demo-desktop-frame');
-            if (frameEl == null) {
-                return;
-            }
-
-            const noticeEl = stage.querySelector('.live-demo-desktop-notice-bar');
-            const noticeHeight = noticeEl == null ? 0 : noticeEl.offsetHeight;
-            const stagePaddingX = 32;
-            const stagePaddingY = 28;
-            const availW = stage.clientWidth - stagePaddingX;
-            const availH = stage.clientHeight - noticeHeight - stagePaddingY;
-
-            const naturalW = frameEl.offsetWidth;
-            const naturalH = frameEl.offsetHeight;
-            if (naturalW <= 0 || naturalH <= 0) {
-                return;
-            }
-
-            let scale = 1;
-            const widthScale = availW / naturalW;
-            const heightScale = availH / naturalH;
-            if (widthScale < scale) {
-                scale = widthScale;
-            }
-            if (heightScale < scale) {
-                scale = heightScale;
-            }
-            if (scale > 1) {
-                scale = 1;
-            }
-
-            setDesktopScale(scale);
-            host.style.setProperty('--live-demo-desktop-scale', String(scale));
-
-            const frame = iframeRef.current;
-            if (frame != null && frame.contentWindow != null && liveDemo.id === 'nway-web') {
-                frame.contentWindow.postMessage(
-                    { type: 'portfolio-viewport-update', scale: scale },
-                    window.location.origin,
-                );
-            }
-        };
-
-        updateDesktopScale();
-        const onResize = () => updateDesktopScale();
-        window.addEventListener('resize', onResize);
-        const delayedIds = [
-            setTimeout(updateDesktopScale, 50),
-            setTimeout(updateDesktopScale, 450),
-        ];
-
-        return () => {
-            window.removeEventListener('resize', onResize);
-            delayedIds.map((id) => clearTimeout(id));
-        };
-    }, [deviceFrame, demoOpen, isReady]);
 
     useEffect(() => {
         if (isPreloading !== true) {
@@ -548,13 +472,11 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
         ? 'live-demo-device-stage'
         : 'live-demo-device-stage live-demo-device-stage--' + deviceFrame + (demoOpen === true ? ' is-open' : '');
 
-    const deviceFrameMarkup = deviceFrame === 'desktop'
+    const deviceFrameMarkup = deviceFrame === 'tablet'
         ? (
-            <div className='live-demo-desktop-frame'>
-                <div className='live-demo-desktop-bezel-top'>
-                    <span className='live-demo-desktop-brand' aria-hidden='true'>nWay prototype</span>
-                </div>
-                <div className='live-demo-device-screen live-demo-device-screen--desktop'>
+            <div className='live-demo-tablet-frame'>
+                <span className='live-demo-tablet-camera' aria-hidden='true' />
+                <div className='live-demo-device-screen'>
                     <iframe
                         ref={iframeRef}
                         className={iframeClass}
@@ -563,25 +485,9 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
                         onLoad={handleFrameLoad}
                     />
                 </div>
-                <span className='live-demo-desktop-stand' aria-hidden='true' />
             </div>
         )
-        : deviceFrame === 'tablet'
-            ? (
-                <div className='live-demo-tablet-frame'>
-                    <span className='live-demo-tablet-camera' aria-hidden='true' />
-                    <div className='live-demo-device-screen'>
-                        <iframe
-                            ref={iframeRef}
-                            className={iframeClass}
-                            src={liveDemo.demoUrl}
-                            title={name}
-                            onLoad={handleFrameLoad}
-                        />
-                    </div>
-                </div>
-            )
-            : (
+        : (
             <div className='live-demo-phone-frame'>
                 <span className='live-demo-phone-notch' aria-hidden='true' />
                 <div className='live-demo-device-screen live-demo-device-screen--phone'>
@@ -597,52 +503,19 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
             </div>
         );
 
-    const presenterClassName = deviceFrame === 'desktop'
-        ? 'live-demo-device-presenter live-demo-device-presenter--desktop'
-        : 'live-demo-device-presenter';
-
-    const desktopNoticeMarkup = deviceFrame === 'desktop' && demoOpen === true && demoVisitorHint != null
-        ? (
-            <div className='live-demo-desktop-notice-bar' role='note'>
-                <p>{demoVisitorHint}</p>
-            </div>
-        )
-        : null;
-
-    const framedDeviceMarkup = deviceFrame === 'desktop'
-        ? (
-            <div
-                ref={desktopScaleHostRef}
-                className='live-demo-desktop-scale-host'
-                style={{ '--live-demo-desktop-scale': desktopScale }}
-            >
-                {deviceFrameMarkup}
-            </div>
-        )
-        : deviceFrameMarkup;
-
     const demoLayer = isPreloading === true
         ? createPortal(
             useDeviceFrame === true
                 ? <>
                     <div
-                        ref={deviceStageRef}
                         className={deviceStageClassName}
                         style={deviceStageStyle}
                     >
-                        {desktopNoticeMarkup}
-                        {deviceFrame === 'desktop'
-                            ? renderDemoCloseAndToast(
-                                'live-demo-fullscreen-close live-demo-fullscreen-close--desktop-stage'
-                            )
-                            : null}
-                        <div className={presenterClassName}>
-                            {framedDeviceMarkup}
-                            {deviceFrame === 'desktop'
-                                ? null
-                                : renderDemoCloseAndToast(
-                                    'live-demo-fullscreen-close live-demo-fullscreen-close--device-frame'
-                                )}
+                        <div className='live-demo-device-presenter'>
+                            {deviceFrameMarkup}
+                            {renderDemoCloseAndToast(
+                                'live-demo-fullscreen-close live-demo-fullscreen-close--device-frame'
+                            )}
                         </div>
                     </div>
                   </>
