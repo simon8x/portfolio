@@ -11,6 +11,9 @@ import { ModalScrollAnchor, useModalDialogFocus } from '../../utils/modalScrollS
 
 const LIVE_DEMO_EXIT_TOAST_KEY = 'liveDemoExitHintSeen';
 
+// Debe coincidir con el breakpoint mobile/tablet de _live-demo-card.scss.
+const DESKTOP_FRAME_FULLSCREEN_MAX_WIDTH = 1024;
+
 const silenceFrameMedia = (frame) => {
     if (frame == null) {
         return;
@@ -260,6 +263,15 @@ export const LiveDemoCard = ({ liveDemo, isPreloading, onRequestPreload, launchD
             }
 
             host.style.setProperty('--live-demo-desktop-scale', '1');
+
+            // En pantallas chicas la demo ocupa el viewport completo a ancho real
+            // (ver _live-demo-card.scss). Escalar un monitor de 1280px dejaba los
+            // controles de la demo demasiado chicos para tocarlos.
+            if (window.innerWidth <= DESKTOP_FRAME_FULLSCREEN_MAX_WIDTH) {
+                setDesktopScale(1);
+                return;
+            }
+
             const frameEl = host.querySelector('.live-demo-desktop-frame');
             if (frameEl == null) {
                 return;
